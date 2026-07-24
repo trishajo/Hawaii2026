@@ -1428,6 +1428,62 @@
     @media(max-width:1050px){.track-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:700px){.track-grid{grid-template-columns:1fr}.playlist-suggest-grid{grid-template-columns:1fr}}
 
+
+    .flight-journey{
+      margin-top:18px;padding:24px;border-radius:27px;
+      background:linear-gradient(145deg,#f8fcfb,#eef7f6);
+      border:1px solid rgba(18,59,83,.12)
+    }
+    .flight-journey h2{margin:8px 0 4px}
+    .flight-note{color:#60747b;line-height:1.55}
+    .flight-timeline{display:grid;gap:12px;margin-top:18px}
+    .flight-card{
+      display:grid;grid-template-columns:115px 1fr auto;gap:18px;align-items:center;
+      padding:18px;border-radius:20px;background:#fff;
+      border:1px solid rgba(18,59,83,.12);box-shadow:0 10px 25px rgba(18,59,83,.07)
+    }
+    .flight-number{
+      text-align:center;padding:13px;border-radius:16px;background:#173f4d;color:white
+    }
+    .flight-number small{display:block;text-transform:uppercase;letter-spacing:.1em;font-weight:900;font-size:.66rem}
+    .flight-number strong{display:block;font-family:Georgia,serif;font-size:1.55rem;margin-top:3px}
+    .flight-route h3{font-family:Georgia,serif;color:#173f4d;margin:0 0 7px;font-size:1.35rem}
+    .flight-route p{margin:3px 0;color:#506971}
+    .flight-route .layover{color:#d16e5e;font-weight:850}
+    .flight-actions{display:grid;gap:8px;min-width:180px}
+    .flight-actions a{
+      display:block;text-align:center;text-decoration:none;padding:10px 12px;
+      border-radius:999px;font-weight:900;font-size:.8rem
+    }
+    .flight-actions a:first-child{background:#173f4d;color:white}
+    .flight-actions a:last-child{background:#edf5f4;color:#173f4d}
+    .live-status-badge{
+      display:inline-flex;align-items:center;gap:7px;margin-top:9px;
+      padding:7px 10px;border-radius:999px;background:#e9f7ed;color:#28633d;
+      font-size:.75rem;font-weight:900
+    }
+    .live-dot{width:8px;height:8px;border-radius:50%;background:#3fa45a;box-shadow:0 0 0 4px rgba(63,164,90,.14)}
+    .hero-verse{
+      display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+      margin-top:18px;padding:11px 15px;border-radius:16px;
+      background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+      color:rgba(255,255,255,.92);max-width:870px
+    }
+    .hero-verse blockquote{margin:0;font-family:Georgia,serif;font-style:italic}
+    .hero-verse cite{font-style:normal;font-size:.8rem;color:#f9cf76;font-weight:900}
+    .page-verse{
+      margin:18px 0;padding:18px 20px;border-radius:20px;
+      background:linear-gradient(145deg,#fffaf0,#f4faf8);
+      border-left:4px solid #efb94f;text-align:center
+    }
+    .page-verse blockquote{font-family:Georgia,serif;font-style:italic;font-size:1.08rem;color:#294d58;margin:0}
+    .page-verse cite{display:block;margin-top:7px;color:#b06a52;font-style:normal;font-weight:900;font-size:.8rem}
+    @media(max-width:780px){
+      .flight-card{grid-template-columns:1fr}
+      .flight-actions{min-width:0}
+      .flight-number{text-align:left}
+    }
+
 </style>
 
 </head>
@@ -1459,6 +1515,13 @@
             <strong id="heroPromptTitle">Pause and notice</strong>
             <p id="heroPrompt">What detail would future-you want to remember?</p>
           </article>
+        </div>
+
+        
+        <div class="hero-verse" aria-live="polite">
+          <span>✦</span>
+          <blockquote id="heroVerse">“This is the day which the Lord hath made; we will rejoice and be glad in it.”</blockquote>
+          <cite id="heroVerseRef">Psalm 118:24</cite>
         </div>
 
         <div class="hero-actions">
@@ -1593,6 +1656,11 @@
     </section>
     
     <section id="day-2026-09-17">
+      <div class="page-verse">
+        <blockquote>“The Lord shall preserve thy going out and thy coming in from this time forth.”</blockquote>
+        <cite>Psalm 121:8</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -1689,9 +1757,53 @@
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
         <div class="explore-links"><a href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">🌺 Hawaiian culture ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Wailea+Maui" target="_blank" rel="noopener">📍 Explore Wailea ↗</a><a href="https://www.youtube.com/results?search_query=Wailea+Maui+travel" target="_blank" rel="noopener">🎥 Maui arrival inspiration ↗</a><a href="https://open.spotify.com/search/Hawaiian%20music" target="_blank" rel="noopener">🎵 Hawaiian music ↗</a></div>
       </div>
+    
+      <div class="flight-journey">
+        <span class="pill">Flight journey</span>
+        <h2>Boise to Maui</h2>
+        <p class="flight-note">Two Alaska Airlines flights take you from an early Boise departure to a mid-morning Maui arrival. The live buttons open the airline’s current status page, where gates, delays and updated times appear when operational data becomes available.</p>
+        <div class="flight-timeline">
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>782</strong></div>
+            <div class="flight-route">
+              <h3>BOI → PDX</h3>
+              <p><strong>6:00 AM</strong> depart Boise, ID</p>
+              <p><strong>6:20 AM</strong> arrive Portland, OR</p>
+              <p>Scheduled duration: 1 hr 20 min</p>
+              <p class="layover">52-minute connection in Portland</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/782/2026-09-17" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA782" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>479</strong></div>
+            <div class="flight-route">
+              <h3>PDX → OGG</h3>
+              <p><strong>7:12 AM</strong> depart Portland, OR</p>
+              <p><strong>10:21 AM</strong> arrive Maui, HI</p>
+              <p>Scheduled duration: 6 hrs 9 min</p>
+              <p class="layover">Arrive in Maui at 10:21 AM</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/479/2026-09-17" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA479" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="day-2026-09-18">
+      <div class="page-verse">
+        <blockquote>“O taste and see that the Lord is good.”</blockquote>
+        <cite>Psalm 34:8</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -1820,6 +1932,11 @@
     </section>
 
     <section id="day-2026-09-19">
+      <div class="page-verse">
+        <blockquote>“They that go down to the sea in ships… see the works of the Lord.”</blockquote>
+        <cite>Psalm 107:23–24</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -1958,6 +2075,11 @@
     </section>
 
     <section id="day-2026-09-20">
+      <div class="page-verse">
+        <blockquote>“Let them praise his name in the dance: let them sing praises unto him.”</blockquote>
+        <cite>Psalm 149:3</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -2096,6 +2218,11 @@
     </section>
 
     <section id="day-2026-09-21">
+      <div class="page-verse">
+        <blockquote>“Be still, and know that I am God.”</blockquote>
+        <cite>Psalm 46:10</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -2224,6 +2351,11 @@
     </section>
 
     <section id="day-2026-09-22">
+      <div class="page-verse">
+        <blockquote>“From the rising of the sun unto the going down of the same the Lord’s name is to be praised.”</blockquote>
+        <cite>Psalm 113:3</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -2362,6 +2494,11 @@
     </section>
 
     <section id="day-2026-09-23">
+      <div class="page-verse">
+        <blockquote>“Every good gift and every perfect gift is from above.”</blockquote>
+        <cite>James 1:17</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -2490,6 +2627,11 @@
     </section>
 
     <section id="day-2026-09-24">
+      <div class="page-verse">
+        <blockquote>“A merry heart maketh a cheerful countenance.”</blockquote>
+        <cite>Proverbs 15:13</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -2618,6 +2760,11 @@
     </section>
 
     <section id="day-2026-09-25">
+      <div class="page-verse">
+        <blockquote>“In every thing give thanks.”</blockquote>
+        <cite>1 Thessalonians 5:18</cite>
+      </div>
+    
       <div class="grid">
         <div class="card span-12">
           <div class="day-heading">
@@ -2743,11 +2890,55 @@
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
         <div class="explore-links"><a href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📖 Moʻolelo and memory ↗</a><a href="https://www.youtube.com/results?search_query=how+to+make+a+family+travel+highlight+video" target="_blank" rel="noopener">🎥 Create a travel highlight reel ↗</a><a href="https://www.google.com/search?q=beautiful+family+travel+photo+book+ideas" target="_blank" rel="noopener">📸 Travel photo book ideas ↗</a><a href="https://open.spotify.com/search/Maui" target="_blank" rel="noopener">🎵 Songs that feel like Maui ↗</a></div>
       </div>
+    
+      <div class="flight-journey">
+        <span class="pill">Flight journey</span>
+        <h2>Maui to Boise</h2>
+        <p class="flight-note">An early farewell to Maui, a Seattle connection and an evening arrival home. The live buttons open the airline’s current status page, where gates, delays and updated times appear when operational data becomes available.</p>
+        <div class="flight-timeline">
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>246</strong></div>
+            <div class="flight-route">
+              <h3>OGG → SEA</h3>
+              <p><strong>7:00 AM</strong> depart Kahului, HI</p>
+              <p><strong>3:44 PM</strong> arrive Seattle, WA</p>
+              <p>Scheduled duration: 5 hrs 44 min</p>
+              <p class="layover">2-hour 11-minute connection in Seattle</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/246/2026-09-25" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA246" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>586</strong></div>
+            <div class="flight-route">
+              <h3>SEA → BOI</h3>
+              <p><strong>5:55 PM</strong> depart Seattle, WA</p>
+              <p><strong>8:25 PM</strong> arrive Boise, ID</p>
+              <p>Scheduled duration: 1 hr 30 min</p>
+              <p class="layover">Home at 8:25 PM</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/586/2026-09-25" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA586" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
 
     
     <section id="games">
+      <div class="page-verse">
+        <blockquote>“A merry heart doeth good like a medicine.”</blockquote>
+        <cite>Proverbs 17:22</cite>
+      </div>
+    
       <div class="grid">
         <div class="editorial-intro span-12 games-hero">
           <div class="copy">
@@ -2833,6 +3024,11 @@
 
 
     <section id="playlist">
+      <div class="page-verse">
+        <blockquote>“Make a joyful noise unto the Lord… come before his presence with singing.”</blockquote>
+        <cite>Psalm 100:1–2</cite>
+      </div>
+    
       <div class="grid">
         <div class="editorial-intro span-12 playlist-hero">
           <div class="copy">
@@ -3044,6 +3240,11 @@
     </section>
 
 <section id="culture">
+      <div class="page-verse">
+        <blockquote>“The earth is the Lord’s, and the fulness thereof.”</blockquote>
+        <cite>Psalm 24:1</cite>
+      </div>
+    
       <div class="grid">
         <div class="culture-hero span-12">
           <div>
@@ -3124,7 +3325,12 @@
       </div>
     </section>
 
-    <section id="ideas"><div class="grid">
+    <section id="ideas">
+      <div class="page-verse">
+        <blockquote>“Commit thy works unto the Lord, and thy thoughts shall be established.”</blockquote>
+        <cite>Proverbs 16:3</cite>
+      </div>
+    <div class="grid">
       <div class="card span-12">
         <span class="pill">Interactive girls’ picks</span>
         <h2 style="margin-top:12px;">What sounds most fun?</h2>
@@ -3145,12 +3351,27 @@
       <div class="card span-6"><h2>Beaches</h2><div class="row"><input id="beachInput" placeholder="Add beach idea" /><button onclick="addItem('beaches','beachInput')">Add</button></div><ul id="beachesList" class="list"></ul></div>
       <div class="card span-6"><h2>Shopping / cute stops</h2><div class="row"><input id="shopInput" placeholder="Add shopping or scenic stop" /><button onclick="addItem('shops','shopInput')">Add</button></div><ul id="shopsList" class="list"></ul></div>
     </div></section>
-    <section id="bookings"><div class="grid"><div class="card span-12"><h2>All bookings & confirmations</h2><div id="bookingList"></div></div></div></section>
-    <section id="packing"><div class="grid">
+    <section id="bookings">
+      <div class="page-verse">
+        <blockquote>“Let all things be done decently and in order.”</blockquote>
+        <cite>1 Corinthians 14:40</cite>
+      </div>
+    <div class="grid"><div class="card span-12"><h2>All bookings & confirmations</h2><div id="bookingList"></div></div></div></section>
+    <section id="packing">
+      <div class="page-verse">
+        <blockquote>“Take therefore no thought for the morrow.”</blockquote>
+        <cite>Matthew 6:34</cite>
+      </div>
+    <div class="grid">
       <div class="card span-6"><h2>Packing checklist</h2><div class="row"><input id="packInput" placeholder="Add packing item" /><button onclick="addItem('packing','packInput')">Add</button></div><ul id="packingList" class="list"></ul></div>
       <div class="card span-6"><h2>Pre-trip tasks</h2><div class="row"><input id="taskInput" placeholder="Add pre-trip task" /><button onclick="addItem('tasks','taskInput')">Add</button></div><ul id="tasksList" class="list"></ul></div>
     </div></section>
-    <section id="share"><div class="grid">
+    <section id="share">
+      <div class="page-verse">
+        <blockquote>“O give thanks unto the Lord; for he is good.”</blockquote>
+        <cite>Psalm 107:1</cite>
+      </div>
+    <div class="grid">
       <div class="card span-6"><h2>Share this dashboard</h2><p>Send the HTML file to your mom and sister by email, cloud storage, or text. Each person’s journals and photos are currently saved in their own browser. Export a backup to preserve them; true live sharing will require connecting the site to a shared database.</p><p><button onclick="window.print()">Print / Save PDF</button> <button class="secondary" onclick="exportData()">Export Backup</button></p><p class="muted">The backup includes plans, notes, reservations, and daily photos.</p></div>
       <div class="card span-6"><h2>Import backup</h2><input id="importFile" type="file" accept="application/json" /><p><button onclick="importData()">Import Backup</button></p><p><button class="danger" onclick="clearAll()">Clear saved dashboard data</button></p></div>
     </div></section>
@@ -3803,6 +4024,35 @@ renderVotes();renderChallenges();
     why.addEventListener("input", function(){ state.why = why.value; save(); });
   }
   renderSuggestions();
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+  const VERSES = {"overview": {"quote": "“This is the day which the Lord hath made; we will rejoice and be glad in it.”", "ref": "Psalm 118:24"}, "day-2026-09-17": {"quote": "“The Lord shall preserve thy going out and thy coming in from this time forth.”", "ref": "Psalm 121:8"}, "day-2026-09-18": {"quote": "“O taste and see that the Lord is good.”", "ref": "Psalm 34:8"}, "day-2026-09-19": {"quote": "“They that go down to the sea in ships… see the works of the Lord.”", "ref": "Psalm 107:23–24"}, "day-2026-09-20": {"quote": "“Let them praise his name in the dance: let them sing praises unto him.”", "ref": "Psalm 149:3"}, "day-2026-09-21": {"quote": "“Be still, and know that I am God.”", "ref": "Psalm 46:10"}, "day-2026-09-22": {"quote": "“From the rising of the sun unto the going down of the same the Lord’s name is to be praised.”", "ref": "Psalm 113:3"}, "day-2026-09-23": {"quote": "“Every good gift and every perfect gift is from above.”", "ref": "James 1:17"}, "day-2026-09-24": {"quote": "“A merry heart maketh a cheerful countenance.”", "ref": "Proverbs 15:13"}, "day-2026-09-25": {"quote": "“In every thing give thanks.”", "ref": "1 Thessalonians 5:18"}, "games": {"quote": "“A merry heart doeth good like a medicine.”", "ref": "Proverbs 17:22"}, "playlist": {"quote": "“Make a joyful noise unto the Lord… come before his presence with singing.”", "ref": "Psalm 100:1–2"}, "culture": {"quote": "“The earth is the Lord’s, and the fulness thereof.”", "ref": "Psalm 24:1"}, "ideas": {"quote": "“Commit thy works unto the Lord, and thy thoughts shall be established.”", "ref": "Proverbs 16:3"}, "bookings": {"quote": "“Let all things be done decently and in order.”", "ref": "1 Corinthians 14:40"}, "packing": {"quote": "“Take therefore no thought for the morrow.”", "ref": "Matthew 6:34"}, "share": {"quote": "“O give thanks unto the Lord; for he is good.”", "ref": "Psalm 107:1"}};
+  function syncVerse(){
+    const id = location.hash ? location.hash.slice(1) : "overview";
+    const verse = VERSES[id] || VERSES.overview;
+    const q = document.getElementById("heroVerse");
+    const r = document.getElementById("heroVerseRef");
+    if(q) q.textContent = verse.quote;
+    if(r) r.textContent = verse.ref;
+  }
+  document.addEventListener("click", function(event){
+    const tab = event.target.closest(".tabs .tab");
+    if(!tab) return;
+    const id = (tab.getAttribute("href") || "").replace("#","");
+    const verse = VERSES[id] || VERSES.overview;
+    const q = document.getElementById("heroVerse");
+    const r = document.getElementById("heroVerseRef");
+    if(q) q.textContent = verse.quote;
+    if(r) r.textContent = verse.ref;
+  }, true);
+  window.addEventListener("hashchange", syncVerse);
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", syncVerse, {once:true});
+  else syncVerse();
 })();
 </script>
 

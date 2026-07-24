@@ -1403,6 +1403,31 @@
       .photo-ribbon figure.guided-photo::before{opacity:1;transform:none}
     }
 
+
+    .playlist-hero{
+      background-image:linear-gradient(90deg,rgba(5,39,53,.91),rgba(5,39,53,.28)),
+      url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1800&q=92")
+    }
+    .playlist-top-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+    .track-card{display:grid;grid-template-columns:105px 1fr;gap:14px;padding:12px;border:1px solid rgba(18,59,83,.12);border-radius:20px;background:#fff}
+    .track-card img{width:105px;height:105px;object-fit:cover;border-radius:14px}
+    .track-copy span{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#d17662}
+    .track-copy h3{margin:5px 0 2px;font-family:Georgia,serif;color:#173f4d;font-size:1.05rem}
+    .track-copy p{margin:0;color:#60747b;font-size:.88rem}
+    .track-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+    .track-actions button,.track-actions a{border:0;border-radius:999px;padding:8px 10px;font-size:.74rem;font-weight:900;text-decoration:none;cursor:pointer}
+    .track-actions button{background:#173f4d;color:#fff}
+    .track-actions a{background:#f1f6f5;color:#173f4d}
+    .preview-button.playing{background:#e37c68}
+    .playlist-suggest-grid{display:grid;grid-template-columns:.35fr .65fr;gap:10px}
+    .playlist-suggest-grid select,.playlist-suggest-grid input,#tripAnthem,#tripAnthemWhy{width:100%;box-sizing:border-box;padding:11px;border:1px solid #cad8da;border-radius:12px;background:white;margin-top:6px}
+    .song-suggestion-list{display:grid;gap:8px;margin-top:16px}
+    .song-suggestion{display:flex;justify-content:space-between;gap:12px;padding:11px 13px;border-radius:13px;background:#f2f8f7}
+    .song-suggestion button{border:0;background:transparent;cursor:pointer}
+    @media(max-width:1050px){.track-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.track-grid{grid-template-columns:1fr}.playlist-suggest-grid{grid-template-columns:1fr}}
+
 </style>
 
 </head>
@@ -1465,6 +1490,7 @@
       <a class="tab" data-tab="day-2026-09-24" href="#day-2026-09-24">Thu 24</a>
       <a class="tab" data-tab="day-2026-09-25" href="#day-2026-09-25">Fri 25</a>
       <a class="tab" data-tab="games" href="#games">Games</a>
+      <a class="tab" data-tab="playlist" href="#playlist">Playlist</a>
       <a class="tab" data-tab="culture" href="#culture">Island Stories</a>
       <a class="tab" data-tab="ideas" href="#ideas">Ideas</a>
       <a class="tab" data-tab="bookings" href="#bookings">All Bookings</a>
@@ -2805,6 +2831,218 @@
       </div>
     </section>
 
+
+    <section id="playlist">
+      <div class="grid">
+        <div class="editorial-intro span-12 playlist-hero">
+          <div class="copy">
+            <span class="pill">The soundtrack to our story</span>
+            <h2>Our Maui Playlist</h2>
+            <p>Music for the anticipation, the drives, the slow mornings, the sunset sail and the moment the photographs become memories.</p>
+            <div class="playlist-top-actions">
+              <a class="optional-link" href="https://music.apple.com/us/search?term=Maui" target="_blank" rel="noopener">Browse Maui music on Apple Music ↗</a>
+              <a class="optional-link" href="https://open.spotify.com/search/Maui" target="_blank" rel="noopener">Browse Maui music on Spotify ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card span-12">
+          <span class="pill">Curated for Trish, Denise & Lindsay</span>
+          <h2 style="margin-top:12px;">Songs for every chapter</h2>
+          <p class="muted">Tap Preview to hear a short sample, or open the full song in Apple Music. Only one preview plays at a time.</p>
+          <div class="track-grid">
+            
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/44/06/fd/4406fdc0-aab5-e300-82ba-3e5fe81a68a7/00602537868858.rgb.jpg/600x600bb.jpg" alt="Better Together album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Arrival</span>
+          <h3>Better Together</h3>
+          <p>Jack Johnson</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/8f/30/7a/8f307a7b-a96b-2917-3633-ca6021090062/mzaf_1739345397153062122.plus.aac.ep.m4a" data-track="0">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/better-together/1440857781?i=1440857786" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/y2004/m04/d20/h17/s05.kbjerdzd.jpg/600x600bb.jpg" alt="Somewhere Over the Rainbow / What a Wonderful World album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>First sunset</span>
+          <h3>Somewhere Over the Rainbow / What a Wonderful World</h3>
+          <p>Israel Kamakawiwo'ole</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/65/4d/c4/654dc469-0e86-9b56-76b6-6fa60fc955f7/mzaf_1602379250384875312.plus.aac.ep.m4a" data-track="1">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/somewhere-over-the-rainbow-what-a-wonderful-world/6920356?i=6920352" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/44/06/fd/4406fdc0-aab5-e300-82ba-3e5fe81a68a7/00602537868858.rgb.jpg/600x600bb.jpg" alt="Banana Pancakes album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Slow morning</span>
+          <h3>Banana Pancakes</h3>
+          <p>Jack Johnson</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/50/75/92/5075925a-efa5-76fc-8ca1-e92487ee9ad7/mzaf_9499198591689836828.plus.aac.ep.m4a" data-track="2">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/banana-pancakes/1440857781?i=1440857795" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/y2004/m05/d05/h16/s05.vsetphgg.jpg/600x600bb.jpg" alt="Hawai'i '78 album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Learn & reflect</span>
+          <h3>Hawai'i '78</h3>
+          <p>Israel Kamakawiwo'ole</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ae/e8/86/aee88633-1283-a16c-4606-78fa9fef0fe6/mzaf_13161930568324026556.plus.aac.ep.m4a" data-track="3">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/hawaii-78/7263537?i=7263533" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/36/c3/a7/mzi.vilpzcxo.jpg/600x600bb.jpg" alt="You Are the Best Thing album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Family favorite</span>
+          <h3>You Are the Best Thing</h3>
+          <p>Ray LaMontagne</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/48/e4/d3/48e4d351-3b8c-4813-c43a-8d77f0820982/mzaf_15830546973089416156.plus.aac.ep.m4a" data-track="4">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/you-are-the-best-thing/311130634?i=311130635" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ac/ec/f8acec21-40e2-fa91-fe61-1be3cbc1467a/mzi.jokpbtnf.jpg/600x600bb.jpg" alt="I'm Yours album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Top down drive</span>
+          <h3>I'm Yours</h3>
+          <p>Jason Mraz</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/63/7d/21/637d21cb-2e4b-a845-bd85-fb327e04464a/mzaf_1995112790386646919.plus.aac.ep.m4a" data-track="5">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/im-yours/277635758?i=277635828" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/1c/93/781c934a-c233-cfce-39db-31f7284969b4/cover.jpg/600x600bb.jpg" alt="Sunset Lover album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Sunset sail</span>
+          <h3>Sunset Lover</h3>
+          <p>Petit Biscuit</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6e/7f/e8/6e7fe823-dc62-3c03-5b18-358ba31f7d2e/mzaf_14472091194684381186.plus.aac.ep.m4a" data-track="6">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/sunset-lover/1111535116?i=1111535562" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d9/cd/24/d9cd2461-82dc-9f9f-6ed3-86bb75d110b9/13UABIM50290.rgb.jpg/600x600bb.jpg" alt="Put Your Records On album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Getting ready</span>
+          <h3>Put Your Records On</h3>
+          <p>Corinne Bailey Rae</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/93/a3/49/93a3498e-680f-31fe-02e4-1927c4960031/mzaf_9641519269124658404.plus.aac.ep.m4a" data-track="7">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/put-your-records-on/724883560?i=724884380" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/15/0b/db/150bdba3-8dbb-8e66-79b3-c8e1dead908b/20UMGIM03868.rgb.jpg/600x600bb.jpg" alt="Three Little Birds album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>No worries</span>
+          <h3>Three Little Birds</h3>
+          <p>Bob Marley & The Wailers</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8a/68/72/8a68729a-4091-b8d5-f487-008188eddb76/mzaf_15991723677491948312.plus.aac.ep.m4a" data-track="8">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/three-little-birds/1496696597?i=1496696606" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/b2/a3/77/b2a377cb-1dd9-be0c-f5a5-71ae077ad2a1/05099963522853.jpg/600x600bb.jpg" alt="Home album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>The three of us</span>
+          <h3>Home</h3>
+          <p>Edward Sharpe & The Magnetic Zeros</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/42/4a/a4/424aa4b5-9e29-2bbf-b25d-2dc2e2335d46/mzaf_6653649822996525231.plus.aac.ep.m4a" data-track="9">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/home/716436562?i=716436758" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2b/c4/c9/2bc4c9d4-3bc6-ab13-3f71-df0b89b173de/886448022213.jpg/600x600bb.jpg" alt="Golden album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Golden hour</span>
+          <h3>Golden</h3>
+          <p>Harry Styles</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/50/8f/f7/508ff714-12ac-6b8b-9e48-871ec5da8ed1/mzaf_8574415697132065448.plus.aac.ep.m4a" data-track="10">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/golden/1485802965?i=1485802966" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="track-card">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/89/a6/f7/89a6f7be-a0e0-2524-a13b-6b5df7b7534a/06UMGIM24399.rgb.jpg/600x600bb.jpg" alt="Somewhere Only We Know album artwork" loading="lazy">
+        <div class="track-copy">
+          <span>Flight home</span>
+          <h3>Somewhere Only We Know</h3>
+          <p>Keane</p>
+          <div class="track-actions">
+            <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fa/93/fe/fa93fec8-adc4-1398-447a-69aca2622c25/mzaf_18257668823352647967.plus.aac.ep.m4a" data-track="11">▶ Preview</button>
+            <a href="https://music.apple.com/us/album/somewhere-only-we-know/1445286850?i=1445287036" target="_blank" rel="noopener">Open in Apple Music ↗</a>
+          </div>
+        </div>
+      </article>
+    
+          </div>
+        </div>
+
+        <div class="card span-7">
+          <span class="pill">Build it together</span>
+          <h2 style="margin-top:12px;">Our song suggestions</h2>
+          <p class="muted">Each person can add songs she wants remembered with the trip. These suggestions save in this browser.</p>
+          <div class="playlist-suggest-grid">
+            <label>Who chose it?
+              <select id="songWho">
+                <option>Trish</option><option>Denise</option><option>Lindsay</option>
+              </select>
+            </label>
+            <label>Song or artist
+              <input id="songSuggestion" placeholder="Song title — artist">
+            </label>
+          </div>
+          <button class="daily-story-btn" type="button" id="addSongSuggestion">＋ Add to our list</button>
+          <div id="songSuggestionList" class="song-suggestion-list"></div>
+        </div>
+
+        <div class="card span-5">
+          <span class="pill">Music memory</span>
+          <h2 style="margin-top:12px;">Our trip anthem</h2>
+          <p class="muted">By the final night, choose the one song that instantly brings all three of you back to Maui.</p>
+          <label>Winning song
+            <input id="tripAnthem" placeholder="Our Maui anthem">
+          </label>
+          <label>Why this one?
+            <textarea id="tripAnthemWhy" rows="5" placeholder="The moment this song became ours..."></textarea>
+          </label>
+        </div>
+      </div>
+    </section>
+
 <section id="culture">
       <div class="grid">
         <div class="culture-hero span-12">
@@ -3442,6 +3680,129 @@ renderVotes();renderChallenges();
       });
     });
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+  const HERO = {"overview": {"eyebrow": "Maui · September 17–25, 2026", "title": "Our Maui Story", "subtitle": "Three women. One beautiful island. A story we’ll keep forever.", "word": "Aloha", "meaning": "Love, compassion, peace and presence.", "challengeTitle": "Before we go", "challenge": "Take a screenshot of this website so we can remember how the story began.", "promptTitle": "The anticipation", "prompt": "What are you most excited to experience together?", "number": "00", "chapter": "The anticipation", "chapterCopy": "Dreaming, planning and beginning the story before the plane ever leaves.", "image": "https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-17"}, "day-2026-09-17": {"eyebrow": "Thursday · September 17", "title": "Aloha, Maui.", "subtitle": "Today is not about checking boxes. It is about arriving.", "word": "Aloha", "meaning": "Affection, compassion, peace and presence.", "challengeTitle": "The first glimpse", "challenge": "Capture the moment the trip begins to feel real.", "promptTitle": "First impression", "prompt": "What was the first smell, sound or color you noticed?", "number": "01", "chapter": "The arrival", "chapterCopy": "Warm air, an unfamiliar horizon and the beginning of eight days together.", "image": "https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-17"}, "day-2026-09-18": {"eyebrow": "Friday · September 18", "title": "Move at island speed.", "subtitle": "A beautiful day for wandering, settling in and noticing the details.", "word": "Mauka / Makai", "meaning": "Toward the mountain / toward the sea.", "challengeTitle": "Signs of place", "challenge": "Find three Hawaiian place names and photograph each sign.", "promptTitle": "Small luxury", "prompt": "Which tiny pleasure made today feel special?", "number": "02", "chapter": "Wailea slowly", "chapterCopy": "Coffee, palms, shops and the luxury of having nowhere urgent to be.", "image": "https://images.unsplash.com/photo-1520454974749-611b7248ffdb?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-18"}, "day-2026-09-19": {"eyebrow": "Saturday · September 19", "title": "Where the ocean tells stories.", "subtitle": "North Shore energy, legendary water and an unforgettable table.", "word": "Waʻa", "meaning": "Canoe—central to voyaging, fishing and settlement.", "challengeTitle": "Three shades of blue", "challenge": "Capture the ocean looking powerful, peaceful and impossibly blue.", "promptTitle": "Listen closely", "prompt": "How did the North Shore sound different from Wailea?", "number": "03", "chapter": "The ocean road", "chapterCopy": "A day shaped by waves, voyaging stories and Mama’s Fish House.", "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-19"}, "day-2026-09-20": {"eyebrow": "Sunday · September 20", "title": "Tonight, the stories dance.", "subtitle": "Torchlight, music, food and memory carried through movement.", "word": "Moʻolelo", "meaning": "Story, history or tradition carried through words and performance.", "challengeTitle": "A story in motion", "challenge": "Photograph one gesture, costume detail or instrument that tells a story.", "promptTitle": "The feeling", "prompt": "Which song, movement or flavor will you remember years from now?", "number": "04", "chapter": "The luau", "chapterCopy": "An evening to receive the story being shared.", "image": "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-20"}, "day-2026-09-21": {"eyebrow": "Monday · September 21", "title": "Rest is part of the story.", "subtitle": "A quiet chapter for caring for yourselves and noticing more.", "word": "Mālama", "meaning": "To care for, protect and preserve.", "challengeTitle": "The still life", "challenge": "Create one peaceful image with a book, drink, flower, hat or sandals.", "promptTitle": "Permission to pause", "prompt": "What did it feel like to do almost nothing?", "number": "05", "chapter": "The exhale", "chapterCopy": "Slow hours, gentle plans and the kind of day Denise can truly enjoy.", "image": "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-21"}, "day-2026-09-22": {"eyebrow": "Tuesday · September 22", "title": "Chasing golden light.", "subtitle": "See Maui from the water as the whole island turns to gold.", "word": "Ahupuaʻa", "meaning": "A traditional land division connecting uplands, shore and sea.", "challengeTitle": "The sunset showdown", "challenge": "Each woman takes one sunset photograph. The family votes after the trip.", "promptTitle": "A new perspective", "prompt": "What changed when you saw Maui from the water?", "number": "06", "chapter": "The sunset sail", "chapterCopy": "Ocean, coast, hills and clouds layered into one cinematic memory.", "image": "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-22"}, "day-2026-09-23": {"eyebrow": "Wednesday · September 23", "title": "Taste the island.", "subtitle": "Flowers, fruit and flavors shaped by many communities.", "word": "Kō", "meaning": "Sugarcane—an introduced plant that later shaped plantation-era Maui.", "challengeTitle": "Three-photo tasting menu", "challenge": "Capture one drink, one sweet or fruit, and one locally made treasure.", "promptTitle": "Flavor memory", "prompt": "Which taste felt most like Maui today?", "number": "07", "chapter": "The local table", "chapterCopy": "A delicious record of cultures, migration and island ingredients.", "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-23"}, "day-2026-09-24": {"eyebrow": "Thursday · September 24", "title": "Remember this light.", "subtitle": "One final full day, elegant portraits and the details you already miss.", "word": "Pō", "meaning": "Night or darkness—a different island revealed by stars and moon.", "challengeTitle": "The final portraits", "challenge": "Take one beautiful portrait of each woman and one of all three together.", "promptTitle": "Already nostalgic", "prompt": "What tiny detail from the trip do you already know you will miss?", "number": "08", "chapter": "The last golden evening", "chapterCopy": "A toast, a photograph and one more chance to linger after sunset.", "image": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-24"}, "day-2026-09-25": {"eyebrow": "Friday · September 25", "title": "Mahalo, Maui.", "subtitle": "Not goodbye. A story carried home.", "word": "Mahalo", "meaning": "Gratitude, admiration and thanks expressed through how we behave.", "challengeTitle": "The last look", "challenge": "Take one final photograph and record a message to your future selves.", "promptTitle": "Carry it home", "prompt": "Complete this sentence: Maui taught me…", "number": "09", "chapter": "The family moʻolelo", "chapterCopy": "The itinerary ends. The story becomes part of your family.", "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-25"}, "games": {"eyebrow": "The Maui Games", "title": "Play your way through paradise.", "subtitle": "A little friendly competition creates the funniest family stories.", "word": "Leʻaleʻa", "meaning": "Fun, joy, amusement and pleasure.", "challengeTitle": "The great sunset showdown", "challenge": "One sunset photo per person. One dramatic family vote.", "promptTitle": "The real prize", "prompt": "Which game produced the funniest moment?", "number": "★", "chapter": "The games", "chapterCopy": "Bingo, photo hunts, awards and a crown for the sunset champion.", "image": "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-22"}, "playlist": {"eyebrow": "The soundtrack to our story", "title": "Press play on Maui.", "subtitle": "Songs for anticipation, laughter, ocean drives and golden-hour memories.", "word": "Mele", "meaning": "Song, chant, poem or musical expression.", "challengeTitle": "Find our anthem", "challenge": "Notice which song makes all three of you smile at the same moment.", "promptTitle": "Memory through music", "prompt": "Which song will instantly bring you back here years from now?", "number": "♫", "chapter": "Our soundtrack", "chapterCopy": "A playlist that becomes another kind of photo album.", "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-22"}, "culture": {"eyebrow": "Island Stories", "title": "Look deeper.", "subtitle": "History, language and culture that make every view more meaningful.", "word": "Moʻomeheu", "meaning": "Culture, tradition and the practices of a people.", "challengeTitle": "Follow your curiosity", "challenge": "Choose one story and share the most surprising thing you learned.", "promptTitle": "A deeper view", "prompt": "How did learning the story change the way you saw the place?", "number": "∞", "chapter": "The meaning beneath the view", "chapterCopy": "A beautiful island becomes unforgettable when you begin to understand it.", "image": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=95", "date": "2026-09-20"}};
+  const ids = {
+    eyebrow:"heroEyebrow", title:"heroTitle", subtitle:"heroSubtitle",
+    word:"heroWord", meaning:"heroWordMeaning",
+    challengeTitle:"heroChallengeTitle", challenge:"heroChallenge",
+    promptTitle:"heroPromptTitle", prompt:"heroPrompt",
+    number:"heroDayNumber", chapter:"heroChapter", chapterCopy:"heroChapterCopy"
+  };
+
+  function setText(id, value){
+    const el = document.getElementById(id);
+    if(el) el.textContent = value || "";
+  }
+
+  function changeHero(id){
+    const h = HERO[id] || HERO.overview;
+    const hero = document.getElementById("dynamicHero");
+    if(hero) hero.classList.add("hero-changing");
+
+    window.setTimeout(function(){
+      Object.keys(ids).forEach(function(key){ setText(ids[key], h[key]); });
+      const backdrop = document.getElementById("heroBackdrop");
+      if(backdrop) backdrop.style.backgroundImage = 'url("' + h.image + '")';
+      const story = document.getElementById("heroStoryButton");
+      if(story) story.dataset.storyDate = h.date;
+      if(hero) hero.classList.remove("hero-changing");
+    }, 140);
+  }
+
+  function currentChapter(){
+    return location.hash ? location.hash.slice(1) : "overview";
+  }
+
+  function syncFromHash(){
+    changeHero(currentChapter());
+  }
+
+  document.addEventListener("click", function(event){
+    const link = event.target.closest(".tabs .tab");
+    if(!link) return;
+    const id = (link.getAttribute("href") || "").replace("#","");
+    if(id) changeHero(id);
+  }, true);
+
+  window.addEventListener("hashchange", syncFromHash);
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", syncFromHash, {once:true});
+  else syncFromHash();
+
+  // Audio previews
+  let currentAudio = null;
+  let currentButton = null;
+  document.addEventListener("click", function(event){
+    const button = event.target.closest(".preview-button");
+    if(!button) return;
+    if(currentAudio){
+      currentAudio.pause();
+      currentAudio = null;
+      if(currentButton){
+        currentButton.classList.remove("playing");
+        currentButton.textContent = "▶ Preview";
+      }
+      if(currentButton === button){
+        currentButton = null;
+        return;
+      }
+    }
+    currentAudio = new Audio(button.dataset.preview);
+    currentButton = button;
+    button.classList.add("playing");
+    button.textContent = "■ Stop";
+    currentAudio.play().catch(function(){});
+    currentAudio.addEventListener("ended", function(){
+      button.classList.remove("playing");
+      button.textContent = "▶ Preview";
+      currentAudio = null; currentButton = null;
+    });
+  });
+
+  // Shared song suggestions
+  const key = "maui2026-playlist-v1";
+  let state = {suggestions:[], anthem:"", why:""};
+  try{ state = Object.assign(state, JSON.parse(localStorage.getItem(key) || "{}")); }catch(e){}
+  const list = document.getElementById("songSuggestionList");
+  function save(){ localStorage.setItem(key, JSON.stringify(state)); }
+  function renderSuggestions(){
+    if(!list) return;
+    list.innerHTML = "";
+    state.suggestions.forEach(function(item, index){
+      const row = document.createElement("div");
+      row.className = "song-suggestion";
+      row.innerHTML = "<span><strong>" + item.who + ":</strong> " + item.song + "</span><button type='button' aria-label='Remove'>×</button>";
+      row.querySelector("button").addEventListener("click", function(){
+        state.suggestions.splice(index,1); save(); renderSuggestions();
+      });
+      list.appendChild(row);
+    });
+  }
+  const add = document.getElementById("addSongSuggestion");
+  if(add) add.addEventListener("click", function(){
+    const who = document.getElementById("songWho");
+    const song = document.getElementById("songSuggestion");
+    if(!song.value.trim()) return;
+    state.suggestions.push({who:who.value, song:song.value.trim()});
+    song.value = ""; save(); renderSuggestions();
+  });
+  const anthem = document.getElementById("tripAnthem");
+  const why = document.getElementById("tripAnthemWhy");
+  if(anthem){
+    anthem.value = state.anthem || "";
+    anthem.addEventListener("input", function(){ state.anthem = anthem.value; save(); });
+  }
+  if(why){
+    why.value = state.why || "";
+    why.addEventListener("input", function(){ state.why = why.value; save(); });
+  }
+  renderSuggestions();
 })();
 </script>
 

@@ -1081,6 +1081,172 @@
       .day-map iframe{height:230px}
     }
 
+
+    /* Breathtaking keepsake edition */
+    .source-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:15px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.30);
+      color:#fff;
+      text-decoration:none;
+      font-weight:900;
+      backdrop-filter:blur(8px);
+    }
+    .source-link:hover{transform:translateY(-2px);background:rgba(255,255,255,.24)}
+    .day-discovery{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:14px;
+    }
+    .story-photo{
+      min-height:330px;
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background-position:center;
+      background-size:cover;
+      box-shadow:0 20px 45px rgba(18,59,83,.18);
+    }
+    .story-photo::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 38%,rgba(7,49,66,.88));
+    }
+    .story-photo-copy{
+      position:absolute;z-index:2;left:0;right:0;bottom:0;
+      padding:24px;color:white;
+    }
+    .story-photo-copy h3{font:700 1.65rem Georgia,serif;color:white;margin:5px 0}
+    .story-photo-copy p{margin:0;color:rgba(255,255,255,.92);line-height:1.55}
+    .discovery-stack{display:grid;gap:14px}
+    .mini-discovery{
+      min-height:155px;
+      padding:20px;
+      border-radius:24px;
+      border:1px solid rgba(18,59,83,.10);
+      background:
+        radial-gradient(circle at 95% 0,rgba(247,191,76,.23),transparent 11rem),
+        linear-gradient(145deg,#fff,#f1faf8);
+      box-shadow:0 12px 30px rgba(18,59,83,.09);
+    }
+    .mini-discovery .mini-label{
+      color:var(--coral);
+      font-size:.74rem;
+      font-weight:900;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+    }
+    .mini-discovery h3{font-family:Georgia,serif;margin:8px 0;color:var(--deep)}
+    .mini-discovery p{margin:0;line-height:1.55;color:#48636d}
+    .photo-ribbon{
+      display:grid;
+      grid-template-columns:1.35fr .8fr .8fr;
+      gap:10px;
+      margin-top:18px;
+      height:300px;
+    }
+    .photo-ribbon figure{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      margin:0;
+      box-shadow:0 13px 28px rgba(18,59,83,.13);
+    }
+    .photo-ribbon img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+    .photo-ribbon figure:hover img{transform:scale(1.045)}
+    .photo-ribbon figcaption{
+      position:absolute;left:0;right:0;bottom:0;
+      padding:35px 15px 13px;
+      color:white;font-weight:800;font-size:.84rem;
+      background:linear-gradient(transparent,rgba(7,49,66,.82));
+    }
+    .daily-story-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:14px;
+      padding:11px 15px;
+      border:0;
+      border-radius:999px;
+      background:linear-gradient(135deg,#f7bf4c,#ef7968);
+      color:#173f4d;
+      font-weight:950;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(239,121,104,.25);
+    }
+    .story-modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      padding:24px;
+      background:rgba(6,34,45,.72);
+      backdrop-filter:blur(12px);
+      align-items:center;
+      justify-content:center;
+    }
+    .story-modal.open{display:flex}
+    .story-modal-card{
+      width:min(820px,96vw);
+      max-height:88vh;
+      overflow:auto;
+      border-radius:34px;
+      background:#fffaf2;
+      box-shadow:0 35px 90px rgba(0,0,0,.35);
+    }
+    .story-modal-image{height:310px;background-size:cover;background-position:center}
+    .story-modal-body{padding:28px}
+    .story-modal-body h2{font-size:clamp(2rem,4vw,3.3rem);margin:7px 0}
+    .story-modal-body p{font-size:1.04rem;line-height:1.75;color:#3e5964}
+    .story-close{
+      position:fixed;top:22px;right:24px;z-index:1001;
+      width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.4);
+      background:rgba(7,49,66,.8);color:white;font-size:1.3rem;cursor:pointer;
+    }
+    .culture-gallery{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      grid-template-rows:230px 230px;
+      gap:12px;
+    }
+    .culture-gallery figure{margin:0;overflow:hidden;border-radius:25px;position:relative}
+    .culture-gallery figure:first-child{grid-row:1/3}
+    .culture-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+    .culture-gallery figure:hover img{transform:scale(1.05)}
+    .culture-gallery figcaption{
+      position:absolute;inset:auto 0 0;
+      padding:34px 14px 13px;color:white;font-weight:900;
+      background:linear-gradient(transparent,rgba(7,49,66,.82));
+    }
+    .memory-prompts{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin:12px 0 15px;
+    }
+    .memory-prompt{
+      padding:13px;
+      border-radius:16px;
+      background:#fff7e9;
+      color:#47606a;
+      font-size:.88rem;
+      line-height:1.45;
+    }
+    @media(max-width:850px){
+      .day-discovery{grid-template-columns:1fr}
+      .photo-ribbon{grid-template-columns:1fr 1fr;height:420px}
+      .photo-ribbon figure:first-child{grid-column:1/3}
+      .culture-gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 190px 190px}
+      .culture-gallery figure:first-child{grid-column:1/3;grid-row:auto}
+      .memory-prompts{grid-template-columns:1fr}
+    }
+
     .print-only { display:none; }
     @media print {
       .tabs, button, input[type=file], .no-print, .top-hero::after { display:none !important; }
@@ -1100,6 +1266,35 @@
     <div class="hero-inner">
       <div>
         <div class="eyebrow">Maui · September 17–25, 2026</div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>Your family moʻolelo</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-25')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Mahalo</h3>
+                <p>Gratitude, admiration or thanks—especially meaningful when expressed through how we behave.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Before leaving, take one “last look” photograph and record a 30-second video message to your future selves.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>Complete this sentence: Maui taught me…</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=88" alt="The last look"><figcaption>The last look</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=88" alt="Carry the ocean home"><figcaption>Carry the ocean home</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=88" alt="The story continues"><figcaption>The story continues</figcaption></figure></div>
+    
         <h1>Hawaii<em>A girls’ escape in paradise</em></h1>
         <p class="subtitle">Eight nights of warm ocean air, beautiful meals, slow mornings, golden sunsets and the kind of laughter we’ll talk about for years.</p>
         <div class="hero-tags">
@@ -1277,6 +1472,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1344,13 +1544,42 @@
             <h3>Wailea’s name evokes sacred water</h3>
             <p>Many Hawaiian place names preserve stories about landscape, weather, ancestors and daily life. Learning and using the Hawaiian names of places is one small way to recognize that the island was richly known long before modern resorts.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> While browsing Wailea, notice the Hawaiian names around you and treat them as clues to the older landscape beneath the shopping center and hotels.</p>
-          </div>
+          <a class="source-link" href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">📚 Explore Hawaiian culture ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=The+Shops+at+Wailea+Maui&output=embed"
               title="Map for The Shops at Wailea Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>Arriving with aloha</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-17')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Aloha</h3>
+                <p>Not merely hello: affection, compassion, peace and the presence shared between people.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Photograph your very first Maui sunset—and one candid photo of the three of you arriving.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>What was the first smell, sound or color that made you realize: we are really here?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=88" alt="First evening by the Pacific"><figcaption>First evening by the Pacific</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=88" alt="Arrive slowly"><figcaption>Arrive slowly</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Wailea glow"><figcaption>Wailea glow</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -1364,6 +1593,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1441,13 +1675,42 @@
             <h3>Maui’s North Shore has always faced the open ocean</h3>
             <p>The ocean was a road, pantry, classroom and source of genealogy for Native Hawaiians. Skilled Polynesian voyagers reached Hawaiʻi by reading stars, currents, birds, clouds and swells across thousands of miles.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> At Ho‘okipa and Kū‘au Bay, the surf is not just scenery—it is part of a living seafaring culture. Watch the water with a little extra wonder before Mama’s.</p>
-          </div>
+          <a class="source-link" href="https://www.gohawaii.com/islands/maui/regions/south-maui/wailea" target="_blank" rel="noopener">📚 Discover Wailea ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Hookipa+Lookout+Maui+to+Mamas+Fish+House&output=embed"
               title="Map for Hookipa Lookout Maui to Mamas Fish House"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1520454974749-611b7248ffdb?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>Reading the island through names</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-18')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Mauka / Makai</h3>
+                <p>Toward the mountain / toward the sea—directions rooted in the landscape.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Find three Hawaiian place names and save a photo of each sign for your keepsake.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>Which little luxury—coffee, flowers, a view, a shop window—made today feel special?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=88" alt="A slow resort morning"><figcaption>A slow resort morning</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Tropical details"><figcaption>Tropical details</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=88" alt="Follow the palms"><figcaption>Follow the palms</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -1461,6 +1724,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1538,13 +1806,42 @@
             <h3>Hula is a library in motion</h3>
             <p>Hula is not simply entertainment. Through movement, chant and song, it can preserve genealogy, place, history and moʻolelo—stories that help explain relationships between people and the natural world.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> At the luau, listen for what the dances are communicating, not just how spectacular they look. The performance becomes richer when you think of it as storytelling.</p>
-          </div>
+          <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm" target="_blank" rel="noopener">📚 Read about early Hawaiian voyagers ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Maui+Ocean+Center+to+Gilligans+Island+Luau+Kihei&output=embed"
               title="Map for Maui Ocean Center to Gilligans Island Luau Kihei"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>The ocean as a road</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-19')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Waʻa</h3>
+                <p>Canoe—central to voyaging, fishing, community and the settlement of Hawaiʻi.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Capture one photo where the ocean looks powerful and another where it looks peaceful.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>What did the North Shore sound like compared with Wailea?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1000&q=88" alt="North Shore energy"><figcaption>North Shore energy</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?auto=format&fit=crop&w=900&q=88" alt="Reading wind and waves"><figcaption>Reading wind and waves</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=88" alt="A road toward the sea"><figcaption>A road toward the sea</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -1558,6 +1855,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1625,13 +1927,42 @@
             <h3>Mālama means to care for and protect</h3>
             <p>Mālama ʻāina expresses a responsibility to care for the land. In Hawaiian thought, people, ocean, plants, animals and place are interconnected rather than separate.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> A quiet resort day can still be meaningful: use reef-safe sunscreen, refill water bottles and leave every beach or garden exactly as you found it.</p>
-          </div>
+          <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📚 Explore Hawaiian moʻolelo ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Wailea+Beach+Maui&output=embed"
               title="Map for Wailea Beach Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>Hula is a living archive</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-20')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Moʻolelo</h3>
+                <p>Story, history or tradition—knowledge carried forward through words and performance.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Photograph one costume detail, instrument or gesture that tells a story at the luau.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>Which song, movement or flavor will you still remember years from now?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1000&q=88" alt="Story through movement"><figcaption>Story through movement</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="Island color"><figcaption>Island color</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=88" alt="An evening of music"><figcaption>An evening of music</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -1645,6 +1976,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1722,13 +2058,42 @@
             <h3>Ka‘anapali once belonged to a much older landscape</h3>
             <p>Before resorts, Maui was organized into moku and ahupuaʻa—land divisions that often ran from mountain to sea so communities could access water, forest, farmland and fishing grounds.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> On the drive from Wailea to Ka‘anapali, watch the mountains descend toward the ocean. You are crossing landscapes that were understood as connected systems, not separate attractions.</p>
-          </div>
+          <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/archeology.htm" target="_blank" rel="noopener">📚 Learn how to mālama Hawaiian places ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Wailea+to+Whalers+Village+Kaanapali+Maui&output=embed"
               title="Map for Wailea to Whalers Village Kaanapali Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>Care can look quiet</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-21')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Mālama</h3>
+                <p>To care for, protect and preserve—especially in the phrase mālama ʻāina, care for the land.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Take a peaceful still-life photo: a book, drink, flower, hat or sandals beside the pool.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>What did it feel like to give yourselves permission to do almost nothing?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1000&q=88" alt="Rest is part of the trip"><figcaption>Rest is part of the trip</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Small tropical joys"><figcaption>Small tropical joys</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=88" alt="A quiet horizon"><figcaption>A quiet horizon</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -1742,6 +2107,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1809,13 +2179,42 @@
             <h3>Plantation history created today’s local food culture</h3>
             <p>Sugar plantations drew workers from Japan, China, Portugal, the Philippines, Korea, Puerto Rico and elsewhere. Their foods and traditions mingled with Native Hawaiian life, helping create Hawaiʻi’s distinctive local culture.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> At Maui Tropical Plantation, the coffee, fruit and market treats tell a layered story—Native crops, introduced plants and generations of immigrant influence all sharing one table.</p>
-          </div>
+          <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/archeology.htm" target="_blank" rel="noopener">📚 Learn about mauka-to-makai landscapes ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Maui+Tropical+Plantation+Waikapu&output=embed"
               title="Map for Maui Tropical Plantation Waikapu"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>From mountain to sea</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-22')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Ahupuaʻa</h3>
+                <p>A traditional land division often extending from uplands toward the sea, connecting vital resources.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>From the sail, photograph Maui in layers: ocean, coast, hills and clouds.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>What changed when you saw the island from the water rather than from the road?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=88" alt="Maui from the water"><figcaption>Maui from the water</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=88" alt="Golden-hour sailing"><figcaption>Golden-hour sailing</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=900&q=88" alt="The coast in layers"><figcaption>The coast in layers</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -1829,6 +2228,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1896,13 +2300,42 @@
             <h3>A Hawaiian sunset has its own vocabulary</h3>
             <p>Hawaiian language contains precise names for winds, rains, ocean conditions and places. That vocabulary reflects generations of close observation and relationship with the natural world.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> During your final sunset, notice the changing wind, cloud shapes, color and water—not just the view. The details are part of what makes each place distinct.</p>
-          </div>
+          <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/timeline.htm" target="_blank" rel="noopener">📚 Explore Maui’s historical timeline ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Wailea+Maui+sunset+viewpoint&output=embed"
               title="Map for Wailea Maui sunset viewpoint"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>Many journeys, one local table</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-23')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Kō</h3>
+                <p>Sugarcane—an ancient Polynesian-introduced plant that later became the center of plantation-era Maui.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Create a three-photo tasting menu: one drink, one fruit or sweet, and one locally made item.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>Which flavor felt most like Maui today?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=88" alt="A tropical garden palette"><figcaption>A tropical garden palette</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1519096845289-95806ee03a1a?auto=format&fit=crop&w=900&q=88" alt="Fruit, flowers and flavor"><figcaption>Fruit, flowers and flavor</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=88" alt="The details of the land"><figcaption>The details of the land</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -1916,6 +2349,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -1983,13 +2421,42 @@
             <h3>Moʻolelo turn places into memories</h3>
             <p>Moʻolelo are stories, histories and traditions that help people understand how the world works and where they belong within it. They connect natural places with family, responsibility and identity.</p>
             <p class="culture-connection"><strong>Today’s connection:</strong> Your three journals are becoming a family moʻolelo of their own—a record of what Maui looked, tasted and felt like to Trish, Denise and Lindsay.</p>
-          </div>
+          <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/nature-mo-olelo.htm" target="_blank" rel="noopener">📚 Read nature moʻolelo from Haleakalā ↗</a></div>
           <div class="day-map">
             <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=Wailea+Maui+to+Kahului+Airport+via+Waikapu&output=embed"
               title="Map for Wailea Maui to Kahului Airport via Waikapu"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
+          <div class="day-discovery">
+            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=92')">
+              <div class="story-photo-copy">
+                <span class="pill">Today’s Maui story</span>
+                <h3>The island after sunset</h3>
+                <p>A small story to carry with you into the day.</p>
+                <button class="daily-story-btn" onclick="openStory('2026-09-24')">🌺 Tell me today’s Maui story</button>
+              </div>
+            </div>
+            <div class="discovery-stack">
+              <div class="mini-discovery">
+                <span class="mini-label">Hawaiian word of the day</span>
+                <h3>Pō</h3>
+                <p>Night or darkness—a time when stars, moon, weather and ocean reveal a different island.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">Today’s photo challenge</span>
+                <h3>Look for this moment</h3>
+                <p>Take one elegant final-night portrait of each woman and one photograph of all three together.</p>
+              </div>
+              <div class="mini-discovery">
+                <span class="mini-label">A sensory memory</span>
+                <h3>Pause and notice</h3>
+                <p>What tiny detail from this trip do you already know you will miss?</p>
+              </div>
+            </div>
+          </div>
+          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=88" alt="One last golden evening"><figcaption>One last golden evening</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="A toast to the trip"><figcaption>A toast to the trip</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Remember this light"><figcaption>Remember this light</figcaption></figure></div>
+    
           
         </div>
         <div class="card span-6 day-note">
@@ -2003,6 +2470,11 @@
         <div class="card span-6">
           <h2>Our three perspectives</h2>
           <div class="journal-intro">The same day can feel completely different to each of us. These private-by-browser journals give Trish, Denise and Lindsay their own space to record the trip and add favorite photographs.</div>
+          <div class="memory-prompts">
+            <div class="memory-prompt">✨ <strong>The sparkle:</strong> What was the best little moment?</div>
+            <div class="memory-prompt">😂 <strong>The story:</strong> What made us laugh today?</div>
+            <div class="memory-prompt">💛 <strong>The keepsake:</strong> What should future-us never forget?</div>
+          </div>
           <div class="traveler-journals">
             
             <div class="traveler-journal">
@@ -2054,6 +2526,19 @@
           </div>
         </div>
 
+        
+        <div class="card span-12">
+          <span class="pill">A visual love letter</span>
+          <h2 style="margin-top:12px;">Maui, in moments</h2>
+          <div class="culture-gallery">
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1500&q=92" alt="Maui coastline"><figcaption>Where mountain meets the Pacific</figcaption></figure>
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=90" alt="Maui surf"><figcaption>Ocean energy</figcaption></figure>
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=90" alt="Tropical flowers"><figcaption>Island color</figcaption></figure>
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=90" alt="Sunset"><figcaption>Golden hour</figcaption></figure>
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=90" alt="Ocean waves"><figcaption>The living sea</figcaption></figure>
+          </div>
+        </div>
+
         <div class="card span-12 island-map-card">
           <span class="pill">Find our way</span>
           <h2 style="margin-top:12px;">Our Maui story map</h2>
@@ -2065,7 +2550,7 @@
 
         <div class="card span-12">
           <span class="pill">A few beautiful words</span>
-          <h2 style="margin-top:12px;">A tiny Hawaiian language shelf</h2>
+          <h2 style="margin-top:12px;">A tiny Hawaiian language shelf</h2><p class="muted">Words carry worldview. Pronunciation and meaning can vary by context, so consider these invitations to learn—not a complete language lesson.</p>
           <div class="culture-fact-list">
             <div class="culture-fact"><span class="word">Aloha</span>Love, compassion, peace and the presence shared between people—not merely “hello” and “goodbye.”</div>
             <div class="culture-fact"><span class="word">Mālama</span>To care for, preserve and protect. You will often hear <em>mālama ʻāina</em>: care for the land.</div>
@@ -2280,7 +2765,49 @@ function exportData(){const backup={data,tripVibe:localStorage.getItem('field_tr
 function importData(){const file=document.getElementById('importFile').files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const backup=JSON.parse(reader.result);data=backup.data||backup;if(backup.tripVibe!==undefined)localStorage.setItem('field_tripVibe',backup.tripVibe);save();location.reload()};reader.readAsText(file)}
 function clearAll(){if(confirm('Clear all saved plans, journal notes, and photos in this browser?')){localStorage.removeItem('hawaiiDailyDashboardData');localStorage.removeItem('field_tripVibe');location.reload()}}
 renderLists();renderGirlsPicks();renderBingo();tripDates.forEach(date=>{renderDay(date);renderDayPhotos(date);['trish','denise','lindsay'].forEach(person=>renderPersonPhotos(date,person))});renderBookings();updateCountdown();save();
+
+const dailyStories={
+  "2026-09-17":{title:'Arriving with aloha',story:'Aloha can be understood as a way of being present with love, compassion and mutual regard. On your first evening, resist the instinct to rush into sightseeing. Let the island introduce itself through wind, salt air and sunset. That slower arrival is not wasted vacation time—it is the beginning of your shared story.',image:'https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1500&q=92',source:'https://www.gohawaii.com/hawaiian-culture',sourceText:'Explore Hawaiian culture'},
+  "2026-09-18":{title:'Reading the island through names',story:'Hawaiian place names often hold observations, memories and relationships with land and water. Even when the original story is not obvious to a visitor, using the Hawaiian name carefully acknowledges that the place was deeply known before it became a destination. Today, notice the names around you as tiny doors into an older Maui.',image:'https://images.unsplash.com/photo-1520454974749-611b7248ffdb?auto=format&fit=crop&w=1500&q=92',source:'https://www.gohawaii.com/islands/maui/regions/south-maui/wailea',sourceText:'Discover Wailea'},
+  "2026-09-19":{title:'The ocean as a road',story:'Polynesian navigators did not see the Pacific as empty space. They read stars, currents, birds, clouds and swells with extraordinary precision, crossing vast distances in double-hulled canoes. As you watch the North Shore, imagine the ocean not as the edge of Maui, but as the route that made Hawaiian life possible.',image:'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1500&q=92',source:'https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm',sourceText:'Read about early Hawaiian voyagers'},
+  "2026-09-20":{title:'Hula is a living archive',story:'Hula can carry genealogy, history, devotion and detailed knowledge of place. Gesture, chant, rhythm and costume all contribute to the meaning. Tonight, look beyond the spectacle and ask what the performers are helping the audience remember. The evening becomes more powerful when you receive it as a story.',image:'https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1500&q=92',source:'https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm',sourceText:'Explore Hawaiian moʻolelo'},
+  "2026-09-21":{title:'Care can look quiet',story:'Mālama is often translated as care or protection, but it also suggests an ongoing relationship. A restful day can be part of that practice: move gently, use less, notice more and leave every place undisturbed. You are caring for Denise, for one another and for the island at the same time.',image:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1500&q=92',source:'https://www.nps.gov/hale/learn/historyculture/archeology.htm',sourceText:'Learn how to mālama Hawaiian places'},
+  "2026-09-22":{title:'From mountain to sea',story:'Traditional Hawaiian land systems recognized that forests, streams, farms, shorelines and reefs depended on one another. As your boat moves offshore, look back at the shape of Maui: mountain slopes descending into communities and ocean. You can see the logic of an interconnected landscape all at once.',image:'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1500&q=92',source:'https://www.nps.gov/hale/learn/historyculture/archeology.htm',sourceText:'Learn about mauka-to-makai landscapes'},
+  "2026-09-23":{title:'Many journeys, one local table',story:'Plantation-era Maui drew workers from across Asia, Europe, Puerto Rico and beyond. Families carried recipes, languages and celebrations that mixed over generations with Native Hawaiian traditions and island ingredients. What people now call local food is not one cuisine—it is a delicious record of many communities learning to live together.',image:'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=92',source:'https://www.nps.gov/hale/learn/historyculture/timeline.htm',sourceText:'Explore Maui’s historical timeline'},
+  "2026-09-24":{title:'The island after sunset',story:'Hawaiian knowledge includes precise names for winds, rains, clouds, seas and phases of light. This vocabulary reflects generations of close observation. Tonight, linger through the transition rather than leaving as soon as the sun disappears. Notice how the colors, air and water continue changing after sunset.',image:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=92',source:'https://www.nps.gov/hale/learn/historyculture/nature-mo-olelo.htm',sourceText:'Read nature moʻolelo from Haleakalā'},
+  "2026-09-25":{title:'Your family moʻolelo',story:'Moʻolelo connect people, values and places through story. Your journals do not need to be polished or profound to matter. A funny comment, a favorite lunch, the way Denise smiled at sunset or something Lindsay noticed from the car may become the most precious details later. The keepsake is built from exactly those small truths.',image:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1500&q=92',source:'https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm',sourceText:'Read about the meaning of moʻolelo'}
+};
+function openStory(date){
+  const s=dailyStories[date]; if(!s)return;
+  document.getElementById('storyModalTitle').textContent=s.title;
+  document.getElementById('storyModalText').textContent=s.story;
+  document.getElementById('storyModalImage').style.backgroundImage=`url("${s.image}")`;
+  const link=document.getElementById('storyModalSource');
+  link.href=s.source;link.textContent=s.sourceText+' ↗';
+  document.getElementById('storyModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeStory(){
+  document.getElementById('storyModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeStory()});
+
 </script>
 
+
+  <div id="storyModal" class="story-modal" onclick="if(event.target===this)closeStory()">
+    <button class="story-close" onclick="closeStory()" aria-label="Close story">×</button>
+    <article class="story-modal-card">
+      <div id="storyModalImage" class="story-modal-image"></div>
+      <div class="story-modal-body">
+        <span class="pill">Today’s Maui story</span>
+        <h2 id="storyModalTitle"></h2>
+        <p id="storyModalText"></p>
+        <a id="storyModalSource" class="optional-link" href="#" target="_blank" rel="noopener">Read the source ↗</a>
+      </div>
+    </article>
+  </div>
+
 </body>
-</html>
+</html><a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📚 Read about the meaning of moʻolelo ↗</a>

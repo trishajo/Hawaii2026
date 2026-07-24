@@ -1257,59 +1257,85 @@
       .hero-collage { display:none; }
       .card { box-shadow:none; }
     }
-  </style>
+  
+    .dynamic-hero{position:relative;isolation:isolate;overflow:hidden;min-height:760px;background:#123b4a}
+    .hero-backdrop{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .45s ease,transform 1.4s ease;transform:scale(1.03)}
+    .dynamic-hero.hero-changing .hero-backdrop{opacity:.35;transform:scale(1.08)}
+    .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,39,53,.91) 0%,rgba(5,39,53,.65) 52%,rgba(5,39,53,.26) 100%),linear-gradient(0deg,rgba(5,39,53,.62),transparent 55%);z-index:-1}
+    .dynamic-hero-inner{position:relative;z-index:2;grid-template-columns:minmax(0,1.45fr) minmax(270px,.55fr);align-items:end;gap:45px;padding-top:110px;padding-bottom:95px}
+    .dynamic-hero-copy h1{font-size:clamp(4rem,8vw,8rem);line-height:.89;letter-spacing:-.055em;max-width:900px;margin:14px 0;color:#fff}
+    .dynamic-hero-copy .subtitle{max-width:780px;font-size:clamp(1.1rem,2vw,1.45rem)}
+    .hero-daily-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:960px}
+    .hero-glass-card,.hero-day-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(15px);color:#fff;border-radius:24px}
+    .hero-glass-card{padding:18px;min-height:150px}
+    .hero-glass-card strong{display:block;font-family:Georgia,serif;font-size:1.22rem;margin:8px 0}
+    .hero-glass-card p,.hero-day-card p{color:rgba(255,255,255,.88);line-height:1.5;margin:0}
+    .hero-mini-label{text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;font-weight:900;color:#f9cf76}
+    .hero-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
+    .hero-day-card{padding:28px;text-align:right}
+    .hero-day-number{font-family:Georgia,serif;font-size:7rem;line-height:.8;color:#f9cf76;margin:18px 0}
+    .hero-day-card h2{font-size:2rem;color:#fff;margin:0 0 10px}
+    .games-hero{background-image:linear-gradient(90deg,rgba(6,49,65,.88),rgba(6,49,65,.2)),url('https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=1600&q=90')}
+    .sunset-game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+    .sunset-entry{border:1px solid rgba(18,59,83,.12);padding:14px;border-radius:22px;background:#fff}
+    .sunset-preview{height:230px;border-radius:16px;background:linear-gradient(145deg,#f7d5a4,#dd7c6b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Georgia,serif;font-size:1.25rem;background-size:cover;background-position:center;margin-bottom:12px}
+    .file-game-label{display:block;text-align:center;cursor:pointer;margin-bottom:10px}.file-game-label input{display:none}
+    .game-input,.game-select{width:100%;box-sizing:border-box;border:1px solid #cbd8dc;border-radius:12px;padding:10px;margin:6px 0 12px;background:white}
+    .vote-button{width:100%;border:0;border-radius:14px;padding:12px;background:#153f4d;color:white;font-weight:900;cursor:pointer}
+    .winner-banner{margin-top:16px;padding:15px;border-radius:16px;background:#fff4dc;text-align:center;font-weight:900;color:#754f13}
+    .challenge-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.challenge-list label{padding:12px;border-radius:13px;background:#f3f9f8}
+    .game-progress{height:10px;border-radius:99px;background:#e3ecec;overflow:hidden}.game-progress div{height:100%;width:0;background:linear-gradient(90deg,#f7bf4c,#ef7968);transition:width .3s}
+    .bingo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.bingo-grid button{min-height:120px;border:1px solid #d5e2e2;border-radius:18px;background:#f8fcfb;color:#173f4d;font-weight:850;padding:14px;cursor:pointer}.bingo-grid button.done{background:linear-gradient(145deg,#f7d8a0,#ef8c79);color:#173f4d;border-color:transparent}
+    @media(max-width:900px){.dynamic-hero-inner{grid-template-columns:1fr}.hero-day-card{text-align:left}.hero-day-number{font-size:5rem}.hero-daily-grid,.sunset-game-grid{grid-template-columns:1fr}.challenge-list{grid-template-columns:1fr}.dynamic-hero{min-height:980px}}
+    @media(max-width:600px){.hero-daily-grid{grid-template-columns:1fr}.dynamic-hero-copy h1{font-size:3.7rem}.dynamic-hero{min-height:1170px}.bingo-grid{grid-template-columns:1fr 1fr}}
+
+</style>
 
 </head>
 <body>
 
-  <header class="top-hero">
-    <div class="hero-inner">
-      <div>
-        <div class="eyebrow">Maui · September 17–25, 2026</div>
-          <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1500&q=92')">
-              <div class="story-photo-copy">
-                <span class="pill">Today’s Maui story</span>
-                <h3>Your family moʻolelo</h3>
-                <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-25')">🌺 Tell me today’s Maui story</button>
-              </div>
-            </div>
-            <div class="discovery-stack">
-              <div class="mini-discovery">
-                <span class="mini-label">Hawaiian word of the day</span>
-                <h3>Mahalo</h3>
-                <p>Gratitude, admiration or thanks—especially meaningful when expressed through how we behave.</p>
-              </div>
-              <div class="mini-discovery">
-                <span class="mini-label">Today’s photo challenge</span>
-                <h3>Look for this moment</h3>
-                <p>Before leaving, take one “last look” photograph and record a 30-second video message to your future selves.</p>
-              </div>
-              <div class="mini-discovery">
-                <span class="mini-label">A sensory memory</span>
-                <h3>Pause and notice</h3>
-                <p>Complete this sentence: Maui taught me…</p>
-              </div>
-            </div>
-          </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=88" alt="The last look"><figcaption>The last look</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=88" alt="Carry the ocean home"><figcaption>Carry the ocean home</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=88" alt="The story continues"><figcaption>The story continues</figcaption></figure></div>
-    
-        <h1>Hawaii<em>A girls’ escape in paradise</em></h1>
-        <p class="subtitle">Eight nights of warm ocean air, beautiful meals, slow mornings, golden sunsets and the kind of laughter we’ll talk about for years.</p>
-        <div class="hero-tags">
-          <span class="hero-tag">🌴 Wailea home base</span>
-          <span class="hero-tag">✨ Three signature experiences</span>
-          <span class="hero-tag">👩‍👩‍👧 Mom · Trish · Sister</span>
+  
+  <header class="top-hero dynamic-hero" id="dynamicHero">
+    <div class="hero-backdrop" id="heroBackdrop"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner dynamic-hero-inner">
+      <div class="dynamic-hero-copy">
+        <div class="eyebrow" id="heroEyebrow">Maui · September 17–25, 2026</div>
+        <h1 id="heroTitle">Our Maui Story</h1>
+        <p class="subtitle" id="heroSubtitle">Three women. One beautiful island. A story we’ll keep forever.</p>
+
+        <div class="hero-daily-grid">
+          <article class="hero-glass-card">
+            <span class="hero-mini-label">Hawaiian word</span>
+            <strong id="heroWord">Aloha</strong>
+            <p id="heroWordMeaning">Love, compassion, peace and presence.</p>
+          </article>
+          <article class="hero-glass-card">
+            <span class="hero-mini-label">Photo challenge</span>
+            <strong id="heroChallengeTitle">The first glimpse</strong>
+            <p id="heroChallenge">Capture the moment the trip begins to feel real.</p>
+          </article>
+          <article class="hero-glass-card">
+            <span class="hero-mini-label">Memory prompt</span>
+            <strong id="heroPromptTitle">Pause and notice</strong>
+            <p id="heroPrompt">What detail would future-you want to remember?</p>
+          </article>
+        </div>
+
+        <div class="hero-actions">
+          <button class="daily-story-btn" id="heroStoryButton" type="button">🌺 Tell me today’s Maui story</button>
+          <a class="source-link" id="heroSource" href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">📚 Explore the source ↗</a>
         </div>
       </div>
-      <div class="hero-collage" aria-label="Maui inspiration">
-        <div class="hero-photo one"></div>
-        <div class="hero-photo two"></div>
-        <div class="hero-photo three"></div>
-      </div>
+      <aside class="hero-day-card">
+        <span class="hero-mini-label">Today’s chapter</span>
+        <div class="hero-day-number" id="heroDayNumber">01</div>
+        <h2 id="heroChapter">The anticipation</h2>
+        <p id="heroChapterCopy">Dreaming, planning and beginning the story before the plane ever leaves.</p>
+      </aside>
     </div>
   </header>
+
 
 
 
@@ -1324,6 +1350,7 @@
       <button class="tab" data-tab="day-2026-09-23">Wed 23</button>
       <button class="tab" data-tab="day-2026-09-24">Thu 24</button>
       <button class="tab" data-tab="day-2026-09-25">Fri 25</button>
+      <button class="tab" data-tab="games">Games</button>
       <button class="tab" data-tab="culture">Island Stories</button>
       <button class="tab" data-tab="ideas">Ideas</button>
       <button class="tab" data-tab="bookings">All Bookings</button>
@@ -2516,7 +2543,92 @@
     </section>
 
 
-    <section id="culture">
+    
+    <section id="games">
+      <div class="grid">
+        <div class="editorial-intro span-12 games-hero">
+          <div class="copy">
+            <span class="pill">A little friendly competition</span>
+            <h2>The Maui Games</h2>
+            <p>Take the pictures, collect the tiny moments, vote dramatically, and create the kind of stories that only the three of you will fully understand.</p>
+          </div>
+        </div>
+
+        <div class="card span-12">
+          <span class="pill">Signature challenge</span>
+          <h2 style="margin-top:12px;">The Great Sunset Showdown</h2>
+          <p class="muted">Each person uploads one favorite sunset. After the trip, vote for the photograph that best captures how Maui felt—not merely the technically perfect picture.</p>
+          <div class="sunset-game-grid">
+            <div class="sunset-entry" data-player="trish">
+              <div class="sunset-preview" id="sunset-preview-trish"><span>Trish’s sunset</span></div>
+              <label class="optional-link file-game-label">Choose Trish’s photo<input type="file" accept="image/*" class="sunset-input" data-player="trish"></label>
+              <label>Title or caption<input class="game-input" id="sunset-caption-trish" placeholder="Golden hour magic"></label>
+              <button class="vote-button" type="button" data-vote="trish">Vote for Trish <span id="votes-trish">0</span></button>
+            </div>
+            <div class="sunset-entry" data-player="denise">
+              <div class="sunset-preview" id="sunset-preview-denise"><span>Denise’s sunset</span></div>
+              <label class="optional-link file-game-label">Choose Denise’s photo<input type="file" accept="image/*" class="sunset-input" data-player="denise"></label>
+              <label>Title or caption<input class="game-input" id="sunset-caption-denise" placeholder="The sky put on a show"></label>
+              <button class="vote-button" type="button" data-vote="denise">Vote for Denise <span id="votes-denise">0</span></button>
+            </div>
+            <div class="sunset-entry" data-player="lindsay">
+              <div class="sunset-preview" id="sunset-preview-lindsay"><span>Lindsay’s sunset</span></div>
+              <label class="optional-link file-game-label">Choose Lindsay’s photo<input type="file" accept="image/*" class="sunset-input" data-player="lindsay"></label>
+              <label>Title or caption<input class="game-input" id="sunset-caption-lindsay" placeholder="One last ray of light"></label>
+              <button class="vote-button" type="button" data-vote="lindsay">Vote for Lindsay <span id="votes-lindsay">0</span></button>
+            </div>
+          </div>
+          <div class="winner-banner" id="sunsetWinner">No votes yet. The crown is still available. 👑</div>
+        </div>
+
+        <div class="card span-7">
+          <span class="pill">Photo scavenger hunt</span>
+          <h2 style="margin-top:12px;">Find Maui</h2>
+          <div class="challenge-list" id="challengeList">
+            <label><input type="checkbox" data-challenge="rainbow"> A full or partial rainbow</label>
+            <label><input type="checkbox" data-challenge="plumeria"> A perfect plumeria</label>
+            <label><input type="checkbox" data-challenge="gecko"> A tiny gecko</label>
+            <label><input type="checkbox" data-challenge="pineapple"> Fresh pineapple or lilikoi</label>
+            <label><input type="checkbox" data-challenge="surfer"> A surfer catching a wave</label>
+            <label><input type="checkbox" data-challenge="three"> All three of us laughing</label>
+            <label><input type="checkbox" data-challenge="reflection"> A reflection in water</label>
+            <label><input type="checkbox" data-challenge="aloha"> The word “aloha” somewhere unexpected</label>
+            <label><input type="checkbox" data-challenge="golden"> A golden-hour silhouette</label>
+            <label><input type="checkbox" data-challenge="detail"> A beautiful detail nobody else noticed</label>
+          </div>
+          <div class="game-progress"><div id="challengeProgress"></div></div>
+          <p class="muted" id="challengeProgressText">0 of 10 found</p>
+        </div>
+
+        <div class="card span-5">
+          <span class="pill">Daily superlatives</span>
+          <h2 style="margin-top:12px;">And the award goes to…</h2>
+          <label>Best dressed<select class="game-select" data-award="dressed"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Funniest moment<select class="game-select" data-award="funniest"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Best food choice<select class="game-select" data-award="food"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Most likely to say “one more picture”<select class="game-select" data-award="picture"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Most adventurous moment<select class="game-select" data-award="adventure"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+        </div>
+
+        <div class="card span-12">
+          <span class="pill">Tiny memories</span>
+          <h2 style="margin-top:12px;">Maui Bingo</h2>
+          <div class="bingo-grid" id="mauiBingo">
+            <button type="button" data-bingo="lei">Receive or spot a lei</button>
+            <button type="button" data-bingo="shaveice">Eat shave ice</button>
+            <button type="button" data-bingo="sunrise">Wake before sunrise</button>
+            <button type="button" data-bingo="wrongturn">Take a scenic wrong turn</button>
+            <button type="button" data-bingo="free">FREE<br><small>We made it!</small></button>
+            <button type="button" data-bingo="localword">Learn a Hawaiian word</button>
+            <button type="button" data-bingo="matching">Accidentally coordinate outfits</button>
+            <button type="button" data-bingo="dessert">Order dessert to share</button>
+            <button type="button" data-bingo="tears">Happy tears or goosebumps</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="culture">
       <div class="grid">
         <div class="culture-hero span-12">
           <div>
@@ -2658,7 +2770,7 @@ let data;try{data=JSON.parse(localStorage.getItem('hawaiiDailyDashboardData')||'
 data.dayItems||={};data.dayPhotos||={};data.journals||={};data.personJournals||={};data.personPhotos||={};data.girlsPicks||=JSON.parse(JSON.stringify(defaultPicks));data.bingo||=defaultBingo.map(text=>({text,done:false}));['musts','questions','food','activities','beaches','shops','packing','tasks'].forEach(k=>data[k]||=[]);
 tripDates.forEach(date=>{data.dayItems[date]||=[];const titles=new Set(data.dayItems[date].map(x=>x.title));(seededItems[date]||[]).forEach(item=>{if(!titles.has(item.title))data.dayItems[date].push(item)});data.dayPhotos[date]||=[];data.personJournals[date]||={trish:'',denise:'',lindsay:''};data.personPhotos[date]||={trish:[],denise:[],lindsay:[]}});
 function save(){localStorage.setItem('hawaiiDailyDashboardData',JSON.stringify(data))}
-document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab,section').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');window.scrollTo({top:document.querySelector('.tabs').offsetTop-10,behavior:'smooth'})}));
+
 const vibe=document.getElementById('tripVibe');vibe.value=localStorage.getItem('field_tripVibe')||'';vibe.addEventListener('input',()=>localStorage.setItem('field_tripVibe',vibe.value));
 document.querySelectorAll('.person-journal').forEach(el=>{
   const d=el.dataset.date,p=el.dataset.person;
@@ -2792,6 +2904,87 @@ function closeStory(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeStory()});
+
+
+const heroChapters = {
+  overview:{number:"00",eyebrow:"Maui · September 17–25, 2026",title:"Our Maui Story",subtitle:"Three women. One beautiful island. A story we’ll keep forever.",word:"Aloha",meaning:"Love, compassion, peace and presence.",challengeTitle:"Before we go",challenge:"Take a screenshot of the very first version of this website so we can see how the story grew.",promptTitle:"The anticipation",prompt:"What are you most excited to experience together?",chapter:"The anticipation",chapterCopy:"Dreaming, planning and beginning the story before the plane ever leaves.",image:"https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=2000&q=94",date:"2026-09-17",source:"https://www.gohawaii.com/hawaiian-culture",sourceText:"Explore Hawaiian culture"},
+  "day-2026-09-17":{number:"01",eyebrow:"Thursday · September 17",title:"Aloha, Maui.",subtitle:"Today is not about checking boxes. It is about arriving.",word:"Aloha",meaning:"Affection, compassion, peace and the presence shared between people.",challengeTitle:"The first glimpse",challenge:"Photograph the first moment the Pacific makes the trip feel real.",promptTitle:"First impression",prompt:"What was the first smell, sound or color you noticed?",chapter:"The arrival",chapterCopy:"Warm air, an unfamiliar horizon and the beginning of eight days together.",image:"https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=2000&q=94",date:"2026-09-17",source:"https://www.gohawaii.com/hawaiian-culture",sourceText:"Explore Hawaiian culture"},
+  "day-2026-09-18":{number:"02",eyebrow:"Friday · September 18",title:"Move at island speed.",subtitle:"A beautiful day for settling in, wandering and noticing the details.",word:"Mauka / Makai",meaning:"Toward the mountain / toward the sea.",challengeTitle:"Signs of place",challenge:"Find three Hawaiian place names and photograph each sign.",promptTitle:"Small luxury",prompt:"Which tiny pleasure made today feel special?",chapter:"Wailea slowly",chapterCopy:"Coffee, palms, shops and the luxury of having nowhere urgent to be.",image:"https://images.unsplash.com/photo-1520454974749-611b7248ffdb?auto=format&fit=crop&w=2000&q=94",date:"2026-09-18",source:"https://www.gohawaii.com/islands/maui/regions/south-maui/wailea",sourceText:"Discover Wailea"},
+  "day-2026-09-19":{number:"03",eyebrow:"Saturday · September 19",title:"Where the ocean tells stories.",subtitle:"North Shore energy, legendary water and an unforgettable table.",word:"Waʻa",meaning:"Canoe—central to voyaging, fishing and the settlement of Hawaiʻi.",challengeTitle:"Three shades of blue",challenge:"Capture the ocean looking powerful, peaceful and impossibly blue.",promptTitle:"Listen closely",prompt:"How did the North Shore sound different from Wailea?",chapter:"The ocean road",chapterCopy:"A day shaped by waves, voyaging stories and Mama’s Fish House.",image:"https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=2000&q=94",date:"2026-09-19",source:"https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm",sourceText:"Read about early Hawaiian voyagers"},
+  "day-2026-09-20":{number:"04",eyebrow:"Sunday · September 20",title:"Tonight, the stories dance.",subtitle:"Torchlight, music, food and memory carried through movement.",word:"Moʻolelo",meaning:"Story, history or tradition carried forward through words and performance.",challengeTitle:"A story in motion",challenge:"Photograph one costume detail, instrument or gesture that tells a story.",promptTitle:"The feeling",prompt:"Which song, movement or flavor will you remember years from now?",chapter:"The luau",chapterCopy:"An evening to look beyond spectacle and receive the story being shared.",image:"https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=2000&q=94",date:"2026-09-20",source:"https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm",sourceText:"Explore Hawaiian moʻolelo"},
+  "day-2026-09-21":{number:"05",eyebrow:"Monday · September 21",title:"Rest is part of the story.",subtitle:"A quiet chapter for caring for yourselves and noticing more.",word:"Mālama",meaning:"To care for, protect and preserve.",challengeTitle:"The still life",challenge:"Create one peaceful image with a book, drink, flower, hat or sandals.",promptTitle:"Permission to pause",prompt:"What did it feel like to do almost nothing?",chapter:"The exhale",chapterCopy:"Slow hours, gentle plans and the kind of day Denise can truly enjoy.",image:"https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=2000&q=94",date:"2026-09-21",source:"https://www.nps.gov/hale/learn/historyculture/archeology.htm",sourceText:"Learn how to mālama Hawaiian places"},
+  "day-2026-09-22":{number:"06",eyebrow:"Tuesday · September 22",title:"Chasing golden light.",subtitle:"See Maui from the water as the whole island turns to gold.",word:"Ahupuaʻa",meaning:"A traditional land division connecting uplands, shore and sea.",challengeTitle:"The sunset showdown",challenge:"Each woman takes one sunset photograph. The family votes after the trip.",promptTitle:"A new perspective",prompt:"What changed when you saw Maui from the water?",chapter:"The sunset sail",chapterCopy:"Ocean, coast, hills and clouds layered into one cinematic memory.",image:"https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=2000&q=94",date:"2026-09-22",source:"https://www.nps.gov/hale/learn/historyculture/archeology.htm",sourceText:"Learn about mauka-to-makai landscapes"},
+  "day-2026-09-23":{number:"07",eyebrow:"Wednesday · September 23",title:"Taste the island.",subtitle:"Flowers, fruit and flavors shaped by many communities.",word:"Kō",meaning:"Sugarcane—an introduced plant that later shaped plantation-era Maui.",challengeTitle:"Three-photo tasting menu",challenge:"Capture one drink, one sweet or fruit, and one locally made treasure.",promptTitle:"Flavor memory",prompt:"Which taste felt most like Maui today?",chapter:"The local table",chapterCopy:"A delicious record of cultures, migration and island ingredients.",image:"https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=2000&q=94",date:"2026-09-23",source:"https://www.nps.gov/hale/learn/historyculture/timeline.htm",sourceText:"Explore Maui’s historical timeline"},
+  "day-2026-09-24":{number:"08",eyebrow:"Thursday · September 24",title:"Remember this light.",subtitle:"One final full day, elegant portraits and the details you already miss.",word:"Pō",meaning:"Night or darkness—a different island revealed by stars and moon.",challengeTitle:"The final portraits",challenge:"Take one beautiful portrait of each woman and one of all three together.",promptTitle:"Already nostalgic",prompt:"What tiny detail from the trip do you already know you will miss?",chapter:"The last golden evening",chapterCopy:"A toast, a photograph and one more chance to linger after sunset.",image:"https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=2000&q=94",date:"2026-09-24",source:"https://www.nps.gov/hale/learn/historyculture/nature-mo-olelo.htm",sourceText:"Read nature moʻolelo from Haleakalā"},
+  "day-2026-09-25":{number:"09",eyebrow:"Friday · September 25",title:"Mahalo, Maui.",subtitle:"Not goodbye. A story carried home.",word:"Mahalo",meaning:"Gratitude, admiration and thanks expressed through how we behave.",challengeTitle:"The last look",challenge:"Take one final photograph and record a message to your future selves.",promptTitle:"Carry it home",prompt:"Complete this sentence: Maui taught me…",chapter:"The family moʻolelo",chapterCopy:"The itinerary ends. The story becomes part of your family.",image:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=94",date:"2026-09-25",source:"https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm",sourceText:"Read about moʻolelo"},
+  games:{number:"★",eyebrow:"The Maui Games",title:"Play your way through paradise.",subtitle:"A little friendly competition creates the funniest family stories.",word:"Leʻaleʻa",meaning:"Fun, joy, amusement and pleasure.",challengeTitle:"The great sunset showdown",challenge:"One sunset photo per person. One dramatic family vote.",promptTitle:"The real prize",prompt:"Which game produced the funniest moment?",chapter:"The games",chapterCopy:"Bingo, photo hunts, daily awards and a crown for the sunset champion.",image:"https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=2000&q=94",date:"2026-09-22",source:"https://www.gohawaii.com/hawaiian-culture",sourceText:"Explore Hawaiian culture"},
+  culture:{number:"∞",eyebrow:"Island Stories",title:"Look deeper.",subtitle:"History, language and culture that make every view more meaningful.",word:"Moʻomeheu",meaning:"Culture, tradition and the practices of a people.",challengeTitle:"Follow your curiosity",challenge:"Choose one story and share the most surprising thing you learned.",promptTitle:"A deeper view",prompt:"How did learning the story change the way you saw the place?",chapter:"The meaning beneath the view",chapterCopy:"A beautiful island becomes unforgettable when you begin to understand it.",image:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=94",date:"2026-09-20",source:"https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm",sourceText:"Explore Hawaiian moʻolelo"}
+};
+const defaultHero = heroChapters.overview;
+function updateHero(tabId){
+  const h=heroChapters[tabId]||defaultHero;
+  const hero=document.getElementById('dynamicHero');
+  hero.classList.add('hero-changing');
+  setTimeout(()=>{
+    document.getElementById('heroBackdrop').style.backgroundImage=`url("${h.image}")`;
+    document.getElementById('heroEyebrow').textContent=h.eyebrow;
+    document.getElementById('heroTitle').textContent=h.title;
+    document.getElementById('heroSubtitle').textContent=h.subtitle;
+    document.getElementById('heroWord').textContent=h.word;
+    document.getElementById('heroWordMeaning').textContent=h.meaning;
+    document.getElementById('heroChallengeTitle').textContent=h.challengeTitle;
+    document.getElementById('heroChallenge').textContent=h.challenge;
+    document.getElementById('heroPromptTitle').textContent=h.promptTitle;
+    document.getElementById('heroPrompt').textContent=h.prompt;
+    document.getElementById('heroDayNumber').textContent=h.number;
+    document.getElementById('heroChapter').textContent=h.chapter;
+    document.getElementById('heroChapterCopy').textContent=h.chapterCopy;
+    const source=document.getElementById('heroSource');
+    source.href=h.source; source.textContent='📚 '+h.sourceText+' ↗';
+    const storyBtn=document.getElementById('heroStoryButton');
+    storyBtn.dataset.storyDate=h.date;
+    hero.classList.remove('hero-changing');
+  },220);
+}
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.tab,section').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(btn.dataset.tab).classList.add('active');
+  updateHero(btn.dataset.tab);
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+document.getElementById('heroStoryButton').addEventListener('click',e=>openStory(e.currentTarget.dataset.storyDate||'2026-09-17'));
+updateHero('overview');
+
+// Games: browser-local keepsake state
+const gameKey='maui2026-games-v1';
+let gameState={votes:{trish:0,denise:0,lindsay:0},challenges:{},bingo:{},awards:{},captions:{}};
+try{gameState={...gameState,...JSON.parse(localStorage.getItem(gameKey)||'{}')}}catch(e){}
+function saveGame(){localStorage.setItem(gameKey,JSON.stringify(gameState))}
+function renderVotes(){
+  ['trish','denise','lindsay'].forEach(p=>document.getElementById('votes-'+p).textContent=gameState.votes?.[p]||0);
+  const entries=Object.entries(gameState.votes||{});
+  const max=Math.max(0,...entries.map(x=>x[1]));
+  const leaders=entries.filter(x=>x[1]===max&&max>0).map(x=>x[0][0].toUpperCase()+x[0].slice(1));
+  document.getElementById('sunsetWinner').textContent=max===0?'No votes yet. The crown is still available. 👑':leaders.length>1?`It’s a tie: ${leaders.join(' & ')} with ${max} vote${max===1?'':'s'} each!`:`👑 ${leaders[0]} leads the sunset showdown with ${max} vote${max===1?'':'s'}!`;
+}
+document.querySelectorAll('[data-vote]').forEach(b=>b.addEventListener('click',()=>{const p=b.dataset.vote;gameState.votes[p]=(gameState.votes[p]||0)+1;saveGame();renderVotes()}));
+document.querySelectorAll('.sunset-input').forEach(input=>input.addEventListener('change',()=>{
+  const file=input.files[0];if(!file)return;
+  const reader=new FileReader();reader.onload=()=>{const el=document.getElementById('sunset-preview-'+input.dataset.player);el.style.backgroundImage=`url("${reader.result}")`;el.innerHTML='';};reader.readAsDataURL(file);
+}));
+document.querySelectorAll('.game-input').forEach(i=>{const p=i.id.replace('sunset-caption-','');i.value=gameState.captions?.[p]||'';i.addEventListener('input',()=>{gameState.captions[p]=i.value;saveGame()})});
+function renderChallenges(){
+  const boxes=[...document.querySelectorAll('[data-challenge]')];
+  boxes.forEach(b=>b.checked=!!gameState.challenges?.[b.dataset.challenge]);
+  const done=boxes.filter(b=>b.checked).length;
+  document.getElementById('challengeProgress').style.width=`${done/boxes.length*100}%`;
+  document.getElementById('challengeProgressText').textContent=`${done} of ${boxes.length} found`;
+}
+document.querySelectorAll('[data-challenge]').forEach(b=>b.addEventListener('change',()=>{gameState.challenges[b.dataset.challenge]=b.checked;saveGame();renderChallenges()}));
+document.querySelectorAll('[data-bingo]').forEach(b=>{if(gameState.bingo?.[b.dataset.bingo])b.classList.add('done');b.addEventListener('click',()=>{b.classList.toggle('done');gameState.bingo[b.dataset.bingo]=b.classList.contains('done');saveGame()})});
+document.querySelectorAll('[data-award]').forEach(s=>{s.value=gameState.awards?.[s.dataset.award]||'';s.addEventListener('change',()=>{gameState.awards[s.dataset.award]=s.value;saveGame()})});
+renderVotes();renderChallenges();
 
 </script>
 

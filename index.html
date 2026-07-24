@@ -1337,6 +1337,72 @@
       to{opacity:1;transform:none}
     }
 
+
+    .photo-ribbon figure.guided-photo{
+      cursor:pointer;
+      outline:0;
+    }
+    .photo-ribbon figure.guided-photo::before{
+      content:"Explore this moment →";
+      position:absolute;z-index:3;top:14px;right:14px;
+      padding:8px 11px;border-radius:999px;
+      background:rgba(7,49,66,.75);color:#fff;
+      border:1px solid rgba(255,255,255,.32);
+      font-size:.75rem;font-weight:900;
+      opacity:0;transform:translateY(-5px);
+      transition:.25s;
+      backdrop-filter:blur(8px);
+    }
+    .photo-ribbon figure.guided-photo:hover::before,
+    .photo-ribbon figure.guided-photo:focus::before{opacity:1;transform:none}
+    .photo-ribbon figure.guided-photo:focus{box-shadow:0 0 0 4px rgba(247,191,76,.55)}
+    .guide-modal{
+      display:none;position:fixed;inset:0;z-index:1200;
+      align-items:center;justify-content:center;padding:24px;
+      background:rgba(4,29,39,.78);backdrop-filter:blur(14px)
+    }
+    .guide-modal.open{display:flex}
+    .guide-modal-card{
+      width:min(1020px,96vw);max-height:91vh;overflow:auto;
+      border-radius:32px;background:#fffaf2;
+      box-shadow:0 35px 90px rgba(0,0,0,.4)
+    }
+    .guide-modal-visual{height:330px;background-size:cover;background-position:center;position:relative}
+    .guide-modal-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(5,39,53,.88))}
+    .guide-modal-heading{position:absolute;z-index:2;left:28px;right:70px;bottom:24px;color:white}
+    .guide-modal-heading h2{color:white;font-size:clamp(2rem,5vw,3.8rem);margin:7px 0}
+    .guide-modal-heading p{margin:0;color:rgba(255,255,255,.9)}
+    .guide-modal-body{padding:26px}
+    .guide-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .guide-tab{
+      border:1px solid #c8d8da;border-radius:999px;background:#fff;
+      padding:10px 15px;font-weight:900;color:#173f4d;cursor:pointer
+    }
+    .guide-tab.active{background:#173f4d;color:#fff;border-color:#173f4d}
+    .guide-panel{display:none;padding:23px;border-radius:22px;background:#f2f8f7}
+    .guide-panel.active{display:block}
+    .guide-panel h3{font-family:Georgia,serif;font-size:1.75rem;color:#173f4d;margin:0 0 10px}
+    .guide-panel p{font-size:1.05rem;line-height:1.75;color:#405d67;margin:0}
+    .guide-link-section{margin-top:18px}
+    .guide-link-section h3{font-family:Georgia,serif;color:#173f4d}
+    .guide-link-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .guide-link{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      min-height:70px;padding:13px 15px;border-radius:16px;
+      background:#173f4d;color:#fff;text-decoration:none;font-weight:850
+    }
+    .guide-link:hover{background:#246577;transform:translateY(-2px)}
+    .guide-close{
+      position:fixed;top:20px;right:23px;z-index:1201;
+      width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);
+      background:rgba(7,49,66,.88);color:white;font-size:1.4rem;cursor:pointer
+    }
+    @media(max-width:720px){
+      .guide-modal-visual{height:260px}
+      .guide-link-grid{grid-template-columns:1fr}
+      .photo-ribbon figure.guided-photo::before{opacity:1;transform:none}
+    }
+
 </style>
 
 </head>
@@ -1660,7 +1726,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=88" alt="First evening by the Pacific"><figcaption>First evening by the Pacific</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=88" alt="Arrive slowly"><figcaption>Arrive slowly</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Wailea glow"><figcaption>Wailea glow</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=88" alt="First evening by the Pacific"><figcaption>First evening by the Pacific</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=88" alt="Arrive slowly"><figcaption>Arrive slowly</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Wailea glow"><figcaption>Wailea glow</figcaption></figure></div>
     
           
         </div>
@@ -1798,7 +1864,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=88" alt="A slow resort morning"><figcaption>A slow resort morning</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Tropical details"><figcaption>Tropical details</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=88" alt="Follow the palms"><figcaption>Follow the palms</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=88" alt="A slow resort morning"><figcaption>A slow resort morning</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Tropical details"><figcaption>Tropical details</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=88" alt="Follow the palms"><figcaption>Follow the palms</figcaption></figure></div>
     
           
         </div>
@@ -1936,7 +2002,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1000&q=88" alt="North Shore energy"><figcaption>North Shore energy</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?auto=format&fit=crop&w=900&q=88" alt="Reading wind and waves"><figcaption>Reading wind and waves</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=88" alt="A road toward the sea"><figcaption>A road toward the sea</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1000&q=88" alt="North Shore energy"><figcaption>North Shore energy</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?auto=format&fit=crop&w=900&q=88" alt="Reading wind and waves"><figcaption>Reading wind and waves</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=88" alt="A road toward the sea"><figcaption>A road toward the sea</figcaption></figure></div>
     
           
         </div>
@@ -2064,7 +2130,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1000&q=88" alt="Story through movement"><figcaption>Story through movement</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="Island color"><figcaption>Island color</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=88" alt="An evening of music"><figcaption>An evening of music</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1000&q=88" alt="Story through movement"><figcaption>Story through movement</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="Island color"><figcaption>Island color</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=88" alt="An evening of music"><figcaption>An evening of music</figcaption></figure></div>
     
           
         </div>
@@ -2202,7 +2268,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1000&q=88" alt="Rest is part of the trip"><figcaption>Rest is part of the trip</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Small tropical joys"><figcaption>Small tropical joys</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=88" alt="A quiet horizon"><figcaption>A quiet horizon</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1000&q=88" alt="Rest is part of the trip"><figcaption>Rest is part of the trip</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Small tropical joys"><figcaption>Small tropical joys</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=88" alt="A quiet horizon"><figcaption>A quiet horizon</figcaption></figure></div>
     
           
         </div>
@@ -2330,7 +2396,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=88" alt="Maui from the water"><figcaption>Maui from the water</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=88" alt="Golden-hour sailing"><figcaption>Golden-hour sailing</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=900&q=88" alt="The coast in layers"><figcaption>The coast in layers</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=88" alt="Maui from the water"><figcaption>Maui from the water</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=88" alt="Golden-hour sailing"><figcaption>Golden-hour sailing</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=900&q=88" alt="The coast in layers"><figcaption>The coast in layers</figcaption></figure></div>
     
           
         </div>
@@ -2458,7 +2524,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=88" alt="A tropical garden palette"><figcaption>A tropical garden palette</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1519096845289-95806ee03a1a?auto=format&fit=crop&w=900&q=88" alt="Fruit, flowers and flavor"><figcaption>Fruit, flowers and flavor</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=88" alt="The details of the land"><figcaption>The details of the land</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=88" alt="A tropical garden palette"><figcaption>A tropical garden palette</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1519096845289-95806ee03a1a?auto=format&fit=crop&w=900&q=88" alt="Fruit, flowers and flavor"><figcaption>Fruit, flowers and flavor</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=88" alt="The details of the land"><figcaption>The details of the land</figcaption></figure></div>
     
           
         </div>
@@ -2586,7 +2652,7 @@
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=88" alt="One last golden evening"><figcaption>One last golden evening</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="A toast to the trip"><figcaption>A toast to the trip</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Remember this light"><figcaption>Remember this light</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=88" alt="One last golden evening"><figcaption>One last golden evening</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="A toast to the trip"><figcaption>A toast to the trip</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Remember this light"><figcaption>Remember this light</figcaption></figure></div>
     
           
         </div>
@@ -3262,6 +3328,120 @@ renderVotes();renderChallenges();
   } else {
     paintActive();
   }
+})();
+</script>
+
+
+  <div id="guideModal" class="guide-modal" aria-hidden="true">
+    <button class="guide-close" id="guideClose" type="button" aria-label="Close">×</button>
+    <article class="guide-modal-card" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+      <div class="guide-modal-visual" id="guideVisual">
+        <div class="guide-modal-heading">
+          <span class="pill">Explore this moment</span>
+          <h2 id="guideTitle"></h2>
+          <p>Tour guide · teacher · life coach</p>
+        </div>
+      </div>
+      <div class="guide-modal-body">
+        <div class="guide-tabs" role="tablist">
+          <button type="button" class="guide-tab active" data-guide-panel="tour">🧭 Tour Guide</button>
+          <button type="button" class="guide-tab" data-guide-panel="learn">📚 Learn</button>
+          <button type="button" class="guide-tab" data-guide-panel="reflect">💛 Reflect</button>
+        </div>
+        <section class="guide-panel active" id="guide-panel-tour">
+          <h3>What to notice and do</h3>
+          <p id="guideTour"></p>
+        </section>
+        <section class="guide-panel" id="guide-panel-learn">
+          <h3>The story beneath the view</h3>
+          <p id="guideLearn"></p>
+        </section>
+        <section class="guide-panel" id="guide-panel-reflect">
+          <h3>A question worth carrying</h3>
+          <p id="guideReflect"></p>
+        </section>
+        <div class="guide-link-section">
+          <h3>Keep exploring</h3>
+          <div class="guide-link-grid" id="guideLinks"></div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+
+<script>
+(function(){
+  "use strict";
+  const guidedMoments = {"2026-09-17": [{"title": "Your first evening by the Pacific", "guide": "Take a slow walk before dinner. Notice where the light catches the water, where Denise can comfortably sit, and which route feels easiest to repeat during the week.", "learn": "Hawaiian culture places strong value on relationship—with people, place and the natural world. A gentle first evening gives you time to arrive with attention rather than treating the island as a checklist.", "coach": "You do not have to maximize every hour for the trip to matter. Ask: What would make this evening feel nourishing rather than impressive?", "links": [["Explore Wailea on Google Maps", "https://www.google.com/maps/search/?api=1&query=Wailea+Maui"], ["Learn about Hawaiian culture", "https://www.gohawaii.com/hawaiian-culture"], ["Find today’s Maui sunset time", "https://www.google.com/search?q=Maui+sunset+time+September+17+2026"]]}, {"title": "Arrive slowly", "guide": "Choose one beautiful place to pause instead of trying to see everything. Order something cold, sit in the shade, and let everyone name the first thing that feels different from home.", "learn": "Travel memories tend to form around sensory details—temperature, scent, music, texture and emotion—not only around major attractions.", "coach": "Release the pressure to begin perfectly. The first chapter is allowed to be tired, messy, funny and real.", "links": [["Gentle things to do in Wailea", "https://www.google.com/search?q=gentle+relaxing+things+to+do+in+Wailea+Maui"], ["Hawaiian music for arrival", "https://open.spotify.com/search/Hawaiian%20slack%20key"], ["Wailea visitor guide", "https://www.gohawaii.com/islands/maui/regions/south-maui/wailea"]]}, {"title": "Wailea glow", "guide": "Scout one easy sunset-viewing spot you can return to later. Check seating, shade, restroom access and how far Denise would need to walk.", "learn": "The west-facing beaches of South Maui are known for broad evening skies and views toward neighboring islands on clear days.", "coach": "A family trip can hold three different energy levels. What would it look like to let each person enjoy the same sunset in her own way?", "links": [["Wailea Beach Path", "https://www.google.com/maps/search/?api=1&query=Wailea+Beach+Path+Maui"], ["Accessible Maui beach information", "https://www.google.com/search?q=accessible+beaches+Wailea+Maui"], ["Sunset photography basics", "https://www.google.com/search?q=easy+phone+sunset+photography+tips"]]}], "2026-09-18": [{"title": "A slow resort morning", "guide": "Start with a comfortable breakfast and choose one anchor activity. Leave the rest of the morning open for browsing, coffee, flowers and spontaneous stops.", "learn": "Wailea was developed as a planned resort community, but its shoreline still offers a clear view of Maui’s volcanic landscape and ocean ecology.", "coach": "Vacation does not need to be productive. What would you choose today if rest counted as a meaningful accomplishment?", "links": [["Explore Wailea", "https://www.gohawaii.com/islands/maui/regions/south-maui/wailea"], ["Breakfast near Wailea", "https://www.google.com/maps/search/?api=1&query=breakfast+near+Wailea+Maui"], ["Wailea Beach Path map", "https://www.google.com/maps/search/?api=1&query=Wailea+Beach+Path"]]}, {"title": "Tropical details", "guide": "Look for plumeria, hibiscus, palms and unusual leaves. Photograph one flower close-up and one full plant so you remember both the detail and its setting.", "learn": "Many flowers associated with Hawaiʻi were introduced from elsewhere, while native Hawaiian plants evolved in remarkable isolation.", "coach": "Beauty becomes more memorable when you slow down enough to name it. What tiny detail would you usually walk past?", "links": [["Native Hawaiian plants", "https://www.google.com/search?q=native+Hawaiian+plants+official"], ["Maui botanical gardens", "https://www.google.com/maps/search/?api=1&query=botanical+garden+Maui"], ["Flower photography tips", "https://www.google.com/search?q=phone+flower+photography+tips"]]}, {"title": "Follow the palms", "guide": "Use this as a wandering hour: follow whatever looks inviting, but set a turnaround time so the day stays comfortable.", "learn": "Traditional Hawaiian directions often use mauka and makai—toward the mountain and toward the sea—rather than compass points.", "coach": "Not knowing exactly where the day is going can be part of the pleasure. Where in your everyday life could you leave a little more room for curiosity?", "links": [["Learn mauka and makai", "https://www.google.com/search?q=mauka+makai+meaning+Hawaii"], ["Explore South Maui", "https://www.google.com/maps/search/?api=1&query=South+Maui"], ["Easy scenic drives near Wailea", "https://www.google.com/search?q=easy+scenic+drive+near+Wailea+Maui"]]}], "2026-09-19": [{"title": "North Shore energy", "guide": "Stop at a safe overlook and watch before moving closer. Notice wave size, wind, surfers’ entry points and where spectators gather.", "learn": "Maui’s North Shore receives powerful ocean swells. Surf conditions can change quickly, and experienced local knowledge matters.", "coach": "Admire power without needing to conquer it. What is something beautiful in your life that you can appreciate without trying to control?", "links": [["North Shore Maui map", "https://www.google.com/maps/search/?api=1&query=North+Shore+Maui"], ["Maui ocean safety", "https://www.google.com/search?q=official+Maui+ocean+safety"], ["North Shore surf forecast", "https://www.google.com/search?q=Maui+North+Shore+surf+forecast"]]}, {"title": "Reading wind and waves", "guide": "Watch the water for five full minutes. See whether you can spot repeating wave sets, changing wind texture and where surfers wait.", "learn": "Polynesian navigators read swells, stars, birds, winds and clouds as a sophisticated information system for long-distance voyaging.", "coach": "Expertise often looks effortless because we do not see the years of attention behind it. Where have you built quiet expertise in your own life?", "links": [["Early Hawaiian voyagers", "https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm"], ["Polynesian wayfinding video", "https://www.youtube.com/results?search_query=Polynesian+wayfinding+navigation"], ["Hōkūleʻa and voyaging", "https://www.google.com/search?q=Polynesian+Voyaging+Society+Hokulea"]]}, {"title": "A road toward the sea", "guide": "Let the drive be part of the day. Save a few scenic stops in Google Maps, but skip any pullout that feels unsafe or requires difficult footing.", "learn": "Maui’s landscapes change dramatically over short distances because elevation, wind and rainfall shape distinct ecological zones.", "coach": "The route matters, not just the reservation at the end. What conversation would make the drive itself worth remembering?", "links": [["Route to Mama’s Fish House", "https://www.google.com/maps/search/?api=1&query=Mama%27s+Fish+House+Maui"], ["Mama’s Fish House", "https://www.mamasfishhouse.com/"], ["Scenic stops near Pāʻia", "https://www.google.com/search?q=scenic+stops+near+Paia+Maui"]]}], "2026-09-20": [{"title": "Story through movement", "guide": "At the luau, watch the hands, facial expression, costume and rhythm—not just the biggest movements. Ask what story the performance might be carrying.", "learn": "Hula can preserve genealogy, history, devotion and detailed knowledge of place. Chant, gesture and rhythm work together.", "coach": "Listening is an active gift. What changes when you stop preparing your reaction and simply receive someone else’s story?", "links": [["Hawaiian moʻolelo", "https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm"], ["Learn about hula", "https://www.youtube.com/results?search_query=history+meaning+of+hula"], ["Gilligans’ Island Luau map", "https://www.google.com/maps/search/?api=1&query=Gilligans+Island+Luau+Maui"]]}, {"title": "Island color", "guide": "Notice how color appears in lei, textiles, flowers and food. Choose one color to photograph repeatedly throughout the evening.", "learn": "Lei may communicate welcome, affection, honor or celebration. The materials and occasion can add meaning.", "coach": "Ritual helps ordinary moments become memorable. What small ritual could your family create for this trip?", "links": [["Meaning of lei in Hawaiʻi", "https://www.google.com/search?q=official+meaning+of+lei+Hawaii"], ["Hawaiian flowers and lei", "https://www.google.com/search?q=Hawaiian+lei+flowers+guide"], ["Luau photography tips", "https://www.google.com/search?q=low+light+event+photography+phone+tips"]]}, {"title": "An evening of music", "guide": "Save the name of one song or artist you hear. Add it to the trip soundtrack before bed.", "learn": "Modern Hawaiian music includes many forms—from traditional chant and slack-key guitar to contemporary reggae and pop influences.", "coach": "Music can reopen a memory years later. Which song already feels like the emotional theme of this trip?", "links": [["Hawaiian music search", "https://open.spotify.com/search/Hawaiian%20music"], ["Slack-key guitar", "https://www.youtube.com/results?search_query=Hawaiian+slack+key+guitar"], ["History of Hawaiian music", "https://www.google.com/search?q=history+of+Hawaiian+music+museum"]]}], "2026-09-21": [{"title": "Rest is part of the trip", "guide": "Build a low-effort day: shade, comfortable seating, hydration and one optional outing close to the hotel.", "learn": "Mālama means to care for or protect. Caring for people’s bodies and limits is as meaningful as caring for place.", "coach": "Rest is not something you earn after exhaustion. What would change if you treated your own limits with tenderness rather than judgment?", "links": [["Mālama Hawaiʻi", "https://www.gohawaii.com/malama"], ["Relaxing activities near Wailea", "https://www.google.com/search?q=relaxing+low+walking+activities+Wailea+Maui"], ["Quiet cafés near Wailea", "https://www.google.com/maps/search/?api=1&query=quiet+cafe+near+Wailea+Maui"]]}, {"title": "Small tropical joys", "guide": "Make a tiny-pleasures list: cold fruit, a favorite chair, a flower, a breeze, a delicious drink and one good laugh.", "learn": "The brain often stores emotionally meaningful details more strongly than a packed sequence of attractions.", "coach": "Joy does not need to justify itself. Which simple pleasure are you usually too busy to notice?", "links": [["Fresh fruit near Wailea", "https://www.google.com/maps/search/?api=1&query=fresh+fruit+near+Wailea+Maui"], ["Maui farmers markets", "https://www.google.com/search?q=Maui+farmers+market+schedule"], ["Create a sensory travel journal", "https://www.google.com/search?q=sensory+travel+journal+prompts"]]}, {"title": "A quiet horizon", "guide": "Sit where all three of you can see the water. Try ten minutes without phones, then share what each person noticed.", "learn": "Ocean horizons can feel calming partly because open visual fields reduce the number of objects demanding attention.", "coach": "Silence with people you love does not need to be filled. What feels safe enough to become quiet around?", "links": [["Calm beaches near Wailea", "https://www.google.com/search?q=calm+beaches+near+Wailea+Maui"], ["Ocean mindfulness exercise", "https://www.google.com/search?q=ocean+mindfulness+exercise"], ["Relaxing Hawaiian playlist", "https://open.spotify.com/search/relaxing%20Hawaiian"]]}], "2026-09-22": [{"title": "Maui from the water", "guide": "From the sail, photograph the island in layers: ocean, coast, hills, cloud and sky. Take one wide shot before zooming in.", "learn": "Traditional ahupuaʻa systems connected upland forests, farms, streams, shoreline and reef as interdependent resources.", "coach": "Distance can help you see the whole shape of something. What part of your life might look different if you stepped back from the daily details?", "links": [["Learn about ahupuaʻa", "https://www.google.com/search?q=official+ahupuaa+Hawaii+education"], ["Kaʻanapali map", "https://www.google.com/maps/search/?api=1&query=Kaanapali+Beach+Maui"], ["Maui sunset sail videos", "https://www.youtube.com/results?search_query=Maui+sunset+sail"]]}, {"title": "Golden-hour sailing", "guide": "For the sunset contest, tap the sky on your phone screen and lower exposure slightly. Also take a silhouette and one candid reaction shot.", "learn": "Golden hour creates warmer, softer light because sunlight travels through more of Earth’s atmosphere near the horizon.", "coach": "Do not miss the sunset while trying to capture it. Choose a moment when everyone deliberately puts the camera down.", "links": [["Phone sunset photography tips", "https://www.google.com/search?q=phone+sunset+photography+tips+exposure"], ["Maui sunset time", "https://www.google.com/search?q=Maui+sunset+September+22+2026"], ["Golden-hour playlist", "https://open.spotify.com/search/sunset%20Hawaii"]]}, {"title": "The coast in layers", "guide": "Look back at Maui and identify distinct landscape layers. Ask the crew what landmarks are visible from the boat.", "learn": "Maui was formed by volcanic activity, and erosion has shaped deep valleys, ridges and dramatic coastal profiles.", "coach": "Families also have layers—shared history, private experience and stories told differently by each person. Which version of this day will each of you carry?", "links": [["Maui geology overview", "https://www.usgs.gov/search?keywords=Maui%20geology"], ["Haleakalā geology", "https://www.nps.gov/hale/learn/nature/geologicformations.htm"], ["Maui coastline map", "https://www.google.com/maps/search/?api=1&query=Maui+coastline"]]}], "2026-09-23": [{"title": "A tropical garden palette", "guide": "Visit a garden, market or farm and photograph color groups: greens, yellows, reds and purples.", "learn": "Maui’s plant life includes native species, Polynesian-introduced canoe plants and many later ornamental and agricultural introductions.", "coach": "Growth depends on conditions. What conditions help you feel most alive and most like yourself?", "links": [["Maui botanical gardens", "https://www.google.com/maps/search/?api=1&query=botanical+garden+Maui"], ["Hawaiian canoe plants", "https://www.google.com/search?q=Hawaiian+canoe+plants+education"], ["Maui farms and gardens", "https://www.google.com/search?q=Maui+farm+garden+tours"]]}, {"title": "Fruit, flowers and flavor", "guide": "Create a three-item tasting flight. Let everyone rate aroma, texture and flavor, then record the winner.", "learn": "Local Hawaiʻi food reflects Native Hawaiian traditions alongside Japanese, Chinese, Filipino, Portuguese, Korean, Puerto Rican and other influences.", "coach": "Taste is personal; nobody has to agree. Where else could your family enjoy differences without needing a winner?", "links": [["Maui local food guide", "https://www.google.com/search?q=Maui+local+food+guide"], ["Maui Gold pineapple tour", "https://mauipineappletour.com/"], ["Local food near Wailea", "https://www.google.com/maps/search/?api=1&query=local+food+near+Wailea+Maui"]]}, {"title": "The details of the land", "guide": "Photograph hands, bark, fruit, soil, tools and labels—not only wide views. Ask one respectful question about how something is grown.", "learn": "Agriculture has shaped Maui through very different periods, from traditional cultivation systems to plantation economies and today’s diversified farms.", "coach": "Every finished product hides labor. Who made today easier or more beautiful for you, and how might you express gratitude?", "links": [["Maui agricultural history", "https://www.google.com/search?q=Maui+agricultural+history+museum"], ["Maui farm tours", "https://www.google.com/search?q=Maui+farm+tours"], ["Alexander & Baldwin Sugar Museum", "https://www.sugarmuseum.com/"]]}], "2026-09-24": [{"title": "One last golden evening", "guide": "Return to a favorite location or choose one elegant final-night setting. Arrive early enough that nobody feels rushed.", "learn": "Repeated visits to the same view can reveal changes in tide, cloud, wind, light and your own attention.", "coach": "Endings can be both grateful and sad. Let both be true without trying to fix either feeling.", "links": [["Best sunset viewpoints near Wailea", "https://www.google.com/search?q=best+sunset+view+near+Wailea+Maui"], ["Maui sunset time September 24", "https://www.google.com/search?q=Maui+sunset+time+September+24+2026"], ["Final-night dinner near Wailea", "https://www.google.com/maps/search/?api=1&query=dinner+near+Wailea+Maui"]]}, {"title": "A toast to the trip", "guide": "At dinner, each person names one favorite moment, one surprise and one thing she wants to carry home.", "learn": "Shared storytelling helps families consolidate memories, and hearing another person’s version can reveal moments you missed.", "coach": "Praise people specifically. Instead of “this was fun,” tell each woman what she contributed to the trip.", "links": [["Conversation prompts for family travel", "https://www.google.com/search?q=family+travel+reflection+questions"], ["Celebration dinner near Wailea", "https://www.google.com/maps/search/?api=1&query=celebration+dinner+Wailea+Maui"], ["Create a shared Maui playlist", "https://open.spotify.com/search/Maui"]]}, {"title": "Remember this light", "guide": "Take portraits in open shade or with the sun behind the subject. Photograph each woman alone, in pairs and all together.", "learn": "Backlighting can create a luminous edge around hair and clothing, while open shade produces softer facial light.", "coach": "Many people are kinder when looking at loved ones than when looking at themselves. Can you view your own photograph with the same affection?", "links": [["Beach portrait posing ideas", "https://www.google.com/search?q=three+women+beach+portrait+ideas"], ["Phone portrait photography tips", "https://www.google.com/search?q=phone+golden+hour+portrait+tips"], ["Maui family photographers inspiration", "https://www.google.com/search?q=Maui+family+photography+inspiration"]]}], "2026-09-25": [{"title": "The last look", "guide": "Before leaving, stand still for one minute. Take a wide photo, a detail photo and a short video with the natural sound.", "learn": "Context photographs—rooms, signs, pathways and ordinary views—often become more valuable with time than posed images alone.", "coach": "You do not have to hold onto every moment perfectly. What matters most has already changed you.", "links": [["Travel photo storytelling ideas", "https://www.google.com/search?q=travel+photo+storytelling+sequence"], ["Create a family travel film", "https://www.youtube.com/results?search_query=family+travel+highlight+video+tips"], ["Maui airport map", "https://www.google.com/maps/search/?api=1&query=Kahului+Airport"]]}, {"title": "Carry the ocean home", "guide": "Choose one photo, one song, one scent and one small object that will become your memory anchors.", "learn": "Memory cues can reactivate associated emotions and details long after a trip ends.", "coach": "Instead of asking how to keep vacation from ending, ask what quality of the trip you want to bring into ordinary life.", "links": [["Make a travel memory box", "https://www.google.com/search?q=travel+memory+box+ideas"], ["Create a Maui playlist", "https://open.spotify.com/search/Maui"], ["Travel photo book inspiration", "https://www.google.com/search?q=luxury+travel+photo+book+inspiration"]]}, {"title": "The story continues", "guide": "Schedule a family photo night for a few weeks after returning. Use the website to vote, journal and finish the story together.", "learn": "Revisiting photographs with other travelers can strengthen shared memory and preserve different perspectives.", "coach": "The goal is not to return unchanged. What promise do you want to make to your future selves while the trip is still vivid?", "links": [["Family photo night ideas", "https://www.google.com/search?q=family+vacation+photo+night+ideas"], ["Make a digital scrapbook", "https://www.google.com/search?q=interactive+digital+travel+scrapbook+ideas"], ["Write your family moʻolelo", "https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm"]]}]};
+  const modal = document.getElementById("guideModal");
+  const visual = document.getElementById("guideVisual");
+
+  function openGuide(figure){
+    const date = figure.dataset.guideDate;
+    const index = Number(figure.dataset.guideIndex || 0);
+    const moment = guidedMoments[date] && guidedMoments[date][index];
+    if (!moment) return;
+    const img = figure.querySelector("img");
+    visual.style.backgroundImage = img ? `url("${img.src}")` : "";
+    document.getElementById("guideTitle").textContent = moment.title;
+    document.getElementById("guideTour").textContent = moment.guide;
+    document.getElementById("guideLearn").textContent = moment.learn;
+    document.getElementById("guideReflect").textContent = moment.coach;
+    const links = document.getElementById("guideLinks");
+    links.innerHTML = "";
+    moment.links.forEach(function(item){
+      const a = document.createElement("a");
+      a.className = "guide-link";
+      a.href = item[1];
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.innerHTML = "<span>" + item[0] + "</span><span>↗</span>";
+      links.appendChild(a);
+    });
+    document.querySelectorAll(".guide-tab").forEach(function(tab, i){
+      tab.classList.toggle("active", i === 0);
+    });
+    document.querySelectorAll(".guide-panel").forEach(function(panel, i){
+      panel.classList.toggle("active", i === 0);
+    });
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeGuide(){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", function(event){
+    const figure = event.target.closest(".guided-photo");
+    if (figure) openGuide(figure);
+  });
+
+  document.addEventListener("keydown", function(event){
+    if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("guided-photo")) {
+      event.preventDefault();
+      openGuide(event.target);
+    }
+    if (event.key === "Escape") closeGuide();
+  });
+
+  document.getElementById("guideClose").addEventListener("click", closeGuide);
+  modal.addEventListener("click", function(event){
+    if (event.target === modal) closeGuide();
+  });
+
+  document.querySelectorAll(".guide-tab").forEach(function(tab){
+    tab.addEventListener("click", function(){
+      const name = tab.dataset.guidePanel;
+      document.querySelectorAll(".guide-tab").forEach(function(t){ t.classList.toggle("active", t === tab); });
+      document.querySelectorAll(".guide-panel").forEach(function(panel){
+        panel.classList.toggle("active", panel.id === "guide-panel-" + name);
+      });
+    });
+  });
 })();
 </script>
 

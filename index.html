@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hawaii Trip Dashboard</title>
+
+  <style>
+    :root {
+      --navy: #123b53;
+      --ocean: #167c92;
+      --aqua: #65cbd0;
+      --sky: #bceef2;
+      --coral: #f4776b;
+      --hibiscus: #d94979;
+      --sun: #f7bf4c;
+      --sand: #fff1d7;
+      --palm: #3e8a63;
+      --leaf: #76aa71;
+      --ink: #173443;
+      --muted: #61747e;
+      --card: rgba(255,255,255,.94);
+      --line: rgba(18,59,83,.13);
+      --shadow: 0 18px 48px rgba(23,52,67,.14);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(101,203,208,.32), transparent 25rem),
+        radial-gradient(circle at 90% 3%, rgba(247,191,76,.28), transparent 23rem),
+        radial-gradient(circle at 85% 88%, rgba(217,73,121,.16), transparent 24rem),
+        linear-gradient(180deg, #effdff 0%, #fffaf0 42%, #fff3e1 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      border-radius: 999px;
+      filter: blur(2px);
+      opacity: .42;
+    }
+    body::before {
+      width: 280px; height: 280px;
+      left: -120px; top: 34%;
+      background: linear-gradient(135deg, var(--aqua), var(--sky));
+    }
+    body::after {
+      width: 330px; height: 330px;
+      right: -170px; bottom: 7%;
+      background: linear-gradient(135deg, var(--coral), var(--sun));
+    }
+
+    header {
+      padding: 0;
+      text-align: left;
+    }
+
+    .top-hero {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(12,52,73,.86) 0%, rgba(12,52,73,.54) 48%, rgba(12,52,73,.06) 100%),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85') center/cover;
+      display: grid;
+      align-items: center;
+    }
+
+    .top-hero::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 90px;
+      background: linear-gradient(to bottom right, transparent 49%, #effdff 50%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 78px 0 120px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 34px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.34);
+      backdrop-filter: blur(12px);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: .76rem;
+    }
+
+    h1 {
+      margin: 16px 0 12px;
+      color: white;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.1rem, 7vw, 6.4rem);
+      line-height: .92;
+      letter-spacing: -.045em;
+      text-shadow: 0 10px 34px rgba(0,0,0,.22);
+    }
+
+    .subtitle {
+      color: rgba(255,255,255,.9);
+      max-width: 670px;
+      margin: 0;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      line-height: 1.65;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .hero-tag {
+      color: white;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.13);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-weight: 750;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-collage {
+      position: relative;
+      height: 360px;
+    }
+
+    .hero-photo {
+      position: absolute;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 5px solid rgba(255,255,255,.84);
+      box-shadow: 0 20px 55px rgba(0,0,0,.28);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-photo.one {
+      width: 58%; height: 70%;
+      right: 2%; top: 0;
+      transform: rotate(3deg);
+      background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82');
+    }
+    .hero-photo.two {
+      width: 54%; height: 58%;
+      left: 2%; bottom: 0;
+      transform: rotate(-4deg);
+      background-image: url('https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=900&q=82');
+    }
+    .hero-photo.three {
+      width: 36%; height: 46%;
+      right: 10%; bottom: -4%;
+      transform: rotate(6deg);
+      background-image: url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=700&q=82');
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 18px 60px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -18px 0 28px;
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      padding: 12px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: 0 12px 34px rgba(23,52,67,.13);
+      backdrop-filter: blur(18px);
+    }
+
+    .tab {
+      border: 1px solid transparent;
+      background: transparent;
+      padding: 10px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--navy);
+      box-shadow: none;
+      transition: .2s ease;
+    }
+    .tab:hover { background: rgba(101,203,208,.16); transform: translateY(-1px); }
+    .tab.active {
+      background: linear-gradient(135deg, var(--ocean), var(--navy));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 9px 22px rgba(18,59,83,.22);
+    }
+
+    section { display: none; animation: fadeIn .25s ease; }
+    section.active { display: block; }
+    @keyframes fadeIn { from { opacity: .35; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 100px; height: 100px;
+      right: -45px; top: -45px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(101,203,208,.2), transparent 70%);
+      pointer-events: none;
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.58rem;
+      letter-spacing: -.02em;
+    }
+
+    h3 { margin: 12px 0 8px; font-size: 1.07rem; color: var(--navy); }
+    p { color: var(--muted); line-height: 1.56; }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 12px 13px;
+      font: inherit;
+      background: rgba(255,255,255,.9);
+      color: var(--ink);
+      outline: none;
+      transition: .2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--aqua);
+      box-shadow: 0 0 0 4px rgba(101,203,208,.17);
+    }
+
+    textarea { min-height: 96px; resize: vertical; }
+    label { display: block; font-weight: 800; margin: 13px 0 6px; color: var(--navy); }
+
+    button {
+      border: 0;
+      border-radius: 15px;
+      padding: 11px 14px;
+      font-weight: 850;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--coral), var(--hibiscus));
+      color: #fff;
+      box-shadow: 0 9px 20px rgba(217,73,121,.2);
+      transition: .2s ease;
+    }
+    button:hover { transform: translateY(-1px); filter: saturate(1.08); }
+    button.secondary {
+      background: rgba(101,203,208,.12);
+      color: var(--navy);
+      border: 1px solid rgba(22,124,146,.18);
+      box-shadow: none;
+    }
+    button.danger { background: linear-gradient(135deg, #a73d42, #7f2730); }
+
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .row > input { flex: 1 1 240px; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(247,191,76,.26), rgba(244,119,107,.18));
+      color: #9a4b36;
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-weight: 850;
+      font-size: .88rem;
+      border: 1px solid rgba(244,119,107,.16);
+    }
+
+    .item {
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(239,253,255,.9));
+      border-radius: 19px;
+      padding: 15px;
+      margin-top: 12px;
+      box-shadow: 0 8px 18px rgba(23,52,67,.06);
+    }
+
+    .item small { color: var(--muted); font-weight: 750; }
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li {
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(18,59,83,.17);
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-card {
+      min-height: 330px;
+      display: grid;
+      align-content: end;
+      background:
+        linear-gradient(135deg, rgba(14,70,87,.9), rgba(217,73,121,.45)),
+        url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=1300&q=84') center/cover;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "ALOHA";
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      color: rgba(255,255,255,.16);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: .05em;
+    }
+
+    .hero-card h2 { color: white; font-size: 2rem; }
+    .hero-card p { color: rgba(255,255,255,.9); max-width: 580px; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 14px;
+    }
+
+    .photo {
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      border: 5px solid white;
+      position: relative;
+      min-height: 150px;
+      box-shadow: 0 12px 26px rgba(23,52,67,.14);
+    }
+
+    .photo img { width: 100%; height: 180px; object-fit: cover; display: block; border-radius: 14px; }
+    .photo .caption { padding: 10px; font-size: .9rem; color: var(--muted); }
+
+    .check { display: flex; align-items: center; gap: 10px; }
+    .check input { width: auto; accent-color: var(--ocean); }
+    .muted { color: var(--muted); }
+
+    .footer-note {
+      text-align: center;
+      color: var(--navy);
+      margin-top: 28px;
+      font-size: .92rem;
+      font-weight: 750;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; padding-top: 60px; }
+      .hero-collage { height: 300px; max-width: 560px; width: 100%; }
+      .top-hero { min-height: 760px; }
+      .span-8,.span-6,.span-4 { grid-column: span 12; }
+    }
+
+    @media (max-width: 560px) {
+      .top-hero { min-height: 700px; }
+      .hero-inner { padding-bottom: 90px; }
+      .hero-collage { height: 245px; }
+      .hero-photo.one { width: 62%; }
+      .hero-photo.two { width: 58%; }
+      .hero-photo.three { width: 38%; }
+      .tabs { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+      .tab { white-space: nowrap; }
+      .card { padding: 18px; border-radius: 22px; }
+      h1 { font-size: 3.5rem; }
+    }
+
+
+    .day-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+    .day-date{display:flex;align-items:center;gap:14px}.date-badge{width:72px;min-width:72px;height:72px;display:grid;place-items:center;border-radius:22px;color:white;background:linear-gradient(135deg,var(--coral),var(--hibiscus));box-shadow:0 12px 25px rgba(217,73,121,.24);text-align:center;font-weight:900;line-height:1.05}.date-badge span{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}.date-badge strong{font-size:1.55rem}
+    .reservation-card{border-left:6px solid var(--sun);background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,241,215,.82))}.reservation-card.restaurant{border-left-color:var(--hibiscus)}.reservation-card.activity{border-left-color:var(--ocean)}
+    .reservation-meta{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}.detail-chip{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(18,59,83,.07);color:var(--navy);font-weight:800;font-size:.84rem}
+    .day-photo-uploader{border:2px dashed rgba(22,124,146,.28);border-radius:22px;padding:18px;background:rgba(239,253,255,.72);text-align:center}.day-photo-uploader input{margin-top:10px}.day-note{background:linear-gradient(135deg,rgba(101,203,208,.10),rgba(247,191,76,.11))}.overview-stay{border-left:6px solid var(--palm)}.mini-countdown{font-size:2.15rem;font-family:Georgia,"Times New Roman",serif;font-weight:900;color:var(--navy);line-height:1}
+
+    .print-only { display:none; }
+    @media print {
+      .tabs, button, input[type=file], .no-print, .top-hero::after { display:none !important; }
+      section { display:block !important; page-break-after: always; }
+      body { background:white; }
+      .top-hero { min-height: 280px; }
+      .hero-inner { padding: 40px 0; grid-template-columns: 1fr; }
+      .hero-collage { display:none; }
+      .card { box-shadow:none; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <header class="top-hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">🌺 Girls Trip Planning Hub</div>
+        <h1>Hawaii<br>2026</h1>
+        <p class="subtitle">A bright, beautiful home for our itinerary, favorite finds, reservations, packing lists, and all the photos we’ll want to keep forever.</p>
+        <div class="hero-tags">
+          <span class="hero-tag">🌴 Maui</span>
+          <span class="hero-tag">☀️ September 2026</span>
+          <span class="hero-tag">👩‍👩‍👧 Mom • Trish • Sister</span>
+        </div>
+      </div>
+      <div class="hero-collage" aria-label="Hawaii inspiration collage">
+        <div class="hero-photo one"></div>
+        <div class="hero-photo two"></div>
+        <div class="hero-photo three"></div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <main class="shell">
+    <nav class="tabs no-print"><button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="day-2026-09-17">Thu 17</button>
+      <button class="tab" data-tab="day-2026-09-18">Fri 18</button>
+      <button class="tab" data-tab="day-2026-09-19">Sat 19</button>
+      <button class="tab" data-tab="day-2026-09-20">Sun 20</button>
+      <button class="tab" data-tab="day-2026-09-21">Mon 21</button>
+      <button class="tab" data-tab="day-2026-09-22">Tue 22</button>
+      <button class="tab" data-tab="day-2026-09-23">Wed 23</button>
+      <button class="tab" data-tab="day-2026-09-24">Thu 24</button>
+      <button class="tab" data-tab="day-2026-09-25">Fri 25</button>
+      <button class="tab" data-tab="ideas">Ideas</button>
+      <button class="tab" data-tab="bookings">All Bookings</button>
+      <button class="tab" data-tab="packing">Packing</button>
+      <button class="tab" data-tab="share">Share / Backup</button></nav>
+    <section id="overview" class="active">
+      <div class="grid">
+        <div class="card hero-card span-8"><span class="pill">🌺 Wailea, Maui</span><h2>Our Hawaii girls’ trip</h2><p>September 17–25, 2026 • Mom, Trish & Sister</p></div>
+        <div class="card span-4"><h2>Countdown to Maui</h2><div id="countdown" class="mini-countdown">—</div><p class="muted">until check-in day</p><label>Trip vibe</label><textarea id="tripVibe" placeholder="Relaxed, pretty beaches, amazing food, and mellow adventures..."></textarea></div>
+        <div class="card span-6 overview-stay"><span class="pill">🏡 Our stay</span><h2 style="margin-top:12px;">Wailea residence</h2><p><strong>Hosted by:</strong> CoralTree Residence Collection</p><p><strong>Check-in:</strong> Thursday, September 17 after 4:00 PM<br><strong>Check-out:</strong> Friday, September 25 before 11:00 AM</p><p class="muted">Near Wailea Beach, Polo Beach and Poʻolenalena Beach.</p></div>
+        <div class="card span-6"><h2>Confirmed highlights</h2><div class="item"><strong>Sat 19</strong> · Mama’s Fish House at 3:30 PM</div><div class="item"><strong>Sun 20</strong> · Gilligans’ Island Luau at 5:00 PM</div><div class="item"><strong>Tue 22</strong> · Kaʻanapali sunset cocktail sail at 4:30 PM</div></div>
+        <div class="card span-6"><h2>Must-do list</h2><div class="row"><input id="mustInput" placeholder="Add a must-do" /><button onclick="addItem('musts','mustInput')">Add</button></div><ul id="mustsList" class="list"></ul></div>
+        <div class="card span-6"><h2>Open questions</h2><div class="row"><input id="questionInput" placeholder="Add a question to decide later" /><button onclick="addItem('questions','questionInput')">Add</button></div><ul id="questionsList" class="list"></ul></div>
+      </div>
+    </section>
+    
+    <section id="day-2026-09-17">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Thu</span><strong>17</strong></div>
+              <div><h2 style="margin-bottom:4px;">Arrival Day</h2><div class="muted">September 17, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 1</span>
+          </div>
+          <div id="dayItems-2026-09-17"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-17" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-17"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-17" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-17" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-17')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-17" class="journal-field" data-date="2026-09-17" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-17" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-17', this.files)" /></div>
+          <div id="photoGrid-2026-09-17" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-18">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Fri</span><strong>18</strong></div>
+              <div><h2 style="margin-bottom:4px;">Settle In</h2><div class="muted">September 18, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 2</span>
+          </div>
+          <div id="dayItems-2026-09-18"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-18" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-18"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-18" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-18" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-18')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-18" class="journal-field" data-date="2026-09-18" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-18" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-18', this.files)" /></div>
+          <div id="photoGrid-2026-09-18" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-19">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Sat</span><strong>19</strong></div>
+              <div><h2 style="margin-bottom:4px;">Mama’s Fish House</h2><div class="muted">September 19, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 3</span>
+          </div>
+          <div id="dayItems-2026-09-19"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-19" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-19"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-19" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-19" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-19')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-19" class="journal-field" data-date="2026-09-19" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-19" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-19', this.files)" /></div>
+          <div id="photoGrid-2026-09-19" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-20">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Sun</span><strong>20</strong></div>
+              <div><h2 style="margin-bottom:4px;">Luau Night</h2><div class="muted">September 20, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 4</span>
+          </div>
+          <div id="dayItems-2026-09-20"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-20" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-20"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-20" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-20" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-20')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-20" class="journal-field" data-date="2026-09-20" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-20" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-20', this.files)" /></div>
+          <div id="photoGrid-2026-09-20" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-21">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Mon</span><strong>21</strong></div>
+              <div><h2 style="margin-bottom:4px;">Maui Day</h2><div class="muted">September 21, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 5</span>
+          </div>
+          <div id="dayItems-2026-09-21"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-21" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-21"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-21" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-21" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-21')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-21" class="journal-field" data-date="2026-09-21" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-21" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-21', this.files)" /></div>
+          <div id="photoGrid-2026-09-21" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-22">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Tue</span><strong>22</strong></div>
+              <div><h2 style="margin-bottom:4px;">Sunset Sail</h2><div class="muted">September 22, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 6</span>
+          </div>
+          <div id="dayItems-2026-09-22"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-22" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-22"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-22" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-22" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-22')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-22" class="journal-field" data-date="2026-09-22" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-22" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-22', this.files)" /></div>
+          <div id="photoGrid-2026-09-22" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-23">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Wed</span><strong>23</strong></div>
+              <div><h2 style="margin-bottom:4px;">Maui Day</h2><div class="muted">September 23, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 7</span>
+          </div>
+          <div id="dayItems-2026-09-23"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-23" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-23"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-23" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-23" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-23')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-23" class="journal-field" data-date="2026-09-23" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-23" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-23', this.files)" /></div>
+          <div id="photoGrid-2026-09-23" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-24">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Thu</span><strong>24</strong></div>
+              <div><h2 style="margin-bottom:4px;">Last Full Day</h2><div class="muted">September 24, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 8</span>
+          </div>
+          <div id="dayItems-2026-09-24"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-24" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-24"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-24" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-24" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-24')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-24" class="journal-field" data-date="2026-09-24" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-24" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-24', this.files)" /></div>
+          <div id="photoGrid-2026-09-24" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day-2026-09-25">
+      <div class="grid">
+        <div class="card span-12">
+          <div class="day-heading">
+            <div class="day-date">
+              <div class="date-badge"><span>Fri</span><strong>25</strong></div>
+              <div><h2 style="margin-bottom:4px;">Departure Day</h2><div class="muted">September 25, 2026</div></div>
+            </div>
+            <span class="pill">🌺 Maui day 9</span>
+          </div>
+          <div id="dayItems-2026-09-25"></div>
+        </div>
+        <div class="card span-6 day-note">
+          <h2>Add to this day</h2>
+          <label>Time</label><input id="time-2026-09-25" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Category</label><select id="category-2026-09-25"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
+          <label>Plan</label><input id="title-2026-09-25" placeholder="What are we doing?" />
+          <label>Notes, address, or link</label><textarea id="notes-2026-09-25" placeholder="Add anything helpful for the day..."></textarea>
+          <p><button onclick="addDayItem('2026-09-25')">Add plan</button></p>
+        </div>
+        <div class="card span-6">
+          <h2>Day notes & memories</h2>
+          <textarea id="journal-2026-09-25" class="journal-field" data-date="2026-09-25" placeholder="Before the trip: ideas and reminders. During the trip: favorite moment, funniest story, best meal..."></textarea>
+          <h3 style="margin-top:18px;">Photos from this day</h3>
+          <div class="day-photo-uploader"><div>📸 Add photos to this day’s keepsake</div><input id="photo-2026-09-25" type="file" accept="image/*" multiple onchange="addDayPhotos('2026-09-25', this.files)" /></div>
+          <div id="photoGrid-2026-09-25" class="photo-grid" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ideas"><div class="grid">
+      <div class="card span-6"><h2>Restaurants & treats</h2><div class="row"><input id="foodInput" placeholder="Add restaurant or food idea" /><button onclick="addItem('food','foodInput')">Add</button></div><ul id="foodList" class="list"></ul></div>
+      <div class="card span-6"><h2>Activities</h2><div class="row"><input id="activityInput" placeholder="Add activity idea" /><button onclick="addItem('activities','activityInput')">Add</button></div><ul id="activitiesList" class="list"></ul></div>
+      <div class="card span-6"><h2>Beaches</h2><div class="row"><input id="beachInput" placeholder="Add beach idea" /><button onclick="addItem('beaches','beachInput')">Add</button></div><ul id="beachesList" class="list"></ul></div>
+      <div class="card span-6"><h2>Shopping / cute stops</h2><div class="row"><input id="shopInput" placeholder="Add shopping or scenic stop" /><button onclick="addItem('shops','shopInput')">Add</button></div><ul id="shopsList" class="list"></ul></div>
+    </div></section>
+    <section id="bookings"><div class="grid"><div class="card span-12"><h2>All bookings & confirmations</h2><div id="bookingList"></div></div></div></section>
+    <section id="packing"><div class="grid">
+      <div class="card span-6"><h2>Packing checklist</h2><div class="row"><input id="packInput" placeholder="Add packing item" /><button onclick="addItem('packing','packInput')">Add</button></div><ul id="packingList" class="list"></ul></div>
+      <div class="card span-6"><h2>Pre-trip tasks</h2><div class="row"><input id="taskInput" placeholder="Add pre-trip task" /><button onclick="addItem('tasks','taskInput')">Add</button></div><ul id="tasksList" class="list"></ul></div>
+    </div></section>
+    <section id="share"><div class="grid">
+      <div class="card span-6"><h2>Share this dashboard</h2><p>Send the HTML file to your mom and sister by email, cloud storage, or text. Each person’s edits are saved in their own browser.</p><p><button onclick="window.print()">Print / Save PDF</button> <button class="secondary" onclick="exportData()">Export Backup</button></p><p class="muted">The backup includes plans, notes, reservations, and daily photos.</p></div>
+      <div class="card span-6"><h2>Import backup</h2><input id="importFile" type="file" accept="application/json" /><p><button onclick="importData()">Import Backup</button></p><p><button class="danger" onclick="clearAll()">Clear saved dashboard data</button></p></div>
+    </div></section>
+    <p class="footer-note">Made for sunshine, ocean days, great meals, and memories. 🌴</p>
+  </main>
+
+
+
+<script>
+const tripDates=['2026-09-17','2026-09-18','2026-09-19','2026-09-20','2026-09-21','2026-09-22','2026-09-23','2026-09-24','2026-09-25'];
+const seededItems={
+'2026-09-17':[{time:'After 4:00 PM',category:'Reservation',title:'Check in to our Wailea residence',notes:'Hosted by CoralTree Residence Collection. Settle in, unpack and enjoy the first Maui sunset.',locked:true}],
+'2026-09-19':[{time:'3:30 PM',category:'Restaurant',title:'Mama’s Fish House',notes:'3 guests · Main Dining · 799 Poho Pl, Paia, HI 96779 · Smart casual attire · Complimentary valet · Do not arrive more than 15 minutes early · Confirmation 52X98W3KGFEF.',locked:true}],
+'2026-09-20':[{time:'5:00 PM',category:'Activity',title:'Gilligans’ Island Luau in Kihei',notes:'3 adults · Viator confirmation 1759659377 · Booking reference 1376940241 · Total $499.47 · Auto-payment scheduled September 18, 2026.',locked:true}],
+'2026-09-22':[{time:'4:30 PM',category:'Activity',title:'Kaʻanapali Luxury Sunset Cocktail Sail with Open Bar',notes:'3 adults · 2 hours · Teralani Sailing Adventures · 2525 Kaanapali Pkwy, Lahaina, HI 96761 · Bring printed voucher and call to confirm check-in time · Allow at least 1.5 hours driving from South Maui · Booking GYGMX4HX6Q2B · $404.10.',locked:true}],
+'2026-09-25':[{time:'Before 11:00 AM',category:'Reservation',title:'Check out of our Wailea residence',notes:'Pack up, complete a final room check and say aloha to Maui.',locked:true}]
+};
+const bookings=[
+{type:'Lodging',date:'Sep 17–25',name:'Wailea residence — CoralTree Residence Collection',confirm:'Airbnb Trips reservation',notes:'Check-in after 4:00 PM on Sep 17. Check-out before 11:00 AM on Sep 25.'},
+{type:'Restaurant',date:'Sep 19 · 3:30 PM',name:'Mama’s Fish House',confirm:'52X98W3KGFEF',notes:'3 guests, Main Dining. 799 Poho Pl, Paia. Smart casual; complimentary valet. $50/person late cancellation or party-size change fee.'},
+{type:'Activity',date:'Sep 20 · 5:00 PM',name:'Gilligans’ Island Luau in Kihei',confirm:'1759659377',notes:'3 adults. Booking reference 1376940241. Total $499.47. Auto-payment Sep 18.'},
+{type:'Activity',date:'Sep 22 · 4:30 PM',name:'Kaʻanapali Luxury Sunset Cocktail Sail',confirm:'GYGMX4HX6Q2B',notes:'3 adults, 2 hours, open bar. Teralani Sailing Adventures. $404.10. Printed voucher requested.'}
+];
+const defaultData={musts:[],questions:[],food:[],activities:[],beaches:[],shops:[],packing:['Swimsuits','Reef-safe sunscreen','Sunglasses','Cute dinner outfits','Comfortable sandals','Light sweater for evenings'],tasks:['Check flight details','Arrange airport transportation or rental car','Plan first grocery stop','Confirm sail check-in time'],dayItems:{},dayPhotos:{},journals:{}};
+let data;try{data=JSON.parse(localStorage.getItem('hawaiiDailyDashboardData')||'null')}catch(e){data=null}if(!data)data=JSON.parse(JSON.stringify(defaultData));
+data.dayItems||={};data.dayPhotos||={};data.journals||={};['musts','questions','food','activities','beaches','shops','packing','tasks'].forEach(k=>data[k]||=[]);
+tripDates.forEach(date=>{data.dayItems[date]||=[];const titles=new Set(data.dayItems[date].map(x=>x.title));(seededItems[date]||[]).forEach(item=>{if(!titles.has(item.title))data.dayItems[date].push(item)});data.dayPhotos[date]||=[]});
+function save(){localStorage.setItem('hawaiiDailyDashboardData',JSON.stringify(data))}
+document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab,section').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');window.scrollTo({top:document.querySelector('.tabs').offsetTop-10,behavior:'smooth'})}));
+const vibe=document.getElementById('tripVibe');vibe.value=localStorage.getItem('field_tripVibe')||'';vibe.addEventListener('input',()=>localStorage.setItem('field_tripVibe',vibe.value));
+document.querySelectorAll('.journal-field').forEach(el=>{const d=el.dataset.date;el.value=data.journals[d]||'';el.addEventListener('input',()=>{data.journals[d]=el.value;save()})});
+function addItem(key,inputId){const input=document.getElementById(inputId);if(!input.value.trim())return;data[key].push({text:input.value.trim(),done:false});input.value='';save();renderLists()}
+function toggleItem(key,i){data[key][i].done=!data[key][i].done;save();renderLists()}function deleteItem(key,i){data[key].splice(i,1);save();renderLists()}
+function renderList(key){const ul=document.getElementById(key+'List');if(!ul)return;ul.innerHTML='';data[key].forEach((item,i)=>{const li=document.createElement('li');li.innerHTML=`<span class="check"><input type="checkbox" ${item.done?'checked':''} onchange="toggleItem('${key}',${i})"><span style="${item.done?'text-decoration:line-through;color:#8d979d;':''}">${escapeHtml(item.text)}</span></span><button class="secondary" onclick="deleteItem('${key}',${i})">Remove</button>`;ul.appendChild(li)})}
+function renderLists(){['musts','questions','food','activities','beaches','shops','packing','tasks'].forEach(renderList)}
+function addDayItem(date){const time=document.getElementById('time-'+date),category=document.getElementById('category-'+date),title=document.getElementById('title-'+date),notes=document.getElementById('notes-'+date);if(!title.value.trim())return;data.dayItems[date].push({time:time.value,category:category.value,title:title.value.trim(),notes:notes.value});time.value='';title.value='';notes.value='';save();renderDay(date)}
+function deleteDayItem(date,index){data.dayItems[date].splice(index,1);save();renderDay(date)}
+function renderDay(date){const box=document.getElementById('dayItems-'+date);box.innerHTML='';const items=data.dayItems[date]||[];if(!items.length)box.innerHTML='<p class="muted">Nothing planned yet—this day is wide open.</p>';items.forEach((x,i)=>{const div=document.createElement('div');const cls=x.category==='Restaurant'?'restaurant':(x.category==='Activity'?'activity':'');div.className='item reservation-card '+cls;div.innerHTML=`<div class="row"><span class="pill">${escapeHtml(x.category)}</span><small>${escapeHtml(x.time||'Time TBD')}</small></div><h3>${escapeHtml(x.title)}</h3><p>${linkify(escapeHtml(x.notes||''))}</p>${x.locked?'':`<button class="secondary" onclick="deleteDayItem('${date}',${i})">Remove</button>`}`;box.appendChild(div)})}
+function addDayPhotos(date,files){[...files].forEach(file=>{const reader=new FileReader();reader.onload=()=>{data.dayPhotos[date].push({src:reader.result,caption:file.name});save();renderDayPhotos(date)};reader.readAsDataURL(file)})}
+function deleteDayPhoto(date,index){data.dayPhotos[date].splice(index,1);save();renderDayPhotos(date)}
+function renderDayPhotos(date){const grid=document.getElementById('photoGrid-'+date);grid.innerHTML='';(data.dayPhotos[date]||[]).forEach((p,i)=>{const div=document.createElement('div');div.className='photo';div.innerHTML=`<img src="${p.src}" alt="Trip photo"><div class="caption">${escapeHtml(p.caption)}</div><button class="secondary" style="margin:0 9px 9px" onclick="deleteDayPhoto('${date}',${i})">Remove</button>`;grid.appendChild(div)})}
+function renderBookings(){const box=document.getElementById('bookingList');box.innerHTML='';bookings.forEach(x=>{const div=document.createElement('div');div.className='item reservation-card '+(x.type==='Restaurant'?'restaurant':'activity');div.innerHTML=`<div class="row"><span class="pill">${x.type}</span><small>${x.date}</small></div><h3>${x.name}</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: ${x.confirm}</span></div><p>${x.notes}</p>`;box.appendChild(div)})}
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function linkify(v){return v.replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')}
+function updateCountdown(){const target=new Date('2026-09-17T16:00:00-10:00'),now=new Date(),days=Math.max(0,Math.ceil((target-now)/86400000));document.getElementById('countdown').textContent=days?days+' days':'Aloha!'}
+function exportData(){const backup={data,tripVibe:localStorage.getItem('field_tripVibe')||'',version:2};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hawaii-daily-dashboard-backup.json';a.click()}
+function importData(){const file=document.getElementById('importFile').files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const backup=JSON.parse(reader.result);data=backup.data||backup;if(backup.tripVibe!==undefined)localStorage.setItem('field_tripVibe',backup.tripVibe);save();location.reload()};reader.readAsText(file)}
+function clearAll(){if(confirm('Clear all saved plans, journal notes, and photos in this browser?')){localStorage.removeItem('hawaiiDailyDashboardData');localStorage.removeItem('field_tripVibe');location.reload()}}
+renderLists();tripDates.forEach(date=>{renderDay(date);renderDayPhotos(date)});renderBookings();updateCountdown();save();
+</script>
+
+</body>
+</html>

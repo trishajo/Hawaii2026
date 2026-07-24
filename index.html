@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hawaii Trip Dashboard</title>
+  <title>Hawaii 2026 · Maui Girls Trip</title>
 
   <style>
     :root {
@@ -428,6 +428,425 @@
     .reservation-meta{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}.detail-chip{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(18,59,83,.07);color:var(--navy);font-weight:800;font-size:.84rem}
     .day-photo-uploader{border:2px dashed rgba(22,124,146,.28);border-radius:22px;padding:18px;background:rgba(239,253,255,.72);text-align:center}.day-photo-uploader input{margin-top:10px}.day-note{background:linear-gradient(135deg,rgba(101,203,208,.10),rgba(247,191,76,.11))}.overview-stay{border-left:6px solid var(--palm)}.mini-countdown{font-size:2.15rem;font-family:Georgia,"Times New Roman",serif;font-weight:900;color:var(--navy);line-height:1}
 
+
+    /* Confirmed-experience editorial cards */
+    .experience-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:14px;
+    }
+    .experience-card{
+      position:relative;
+      min-height:310px;
+      border-radius:24px;
+      overflow:hidden;
+      color:white;
+      box-shadow:0 18px 38px rgba(23,52,67,.20);
+      isolation:isolate;
+      display:flex;
+      align-items:flex-end;
+      text-decoration:none;
+    }
+    .experience-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(7,31,44,.02) 15%,rgba(7,31,44,.88) 100%);
+      z-index:-1;
+    }
+    .experience-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:var(--experience-image) center/cover no-repeat;
+      z-index:-2;
+      transition:transform .45s ease;
+    }
+    .experience-card:hover::after{transform:scale(1.045)}
+    .experience-copy{padding:22px}
+    .experience-kicker{
+      display:inline-flex;
+      padding:7px 10px;
+      margin-bottom:9px;
+      border:1px solid rgba(255,255,255,.42);
+      border-radius:999px;
+      background:rgba(255,255,255,.16);
+      backdrop-filter:blur(9px);
+      font-size:.75rem;
+      font-weight:900;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+    .experience-copy h3{
+      margin:0 0 7px;
+      color:white;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.55rem;
+    }
+    .experience-copy p{
+      margin:0;
+      color:rgba(255,255,255,.92);
+      line-height:1.48;
+      font-size:.94rem;
+    }
+    .feature-banner{
+      position:relative;
+      min-height:390px;
+      overflow:hidden;
+      border-radius:25px;
+      margin:4px 0 20px;
+      display:flex;
+      align-items:flex-end;
+      color:white;
+      background:var(--feature-image) center/cover no-repeat;
+      box-shadow:0 18px 42px rgba(23,52,67,.18);
+    }
+    .feature-banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,rgba(8,35,48,.93) 0%,rgba(8,35,48,.68) 53%,rgba(8,35,48,.12) 100%);
+    }
+    .feature-content{
+      position:relative;
+      z-index:1;
+      width:min(670px,100%);
+      padding:32px;
+    }
+    .feature-content .feature-date{
+      display:inline-flex;
+      padding:8px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.4);
+      background:rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.78rem;
+    }
+    .feature-content h3{
+      margin:14px 0 8px;
+      color:white;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2rem,5vw,3.35rem);
+      line-height:1;
+    }
+    .feature-content p{
+      color:rgba(255,255,255,.94);
+      font-size:1.02rem;
+      line-height:1.6;
+      margin:0 0 17px;
+    }
+    .feature-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:white;
+      font-weight:900;
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.55);
+      padding-bottom:3px;
+    }
+    @media(max-width:900px){
+      .experience-grid{grid-template-columns:1fr}
+      .experience-card{min-height:330px}
+    }
+    @media(max-width:560px){
+      .feature-banner{min-height:430px}
+      .feature-content{padding:24px}
+    }
+
+
+    /* 2026 cinematic refresh */
+    :root{
+      --deep:#092c3a;
+      --ivory:#fffaf2;
+      --champagne:#e7c88a;
+      --rose:#d87582;
+    }
+    .top-hero{
+      min-height:92vh;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg,rgba(5,24,33,.10) 0%,rgba(5,24,33,.25) 38%,rgba(5,24,33,.88) 100%),
+        url('https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=2200&q=92') center 56%/cover no-repeat;
+      overflow:hidden;
+    }
+    .top-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 76% 20%,rgba(255,230,175,.26),transparent 23rem),
+        linear-gradient(90deg,rgba(7,34,46,.46),transparent 66%);
+      pointer-events:none;
+    }
+    .top-hero::after{
+      content:"";
+      position:absolute;
+      left:0;right:0;bottom:-1px;
+      height:120px;
+      background:linear-gradient(180deg,transparent,var(--ivory));
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      width:min(1220px,calc(100% - 40px));
+      margin:0 auto;
+      padding:140px 0 150px;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 330px;
+      gap:50px;
+      align-items:end;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:white;
+      border:1px solid rgba(255,255,255,.35);
+      background:rgba(255,255,255,.12);
+      backdrop-filter:blur(14px);
+      border-radius:999px;
+      padding:9px 13px;
+      font-size:.75rem;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .top-hero h1{
+      max-width:850px;
+      margin:18px 0 16px;
+      color:white;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(4.6rem,11vw,9rem);
+      line-height:.82;
+      letter-spacing:-.055em;
+      text-shadow:0 14px 34px rgba(0,0,0,.2);
+    }
+    .top-hero h1 em{
+      display:block;
+      font-size:.34em;
+      line-height:1.2;
+      font-weight:400;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#ffe4af;
+      font-style:normal;
+      margin-top:18px;
+    }
+    .subtitle{
+      max-width:650px;
+      color:rgba(255,255,255,.91);
+      font-size:1.13rem;
+      line-height:1.7;
+      margin:0;
+    }
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .hero-tag{
+      color:white;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(9,44,58,.35);
+      backdrop-filter:blur(10px);
+      padding:9px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.82rem;
+    }
+    .hero-collage{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      transform:rotate(2deg);
+    }
+    .hero-photo{
+      min-height:190px;
+      border:8px solid rgba(255,255,255,.94);
+      border-bottom-width:34px;
+      box-shadow:0 20px 45px rgba(0,0,0,.28);
+      background-size:cover;
+      background-position:center;
+    }
+    .hero-photo.one{
+      grid-row:span 2;
+      min-height:400px;
+      background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=90');
+    }
+    .hero-photo.two{
+      background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=90');
+      transform:rotate(-5deg);
+    }
+    .hero-photo.three{
+      background-image:url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=90');
+      transform:rotate(4deg);
+    }
+    .shell{background:var(--ivory)}
+    .editorial-intro{
+      position:relative;
+      min-height:500px;
+      border-radius:32px;
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(90deg,rgba(5,27,37,.92) 0%,rgba(5,27,37,.60) 50%,rgba(5,27,37,.06) 100%),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=90') center/cover no-repeat;
+      box-shadow:0 28px 70px rgba(18,59,83,.17);
+    }
+    .editorial-intro .copy{
+      max-width:710px;
+      padding:46px;
+      color:white;
+    }
+    .editorial-intro h2{
+      color:white;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2.6rem,6vw,5.3rem);
+      line-height:.97;
+      margin:12px 0 18px;
+    }
+    .editorial-intro p{
+      font-size:1.08rem;
+      line-height:1.75;
+      color:rgba(255,255,255,.9);
+      margin:0;
+    }
+    .stay-showcase{
+      min-height:420px;
+      position:relative;
+      border-radius:30px;
+      overflow:hidden;
+      color:white;
+      display:flex;
+      align-items:flex-end;
+      background:
+        linear-gradient(180deg,rgba(5,27,37,.05) 12%,rgba(5,27,37,.84) 100%),
+        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1700&q=90') center/cover no-repeat;
+      box-shadow:0 22px 58px rgba(18,59,83,.16);
+    }
+    .stay-showcase .stay-copy{padding:34px;max-width:800px}
+    .stay-showcase h2{
+      color:white;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2.2rem,5vw,4.2rem);
+      margin:10px 0 10px;
+    }
+    .stay-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .stay-meta span{
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.3);
+      backdrop-filter:blur(8px);
+      font-weight:800;
+      font-size:.84rem;
+    }
+    .moodboard{
+      display:grid;
+      grid-template-columns:1.3fr .7fr .9fr;
+      grid-template-rows:220px 220px;
+      gap:12px;
+      margin-top:16px;
+    }
+    .mood-shot{border-radius:22px;background-size:cover;background-position:center;min-height:180px}
+    .mood-shot.a{grid-row:1/3;background-image:url('https://images.unsplash.com/photo-1484291470158-b8f8d608850d?auto=format&fit=crop&w=1000&q=90')}
+    .mood-shot.b{background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=90')}
+    .mood-shot.c{background-image:url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=800&q=90')}
+    .mood-shot.d{grid-column:2/4;background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=90')}
+    .story-quote{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(1.7rem,4vw,3.1rem);
+      line-height:1.2;
+      color:var(--deep);
+      margin:0;
+    }
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;padding-top:120px}
+      .hero-collage{display:none}
+      .top-hero{min-height:820px}
+      .moodboard{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}
+      .mood-shot.a{grid-column:1/3;grid-row:auto}
+      .mood-shot.d{grid-column:1/3}
+    }
+    @media(max-width:600px){
+      .top-hero h1{font-size:4.5rem}
+      .top-hero{min-height:760px}
+      .hero-inner{padding-bottom:120px}
+      .editorial-intro .copy,.stay-showcase .stay-copy{padding:26px}
+      .moodboard{display:block}
+      .mood-shot{margin-top:10px}
+    }
+
+
+    .website-button{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:900;
+      color:white;
+      background:linear-gradient(135deg,var(--ocean),var(--deep));
+      box-shadow:0 10px 22px rgba(18,59,83,.15);
+    }
+    .website-button:hover{transform:translateY(-1px)}
+    .vote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    .vote-card{
+      border:1px solid #dbe6e9;
+      border-radius:20px;
+      padding:16px;
+      background:#fff;
+    }
+    .vote-card h3{margin:0 0 8px}
+    .heart-button{
+      border:1px solid #f0c7cc;
+      background:#fff7f8;
+      color:#a94655;
+      box-shadow:none;
+      padding:8px 11px;
+    }
+    .heart-button.active{background:#d87582;color:white;border-color:#d87582}
+    .bingo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+    .bingo-tile{
+      min-height:105px;
+      border:1px solid #dbe6e9;
+      border-radius:18px;
+      background:white;
+      padding:13px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      cursor:pointer;
+      font-weight:800;
+      color:var(--deep);
+      transition:.2s ease;
+    }
+    .bingo-tile.done{
+      background:linear-gradient(135deg,#e6f5ef,#fff3d5);
+      border-color:#8fc7b3;
+      text-decoration:line-through;
+      color:#52716b;
+    }
+    .progress-track{height:10px;background:#e8eff1;border-radius:999px;overflow:hidden}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--ocean),var(--coral));width:0%}
+    @media(max-width:800px){
+      .vote-grid{grid-template-columns:1fr}
+      .bingo-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
     .print-only { display:none; }
     @media print {
       .tabs, button, input[type=file], .no-print, .top-hero::after { display:none !important; }
@@ -446,16 +865,16 @@
   <header class="top-hero">
     <div class="hero-inner">
       <div>
-        <div class="eyebrow">🌺 Girls Trip Planning Hub</div>
-        <h1>Hawaii<br>2026</h1>
-        <p class="subtitle">A bright, beautiful home for our itinerary, favorite finds, reservations, packing lists, and all the photos we’ll want to keep forever.</p>
+        <div class="eyebrow">Maui · September 17–25, 2026</div>
+        <h1>Hawaii<em>A girls’ escape in paradise</em></h1>
+        <p class="subtitle">Eight nights of warm ocean air, beautiful meals, slow mornings, golden sunsets and the kind of laughter we’ll talk about for years.</p>
         <div class="hero-tags">
-          <span class="hero-tag">🌴 Maui</span>
-          <span class="hero-tag">☀️ September 2026</span>
-          <span class="hero-tag">👩‍👩‍👧 Mom • Trish • Sister</span>
+          <span class="hero-tag">🌴 Wailea home base</span>
+          <span class="hero-tag">✨ Three signature experiences</span>
+          <span class="hero-tag">👩‍👩‍👧 Mom · Trish · Sister</span>
         </div>
       </div>
-      <div class="hero-collage" aria-label="Hawaii inspiration collage">
+      <div class="hero-collage" aria-label="Maui inspiration">
         <div class="hero-photo one"></div>
         <div class="hero-photo two"></div>
         <div class="hero-photo three"></div>
@@ -482,12 +901,97 @@
       <button class="tab" data-tab="share">Share / Backup</button></nav>
     <section id="overview" class="active">
       <div class="grid">
-        <div class="card hero-card span-8"><span class="pill">🌺 Wailea, Maui</span><h2>Our Hawaii girls’ trip</h2><p>September 17–25, 2026 • Mom, Trish & Sister</p></div>
-        <div class="card span-4"><h2>Countdown to Maui</h2><div id="countdown" class="mini-countdown">—</div><p class="muted">until check-in day</p><label>Trip vibe</label><textarea id="tripVibe" placeholder="Relaxed, pretty beaches, amazing food, and mellow adventures..."></textarea></div>
-        <div class="card span-6 overview-stay"><span class="pill">🏡 Our stay</span><h2 style="margin-top:12px;">Wailea residence</h2><p><strong>Hosted by:</strong> CoralTree Residence Collection</p><p><strong>Check-in:</strong> Thursday, September 17 after 4:00 PM<br><strong>Check-out:</strong> Friday, September 25 before 11:00 AM</p><p class="muted">Near Wailea Beach, Polo Beach and Poʻolenalena Beach.</p></div>
-        <div class="card span-6"><h2>Confirmed highlights</h2><div class="item"><strong>Sat 19</strong> · Mama’s Fish House at 3:30 PM</div><div class="item"><strong>Sun 20</strong> · Gilligans’ Island Luau at 5:00 PM</div><div class="item"><strong>Tue 22</strong> · Kaʻanapali sunset cocktail sail at 4:30 PM</div></div>
-        <div class="card span-6"><h2>Must-do list</h2><div class="row"><input id="mustInput" placeholder="Add a must-do" /><button onclick="addItem('musts','mustInput')">Add</button></div><ul id="mustsList" class="list"></ul></div>
-        <div class="card span-6"><h2>Open questions</h2><div class="row"><input id="questionInput" placeholder="Add a question to decide later" /><button onclick="addItem('questions','questionInput')">Add</button></div><ul id="questionsList" class="list"></ul></div>
+        <div class="editorial-intro span-12">
+          <div class="copy">
+            <span class="pill">Our Maui story</span>
+            <h2>Three women.<br>One beautiful island.</h2>
+            <p>This is more than an itinerary. It is a little time capsule for our days in Maui: the meals we savor, the views that stop us in our tracks, the photographs we love and the moments that become part of our family story.</p>
+          </div>
+        </div>
+
+        <div class="card span-4">
+          <span class="pill">The countdown</span>
+          <h2 style="margin-top:14px;">Paradise is getting closer</h2>
+          <div id="countdown" class="mini-countdown">—</div>
+          <p class="muted">until check-in day</p>
+          <label>Our trip mood</label>
+          <textarea id="tripVibe" placeholder="Relaxed, beautiful, delicious and just adventurous enough..."></textarea>
+        </div>
+
+        <div class="card span-8">
+          <span class="pill">The feeling</span>
+          <p class="story-quote" style="margin-top:18px;">“Slow mornings. Salt in the air. Linen dresses. Sunset cocktails. And nowhere else we need to be.”</p>
+        </div>
+
+        <div class="stay-showcase span-12">
+          <div class="stay-copy">
+            <span class="pill">Our island home</span>
+            <h2>Eight nights in Wailea</h2>
+            <p>Our CoralTree Residence Collection stay gives us a beautiful South Maui home base close to Wailea Beach, Polo Beach and Poʻolenalena Beach—perfect for easy mornings, pool afternoons and sunset walks.</p>
+            <div class="stay-meta">
+              <span>🏡 CoralTree Residence Collection</span>
+              <span>📅 Sep 17–25</span>
+              <span>🕓 Check-in after 4 PM</span>
+              <span>🌺 8 nights</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card span-12">
+          <span class="pill">A glimpse of the week</span>
+          <h2 style="margin-top:12px;">The Maui mood board</h2>
+          <p class="muted">Turquoise water, lush green landscapes, tropical mornings and glowing island evenings.</p>
+          <div class="moodboard">
+            <div class="mood-shot a"></div>
+            <div class="mood-shot b"></div>
+            <div class="mood-shot c"></div>
+            <div class="mood-shot d"></div>
+          </div>
+        </div>
+
+        <div class="card span-12">
+          <span class="pill">Three unforgettable reservations</span>
+          <h2 style="margin-top:12px;">The headline experiences</h2>
+          <p class="muted">Fresh island flavors, a fiery Polynesian celebration and golden hour from the deck of a luxury catamaran.</p>
+          <div class="experience-grid">
+            <a class="experience-card" href="https://mamasfishhouse.com/" target="_blank" rel="noopener"
+               style="--experience-image:url('https://images.prismic.io/mamas-fish-house/aIlYE1GsbswqTcLW__DSC1343-2.jpg?auto=format%2Ccompress&h=940&rect=0%2C129%2C1452%2C711&w=1920')">
+              <div class="experience-copy">
+                <span class="experience-kicker">Saturday · 3:30 PM</span>
+                <h3>Mama’s Fish House</h3>
+                <p>A dreamy North Shore oasis where locally caught fish, tropical flowers and Kū‘au Bay create one of Maui’s most iconic dining experiences.</p>
+              </div>
+            </a>
+            <a class="experience-card" href="https://gilligansmaui.com/luau/" target="_blank" rel="noopener"
+               style="--experience-image:url('https://gilligansmaui.com/wp-content/uploads/2023/01/016-Sean-M.-Hower-2022-050-Sean-M.-Hower-2022DSC_1406-scaled.jpg')">
+              <div class="experience-copy">
+                <span class="experience-kicker">Sunday · 5:00 PM</span>
+                <h3>Gilligans’ Island Luau</h3>
+                <p>An open-air evening of Hawaiian food, live music and Polynesian dance—building to a spectacular Samoan fire-knife finale.</p>
+              </div>
+            </a>
+            <a class="experience-card" href="https://teralani.com/maui-sunset-sail/" target="_blank" rel="noopener"
+               style="--experience-image:url('https://teralani.com/wp-content/uploads/2023/11/teralani-sunset-12-1024x684.jpg')">
+              <div class="experience-copy">
+                <span class="experience-kicker">Tuesday · 4:30 PM</span>
+                <h3>Ka‘anapali Sunset Sail</h3>
+                <p>Premium cocktails, chef-inspired pupus and 360-degree views of the Pacific and West Maui Mountains aboard a luxury catamaran.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="card span-6">
+          <h2>Our must-do list</h2>
+          <div class="row"><input id="mustInput" placeholder="Add a Maui must-do" /><button onclick="addItem('musts','mustInput')">Add</button></div>
+          <ul id="mustsList" class="list"></ul>
+        </div>
+
+        <div class="card span-6">
+          <h2>Maybe we should…</h2>
+          <div class="row"><input id="questionInput" placeholder="Add a beautiful possibility" /><button onclick="addItem('questions','questionInput')">Add</button></div>
+          <ul id="questionsList" class="list"></ul>
+        </div>
       </div>
     </section>
     
@@ -561,6 +1065,16 @@
             </div>
             <span class="pill">🌺 Maui day 3</span>
           </div>
+          
+          <div class="feature-banner" style="--feature-image:url('https://images.prismic.io/mamas-fish-house/aIlYE1GsbswqTcLW__DSC1343-2.jpg?auto=format%2Ccompress&h=940&rect=0%2C129%2C1452%2C711&w=1920')">
+            <div class="feature-content">
+              <span class="feature-date">Reserved · 3:30 PM</span>
+              <h3>Mama’s Fish House</h3>
+              <p>Arrive ready to be transported: a beachfront Polynesian hideaway filled with tropical flowers, old-Hawaii romance and fish sourced from Maui’s local fishermen.</p>
+              <a class="feature-link" href="https://mamasfishhouse.com/" target="_blank" rel="noopener">Visit the official website →</a>
+            </div>
+          </div>
+
           <div id="dayItems-2026-09-19"></div>
         </div>
         <div class="card span-6 day-note">
@@ -591,6 +1105,16 @@
             </div>
             <span class="pill">🌺 Maui day 4</span>
           </div>
+          
+          <div class="feature-banner" style="--feature-image:url('https://gilligansmaui.com/wp-content/uploads/2023/01/016-Sean-M.-Hower-2022-050-Sean-M.-Hower-2022DSC_1406-scaled.jpg')">
+            <div class="feature-content">
+              <span class="feature-date">Reserved · 5:00 PM</span>
+              <h3>Gilligans’ Island Luau</h3>
+              <p>A festive Maui night with panoramic views, tropical drinks, a full Hawaiian buffet and a colorful journey through Hawaiian, Tahitian and New Zealand dance—finished with fire.</p>
+              <a class="feature-link" href="https://gilligansmaui.com/luau/" target="_blank" rel="noopener">See the luau experience →</a>
+            </div>
+          </div>
+
           <div id="dayItems-2026-09-20"></div>
         </div>
         <div class="card span-6 day-note">
@@ -651,6 +1175,16 @@
             </div>
             <span class="pill">🌺 Maui day 6</span>
           </div>
+          
+          <div class="feature-banner" style="--feature-image:url('https://teralani.com/wp-content/uploads/2023/11/teralani-sunset-12-1024x684.jpg')">
+            <div class="feature-content">
+              <span class="feature-date">Reserved · 4:30 PM</span>
+              <h3>Ka‘anapali Luxury Sunset Cocktail Sail</h3>
+              <p>Step directly from Ka‘anapali Beach onto a luxury catamaran for premium drinks, chef-inspired appetizers and Maui’s golden hour unfolding across the Pacific.</p>
+              <a class="feature-link" href="https://teralani.com/maui-sunset-sail/" target="_blank" rel="noopener">Explore Teralani sunset sails →</a>
+            </div>
+          </div>
+
           <div id="dayItems-2026-09-22"></div>
         </div>
         <div class="card span-6 day-note">
@@ -762,6 +1296,21 @@
     </section>
 
     <section id="ideas"><div class="grid">
+      <div class="card span-12">
+        <span class="pill">Interactive girls’ picks</span>
+        <h2 style="margin-top:12px;">What sounds most fun?</h2>
+        <p class="muted">Add possibilities and tap the heart to vote for favorites. Choices save in this browser.</p>
+        <div class="row"><input id="pickInput" placeholder="Example: sunset beach picnic" /><button onclick="addPick()">Add idea</button></div>
+        <div id="girlsPicks" class="vote-grid"></div>
+      </div>
+      <div class="card span-12">
+        <span class="pill">Maui bingo</span>
+        <h2 style="margin-top:12px;">Little moments to collect</h2>
+        <p class="muted">Tap a square when it happens.</p>
+        <div class="progress-track"><div id="bingoProgress" class="progress-fill"></div></div>
+        <p id="bingoCount" class="muted"></p>
+        <div id="bingoGrid" class="bingo-grid"></div>
+      </div>
       <div class="card span-6"><h2>Restaurants & treats</h2><div class="row"><input id="foodInput" placeholder="Add restaurant or food idea" /><button onclick="addItem('food','foodInput')">Add</button></div><ul id="foodList" class="list"></ul></div>
       <div class="card span-6"><h2>Activities</h2><div class="row"><input id="activityInput" placeholder="Add activity idea" /><button onclick="addItem('activities','activityInput')">Add</button></div><ul id="activitiesList" class="list"></ul></div>
       <div class="card span-6"><h2>Beaches</h2><div class="row"><input id="beachInput" placeholder="Add beach idea" /><button onclick="addItem('beaches','beachInput')">Add</button></div><ul id="beachesList" class="list"></ul></div>
@@ -785,20 +1334,26 @@
 const tripDates=['2026-09-17','2026-09-18','2026-09-19','2026-09-20','2026-09-21','2026-09-22','2026-09-23','2026-09-24','2026-09-25'];
 const seededItems={
 '2026-09-17':[{time:'After 4:00 PM',category:'Reservation',title:'Check in to our Wailea residence',notes:'Hosted by CoralTree Residence Collection. Settle in, unpack and enjoy the first Maui sunset.',locked:true}],
-'2026-09-19':[{time:'3:30 PM',category:'Restaurant',title:'Mama’s Fish House',notes:'3 guests · Main Dining · 799 Poho Pl, Paia, HI 96779 · Smart casual attire · Complimentary valet · Do not arrive more than 15 minutes early · Confirmation 52X98W3KGFEF.',locked:true}],
-'2026-09-20':[{time:'5:00 PM',category:'Activity',title:'Gilligans’ Island Luau in Kihei',notes:'3 adults · Viator confirmation 1759659377 · Booking reference 1376940241 · Total $499.47 · Auto-payment scheduled September 18, 2026.',locked:true}],
-'2026-09-22':[{time:'4:30 PM',category:'Activity',title:'Kaʻanapali Luxury Sunset Cocktail Sail with Open Bar',notes:'3 adults · 2 hours · Teralani Sailing Adventures · 2525 Kaanapali Pkwy, Lahaina, HI 96761 · Bring printed voucher and call to confirm check-in time · Allow at least 1.5 hours driving from South Maui · Booking GYGMX4HX6Q2B · $404.10.',locked:true}],
+'2026-09-19':[{time:'3:30 PM',category:'Restaurant',title:'Mama’s Fish House',url:'https://mamasfishhouse.com/',notes:'3 guests · Main Dining · 799 Poho Pl, Paia, HI 96779 · Smart casual attire · Complimentary valet · Do not arrive more than 15 minutes early · Confirmation 52X98W3KGFEF.',locked:true}],
+'2026-09-20':[{time:'5:00 PM',category:'Activity',title:'Gilligans’ Island Luau in Kihei',url:'https://gilligansmaui.com/luau/',notes:'3 adults · Viator confirmation 1759659377 · Booking reference 1376940241 · Total $499.47 · Auto-payment scheduled September 18, 2026.',locked:true}],
+'2026-09-22':[{time:'4:30 PM',category:'Activity',title:'Kaʻanapali Luxury Sunset Cocktail Sail with Open Bar',url:'https://teralani.com/maui-sunset-sail/',notes:'3 adults · 2 hours · Teralani Sailing Adventures · 2525 Kaanapali Pkwy, Lahaina, HI 96761 · Bring printed voucher and call to confirm check-in time · Allow at least 1.5 hours driving from South Maui · Booking GYGMX4HX6Q2B · $404.10.',locked:true}],
 '2026-09-25':[{time:'Before 11:00 AM',category:'Reservation',title:'Check out of our Wailea residence',notes:'Pack up, complete a final room check and say aloha to Maui.',locked:true}]
 };
 const bookings=[
 {type:'Lodging',date:'Sep 17–25',name:'Wailea residence — CoralTree Residence Collection',confirm:'Airbnb Trips reservation',notes:'Check-in after 4:00 PM on Sep 17. Check-out before 11:00 AM on Sep 25.'},
-{type:'Restaurant',date:'Sep 19 · 3:30 PM',name:'Mama’s Fish House',confirm:'52X98W3KGFEF',notes:'3 guests, Main Dining. 799 Poho Pl, Paia. Smart casual; complimentary valet. $50/person late cancellation or party-size change fee.'},
-{type:'Activity',date:'Sep 20 · 5:00 PM',name:'Gilligans’ Island Luau in Kihei',confirm:'1759659377',notes:'3 adults. Booking reference 1376940241. Total $499.47. Auto-payment Sep 18.'},
-{type:'Activity',date:'Sep 22 · 4:30 PM',name:'Kaʻanapali Luxury Sunset Cocktail Sail',confirm:'GYGMX4HX6Q2B',notes:'3 adults, 2 hours, open bar. Teralani Sailing Adventures. $404.10. Printed voucher requested.'}
+{type:'Restaurant',date:'Sep 19 · 3:30 PM',name:'Mama’s Fish House',url:'https://mamasfishhouse.com/',confirm:'52X98W3KGFEF',notes:'3 guests, Main Dining. 799 Poho Pl, Paia. Smart casual; complimentary valet. $50/person late cancellation or party-size change fee.'},
+{type:'Activity',date:'Sep 20 · 5:00 PM',name:'Gilligans’ Island Luau in Kihei',url:'https://gilligansmaui.com/luau/',confirm:'1759659377',notes:'3 adults. Booking reference 1376940241. Total $499.47. Auto-payment Sep 18.'},
+{type:'Activity',date:'Sep 22 · 4:30 PM',name:'Kaʻanapali Luxury Sunset Cocktail Sail',url:'https://teralani.com/maui-sunset-sail/',confirm:'GYGMX4HX6Q2B',notes:'3 adults, 2 hours, open bar. Teralani Sailing Adventures. $404.10. Printed voucher requested.'}
 ];
-const defaultData={musts:[],questions:[],food:[],activities:[],beaches:[],shops:[],packing:['Swimsuits','Reef-safe sunscreen','Sunglasses','Cute dinner outfits','Comfortable sandals','Light sweater for evenings'],tasks:['Check flight details','Arrange airport transportation or rental car','Plan first grocery stop','Confirm sail check-in time'],dayItems:{},dayPhotos:{},journals:{}};
+const defaultBingo=['See a sea turtle','Try shave ice','Wear a flower in our hair','Watch a Maui sunset','Eat fresh pineapple','Take a barefoot beach photo','Spot a rainbow','Order a tropical drink','Find the perfect souvenir','Have a slow pool morning','Try local poke','Laugh until we cry'];
+const defaultPicks=[
+{text:'Sunset beach picnic',votes:0,loved:false},
+{text:'Shave ice taste test',votes:0,loved:false},
+{text:'Spa or resort day',votes:0,loved:false}
+];
+const defaultData={girlsPicks:defaultPicks,bingo:defaultBingo.map(text=>({text,done:false})),musts:[],questions:[],food:[],activities:[],beaches:[],shops:[],packing:['Swimsuits','Reef-safe sunscreen','Sunglasses','Cute dinner outfits','Comfortable sandals','Light sweater for evenings'],tasks:['Check flight details','Arrange airport transportation or rental car','Plan first grocery stop','Confirm sail check-in time'],dayItems:{},dayPhotos:{},journals:{}};
 let data;try{data=JSON.parse(localStorage.getItem('hawaiiDailyDashboardData')||'null')}catch(e){data=null}if(!data)data=JSON.parse(JSON.stringify(defaultData));
-data.dayItems||={};data.dayPhotos||={};data.journals||={};['musts','questions','food','activities','beaches','shops','packing','tasks'].forEach(k=>data[k]||=[]);
+data.dayItems||={};data.dayPhotos||={};data.journals||={};data.girlsPicks||=JSON.parse(JSON.stringify(defaultPicks));data.bingo||=defaultBingo.map(text=>({text,done:false}));['musts','questions','food','activities','beaches','shops','packing','tasks'].forEach(k=>data[k]||=[]);
 tripDates.forEach(date=>{data.dayItems[date]||=[];const titles=new Set(data.dayItems[date].map(x=>x.title));(seededItems[date]||[]).forEach(item=>{if(!titles.has(item.title))data.dayItems[date].push(item)});data.dayPhotos[date]||=[]});
 function save(){localStorage.setItem('hawaiiDailyDashboardData',JSON.stringify(data))}
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab,section').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active');window.scrollTo({top:document.querySelector('.tabs').offsetTop-10,behavior:'smooth'})}));
@@ -810,18 +1365,70 @@ function renderList(key){const ul=document.getElementById(key+'List');if(!ul)ret
 function renderLists(){['musts','questions','food','activities','beaches','shops','packing','tasks'].forEach(renderList)}
 function addDayItem(date){const time=document.getElementById('time-'+date),category=document.getElementById('category-'+date),title=document.getElementById('title-'+date),notes=document.getElementById('notes-'+date);if(!title.value.trim())return;data.dayItems[date].push({time:time.value,category:category.value,title:title.value.trim(),notes:notes.value});time.value='';title.value='';notes.value='';save();renderDay(date)}
 function deleteDayItem(date,index){data.dayItems[date].splice(index,1);save();renderDay(date)}
-function renderDay(date){const box=document.getElementById('dayItems-'+date);box.innerHTML='';const items=data.dayItems[date]||[];if(!items.length)box.innerHTML='<p class="muted">Nothing planned yet—this day is wide open.</p>';items.forEach((x,i)=>{const div=document.createElement('div');const cls=x.category==='Restaurant'?'restaurant':(x.category==='Activity'?'activity':'');div.className='item reservation-card '+cls;div.innerHTML=`<div class="row"><span class="pill">${escapeHtml(x.category)}</span><small>${escapeHtml(x.time||'Time TBD')}</small></div><h3>${escapeHtml(x.title)}</h3><p>${linkify(escapeHtml(x.notes||''))}</p>${x.locked?'':`<button class="secondary" onclick="deleteDayItem('${date}',${i})">Remove</button>`}`;box.appendChild(div)})}
+function renderDay(date){const box=document.getElementById('dayItems-'+date);box.innerHTML='';const items=data.dayItems[date]||[];if(!items.length)box.innerHTML='<p class="muted">Nothing planned yet—this day is wide open.</p>';items.forEach((x,i)=>{const div=document.createElement('div');const cls=x.category==='Restaurant'?'restaurant':(x.category==='Activity'?'activity':'');div.className='item reservation-card '+cls;div.innerHTML=`<div class="row"><span class="pill">${escapeHtml(x.category)}</span><small>${escapeHtml(x.time||'Time TBD')}</small></div><h3>${escapeHtml(x.title)}</h3><p>${linkify(escapeHtml(x.notes||''))}</p>${x.url?`<a class="website-button" href="${escapeHtml(x.url)}" target="_blank" rel="noopener">Visit official website ↗</a>`:''}${x.locked?'':`<button class="secondary" onclick="deleteDayItem('${date}',${i})">Remove</button>`}`;box.appendChild(div)})}
 function addDayPhotos(date,files){[...files].forEach(file=>{const reader=new FileReader();reader.onload=()=>{data.dayPhotos[date].push({src:reader.result,caption:file.name});save();renderDayPhotos(date)};reader.readAsDataURL(file)})}
 function deleteDayPhoto(date,index){data.dayPhotos[date].splice(index,1);save();renderDayPhotos(date)}
 function renderDayPhotos(date){const grid=document.getElementById('photoGrid-'+date);grid.innerHTML='';(data.dayPhotos[date]||[]).forEach((p,i)=>{const div=document.createElement('div');div.className='photo';div.innerHTML=`<img src="${p.src}" alt="Trip photo"><div class="caption">${escapeHtml(p.caption)}</div><button class="secondary" style="margin:0 9px 9px" onclick="deleteDayPhoto('${date}',${i})">Remove</button>`;grid.appendChild(div)})}
-function renderBookings(){const box=document.getElementById('bookingList');box.innerHTML='';bookings.forEach(x=>{const div=document.createElement('div');div.className='item reservation-card '+(x.type==='Restaurant'?'restaurant':'activity');div.innerHTML=`<div class="row"><span class="pill">${x.type}</span><small>${x.date}</small></div><h3>${x.name}</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: ${x.confirm}</span></div><p>${x.notes}</p>`;box.appendChild(div)})}
+function renderBookings(){const box=document.getElementById('bookingList');box.innerHTML='';bookings.forEach(x=>{const div=document.createElement('div');div.className='item reservation-card '+(x.type==='Restaurant'?'restaurant':'activity');div.innerHTML=`<div class="row"><span class="pill">${x.type}</span><small>${x.date}</small></div><h3>${x.name}</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: ${x.confirm}</span></div><p>${x.notes}</p>${x.url?`<a class="website-button" href="${x.url}" target="_blank" rel="noopener">Visit official website ↗</a>`:''}`;box.appendChild(div)})}
+
+function addPick(){
+  const input=document.getElementById('pickInput');
+  const text=input.value.trim();
+  if(!text)return;
+  data.girlsPicks.push({text,votes:0,loved:false});
+  input.value='';
+  save();renderGirlsPicks();
+}
+function votePick(index){
+  const item=data.girlsPicks[index];
+  item.loved=!item.loved;
+  item.votes=Math.max(0,(item.votes||0)+(item.loved?1:-1));
+  save();renderGirlsPicks();
+}
+function removePick(index){
+  data.girlsPicks.splice(index,1);
+  save();renderGirlsPicks();
+}
+function renderGirlsPicks(){
+  const box=document.getElementById('girlsPicks');
+  if(!box)return;
+  box.innerHTML='';
+  data.girlsPicks.forEach((item,i)=>{
+    const div=document.createElement('div');
+    div.className='vote-card';
+    div.innerHTML=`<h3>${escapeHtml(item.text)}</h3><p class="muted">${item.votes||0} heart${(item.votes||0)===1?'':'s'}</p><div class="row"><button class="heart-button ${item.loved?'active':''}" onclick="votePick(${i})">${item.loved?'♥ Loved':'♡ Vote'}</button><button class="secondary" onclick="removePick(${i})">Remove</button></div>`;
+    box.appendChild(div);
+  });
+}
+function toggleBingo(index){
+  data.bingo[index].done=!data.bingo[index].done;
+  save();renderBingo();
+}
+function renderBingo(){
+  const grid=document.getElementById('bingoGrid');
+  if(!grid)return;
+  grid.innerHTML='';
+  data.bingo.forEach((item,i)=>{
+    const button=document.createElement('button');
+    button.className='bingo-tile'+(item.done?' done':'');
+    button.type='button';
+    button.textContent=(item.done?'✓ ':'')+item.text;
+    button.onclick=()=>toggleBingo(i);
+    grid.appendChild(button);
+  });
+  const done=data.bingo.filter(x=>x.done).length;
+  const pct=data.bingo.length?Math.round(done/data.bingo.length*100):0;
+  document.getElementById('bingoProgress').style.width=pct+'%';
+  document.getElementById('bingoCount').textContent=`${done} of ${data.bingo.length} Maui moments collected`;
+}
+
 function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function linkify(v){return v.replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')}
 function updateCountdown(){const target=new Date('2026-09-17T16:00:00-10:00'),now=new Date(),days=Math.max(0,Math.ceil((target-now)/86400000));document.getElementById('countdown').textContent=days?days+' days':'Aloha!'}
 function exportData(){const backup={data,tripVibe:localStorage.getItem('field_tripVibe')||'',version:2};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hawaii-daily-dashboard-backup.json';a.click()}
 function importData(){const file=document.getElementById('importFile').files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const backup=JSON.parse(reader.result);data=backup.data||backup;if(backup.tripVibe!==undefined)localStorage.setItem('field_tripVibe',backup.tripVibe);save();location.reload()};reader.readAsText(file)}
 function clearAll(){if(confirm('Clear all saved plans, journal notes, and photos in this browser?')){localStorage.removeItem('hawaiiDailyDashboardData');localStorage.removeItem('field_tripVibe');location.reload()}}
-renderLists();tripDates.forEach(date=>{renderDay(date);renderDayPhotos(date)});renderBookings();updateCountdown();save();
+renderLists();renderGirlsPicks();renderBingo();tripDates.forEach(date=>{renderDay(date);renderDayPhotos(date)});renderBookings();updateCountdown();save();
 </script>
 
 </body>

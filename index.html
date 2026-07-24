@@ -1306,6 +1306,37 @@
     .explore-links a:hover{background:rgba(255,255,255,.23);transform:translateY(-1px)}
     .tab{position:relative;z-index:2;pointer-events:auto}
 
+
+    /* Fail-safe chapter navigation: real links + CSS :target */
+    .tabs{
+      z-index:9999 !important;
+      pointer-events:auto !important;
+    }
+    .tabs .tab{
+      position:relative !important;
+      z-index:10000 !important;
+      pointer-events:auto !important;
+      text-decoration:none;
+      color:inherit;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    main > section{
+      display:none !important;
+    }
+    main > section:target{
+      display:block !important;
+      animation:chapterReveal .45s ease both;
+    }
+    body:not(:has(main > section:target)) main > #overview{
+      display:block !important;
+    }
+    @keyframes chapterReveal{
+      from{opacity:.15;transform:translateY(10px)}
+      to{opacity:1;transform:none}
+    }
+
 </style>
 
 </head>
@@ -1357,22 +1388,22 @@
 
 
   <main class="shell">
-    <nav class="tabs no-print"><button class="tab active" data-tab="overview">Overview</button>
-      <button class="tab" data-tab="day-2026-09-17">Thu 17</button>
-      <button class="tab" data-tab="day-2026-09-18">Fri 18</button>
-      <button class="tab" data-tab="day-2026-09-19">Sat 19</button>
-      <button class="tab" data-tab="day-2026-09-20">Sun 20</button>
-      <button class="tab" data-tab="day-2026-09-21">Mon 21</button>
-      <button class="tab" data-tab="day-2026-09-22">Tue 22</button>
-      <button class="tab" data-tab="day-2026-09-23">Wed 23</button>
-      <button class="tab" data-tab="day-2026-09-24">Thu 24</button>
-      <button class="tab" data-tab="day-2026-09-25">Fri 25</button>
-      <button class="tab" data-tab="games">Games</button>
-      <button class="tab" data-tab="culture">Island Stories</button>
-      <button class="tab" data-tab="ideas">Ideas</button>
-      <button class="tab" data-tab="bookings">All Bookings</button>
-      <button class="tab" data-tab="packing">Packing</button>
-      <button class="tab" data-tab="share">Share / Backup</button></nav>
+    <nav class="tabs no-print"><a class="tab active" data-tab="overview" href="#overview">Overview</a>
+      <a class="tab" data-tab="day-2026-09-17" href="#day-2026-09-17">Thu 17</a>
+      <a class="tab" data-tab="day-2026-09-18" href="#day-2026-09-18">Fri 18</a>
+      <a class="tab" data-tab="day-2026-09-19" href="#day-2026-09-19">Sat 19</a>
+      <a class="tab" data-tab="day-2026-09-20" href="#day-2026-09-20">Sun 20</a>
+      <a class="tab" data-tab="day-2026-09-21" href="#day-2026-09-21">Mon 21</a>
+      <a class="tab" data-tab="day-2026-09-22" href="#day-2026-09-22">Tue 22</a>
+      <a class="tab" data-tab="day-2026-09-23" href="#day-2026-09-23">Wed 23</a>
+      <a class="tab" data-tab="day-2026-09-24" href="#day-2026-09-24">Thu 24</a>
+      <a class="tab" data-tab="day-2026-09-25" href="#day-2026-09-25">Fri 25</a>
+      <a class="tab" data-tab="games" href="#games">Games</a>
+      <a class="tab" data-tab="culture" href="#culture">Island Stories</a>
+      <a class="tab" data-tab="ideas" href="#ideas">Ideas</a>
+      <a class="tab" data-tab="bookings" href="#bookings">All Bookings</a>
+      <a class="tab" data-tab="packing" href="#packing">Packing</a>
+      <a class="tab" data-tab="share" href="#share">Share / Backup</a></nav>
     <section id="overview" class="active">
       <div class="grid">
         <div class="editorial-intro span-12">
@@ -3026,13 +3057,7 @@ function updateHero(tabId){
     hero.classList.remove('hero-changing');
   },220);
 }
-document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.tab,section').forEach(x=>x.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(btn.dataset.tab).classList.add('active');
-  updateHero(btn.dataset.tab);
-  window.scrollTo({top:0,behavior:'smooth'});
-}));
+
 document.getElementById('heroStoryButton').addEventListener('click',e=>openStory(e.currentTarget.dataset.storyDate||'2026-09-17'));
 updateHero('overview');
 
@@ -3188,6 +3213,54 @@ renderVotes();renderChallenges();
     document.addEventListener("DOMContentLoaded", bindNavigation, { once: true });
   } else {
     bindNavigation();
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+
+  function currentChapter(){
+    return location.hash ? location.hash.slice(1) : "overview";
+  }
+
+  function paintActive(){
+    var id = currentChapter();
+    document.querySelectorAll(".tabs .tab").forEach(function(link){
+      var active = link.getAttribute("href") === "#" + id;
+      link.classList.toggle("active", active);
+      link.setAttribute("aria-current", active ? "page" : "false");
+    });
+
+    try {
+      if (typeof updateHero === "function") updateHero(id);
+    } catch (error) {
+      console.warn("The chapter opened; only the hero enhancement was skipped.", error);
+    }
+  }
+
+  function openChapterFromClick(event){
+    var link = event.target.closest(".tabs .tab");
+    if (!link) return;
+    var href = link.getAttribute("href");
+    if (!href || href.charAt(0) !== "#") return;
+
+    // Let the browser perform normal anchor navigation. This is intentionally
+    // not prevented, so navigation still works even if this enhancement fails.
+    window.setTimeout(function(){
+      paintActive();
+      window.scrollTo({top:0, behavior:"smooth"});
+    }, 0);
+  }
+
+  document.addEventListener("click", openChapterFromClick, false);
+  window.addEventListener("hashchange", paintActive);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", paintActive, {once:true});
+  } else {
+    paintActive();
   }
 })();
 </script>

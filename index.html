@@ -230,8 +230,9 @@
       box-shadow: 0 9px 22px rgba(18,59,83,.22);
     }
 
-    section { display: none; animation: fadeIn .25s ease; }
-    section.active { display: block; }
+    main > section { display: none; animation: fadeIn .25s ease; }
+    main > section.active { display: block; }
+    main > section section { display: block; }
     @keyframes fadeIn { from { opacity: .35; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
@@ -1903,6 +1904,226 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
  body::after{display:none}.tabs{border-radius:24px!important}.home-base-gallery{grid-template-columns:1fr 1fr}.home-base-gallery figure:first-child{grid-column:1/3;height:210px}.home-base-gallery figure{height:130px}.mystic-home-base{padding-bottom:530px}.home-orbit{grid-template-columns:1fr}.magic-bar{left:12px;right:12px;justify-content:center}
 }
 
+
+    .stay-meta-links a{
+      display:inline-flex;align-items:center;text-decoration:none;
+      color:#fff;background:rgba(8,34,46,.72);border:1px solid rgba(255,255,255,.34);
+      transition:.2s ease;cursor:pointer
+    }
+    .stay-meta-links a:hover{
+      transform:translateY(-2px);background:#fff;color:#102f3b;
+      box-shadow:0 12px 28px rgba(0,0,0,.28)
+    }
+    .stay-meta-links span{cursor:default}
+    .home-base-details{margin-top:-4px}
+
+
+    /* ---------- Reliable top-level page navigation ---------- */
+    main > section{
+      display:none !important;
+    }
+    main > section.active,
+    main > section:target{
+      display:block !important;
+      animation:chapterReveal .45s ease both;
+    }
+    main > section section,
+    main > section.active section,
+    main > section:target section{
+      display:block !important;
+    }
+    body:not(:has(main > section:target)) main > #overview{
+      display:block !important;
+    }
+
+    /* ---------- Island atmosphere switch ---------- */
+    .aesthetic-toggle{
+      position:absolute;
+      top:22px;
+      right:22px;
+      z-index:12;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:176px;
+      padding:9px 14px 9px 10px;
+      border:1px solid rgba(255,255,255,.34);
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      box-shadow:0 16px 40px rgba(0,0,0,.2);
+      backdrop-filter:blur(18px);
+      cursor:pointer;
+      transition:transform .25s ease, background .35s ease, border-color .35s ease;
+    }
+    .aesthetic-toggle:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.19);
+    }
+    .toggle-orbit{
+      width:43px;
+      height:43px;
+      flex:0 0 43px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(145deg,#fff3b0,#ef9a69);
+      color:#142d38;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),0 7px 16px rgba(0,0,0,.2);
+    }
+    .toggle-sun,.toggle-moon{
+      position:absolute;
+      font-size:1.3rem;
+      transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s ease;
+    }
+    .toggle-moon{transform:translateY(42px);opacity:0;color:#fff}
+    .toggle-star{
+      position:absolute;
+      right:6px;
+      top:4px;
+      font-size:.62rem;
+      opacity:.78;
+    }
+    .toggle-copy{
+      display:grid;
+      text-align:left;
+      line-height:1.05;
+    }
+    .toggle-copy small{
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:.58rem;
+      color:rgba(255,255,255,.68);
+      font-weight:800;
+    }
+    .toggle-copy strong{
+      margin-top:4px;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:1.18rem;
+      color:#fff;
+    }
+
+    body[data-aesthetic="moonlight"]{
+      --ink:#f7fbff;
+      --muted:#b8c9d0;
+      --card:rgba(8,28,39,.94);
+      --line:rgba(173,226,229,.16);
+      --shadow:0 22px 62px rgba(0,0,0,.34);
+      color:#f7fbff;
+      background:
+        radial-gradient(circle at 11% 10%,rgba(68,146,162,.28),transparent 28rem),
+        radial-gradient(circle at 85% 9%,rgba(164,111,196,.18),transparent 26rem),
+        radial-gradient(circle at 82% 90%,rgba(225,151,91,.13),transparent 24rem),
+        linear-gradient(180deg,#03131c 0%,#071f2a 48%,#030e14 100%);
+    }
+    body[data-aesthetic="moonlight"]::before{
+      background:linear-gradient(135deg,#17495b,#5f7fa7);
+      opacity:.35;
+    }
+    body[data-aesthetic="moonlight"]::after{
+      background:linear-gradient(135deg,#7b487e,#d28c70);
+      opacity:.28;
+    }
+    body[data-aesthetic="moonlight"] .tabs{
+      background:rgba(4,19,28,.88);
+      border-color:rgba(255,255,255,.14);
+      box-shadow:0 18px 48px rgba(0,0,0,.42);
+    }
+    body[data-aesthetic="moonlight"] .tab{
+      color:#eaf5f7;
+    }
+    body[data-aesthetic="moonlight"] .tab:hover{
+      background:rgba(255,255,255,.08);
+    }
+    body[data-aesthetic="moonlight"] .tab.active{
+      background:linear-gradient(135deg,#6ec5cc,#365a79);
+      color:#fff;
+      box-shadow:0 10px 28px rgba(65,180,193,.26);
+    }
+    body[data-aesthetic="moonlight"] .card,
+    body[data-aesthetic="moonlight"] .games-panel,
+    body[data-aesthetic="moonlight"] .meals-panel,
+    body[data-aesthetic="moonlight"] .flight-journey,
+    body[data-aesthetic="moonlight"] .travel-playground,
+    body[data-aesthetic="moonlight"] .arrival-home,
+    body[data-aesthetic="moonlight"] .page-verse{
+      background:linear-gradient(145deg,rgba(10,35,47,.97),rgba(5,21,31,.97));
+      border-color:rgba(255,255,255,.12);
+      color:#f8fcff;
+    }
+    body[data-aesthetic="moonlight"] h2,
+    body[data-aesthetic="moonlight"] h3,
+    body[data-aesthetic="moonlight"] h4,
+    body[data-aesthetic="moonlight"] .card h2,
+    body[data-aesthetic="moonlight"] .games-panel h2,
+    body[data-aesthetic="moonlight"] .meals-panel h2{
+      color:#ffffff;
+    }
+    body[data-aesthetic="moonlight"] p,
+    body[data-aesthetic="moonlight"] .muted,
+    body[data-aesthetic="moonlight"] .flight-note{
+      color:#bdcdd3;
+    }
+    body[data-aesthetic="moonlight"] input,
+    body[data-aesthetic="moonlight"] textarea,
+    body[data-aesthetic="moonlight"] select{
+      background:#071b25;
+      color:#f7fbff;
+      border-color:rgba(255,255,255,.18);
+    }
+    body[data-aesthetic="moonlight"] .page-verse blockquote{
+      color:#f7fbff;
+    }
+    body[data-aesthetic="moonlight"] .hunt-board{
+      background:
+        linear-gradient(135deg,rgba(5,23,33,.97),rgba(10,39,49,.97)),
+        repeating-linear-gradient(45deg,transparent 0 18px,rgba(255,255,255,.025) 18px 36px);
+      border-color:#020d13;
+      box-shadow:inset 0 0 0 3px #d8ad58,0 22px 50px rgba(0,0,0,.46);
+    }
+    body[data-aesthetic="moonlight"] .hunt-square,
+    body[data-aesthetic="moonlight"] .photo-award-card,
+    body[data-aesthetic="moonlight"] .meal-idea,
+    body[data-aesthetic="moonlight"] .flight-card{
+      background:#0b2732;
+      color:#f8fcff;
+      border-color:rgba(255,255,255,.12);
+    }
+    body[data-aesthetic="moonlight"] .hunt-square strong,
+    body[data-aesthetic="moonlight"] .meal-idea h3,
+    body[data-aesthetic="moonlight"] .photo-award-card h3,
+    body[data-aesthetic="moonlight"] .flight-route h3{
+      color:#fff;
+    }
+    body[data-aesthetic="moonlight"] .aesthetic-toggle{
+      background:rgba(2,13,20,.62);
+      border-color:rgba(193,225,237,.26);
+    }
+    body[data-aesthetic="moonlight"] .toggle-orbit{
+      background:linear-gradient(145deg,#153d5c,#775b8d);
+      color:#fff;
+    }
+    body[data-aesthetic="moonlight"] .toggle-sun{
+      transform:translateY(-42px);
+      opacity:0;
+    }
+    body[data-aesthetic="moonlight"] .toggle-moon{
+      transform:translateY(0);
+      opacity:1;
+    }
+
+    @media(max-width:760px){
+      .aesthetic-toggle{
+        position:relative;
+        top:auto;
+        right:auto;
+        margin:14px 0 18px;
+        width:max-content;
+      }
+    }
+
 </style>
 
 </head>
@@ -1913,6 +2134,20 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     <div class="hero-backdrop" id="heroBackdrop"></div>
     <div class="hero-shade"></div>
     <div class="hero-inner dynamic-hero-inner">
+
+    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button"
+            aria-label="Switch to moonlight mode" aria-pressed="false">
+      <span class="toggle-orbit" aria-hidden="true">
+        <span class="toggle-sun">☀</span>
+        <span class="toggle-moon">☾</span>
+        <span class="toggle-star">✦</span>
+      </span>
+      <span class="toggle-copy">
+        <small>Island atmosphere</small>
+        <strong id="aestheticToggleLabel">Daylight</strong>
+      </span>
+    </button>
+
       <div class="dynamic-hero-copy">
         <div class="eyebrow" id="heroEyebrow">Maui · September 17–25, 2026</div>
         <h1 id="heroTitle">Our Maui Story</h1>
@@ -2005,20 +2240,21 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 
         <div class="stay-showcase span-12">
           <div class="stay-copy">
-            <span class="pill">Our island home</span>
+            <span class="pill">✦ Home Base · Wailea</span>
             <h2>Eight nights in Wailea</h2>
             <p>Our CoralTree Residence Collection stay gives us a beautiful South Maui home base close to Wailea Beach, Polo Beach and Poʻolenalena Beach—perfect for easy mornings, pool afternoons and sunset walks.</p>
-            <div class="stay-meta">
-              <span>🏡 CoralTree Residence Collection</span>
-              <span>📅 Sep 17–25</span>
+            <div class="stay-meta stay-meta-links">
+              <a href="https://www.coraltreeresidencecollection.com/our-destinations/wailea/" target="_blank" rel="noopener">🏡 Explore CoralTree ↗</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=CoralTree+Residence+Collection+Wailea+Maui" target="_blank" rel="noopener">📍 Open the neighborhood map ↗</a>
+              <a href="https://bookings.coraltreeresidencecollection.com/wailea" target="_blank" rel="noopener">🔑 Browse Wailea residences ↗</a>
+              <span>📅 Sep 17–25 · 8 nights</span>
               <span>🕓 Check-in after 4 PM</span>
-              <span>🌺 8 nights</span>
             </div>
           </div>
         </div>
 
 
-        <section class="mystic-home-base span-12" aria-label="Maui Home Base">
+        <section class="mystic-home-base span-12 home-base-details" aria-label="Maui Home Base details">
           <div class="home-base-content">
             <span class="home-base-kicker">✦ Home Base · Wailea</span>
             <h2>Where the<br>magic lives.</h2>
@@ -4656,7 +4892,7 @@ renderVotes();renderChallenges();
       tab.classList.toggle("active", tab === button);
       tab.setAttribute("aria-selected", tab === button ? "true" : "false");
     });
-    document.querySelectorAll("main section").forEach(function (section) {
+    document.querySelectorAll("main > section").forEach(function (section) {
       section.classList.toggle("active", section === target);
     });
 
@@ -5472,6 +5708,93 @@ renderVotes();renderChallenges();
   if(moon)moon.addEventListener("click",function(){document.body.classList.toggle("moonlit");moon.textContent=document.body.classList.contains("moonlit")?"☀ Daylight":"☾ Moonlight";});
   const jump=document.getElementById("homeJump");
   if(jump)jump.addEventListener("click",function(){location.hash="overview";setTimeout(function(){const h=document.querySelector(".mystic-home-base");if(h)h.scrollIntoView({behavior:"smooth",block:"center"});},80);});
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+
+  function setChapter(id, shouldScroll){
+    var target = document.getElementById(id);
+    if(!target || !target.matches("main > section")) return;
+
+    document.querySelectorAll("main > section").forEach(function(section){
+      section.classList.toggle("active", section.id === id);
+    });
+    document.querySelectorAll(".tabs .tab[data-tab]").forEach(function(tab){
+      var active = tab.dataset.tab === id;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.setAttribute("aria-current", active ? "page" : "false");
+    });
+
+    try{
+      if(typeof updateHero === "function") updateHero(id);
+      if(typeof updateSourceButton === "function") updateSourceButton(id);
+      if(id === "bookings" && typeof renderBookings === "function") renderBookings();
+    }catch(error){
+      console.warn("Optional chapter enhancement skipped:", error);
+    }
+
+    if(location.hash !== "#" + id){
+      history.replaceState(null, "", "#" + id);
+    }
+    if(shouldScroll){
+      window.scrollTo({top:0,behavior:"smooth"});
+    }
+  }
+
+  function initializeNavigation(){
+    var requested = location.hash ? location.hash.slice(1) : "overview";
+    if(!document.getElementById(requested)) requested = "overview";
+    setChapter(requested, false);
+  }
+
+  // Capture phase guarantees the corrected navigation runs before older handlers.
+  document.addEventListener("click", function(event){
+    var tab = event.target.closest(".tabs .tab[data-tab]");
+    if(!tab) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    setChapter(tab.dataset.tab, true);
+  }, true);
+
+  window.addEventListener("hashchange", function(){
+    var id = location.hash ? location.hash.slice(1) : "overview";
+    setChapter(id, false);
+  });
+
+  var body = document.body;
+  var toggle = document.getElementById("aestheticToggle");
+  var label = document.getElementById("aestheticToggleLabel");
+  var stored = localStorage.getItem("maui2026-aesthetic");
+  var initial = stored === "moonlight" ? "moonlight" : "daylight";
+
+  function applyAesthetic(mode){
+    body.dataset.aesthetic = mode;
+    var isMoon = mode === "moonlight";
+    if(toggle){
+      toggle.setAttribute("aria-pressed", isMoon ? "true" : "false");
+      toggle.setAttribute("aria-label", isMoon ? "Switch to daylight mode" : "Switch to moonlight mode");
+    }
+    if(label) label.textContent = isMoon ? "Moonlight" : "Daylight";
+    localStorage.setItem("maui2026-aesthetic", mode);
+  }
+
+  applyAesthetic(initial);
+  if(toggle){
+    toggle.addEventListener("click", function(){
+      applyAesthetic(body.dataset.aesthetic === "moonlight" ? "daylight" : "moonlight");
+    });
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", initializeNavigation, {once:true});
+  }else{
+    initializeNavigation();
+  }
 })();
 </script>
 

@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hawaii 2026 · Maui Girls Trip</title>
+  <meta name="theme-color" content="#061a24">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -1755,6 +1759,150 @@
       .arrival-checklist{grid-template-columns:1fr}
     }
 
+
+/* =========================================================
+   MAUI AFTERGLOW — MAGICAL REDESIGN CONCEPT
+   ========================================================= */
+:root{
+  --night:#061a24;
+  --night-2:#0b2a35;
+  --white:#fffefa;
+  --pearl:#f7f4ed;
+  --gold:#f6cd70;
+  --moon:#fff4c8;
+  --aqua-pop:#73e5df;
+  --coral-pop:#ff8c78;
+  --orchid:#c9a7ff;
+  --deep-shadow:0 28px 80px rgba(0,12,20,.28);
+}
+html{scroll-behavior:smooth;background:var(--night)}
+body{
+  font-family:'DM Sans',sans-serif;
+  color:#102e3b;
+  background:
+    radial-gradient(circle at 15% 5%,rgba(115,229,223,.16),transparent 26rem),
+    radial-gradient(circle at 88% 28%,rgba(201,167,255,.14),transparent 28rem),
+    linear-gradient(180deg,#061a24 0,#0b2a35 22rem,#f7f4ed 44rem,#fffefa 100%);
+}
+h1,h2,h3,.story-quote,.hero-day-number,.guide-title{font-family:'Cormorant Garamond',serif!important}
+body::before,body::after{
+  content:"";position:fixed;pointer-events:none;z-index:9999;border-radius:50%;filter:blur(.1px)
+}
+body::before{width:4px;height:4px;left:7vw;top:13vh;background:#fff;box-shadow:12vw 5vh #fff8,28vw 1vh #fff,41vw 10vh #fff8,62vw 4vh #fff,75vw 13vh #fff8,88vw 5vh #fff,18vw 22vh #fff8,55vw 24vh #fff8,93vw 23vh #fff}
+body::after{width:270px;height:270px;right:-90px;top:170px;background:radial-gradient(circle,#fff8 0,#fff1 45%,transparent 70%);filter:blur(3px)}
+
+.hero{
+  min-height:860px!important;
+  border-radius:0 0 56px 56px!important;
+  box-shadow:0 34px 80px rgba(0,0,0,.42)!important;
+  overflow:hidden;
+}
+.hero::before{
+  background:linear-gradient(90deg,rgba(2,17,25,.94) 0%,rgba(4,25,34,.78) 48%,rgba(5,29,38,.40) 100%)!important
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 76% 18%,rgba(255,244,200,.36),transparent 9rem),linear-gradient(180deg,transparent 72%,#061a24 100%)
+}
+.hero-inner{position:relative;z-index:2;padding-top:72px!important;padding-bottom:118px!important}
+.hero h1{font-size:clamp(5rem,11vw,10.5rem)!important;line-height:.78!important;letter-spacing:-.055em!important;text-shadow:0 8px 40px rgba(0,0,0,.45)}
+.hero .subtitle{font-size:1.35rem!important;color:#fff!important;max-width:760px}
+.hero-eyebrow{background:rgba(255,255,255,.08)!important;backdrop-filter:blur(16px);border-color:rgba(255,255,255,.45)!important}
+.hero-glass-card,.hero-day-card,.hero-verse{
+  background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.07))!important;
+  border:1px solid rgba(255,255,255,.34)!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.18),0 18px 45px rgba(0,0,0,.2)!important;
+  backdrop-filter:blur(22px) saturate(145%)!important
+}
+.hero-glass-card strong{font-size:1.8rem!important;color:#fff!important}
+.hero-mini-label,.experience-kicker{color:var(--gold)!important;letter-spacing:.13em!important}
+.hero-day-number{color:var(--gold)!important;text-shadow:0 0 35px rgba(246,205,112,.28)}
+.hero-actions a,.hero-actions button{box-shadow:0 14px 35px rgba(0,0,0,.25)!important}
+.daily-story-btn{background:linear-gradient(100deg,var(--gold),var(--coral-pop))!important;color:#082533!important}
+.source-link{background:rgba(255,255,255,.08)!important;color:#fff!important;border:1px solid rgba(255,255,255,.55)!important}
+
+.shell{max-width:1500px!important}
+.tabs{
+  margin-top:-62px!important;position:relative;z-index:10;
+  background:rgba(255,255,255,.93)!important;border:1px solid rgba(255,255,255,.9)!important;
+  box-shadow:0 24px 60px rgba(0,18,28,.22)!important;backdrop-filter:blur(26px)!important;
+  padding:16px!important;border-radius:32px!important
+}
+.tab{border-radius:999px!important;padding:13px 18px!important;color:#102b38!important}
+.tab.active{background:linear-gradient(120deg,#0a3442,#245d70)!important;color:#fff!important;box-shadow:0 12px 30px rgba(8,48,63,.28)!important}
+main section{animation:chapterReveal .55s ease both}
+@keyframes chapterReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.card,.games-panel,.meals-panel,.flight-journey,.travel-playground,.page-verse,.arrival-home{
+  background:rgba(255,255,255,.96)!important;
+  border:1px solid #fff!important;
+  box-shadow:0 20px 55px rgba(10,42,52,.12)!important
+}
+.card,.games-panel,.meals-panel,.flight-journey,.travel-playground,.arrival-home{border-radius:30px!important}
+.card h2,.games-panel h2,.meals-panel h2,.flight-journey h2{font-size:clamp(2rem,3vw,3.25rem)!important;color:#092936!important}
+.pill{background:linear-gradient(120deg,#fff0dc,#e9fbf9)!important;color:#9a513d!important;border:1px solid #f3d6bc!important}
+.page-verse{background:linear-gradient(120deg,#071f2a,#123b47)!important;border-left:0!important;color:#fff!important}
+.page-verse blockquote{color:#fff!important;font-size:1.35rem!important}
+.page-verse cite{color:var(--gold)!important}
+
+/* Chapter-specific living palettes */
+body[data-chapter="overview"]{--chapter-accent:#73e5df;--chapter-glow:#c9a7ff}
+body[data-chapter="day-2026-09-17"]{--chapter-accent:#ffd375;--chapter-glow:#ff8c78}
+body[data-chapter="day-2026-09-18"]{--chapter-accent:#76e0c2;--chapter-glow:#63bfe8}
+body[data-chapter="day-2026-09-19"]{--chapter-accent:#ff9f7d;--chapter-glow:#ffd276}
+body[data-chapter="day-2026-09-20"]{--chapter-accent:#f6c85f;--chapter-glow:#d78cff}
+body[data-chapter="day-2026-09-21"]{--chapter-accent:#7edac7;--chapter-glow:#b9e56b}
+body[data-chapter="day-2026-09-22"]{--chapter-accent:#ffb37a;--chapter-glow:#80d6e3}
+body[data-chapter="day-2026-09-23"]{--chapter-accent:#dbb1ff;--chapter-glow:#ff98b6}
+body[data-chapter="day-2026-09-24"]{--chapter-accent:#ffd56a;--chapter-glow:#80c7ef}
+body[data-chapter="day-2026-09-25"]{--chapter-accent:#f0c27b;--chapter-glow:#8799aa}
+body[data-chapter="games"]{--chapter-accent:#ff9d79;--chapter-glow:#79dfda}
+body[data-chapter="meals"]{--chapter-accent:#f4bd64;--chapter-glow:#88c995}
+body[data-chapter="playlist"]{--chapter-accent:#c9a7ff;--chapter-glow:#74dbe4}
+body[data-chapter] .pill{box-shadow:0 0 30px color-mix(in srgb,var(--chapter-accent) 25%,transparent)}
+body[data-chapter] .tab.active{background:linear-gradient(120deg,#072b38,color-mix(in srgb,var(--chapter-accent) 46%,#123b53))!important}
+
+/* Home Base — prominent editorial centerpiece */
+.mystic-home-base{
+  grid-column:1/-1;position:relative;overflow:hidden;
+  min-height:640px;border-radius:38px;padding:46px;color:#fff;
+  background:
+    linear-gradient(90deg,rgba(2,20,29,.95),rgba(3,27,37,.68) 52%,rgba(3,27,37,.24)),
+    url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=92') center/cover;
+  box-shadow:var(--deep-shadow);border:1px solid rgba(255,255,255,.3)
+}
+.mystic-home-base::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 18%,rgba(255,244,200,.32),transparent 12rem);pointer-events:none}
+.home-base-content{position:relative;z-index:2;max-width:760px}
+.home-base-kicker{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem}
+.mystic-home-base h2{font-size:clamp(4rem,8vw,7.8rem);line-height:.82;margin:20px 0 18px;color:#fff;letter-spacing:-.045em}
+.mystic-home-base .home-lede{font-size:1.25rem;line-height:1.7;color:rgba(255,255,255,.88);max-width:650px}
+.home-base-actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.home-base-actions a{padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:800;background:#fff;color:#0a2d3a}
+.home-base-actions a:first-child{background:linear-gradient(100deg,var(--gold),var(--coral-pop))}
+.home-orbit{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+.home-orbit article{padding:15px;border-radius:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(14px)}
+.home-orbit strong{display:block;color:var(--gold);font-size:.75rem;text-transform:uppercase;letter-spacing:.11em}
+.home-orbit span{display:block;margin-top:7px;color:#fff;font-weight:700}
+.home-base-gallery{position:absolute;z-index:2;right:38px;bottom:38px;width:min(43%,570px);display:grid;grid-template-columns:1.25fr .75fr;gap:10px}
+.home-base-gallery figure{margin:0;height:165px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.38);box-shadow:0 18px 45px rgba(0,0,0,.25)}
+.home-base-gallery figure:first-child{grid-row:span 2;height:340px}
+.home-base-gallery img{width:100%;height:100%;object-fit:cover}
+
+/* Magic utility bar */
+.magic-bar{position:fixed;right:22px;bottom:22px;z-index:90;display:flex;gap:9px;padding:9px;border-radius:999px;background:rgba(4,26,35,.9);border:1px solid rgba(255,255,255,.2);box-shadow:0 18px 45px rgba(0,0,0,.3);backdrop-filter:blur(18px)}
+.magic-bar button{border:0;background:transparent;color:#fff;padding:9px 12px;border-radius:999px;font-weight:800;cursor:pointer}
+.magic-bar button:hover{background:rgba(255,255,255,.12)}
+body.moonlit{filter:saturate(.9)}
+body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rgba(7,23,45,.78))!important}
+
+@media(max-width:1000px){
+ .hero{min-height:auto!important}.hero-inner{padding-bottom:95px!important}.hero h1{font-size:clamp(4.5rem,15vw,7rem)!important}
+ .mystic-home-base{padding:30px;padding-bottom:420px}.home-base-gallery{left:30px;right:30px;bottom:30px;width:auto}.home-orbit{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+ body::after{display:none}.tabs{border-radius:24px!important}.home-base-gallery{grid-template-columns:1fr 1fr}.home-base-gallery figure:first-child{grid-column:1/3;height:210px}.home-base-gallery figure{height:130px}.mystic-home-base{padding-bottom:530px}.home-orbit{grid-template-columns:1fr}.magic-bar{left:12px;right:12px;justify-content:center}
+}
+
 </style>
 
 </head>
@@ -1868,6 +2016,30 @@
             </div>
           </div>
         </div>
+
+
+        <section class="mystic-home-base span-12" aria-label="Maui Home Base">
+          <div class="home-base-content">
+            <span class="home-base-kicker">✦ Home Base · Wailea</span>
+            <h2>Where the<br>magic lives.</h2>
+            <p class="home-lede">Our private little world between adventures: lanai coffee, bare feet, groceries in the kitchen, stories after sunset and the feeling that, for eight nights, Maui is home.</p>
+            <div class="home-base-actions">
+              <a href="https://www.coraltreeresidencecollection.com/our-destinations/wailea/" target="_blank" rel="noopener">Enter our Maui home ↗</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=CoralTree+Residence+Collection+Wailea+Maui" target="_blank" rel="noopener">Explore the neighborhood ↗</a>
+            </div>
+            <div class="home-orbit">
+              <article><strong>Morning ritual</strong><span>Coffee on the lanai</span></article>
+              <article><strong>Closest magic</strong><span>Wailea beaches</span></article>
+              <article><strong>Evening ritual</strong><span>Sunset + a daily favorite photo</span></article>
+              <article><strong>Before bed</strong><span>One sentence of gratitude</span></article>
+            </div>
+          </div>
+          <div class="home-base-gallery" aria-label="Wailea mood gallery">
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=90" alt="Elegant tropical residence interior"></figure>
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=700&q=90" alt="Tropical lanai"></figure>
+            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=90" alt="Maui beach water"></figure>
+          </div>
+        </section>
 
         <div class="card span-12">
           <span class="pill">A glimpse of the week</span>
@@ -5268,5 +5440,40 @@ renderVotes();renderChallenges();
 })();
 </script>
 
+
+<div class="magic-bar no-print" aria-label="Visual mood controls">
+  <button type="button" id="sparkleToggle">✦ Sparkle</button>
+  <button type="button" id="moonToggle">☾ Moonlight</button>
+  <button type="button" id="homeJump">⌂ Home Base</button>
+</div>
+
+
+<script>
+(function(){
+  "use strict";
+  function currentChapter(){return location.hash ? location.hash.slice(1) : "overview";}
+  function setChapterMood(){document.body.dataset.chapter=currentChapter();}
+  window.addEventListener("hashchange",setChapterMood);setChapterMood();
+
+  let sparkleOn=true;
+  const sparkleButton=document.getElementById("sparkleToggle");
+  function createSparkle(){
+    if(!sparkleOn)return;
+    const s=document.createElement("span");
+    s.setAttribute("aria-hidden","true");
+    s.style.cssText="position:fixed;z-index:9998;pointer-events:none;color:#fff;font-size:"+(8+Math.random()*12)+"px;left:"+(Math.random()*100)+"vw;top:"+(8+Math.random()*55)+"vh;text-shadow:0 0 10px #fff;opacity:0;transition:1.8s ease";
+    s.textContent=Math.random()>.5?"✦":"·";document.body.appendChild(s);
+    requestAnimationFrame(function(){s.style.opacity=".75";s.style.transform="translateY(-22px) scale(.6)";});
+    setTimeout(function(){s.remove();},1900);
+  }
+  const sparkleTimer=setInterval(createSparkle,700);
+  if(sparkleButton)sparkleButton.addEventListener("click",function(){sparkleOn=!sparkleOn;sparkleButton.textContent=sparkleOn?"✦ Sparkle":"✦ Still";});
+  const moon=document.getElementById("moonToggle");
+  if(moon)moon.addEventListener("click",function(){document.body.classList.toggle("moonlit");moon.textContent=document.body.classList.contains("moonlit")?"☀ Daylight":"☾ Moonlight";});
+  const jump=document.getElementById("homeJump");
+  if(jump)jump.addEventListener("click",function(){location.hash="overview";setTimeout(function(){const h=document.querySelector(".mystic-home-base");if(h)h.scrollIntoView({behavior:"smooth",block:"center"});},80);});
+})();
+</script>
+
 </body>
-</html><a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📚 Read about the meaning of moʻolelo ↗</a>
+</html>

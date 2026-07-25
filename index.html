@@ -1484,6 +1484,218 @@
       .flight-number{text-align:left}
     }
 
+
+    .travel-playground{
+      margin:16px 0 24px;
+      padding:24px;
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 100% 0,rgba(247,191,76,.24),transparent 18rem),
+        linear-gradient(145deg,#fff,#eef8f6);
+      border:1px solid rgba(18,59,83,.12);
+    }
+    .travel-playground h2{margin:8px 0 4px}
+    .travel-fun-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:18px}
+    .travel-photo-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .travel-photo-slot{
+      min-height:210px;border-radius:19px;
+      background:linear-gradient(145deg,#dceceb,#f9e2c5);
+      background-position:center;background-size:cover;
+      border:1px dashed rgba(18,59,83,.28);
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      padding:12px;color:#294e59;font-weight:900;position:relative;overflow:hidden
+    }
+    .travel-photo-slot input{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .travel-game-card{
+      padding:18px;border-radius:20px;background:#173f4d;color:#fff;
+      display:grid;gap:12px
+    }
+    .travel-game-card h3{font-family:Georgia,serif;color:white;margin:0}
+    .travel-game-card p{margin:0;color:rgba(255,255,255,.82);line-height:1.55}
+    .travel-game-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .travel-game-buttons button,.travel-game-buttons a{
+      border:1px solid rgba(255,255,255,.25);border-radius:13px;
+      background:rgba(255,255,255,.11);color:white;text-decoration:none;
+      padding:11px;font-weight:900;text-align:center;cursor:pointer
+    }
+    .travel-prompt{
+      padding:13px;border-radius:14px;background:rgba(255,255,255,.12);
+      min-height:68px;display:flex;align-items:center;line-height:1.45
+    }
+    .journey-score{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .journey-score label{background:#fff;padding:11px;border-radius:14px;text-align:center;color:#244b57;font-weight:900}
+    .journey-score input{width:56px;margin-top:7px;text-align:center;padding:7px;border-radius:9px;border:1px solid #bdd0d2}
+    @media(max-width:850px){
+      .travel-fun-grid{grid-template-columns:1fr}
+      .travel-photo-wall{grid-template-columns:1fr}
+      .travel-photo-slot{min-height:240px}
+    }
+
+
+    .games-v2{display:grid;gap:18px}
+    .games-v2-hero{
+      padding:38px;border-radius:30px;color:#fff;
+      background:
+        linear-gradient(90deg,rgba(5,39,53,.9),rgba(5,39,53,.25)),
+        url("https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=1800&q=92") center/cover
+    }
+    .games-v2-hero h2{font-size:clamp(2.5rem,5vw,5rem);color:#fff;margin:10px 0}
+    .games-v2-hero p{max-width:760px;font-size:1.08rem;line-height:1.65;color:rgba(255,255,255,.9)}
+    .games-dashboard{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .game-stat{padding:20px;border-radius:20px;background:#173f4d;color:white}
+    .game-stat span,.game-stat small{display:block;color:rgba(255,255,255,.75)}
+    .game-stat strong{display:block;font-family:Georgia,serif;font-size:2.7rem;color:#f7cc72;margin:5px 0}
+    .games-panel{padding:25px;border-radius:25px;background:#fff;border:1px solid rgba(18,59,83,.12);box-shadow:0 12px 28px rgba(18,59,83,.07)}
+    .games-panel h2{margin:9px 0 5px}
+    .games-two-column{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .photo-awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+    .photo-award-card{border:1px solid #d6e2e2;border-radius:18px;padding:11px;background:#f8fbfa}
+    .award-photo{
+      height:160px;border-radius:13px;background:linear-gradient(145deg,#d9ecea,#f5d3ad);
+      background-position:center;background-size:cover;display:flex;align-items:center;justify-content:center;
+      text-align:center;position:relative;overflow:hidden;font-weight:900;color:#294e59
+    }
+    .award-photo input{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .photo-award-card h3{font-family:Georgia,serif;margin:10px 0 5px;color:#173f4d}
+    .photo-award-card select,.photo-award-card input[type="text"],
+    .award-form select,.secret-mission-panel select{
+      width:100%;box-sizing:border-box;padding:10px;border:1px solid #cbd8da;border-radius:11px;background:#fff;margin-top:5px
+    }
+    .game-picker-result,.secret-mission,.question-card{
+      min-height:105px;padding:20px;border-radius:18px;background:#f0f7f6;
+      display:flex;align-items:center;font-family:Georgia,serif;font-size:1.22rem;line-height:1.5;
+      color:#244c58;margin:15px 0
+    }
+    .external-games{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+    .external-games a{text-align:center;padding:11px;border-radius:13px;background:#173f4d;color:white;text-decoration:none;font-weight:900}
+    .award-form{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+    .scavenger-v2{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}
+    .scavenger-v2 label{padding:12px;border-radius:13px;background:#f2f8f7}
+    @media(max-width:1000px){.photo-awards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){
+      .games-dashboard,.games-two-column,.scavenger-v2{grid-template-columns:1fr}
+      .photo-awards-grid{grid-template-columns:1fr}
+      .award-form{grid-template-columns:1fr}
+    }
+
+
+    .meals-page{display:grid;gap:18px}
+    .meals-hero{
+      padding:38px;border-radius:30px;color:#fff;
+      background:
+        linear-gradient(90deg,rgba(5,39,53,.88),rgba(5,39,53,.18)),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=92") center/cover
+    }
+    .meals-hero h2{font-size:clamp(2.7rem,5vw,5rem);color:#fff;margin:9px 0}
+    .meals-hero p{max-width:760px;color:rgba(255,255,255,.9);line-height:1.65}
+    .meal-idea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .meal-idea{padding:20px;border-radius:20px;background:#fff;border:1px solid rgba(18,59,83,.11)}
+    .meal-idea span{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#d27361}
+    .meal-idea h3{font-family:Georgia,serif;color:#173f4d;margin:8px 0}
+    .meal-idea p{color:#587078;line-height:1.55;margin:0}
+    .meals-two-column{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .meals-panel{padding:24px;border-radius:24px;background:#fff;border:1px solid rgba(18,59,83,.12)}
+    .meal-add-row{display:grid;grid-template-columns:1fr .42fr auto;gap:8px;margin:15px 0}
+    .meal-add-row input,.meal-add-row select{padding:11px;border:1px solid #c8d7d9;border-radius:12px}
+    .meal-add-row button{border:0;border-radius:12px;padding:0 16px;background:#173f4d;color:white;font-weight:900;cursor:pointer}
+    .grocery-row{grid-template-columns:1fr auto}
+    .meal-plan-list,.grocery-list{display:grid;gap:8px}
+    .meal-plan-item,.grocery-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;border-radius:13px;background:#f1f7f6}
+    .meal-plan-item button,.grocery-item button{border:0;background:transparent;cursor:pointer;font-size:1.05rem}
+    .grocery-item.done span{text-decoration:line-through;opacity:.55}
+    .meal-links{display:grid;gap:8px;margin-top:16px}
+    .meal-links a{text-decoration:none;padding:11px 13px;border-radius:12px;background:#173f4d;color:#fff;font-weight:900;text-align:center}
+    @media(max-width:850px){.meal-idea-grid,.meals-two-column{grid-template-columns:1fr}.meal-add-row{grid-template-columns:1fr}}
+
+
+    .scavenger-board-panel{overflow:hidden}
+    .board-heading{display:flex;justify-content:space-between;gap:22px;align-items:flex-start}
+    .player-key{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .player-key span{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:#f2f7f6;font-weight:900;font-size:.8rem}
+    .player-dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+    .player-dot.trish{background:#ef8f79}
+    .player-dot.denise{background:#f2c35f}
+    .player-dot.lindsay{background:#5fa7b6}
+    .scoreboard-v3{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+    .scoreboard-v3 article{padding:16px;border-radius:18px;background:#173f4d;color:#fff;text-align:center}
+    .scoreboard-v3 span,.scoreboard-v3 small{display:block;color:rgba(255,255,255,.72)}
+    .scoreboard-v3 strong{display:block;font-family:Georgia,serif;font-size:2.1rem;color:#f6d37f;margin:3px 0}
+    .hunt-board{
+      display:grid;
+      grid-template-columns:repeat(10,minmax(105px,1fr));
+      gap:8px;
+      padding:18px;
+      border-radius:26px;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.92),rgba(242,248,247,.95)),
+        repeating-linear-gradient(45deg,transparent 0 18px,rgba(18,59,83,.03) 18px 36px);
+      border:8px solid #173f4d;
+      box-shadow:inset 0 0 0 3px #f4cf7a,0 18px 38px rgba(18,59,83,.16);
+      overflow-x:auto;
+    }
+    .hunt-square{
+      position:relative;
+      min-height:116px;
+      border:1px solid #cddddd;
+      border-radius:16px;
+      background:#fff;
+      color:#173f4d;
+      padding:24px 10px 10px;
+      cursor:pointer;
+      text-align:left;
+      transition:.18s ease;
+    }
+    .hunt-square:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(18,59,83,.12)}
+    .hunt-square strong{display:block;font-family:Georgia,serif;font-size:.98rem;line-height:1.18}
+    .hunt-square small{display:block;margin-top:8px;color:#6a7d83;font-size:.68rem}
+    .hunt-points{
+      position:absolute;top:7px;right:7px;
+      width:25px;height:25px;border-radius:50%;
+      display:grid;place-items:center;
+      background:#173f4d;color:#fff;font-weight:900;font-size:.72rem
+    }
+    .hunt-square.claim-trish{background:linear-gradient(145deg,#ffe3dc,#fff);box-shadow:inset 0 0 0 4px #ef8f79}
+    .hunt-square.claim-denise{background:linear-gradient(145deg,#fff1bd,#fff);box-shadow:inset 0 0 0 4px #f2c35f}
+    .hunt-square.claim-lindsay{background:linear-gradient(145deg,#d9f1f4,#fff);box-shadow:inset 0 0 0 4px #5fa7b6}
+    .hunt-square.claim-trish small::after{content:" · Trish";font-weight:900;color:#b85b48}
+    .hunt-square.claim-denise small::after{content:" · Denise";font-weight:900;color:#8b6b12}
+    .hunt-square.claim-lindsay small::after{content:" · Lindsay";font-weight:900;color:#2b7584}
+    .hunt-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+    .hunt-controls button{border:0;border-radius:999px;padding:11px 15px;background:#173f4d;color:#fff;font-weight:900;cursor:pointer}
+    .hunt-controls span{font-weight:900;color:#526b73}
+    .guide-memory-section{
+      margin-top:22px;padding-top:22px;border-top:1px solid #d8e2e2
+    }
+    .guide-memory-heading{display:flex;align-items:end;justify-content:space-between;gap:16px}
+    .guide-memory-heading h3{font-family:Georgia,serif;color:#173f4d;font-size:1.75rem;margin:8px 0 0}
+    .guide-memory-heading small{color:#7a8c92}
+    .guide-traveler-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .guide-traveler-note{padding:16px;border-radius:18px;background:#f2f8f7}
+    .guide-traveler-note h4{font-family:Georgia,serif;color:#173f4d;font-size:1.25rem;margin:0 0 9px}
+    .guide-traveler-note textarea{
+      width:100%;box-sizing:border-box;resize:vertical;
+      border:1px solid #c8d7d9;border-radius:12px;padding:11px;background:#fff
+    }
+    .guide-photo-add{
+      display:block;margin-top:10px;padding:10px;border-radius:12px;
+      background:#173f4d;color:#fff;text-align:center;font-weight:900;cursor:pointer
+    }
+    .guide-photo-add input{display:none}
+    .guide-photo-preview{
+      min-height:0;margin-top:10px;border-radius:12px;background-size:cover;background-position:center
+    }
+    .guide-photo-preview.has-photo{min-height:150px;border:1px solid #cbd9da}
+    @media(max-width:1100px){
+      .hunt-board{grid-template-columns:repeat(6,minmax(110px,1fr))}
+    }
+    @media(max-width:760px){
+      .board-heading,.hunt-controls,.guide-memory-heading{display:block}
+      .player-key{justify-content:flex-start;margin-top:12px}
+      .scoreboard-v3{grid-template-columns:1fr 1fr}
+      .hunt-board{grid-template-columns:repeat(3,minmax(110px,1fr))}
+      .guide-traveler-grid{grid-template-columns:1fr}
+    }
+
 </style>
 
 </head>
@@ -1553,6 +1765,7 @@
       <a class="tab" data-tab="day-2026-09-24" href="#day-2026-09-24">Thu 24</a>
       <a class="tab" data-tab="day-2026-09-25" href="#day-2026-09-25">Fri 25</a>
       <a class="tab" data-tab="games" href="#games">Games</a>
+      <a class="tab" data-tab="meals" href="#meals">Meals at Home</a>
       <a class="tab" data-tab="playlist" href="#playlist">Playlist</a>
       <a class="tab" data-tab="culture" href="#culture">Island Stories</a>
       <a class="tab" data-tab="ideas" href="#ideas">Ideas</a>
@@ -1660,6 +1873,85 @@
         <blockquote>“The Lord shall preserve thy going out and thy coming in from this time forth.”</blockquote>
         <cite>Psalm 121:8</cite>
       </div>
+
+    
+      <div class="flight-journey">
+        <span class="pill">Flight journey</span>
+        <h2>Boise to Maui</h2>
+        <p class="flight-note">Two Alaska Airlines flights take you from an early Boise departure to a mid-morning Maui arrival. The live buttons open the airline’s current status page, where gates, delays and updated times appear when operational data becomes available.</p>
+        <div class="flight-timeline">
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>782</strong></div>
+            <div class="flight-route">
+              <h3>BOI → PDX</h3>
+              <p><strong>6:00 AM</strong> depart Boise, ID</p>
+              <p><strong>6:20 AM</strong> arrive Portland, OR</p>
+              <p>Scheduled duration: 1 hr 20 min</p>
+              <p class="layover">52-minute connection in Portland</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/782/2026-09-17" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA782" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>479</strong></div>
+            <div class="flight-route">
+              <h3>PDX → OGG</h3>
+              <p><strong>7:12 AM</strong> depart Portland, OR</p>
+              <p><strong>10:21 AM</strong> arrive Maui, HI</p>
+              <p>Scheduled duration: 6 hrs 9 min</p>
+              <p class="layover">Arrive in Maui at 10:21 AM</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/479/2026-09-17" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA479" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="travel-playground">
+        <span class="pill">Travel-day adventure</span>
+        <h2>The Journey to Maui</h2>
+        <p class="flight-note">The flights are the day’s adventure. Collect the little moments between Boise and your first Maui breeze.</p>
+        <div class="travel-fun-grid">
+          <div>
+            <h3 style="font-family:Georgia,serif;color:#173f4d;">Your journey in three pictures</h3>
+            <div class="travel-photo-wall"><label class="travel-photo-slot" data-travel-photo="out-0">
+              <span>📷 Airport send-off<br><small>Click to add a photo</small></span>
+              <input type="file" accept="image/*">
+            </label><label class="travel-photo-slot" data-travel-photo="out-1">
+              <span>📷 First island glimpse<br><small>Click to add a photo</small></span>
+              <input type="file" accept="image/*">
+            </label><label class="travel-photo-slot" data-travel-photo="out-2">
+              <span>📷 We made it!<br><small>Click to add a photo</small></span>
+              <input type="file" accept="image/*">
+            </label></div>
+          </div>
+          <aside class="travel-game-card" data-travel-prompts='["Everyone chooses one snack the others must rate from 1\u201310.", "Take a photo of the best airport outfit.", "Name one thing you are leaving behind and one feeling you want to bring with you.", "Guess the exact minute someone first says, \u201cI can\u2019t believe we\u2019re in Maui.\u201d", "Find something in each airport that matches your trip colors.", "Each person chooses one song for the flight."]'>
+            <span class="hero-mini-label">Play while you travel</span>
+            <h3>Airport & airplane challenge</h3>
+            <div class="travel-prompt">Press “Give us a challenge” when you need something fun.</div>
+            <div class="travel-game-buttons">
+              <button type="button" class="new-travel-prompt">Give us a challenge</button>
+              <a href="https://www.psychologytoday.com/us/blog/in-practice/202001/36-questions-increase-closeness" target="_blank" rel="noopener">Conversation questions ↗</a>
+            </div>
+            <h3 style="margin-top:7px;">Travel-day points</h3>
+            <div class="journey-score">
+              <label>Trish<br><input type="number" value="0" data-score="out-trish"></label>
+              <label>Denise<br><input type="number" value="0" data-score="out-denise"></label>
+              <label>Lindsay<br><input type="number" value="0" data-score="out-lindsay"></label>
+            </div>
+          </aside>
+        </div>
+      </div>
+    
+
+
     
       <div class="grid">
         <div class="card span-12">
@@ -1756,45 +2048,6 @@
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
         <div class="explore-links"><a href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">🌺 Hawaiian culture ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Wailea+Maui" target="_blank" rel="noopener">📍 Explore Wailea ↗</a><a href="https://www.youtube.com/results?search_query=Wailea+Maui+travel" target="_blank" rel="noopener">🎥 Maui arrival inspiration ↗</a><a href="https://open.spotify.com/search/Hawaiian%20music" target="_blank" rel="noopener">🎵 Hawaiian music ↗</a></div>
-      </div>
-    
-      <div class="flight-journey">
-        <span class="pill">Flight journey</span>
-        <h2>Boise to Maui</h2>
-        <p class="flight-note">Two Alaska Airlines flights take you from an early Boise departure to a mid-morning Maui arrival. The live buttons open the airline’s current status page, where gates, delays and updated times appear when operational data becomes available.</p>
-        <div class="flight-timeline">
-          <article class="flight-card">
-            <div class="flight-number"><small>Alaska</small><strong>782</strong></div>
-            <div class="flight-route">
-              <h3>BOI → PDX</h3>
-              <p><strong>6:00 AM</strong> depart Boise, ID</p>
-              <p><strong>6:20 AM</strong> arrive Portland, OR</p>
-              <p>Scheduled duration: 1 hr 20 min</p>
-              <p class="layover">52-minute connection in Portland</p>
-              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
-            </div>
-            <div class="flight-actions">
-              <a href="https://www.alaskaair.com/status/782/2026-09-17" target="_blank" rel="noopener">Live Alaska status ↗</a>
-              <a href="https://www.flightaware.com/live/flight/ASA782" target="_blank" rel="noopener">Track on FlightAware ↗</a>
-            </div>
-          </article>
-        
-          <article class="flight-card">
-            <div class="flight-number"><small>Alaska</small><strong>479</strong></div>
-            <div class="flight-route">
-              <h3>PDX → OGG</h3>
-              <p><strong>7:12 AM</strong> depart Portland, OR</p>
-              <p><strong>10:21 AM</strong> arrive Maui, HI</p>
-              <p>Scheduled duration: 6 hrs 9 min</p>
-              <p class="layover">Arrive in Maui at 10:21 AM</p>
-              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
-            </div>
-            <div class="flight-actions">
-              <a href="https://www.alaskaair.com/status/479/2026-09-17" target="_blank" rel="noopener">Live Alaska status ↗</a>
-              <a href="https://www.flightaware.com/live/flight/ASA479" target="_blank" rel="noopener">Track on FlightAware ↗</a>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -2764,6 +3017,85 @@
         <blockquote>“In every thing give thanks.”</blockquote>
         <cite>1 Thessalonians 5:18</cite>
       </div>
+
+    
+      <div class="flight-journey">
+        <span class="pill">Flight journey</span>
+        <h2>Maui to Boise</h2>
+        <p class="flight-note">An early farewell to Maui, a Seattle connection and an evening arrival home. The live buttons open the airline’s current status page, where gates, delays and updated times appear when operational data becomes available.</p>
+        <div class="flight-timeline">
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>246</strong></div>
+            <div class="flight-route">
+              <h3>OGG → SEA</h3>
+              <p><strong>7:00 AM</strong> depart Kahului, HI</p>
+              <p><strong>3:44 PM</strong> arrive Seattle, WA</p>
+              <p>Scheduled duration: 5 hrs 44 min</p>
+              <p class="layover">2-hour 11-minute connection in Seattle</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/246/2026-09-25" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA246" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        
+          <article class="flight-card">
+            <div class="flight-number"><small>Alaska</small><strong>586</strong></div>
+            <div class="flight-route">
+              <h3>SEA → BOI</h3>
+              <p><strong>5:55 PM</strong> depart Seattle, WA</p>
+              <p><strong>8:25 PM</strong> arrive Boise, ID</p>
+              <p>Scheduled duration: 1 hr 30 min</p>
+              <p class="layover">Home at 8:25 PM</p>
+              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
+            </div>
+            <div class="flight-actions">
+              <a href="https://www.alaskaair.com/status/586/2026-09-25" target="_blank" rel="noopener">Live Alaska status ↗</a>
+              <a href="https://www.flightaware.com/live/flight/ASA586" target="_blank" rel="noopener">Track on FlightAware ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="travel-playground">
+        <span class="pill">Travel-day adventure</span>
+        <h2>The Journey Home</h2>
+        <p class="flight-note">The vacation is not over yet. Use the travel home to gather the ending, laugh about the week and begin the keepsake.</p>
+        <div class="travel-fun-grid">
+          <div>
+            <h3 style="font-family:Georgia,serif;color:#173f4d;">Your journey in three pictures</h3>
+            <div class="travel-photo-wall"><label class="travel-photo-slot" data-travel-photo="home-0">
+              <span>📷 The last look<br><small>Click to add a photo</small></span>
+              <input type="file" accept="image/*">
+            </label><label class="travel-photo-slot" data-travel-photo="home-1">
+              <span>📷 Layover memory<br><small>Click to add a photo</small></span>
+              <input type="file" accept="image/*">
+            </label><label class="travel-photo-slot" data-travel-photo="home-2">
+              <span>📷 Home—but different<br><small>Click to add a photo</small></span>
+              <input type="file" accept="image/*">
+            </label></div>
+          </div>
+          <aside class="travel-game-card" data-travel-prompts='["Each person shares her funniest moment from the trip.", "Choose the photograph most likely to become framed art.", "Name one Maui habit you want to carry into ordinary life.", "Describe the trip using only three words.", "Vote on the official trip anthem.", "Write one sentence to read before the next family trip."]'>
+            <span class="hero-mini-label">Play while you travel</span>
+            <h3>Airport & airplane challenge</h3>
+            <div class="travel-prompt">Press “Give us a challenge” when you need something fun.</div>
+            <div class="travel-game-buttons">
+              <button type="button" class="new-travel-prompt">Give us a challenge</button>
+              <a href="https://www.psychologytoday.com/us/blog/in-practice/202001/36-questions-increase-closeness" target="_blank" rel="noopener">Conversation questions ↗</a>
+            </div>
+            <h3 style="margin-top:7px;">Travel-day points</h3>
+            <div class="journey-score">
+              <label>Trish<br><input type="number" value="0" data-score="home-trish"></label>
+              <label>Denise<br><input type="number" value="0" data-score="home-denise"></label>
+              <label>Lindsay<br><input type="number" value="0" data-score="home-lindsay"></label>
+            </div>
+          </aside>
+        </div>
+      </div>
+    
+
+
     
       <div class="grid">
         <div class="card span-12">
@@ -2890,140 +3222,553 @@
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
         <div class="explore-links"><a href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📖 Moʻolelo and memory ↗</a><a href="https://www.youtube.com/results?search_query=how+to+make+a+family+travel+highlight+video" target="_blank" rel="noopener">🎥 Create a travel highlight reel ↗</a><a href="https://www.google.com/search?q=beautiful+family+travel+photo+book+ideas" target="_blank" rel="noopener">📸 Travel photo book ideas ↗</a><a href="https://open.spotify.com/search/Maui" target="_blank" rel="noopener">🎵 Songs that feel like Maui ↗</a></div>
       </div>
+    </section>
+
+
     
-      <div class="flight-journey">
-        <span class="pill">Flight journey</span>
-        <h2>Maui to Boise</h2>
-        <p class="flight-note">An early farewell to Maui, a Seattle connection and an evening arrival home. The live buttons open the airline’s current status page, where gates, delays and updated times appear when operational data becomes available.</p>
-        <div class="flight-timeline">
-          <article class="flight-card">
-            <div class="flight-number"><small>Alaska</small><strong>246</strong></div>
-            <div class="flight-route">
-              <h3>OGG → SEA</h3>
-              <p><strong>7:00 AM</strong> depart Kahului, HI</p>
-              <p><strong>3:44 PM</strong> arrive Seattle, WA</p>
-              <p>Scheduled duration: 5 hrs 44 min</p>
-              <p class="layover">2-hour 11-minute connection in Seattle</p>
-              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
-            </div>
-            <div class="flight-actions">
-              <a href="https://www.alaskaair.com/status/246/2026-09-25" target="_blank" rel="noopener">Live Alaska status ↗</a>
-              <a href="https://www.flightaware.com/live/flight/ASA246" target="_blank" rel="noopener">Track on FlightAware ↗</a>
-            </div>
-          </article>
+    
+<section id="games">
+  <div class="page-verse">
+    <blockquote>“A merry heart doeth good like a medicine.”</blockquote>
+    <cite>Proverbs 17:22</cite>
+  </div>
+
+  <div class="games-v2">
+    <header class="games-v2-hero">
+      <span class="pill">Use throughout the entire trip</span>
+      <h2>The Maui Games</h2>
+      <p>Photo championships, evening games, secret missions, conversation starters and ridiculous awards. The point is not really to win—it is to create stories.</p>
+    </header>
+
+    <div class="games-dashboard">
+      <article class="game-stat"><span>Photo categories</span><strong>8</strong><small>Choose winners after the trip</small></article>
+      <article class="game-stat"><span>Evening games</span><strong>6</strong><small>Low-effort fun at the condo</small></article>
+      <article class="game-stat"><span>Secret missions</span><strong>∞</strong><small>Draw a new one anytime</small></article>
+    </div>
+
+    
+    <section class="games-panel scavenger-board-panel">
+      <div class="board-heading">
+        <div>
+          <span class="pill">Whole-trip competition</span>
+          <h2>The Great Maui Scavenger Hunt</h2>
+          <p class="muted">Claim a square when you find it. Tap once for Trish, twice for Denise, three times for Lindsay, and again to clear it. Each square is worth the number of points shown.</p>
+        </div>
+        <div class="player-key">
+          <span><i class="player-dot trish"></i> Trish</span>
+          <span><i class="player-dot denise"></i> Denise</span>
+          <span><i class="player-dot lindsay"></i> Lindsay</span>
+        </div>
+      </div>
+
+      <div class="scoreboard-v3">
+        <article><span>Trish</span><strong id="huntScoreTrish">0</strong><small>points</small></article>
+        <article><span>Denise</span><strong id="huntScoreDenise">0</strong><small>points</small></article>
+        <article><span>Lindsay</span><strong id="huntScoreLindsay">0</strong><small>points</small></article>
+        <article><span>Found</span><strong id="huntFoundCount">0</strong><small>of 59</small></article>
+      </div>
+
+      <div class="hunt-board">
         
-          <article class="flight-card">
-            <div class="flight-number"><small>Alaska</small><strong>586</strong></div>
-            <div class="flight-route">
-              <h3>SEA → BOI</h3>
-              <p><strong>5:55 PM</strong> depart Seattle, WA</p>
-              <p><strong>8:25 PM</strong> arrive Boise, ID</p>
-              <p>Scheduled duration: 1 hr 30 min</p>
-              <p class="layover">Home at 8:25 PM</p>
-              <span class="live-status-badge"><span class="live-dot"></span> Live details open on Alaska</span>
-            </div>
-            <div class="flight-actions">
-              <a href="https://www.alaskaair.com/status/586/2026-09-25" target="_blank" rel="noopener">Live Alaska status ↗</a>
-              <a href="https://www.flightaware.com/live/flight/ASA586" target="_blank" rel="noopener">Track on FlightAware ↗</a>
-            </div>
-          </article>
-        </div>
+      <button type="button" class="hunt-square" data-hunt-id="0" data-points="3" data-category="nature">
+        <span class="hunt-points">3</span>
+        <strong>Rainbow</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="1" data-points="1" data-category="nature">
+        <span class="hunt-points">1</span>
+        <strong>Perfect plumeria</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="2" data-points="2" data-category="wildlife">
+        <span class="hunt-points">2</span>
+        <strong>Gecko</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="3" data-points="5" data-category="wildlife">
+        <span class="hunt-points">5</span>
+        <strong>Sea turtle</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="4" data-points="8" data-category="wildlife">
+        <span class="hunt-points">8</span>
+        <strong>Monk seal</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="5" data-points="10" data-category="wildlife">
+        <span class="hunt-points">10</span>
+        <strong>Humpback whale</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="6" data-points="2" data-category="wildlife">
+        <span class="hunt-points">2</span>
+        <strong>Rooster in an unexpected place</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="7" data-points="3" data-category="action">
+        <span class="hunt-points">3</span>
+        <strong>Surfer catching a wave</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="8" data-points="2" data-category="action">
+        <span class="hunt-points">2</span>
+        <strong>Paddleboarder</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="9" data-points="3" data-category="culture">
+        <span class="hunt-points">3</span>
+        <strong>Outrigger canoe</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="10" data-points="3" data-category="culture">
+        <span class="hunt-points">3</span>
+        <strong>Hula performance</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="11" data-points="2" data-category="culture">
+        <span class="hunt-points">2</span>
+        <strong>Lei being given</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="12" data-points="1" data-category="culture">
+        <span class="hunt-points">1</span>
+        <strong>Hawaiian word on a sign</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="13" data-points="3" data-category="culture">
+        <span class="hunt-points">3</span>
+        <strong>Historic marker</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="14" data-points="4" data-category="culture">
+        <span class="hunt-points">4</span>
+        <strong>Local artisan at work</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="15" data-points="2" data-category="food">
+        <span class="hunt-points">2</span>
+        <strong>Shave ice</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="16" data-points="1" data-category="food">
+        <span class="hunt-points">1</span>
+        <strong>Fresh pineapple</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="17" data-points="2" data-category="food">
+        <span class="hunt-points">2</span>
+        <strong>Lilikoi</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="18" data-points="2" data-category="food">
+        <span class="hunt-points">2</span>
+        <strong>Poke</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="19" data-points="2" data-category="food">
+        <span class="hunt-points">2</span>
+        <strong>Spam musubi</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="20" data-points="1" data-category="food">
+        <span class="hunt-points">1</span>
+        <strong>Macadamia nuts</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="21" data-points="2" data-category="food">
+        <span class="hunt-points">2</span>
+        <strong>Beautiful breakfast</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="22" data-points="3" data-category="food">
+        <span class="hunt-points">3</span>
+        <strong>Best plated dinner</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="23" data-points="2" data-category="food">
+        <span class="hunt-points">2</span>
+        <strong>Something cooked at the condo</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="24" data-points="4" data-category="light">
+        <span class="hunt-points">4</span>
+        <strong>Sunrise</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="25" data-points="3" data-category="light">
+        <span class="hunt-points">3</span>
+        <strong>Sunset</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="26" data-points="4" data-category="light">
+        <span class="hunt-points">4</span>
+        <strong>Golden-hour silhouette</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="27" data-points="4" data-category="light">
+        <span class="hunt-points">4</span>
+        <strong>Moon over Maui</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="28" data-points="3" data-category="light">
+        <span class="hunt-points">3</span>
+        <strong>Stars from the lanai</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="29" data-points="3" data-category="nature">
+        <span class="hunt-points">3</span>
+        <strong>Clouds wrapping a mountain</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="30" data-points="5" data-category="nature">
+        <span class="hunt-points">5</span>
+        <strong>Waterfall</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="31" data-points="6" data-category="nature">
+        <span class="hunt-points">6</span>
+        <strong>Black sand</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="32" data-points="2" data-category="nature">
+        <span class="hunt-points">2</span>
+        <strong>Lava rock</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="33" data-points="3" data-category="nature">
+        <span class="hunt-points">3</span>
+        <strong>Palm-tree reflection</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="34" data-points="3" data-category="nature">
+        <span class="hunt-points">3</span>
+        <strong>Wave splash frozen in motion</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="35" data-points="5" data-category="family">
+        <span class="hunt-points">5</span>
+        <strong>All three of us laughing</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="36" data-points="4" data-category="family">
+        <span class="hunt-points">4</span>
+        <strong>Matching outfits by accident</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="37" data-points="5" data-category="family">
+        <span class="hunt-points">5</span>
+        <strong>Mom smiling at the ocean</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="38" data-points="3" data-category="family">
+        <span class="hunt-points">3</span>
+        <strong>Sister selfie</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="39" data-points="4" data-category="family">
+        <span class="hunt-points">4</span>
+        <strong>A candid nobody posed for</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="40" data-points="2" data-category="family">
+        <span class="hunt-points">2</span>
+        <strong>Best vacation outfit</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="41" data-points="1" data-category="family">
+        <span class="hunt-points">1</span>
+        <strong>Someone barefoot</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="42" data-points="3" data-category="family">
+        <span class="hunt-points">3</span>
+        <strong>A toast together</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="43" data-points="4" data-category="funny">
+        <span class="hunt-points">4</span>
+        <strong>A scenic wrong turn</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="44" data-points="2" data-category="funny">
+        <span class="hunt-points">2</span>
+        <strong>A ridiculous souvenir</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="45" data-points="2" data-category="funny">
+        <span class="hunt-points">2</span>
+        <strong>Someone saying 'one more picture'</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="46" data-points="2" data-category="funny">
+        <span class="hunt-points">2</span>
+        <strong>A sign that makes us laugh</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="47" data-points="3" data-category="funny">
+        <span class="hunt-points">3</span>
+        <strong>A photo bomb</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="48" data-points="5" data-category="heart">
+        <span class="hunt-points">5</span>
+        <strong>A tiny act of kindness</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="49" data-points="3" data-category="heart">
+        <span class="hunt-points">3</span>
+        <strong>Something that feels peaceful</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="50" data-points="4" data-category="heart">
+        <span class="hunt-points">4</span>
+        <strong>A moment of gratitude</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="51" data-points="2" data-category="heart">
+        <span class="hunt-points">2</span>
+        <strong>Something that reminds us of home</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="52" data-points="5" data-category="heart">
+        <span class="hunt-points">5</span>
+        <strong>Something we want to bring into everyday life</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="53" data-points="4" data-category="details">
+        <span class="hunt-points">4</span>
+        <strong>Hidden heart shape</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="54" data-points="4" data-category="details">
+        <span class="hunt-points">4</span>
+        <strong>Something in all three trip colors</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="55" data-points="2" data-category="details">
+        <span class="hunt-points">2</span>
+        <strong>A beautiful door or window</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="56" data-points="1" data-category="details">
+        <span class="hunt-points">1</span>
+        <strong>Interesting texture</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="57" data-points="4" data-category="details">
+        <span class="hunt-points">4</span>
+        <strong>A detail nobody else noticed</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      <button type="button" class="hunt-square" data-hunt-id="58" data-points="5" data-category="details">
+        <span class="hunt-points">5</span>
+        <strong>A perfect postcard view</strong>
+        <small>Tap to claim</small>
+      </button>
+    
+      </div>
+
+      <div class="hunt-controls">
+        <button type="button" id="clearHuntBoard">Reset board</button>
+        <span id="huntLeader">The board is wide open.</span>
       </div>
     </section>
 
-
-    
-    <section id="games">
-      <div class="page-verse">
-        <blockquote>“A merry heart doeth good like a medicine.”</blockquote>
-        <cite>Proverbs 17:22</cite>
-      </div>
-    
-      <div class="grid">
-        <div class="editorial-intro span-12 games-hero">
-          <div class="copy">
-            <span class="pill">A little friendly competition</span>
-            <h2>The Maui Games</h2>
-            <p>Take the pictures, collect the tiny moments, vote dramatically, and create the kind of stories that only the three of you will fully understand.</p>
-          </div>
-        </div>
-
-        <div class="card span-12">
-          <span class="pill">Signature challenge</span>
-          <h2 style="margin-top:12px;">The Great Sunset Showdown</h2>
-          <p class="muted">Each person uploads one favorite sunset. After the trip, vote for the photograph that best captures how Maui felt—not merely the technically perfect picture.</p>
-          <div class="sunset-game-grid">
-            <div class="sunset-entry" data-player="trish">
-              <div class="sunset-preview" id="sunset-preview-trish"><span>Trish’s sunset</span></div>
-              <label class="optional-link file-game-label">Choose Trish’s photo<input type="file" accept="image/*" class="sunset-input" data-player="trish"></label>
-              <label>Title or caption<input class="game-input" id="sunset-caption-trish" placeholder="Golden hour magic"></label>
-              <button class="vote-button" type="button" data-vote="trish">Vote for Trish <span id="votes-trish">0</span></button>
-            </div>
-            <div class="sunset-entry" data-player="denise">
-              <div class="sunset-preview" id="sunset-preview-denise"><span>Denise’s sunset</span></div>
-              <label class="optional-link file-game-label">Choose Denise’s photo<input type="file" accept="image/*" class="sunset-input" data-player="denise"></label>
-              <label>Title or caption<input class="game-input" id="sunset-caption-denise" placeholder="The sky put on a show"></label>
-              <button class="vote-button" type="button" data-vote="denise">Vote for Denise <span id="votes-denise">0</span></button>
-            </div>
-            <div class="sunset-entry" data-player="lindsay">
-              <div class="sunset-preview" id="sunset-preview-lindsay"><span>Lindsay’s sunset</span></div>
-              <label class="optional-link file-game-label">Choose Lindsay’s photo<input type="file" accept="image/*" class="sunset-input" data-player="lindsay"></label>
-              <label>Title or caption<input class="game-input" id="sunset-caption-lindsay" placeholder="One last ray of light"></label>
-              <button class="vote-button" type="button" data-vote="lindsay">Vote for Lindsay <span id="votes-lindsay">0</span></button>
-            </div>
-          </div>
-          <div class="winner-banner" id="sunsetWinner">No votes yet. The crown is still available. 👑</div>
-        </div>
-
-        <div class="card span-7">
-          <span class="pill">Photo scavenger hunt</span>
-          <h2 style="margin-top:12px;">Find Maui</h2>
-          <div class="challenge-list" id="challengeList">
-            <label><input type="checkbox" data-challenge="rainbow"> A full or partial rainbow</label>
-            <label><input type="checkbox" data-challenge="plumeria"> A perfect plumeria</label>
-            <label><input type="checkbox" data-challenge="gecko"> A tiny gecko</label>
-            <label><input type="checkbox" data-challenge="pineapple"> Fresh pineapple or lilikoi</label>
-            <label><input type="checkbox" data-challenge="surfer"> A surfer catching a wave</label>
-            <label><input type="checkbox" data-challenge="three"> All three of us laughing</label>
-            <label><input type="checkbox" data-challenge="reflection"> A reflection in water</label>
-            <label><input type="checkbox" data-challenge="aloha"> The word “aloha” somewhere unexpected</label>
-            <label><input type="checkbox" data-challenge="golden"> A golden-hour silhouette</label>
-            <label><input type="checkbox" data-challenge="detail"> A beautiful detail nobody else noticed</label>
-          </div>
-          <div class="game-progress"><div id="challengeProgress"></div></div>
-          <p class="muted" id="challengeProgressText">0 of 10 found</p>
-        </div>
-
-        <div class="card span-5">
-          <span class="pill">Daily superlatives</span>
-          <h2 style="margin-top:12px;">And the award goes to…</h2>
-          <label>Best dressed<select class="game-select" data-award="dressed"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
-          <label>Funniest moment<select class="game-select" data-award="funniest"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
-          <label>Best food choice<select class="game-select" data-award="food"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
-          <label>Most likely to say “one more picture”<select class="game-select" data-award="picture"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
-          <label>Most adventurous moment<select class="game-select" data-award="adventure"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
-        </div>
-
-        <div class="card span-12">
-          <span class="pill">Tiny memories</span>
-          <h2 style="margin-top:12px;">Maui Bingo</h2>
-          <div class="bingo-grid" id="mauiBingo">
-            <button type="button" data-bingo="lei">Receive or spot a lei</button>
-            <button type="button" data-bingo="shaveice">Eat shave ice</button>
-            <button type="button" data-bingo="sunrise">Wake before sunrise</button>
-            <button type="button" data-bingo="wrongturn">Take a scenic wrong turn</button>
-            <button type="button" data-bingo="free">FREE<br><small>We made it!</small></button>
-            <button type="button" data-bingo="localword">Learn a Hawaiian word</button>
-            <button type="button" data-bingo="matching">Accidentally coordinate outfits</button>
-            <button type="button" data-bingo="dessert">Order dessert to share</button>
-            <button type="button" data-bingo="tears">Happy tears or goosebumps</button>
-          </div>
-        </div>
-      </div>
+<section class="games-panel">
+      <span class="pill">The Maui Photo Awards</span>
+      <h2>Best picture of…</h2>
+      <p class="muted">Each person can upload an entry for a category. The photos are displayed for this browser session; captions and winners save locally.</p>
+      <div class="photo-awards-grid" id="photoAwards"></div>
     </section>
 
+    <div class="games-two-column">
+      <section class="games-panel">
+        <span class="pill">Tonight’s game</span>
+        <h2>What should we play?</h2>
+        <div class="game-picker-result" id="gamePickerResult">
+          Press the button and let the website decide.
+        </div>
+        <button class="daily-story-btn" id="pickEveningGame" type="button">🎲 Pick tonight’s game</button>
+        <div class="external-games">
+          <a href="https://www.headsupplay.com/" target="_blank" rel="noopener">Heads Up! ↗</a>
+          <a href="https://skribbl.io/" target="_blank" rel="noopener">Skribbl drawing game ↗</a>
+          <a href="https://www.geoguessr.com/" target="_blank" rel="noopener">GeoGuessr ↗</a>
+          <a href="https://kahoot.it/" target="_blank" rel="noopener">Kahoot ↗</a>
+        </div>
+      </section>
 
-    <section id="playlist">
+      <section class="games-panel secret-mission-panel">
+        <span class="pill">Keep it secret until dinner</span>
+        <h2>Your mission</h2>
+        <label>Who needs a mission?
+          <select id="missionPerson">
+            <option>Trish</option><option>Denise</option><option>Lindsay</option>
+          </select>
+        </label>
+        <div class="secret-mission" id="secretMission">Choose a person and draw a mission.</div>
+        <button class="daily-story-btn" id="drawMission" type="button">🤫 Draw a secret mission</button>
+      </section>
+    </div>
+
+    <div class="games-two-column">
+      <section class="games-panel">
+        <span class="pill">20 Questions: Maui edition</span>
+        <h2>Ask something memorable</h2>
+        <div class="question-card" id="questionCard">What is one tiny detail you hope you never forget?</div>
+        <button class="daily-story-btn" id="newQuestion" type="button">💬 Another question</button>
+      </section>
+
+      <section class="games-panel">
+        <span class="pill">Daily awards</span>
+        <h2>And the award goes to…</h2>
+        <div class="award-form">
+          <label>Best dressed<select data-award-v2="dressed"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Funniest moment<select data-award-v2="funniest"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Best food choice<select data-award-v2="food"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Best candid<select data-award-v2="candid"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>Most joyful<select data-award-v2="joy"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+          <label>MVP of the day<select data-award-v2="mvp"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
+        </div>
+      </section>
+    </div>
+
+    <section class="games-panel">
+      <span class="pill">Maui scavenger hunt</span>
+      <h2>Find it together</h2>
+      <div class="scavenger-v2" id="scavengerV2">
+        <label><input type="checkbox" data-find="rainbow"> A rainbow</label>
+        <label><input type="checkbox" data-find="plumeria"> A perfect plumeria</label>
+        <label><input type="checkbox" data-find="gecko"> A gecko</label>
+        <label><input type="checkbox" data-find="surfer"> A surfer catching a wave</label>
+        <label><input type="checkbox" data-find="three-laughing"> All three of us laughing</label>
+        <label><input type="checkbox" data-find="wildlife"> Wildlife in the wild</label>
+        <label><input type="checkbox" data-find="local-food"> A new local food</label>
+        <label><input type="checkbox" data-find="aloha"> “Aloha” somewhere unexpected</label>
+        <label><input type="checkbox" data-find="sunrise"> A sunrise photo</label>
+        <label><input type="checkbox" data-find="silhouette"> A golden-hour silhouette</label>
+        <label><input type="checkbox" data-find="matching"> Accidental matching outfits</label>
+        <label><input type="checkbox" data-find="kindness"> A beautiful act of kindness</label>
+      </div>
+      <div class="game-progress"><div id="scavengerV2Progress"></div></div>
+      <p class="muted" id="scavengerV2Text">0 of 12 found</p>
+    </section>
+  </div>
+</section>
+
+
+
+    
+<section id="meals">
+  <div class="page-verse">
+    <blockquote>“They did eat their meat with gladness and singleness of heart.”</blockquote>
+    <cite>Acts 2:46</cite>
+  </div>
+
+  <div class="meals-page">
+    <header class="meals-hero">
+      <span class="pill">Breakfasts, easy dinners & condo nights</span>
+      <h2>Meals at Home</h2>
+      <p>Not every Maui memory needs a reservation. Some of the sweetest evenings may be bare feet, a beautiful plate, a glass of something cold and dinner together at the condo.</p>
+    </header>
+
+    <div class="meal-idea-grid">
+      <article class="meal-idea"><span>Breakfast</span><h3>Tropical yogurt bar</h3><p>Greek yogurt, granola, pineapple, mango, berries, coconut and macadamia nuts.</p></article>
+      <article class="meal-idea"><span>Breakfast</span><h3>Hawaiian French toast</h3><p>Sweet bread, eggs, cinnamon and fresh fruit with coffee on the lanai.</p></article>
+      <article class="meal-idea"><span>Easy dinner</span><h3>Fresh fish tacos</h3><p>Local fish, cabbage slaw, avocado, lime crema and mango salsa.</p></article>
+      <article class="meal-idea"><span>Easy dinner</span><h3>Teriyaki chicken bowls</h3><p>Rice, grilled chicken, pineapple, cucumber, edamame and sesame.</p></article>
+      <article class="meal-idea"><span>Lanai dinner</span><h3>Garlic shrimp & rice</h3><p>Buttery garlic shrimp, rice, a simple salad and fresh lime.</p></article>
+      <article class="meal-idea"><span>Low-effort night</span><h3>Island snack board</h3><p>Poke, crackers, cheese, fruit, vegetables, dips and something sweet.</p></article>
+    </div>
+
+    <div class="meals-two-column">
+      <section class="meals-panel">
+        <span class="pill">Our actual plan</span>
+        <h2>Meals we want to make</h2>
+        <div class="meal-add-row">
+          <input id="mealName" placeholder="Example: fish tacos">
+          <select id="mealType"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack / drinks</option></select>
+          <button id="addMeal" type="button">Add</button>
+        </div>
+        <div id="mealPlanList" class="meal-plan-list"></div>
+      </section>
+
+      <section class="meals-panel">
+        <span class="pill">Shopping list</span>
+        <h2>Condo groceries</h2>
+        <div class="meal-add-row grocery-row">
+          <input id="groceryItem" placeholder="Add an ingredient">
+          <button id="addGrocery" type="button">Add</button>
+        </div>
+        <div id="groceryList" class="grocery-list"></div>
+        <div class="meal-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=grocery+store+near+Wailea+Maui" target="_blank" rel="noopener">Groceries near Wailea ↗</a>
+          <a href="https://www.google.com/search?q=Maui+farmers+market+schedule" target="_blank" rel="noopener">Maui farmers markets ↗</a>
+          <a href="https://www.google.com/search?q=easy+Hawaiian+vacation+rental+recipes" target="_blank" rel="noopener">More condo meal ideas ↗</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section id="playlist">
       <div class="page-verse">
         <blockquote>“Make a joyful noise unto the Lord… come before his presence with singing.”</blockquote>
         <cite>Psalm 100:1–2</cite>
@@ -3819,6 +4564,49 @@ renderVotes();renderChallenges();
           <h3>A question worth carrying</h3>
           <p id="guideReflect"></p>
         </section>
+        
+        <div class="guide-memory-section">
+          <div class="guide-memory-heading">
+            <div>
+              <span class="pill">Make this moment yours</span>
+              <h3>Our notes & pictures</h3>
+            </div>
+            <small>Saved in this browser</small>
+          </div>
+
+          <div class="guide-traveler-grid">
+            <article class="guide-traveler-note">
+              <h4>Trish</h4>
+              <textarea id="guideNoteTrish" rows="5" placeholder="What did you notice, feel, learn or want to remember?"></textarea>
+              <label class="guide-photo-add">
+                <span>＋ Add Trish’s picture</span>
+                <input type="file" accept="image/*" data-guide-photo-person="trish">
+              </label>
+              <div class="guide-photo-preview" id="guidePhotoTrish"></div>
+            </article>
+
+            <article class="guide-traveler-note">
+              <h4>Denise</h4>
+              <textarea id="guideNoteDenise" rows="5" placeholder="What made this moment special?"></textarea>
+              <label class="guide-photo-add">
+                <span>＋ Add Denise’s picture</span>
+                <input type="file" accept="image/*" data-guide-photo-person="denise">
+              </label>
+              <div class="guide-photo-preview" id="guidePhotoDenise"></div>
+            </article>
+
+            <article class="guide-traveler-note">
+              <h4>Lindsay</h4>
+              <textarea id="guideNoteLindsay" rows="5" placeholder="What would future-you want to remember?"></textarea>
+              <label class="guide-photo-add">
+                <span>＋ Add Lindsay’s picture</span>
+                <input type="file" accept="image/*" data-guide-photo-person="lindsay">
+              </label>
+              <div class="guide-photo-preview" id="guidePhotoLindsay"></div>
+            </article>
+          </div>
+        </div>
+
         <div class="guide-link-section">
           <h3>Keep exploring</h3>
           <div class="guide-link-grid" id="guideLinks"></div>
@@ -4053,6 +4841,338 @@ renderVotes();renderChallenges();
   window.addEventListener("hashchange", syncVerse);
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", syncVerse, {once:true});
   else syncVerse();
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+
+  // Dynamic source button
+  const chapterSources = {"overview": ["Explore Hawaiian culture", "https://www.gohawaii.com/hawaiian-culture"], "day-2026-09-17": ["Boise → Maui travel guide", "https://www.google.com/travel/flights"], "day-2026-09-18": ["Discover Wailea", "https://www.gohawaii.com/islands/maui/regions/south-maui/wailea"], "day-2026-09-19": ["Early Hawaiian voyagers", "https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm"], "day-2026-09-20": ["Hawaiian moʻolelo", "https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm"], "day-2026-09-21": ["Mālama Hawaiʻi", "https://www.gohawaii.com/malama"], "day-2026-09-22": ["Maui from mountain to sea", "https://www.nps.gov/hale/learn/historyculture/archeology.htm"], "day-2026-09-23": ["Maui agricultural history", "https://www.sugarmuseum.com/"], "day-2026-09-24": ["Haleakalā nature stories", "https://www.nps.gov/hale/learn/historyculture/nature-mo-olelo.htm"], "day-2026-09-25": ["Track the journey home", "https://www.alaskaair.com/flightstatus"], "games": ["Find more family travel games", "https://www.google.com/search?q=family+vacation+games+for+adults"], "meals": ["Maui farmers markets", "https://www.google.com/search?q=Maui+farmers+markets"], "playlist": ["Browse Maui music", "https://music.apple.com/us/search?term=Maui"], "culture": ["Explore Maui history", "https://www.nps.gov/hale/learn/historyculture/index.htm"], "ideas": ["Explore things to do on Maui", "https://www.gohawaii.com/islands/maui/things-to-do"], "bookings": ["Open Google Travel", "https://www.google.com/travel/"], "packing": ["Hawaiʻi packing guidance", "https://www.gohawaii.com/trip-planning/packing"], "share": ["Our Maui Story", "https://trishajo.github.io/Hawaii2026/"]};
+  function updateSourceButton(id){
+    const source = chapterSources[id] || chapterSources.overview;
+    const a = document.getElementById("heroSource");
+    if(a){
+      a.href = source[1];
+      a.textContent = "📚 " + source[0] + " ↗";
+    }
+  }
+  function chapterId(){ return location.hash ? location.hash.slice(1) : "overview"; }
+  document.addEventListener("click", function(e){
+    const tab = e.target.closest(".tabs .tab");
+    if(tab) updateSourceButton((tab.getAttribute("href") || "#overview").slice(1));
+  }, true);
+  window.addEventListener("hashchange", function(){ updateSourceButton(chapterId()); });
+  updateSourceButton(chapterId());
+
+  // Travel-day photos and games
+  document.querySelectorAll(".travel-photo-slot input").forEach(function(input){
+    input.addEventListener("change", function(){
+      const file = input.files && input.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = function(){
+        const slot = input.closest(".travel-photo-slot");
+        slot.style.backgroundImage = 'url("' + reader.result + '")';
+        const span = slot.querySelector("span");
+        if(span) span.style.display = "none";
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+  document.querySelectorAll(".new-travel-prompt").forEach(function(button){
+    button.addEventListener("click", function(){
+      const card = button.closest(".travel-game-card");
+      const prompts = JSON.parse(card.dataset.travelPrompts || "[]");
+      const result = card.querySelector(".travel-prompt");
+      if(prompts.length) result.textContent = prompts[Math.floor(Math.random()*prompts.length)];
+    });
+  });
+  const travelScoreKey = "maui2026-travel-scores";
+  let travelScores = {};
+  try{ travelScores = JSON.parse(localStorage.getItem(travelScoreKey) || "{}"); }catch(e){}
+  document.querySelectorAll("[data-score]").forEach(function(input){
+    input.value = travelScores[input.dataset.score] || 0;
+    input.addEventListener("input", function(){
+      travelScores[input.dataset.score] = input.value;
+      localStorage.setItem(travelScoreKey, JSON.stringify(travelScores));
+    });
+  });
+
+  // Photo awards
+  const photoCategories = ["Nature", "Food", "Sunset", "Sunrise", "Wildlife", "Best Candid", "Best Portrait", "Funniest Photo"];
+  const awardsRoot = document.getElementById("photoAwards");
+  const gamesKey = "maui2026-games-v2";
+  let gamesState = {captions:{}, winners:{}, awards:{}, finds:{}};
+  try{ gamesState = Object.assign(gamesState, JSON.parse(localStorage.getItem(gamesKey) || "{}")); }catch(e){}
+  function saveGames(){ localStorage.setItem(gamesKey, JSON.stringify(gamesState)); }
+  if(awardsRoot){
+    photoCategories.forEach(function(category, index){
+      const card = document.createElement("article");
+      card.className = "photo-award-card";
+      card.innerHTML =
+        '<label class="award-photo"><span>📷 Add an entry</span><input type="file" accept="image/*"></label>' +
+        '<h3>' + category + '</h3>' +
+        '<input type="text" placeholder="Caption or story">' +
+        '<label>Winner<select><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>';
+      const caption = card.querySelector('input[type="text"]');
+      const winner = card.querySelector("select");
+      caption.value = gamesState.captions[category] || "";
+      winner.value = gamesState.winners[category] || "";
+      caption.addEventListener("input", function(){ gamesState.captions[category]=caption.value; saveGames(); });
+      winner.addEventListener("change", function(){ gamesState.winners[category]=winner.value; saveGames(); });
+      const fileInput = card.querySelector('input[type="file"]');
+      fileInput.addEventListener("change", function(){
+        const file = fileInput.files && fileInput.files[0]; if(!file) return;
+        const reader = new FileReader();
+        reader.onload = function(){
+          const photo = card.querySelector(".award-photo");
+          photo.style.backgroundImage = 'url("' + reader.result + '")';
+          photo.querySelector("span").style.display = "none";
+        };
+        reader.readAsDataURL(file);
+      });
+      awardsRoot.appendChild(card);
+    });
+  }
+
+  // Evening game picker
+  const eveningGames = [{"name": "20 Questions", "detail": "Take turns answering one thoughtful or ridiculous question. No phones needed."}, {"name": "Heads Up!", "detail": "Use the Heads Up app or make your own category: Maui foods, family memories or famous women."}, {"name": "Would You Rather?", "detail": "Choose between two impossible vacation options and defend your answer."}, {"name": "Photo Roulette", "detail": "Everyone chooses a random photo from the day; vote for funniest, prettiest and most mysterious."}, {"name": "Two Truths and a Lie", "detail": "Use stories from your lives that the others may not know."}, {"name": "Maui Memory Match", "detail": "One person names a moment; the others add every detail they remember."}];
+  const pickGame = document.getElementById("pickEveningGame");
+  if(pickGame) pickGame.addEventListener("click", function(){
+    const g = eveningGames[Math.floor(Math.random()*eveningGames.length)];
+    document.getElementById("gamePickerResult").innerHTML = "<div><strong>" + g.name + "</strong><br><span>" + g.detail + "</span></div>";
+  });
+
+  // Missions
+  const missions = ["Make someone laugh before lunch without telling her this is your mission.", "Photograph a beautiful detail nobody else notices.", "Give each traveler one sincere compliment.", "Learn one Hawaiian word and use it correctly before dinner.", "Capture a candid moment that feels completely genuine.", "Find the prettiest flower of the day.", "Start a conversation with: \u201cWhat is one thing you are grateful for right now?\u201d", "Choose tonight\u2019s unofficial soundtrack song.", "Do one small thing that makes Denise\u2019s day easier.", "Take a photo that includes all three trip colors."];
+  const drawMission = document.getElementById("drawMission");
+  if(drawMission) drawMission.addEventListener("click", function(){
+    const who = document.getElementById("missionPerson").value;
+    const mission = missions[Math.floor(Math.random()*missions.length)];
+    document.getElementById("secretMission").textContent = who + ": " + mission;
+  });
+
+  // Questions
+  const questions = ["What is one tiny detail you hope you never forget?", "What has surprised you most about Maui?", "What is a favorite memory involving the three of us?", "Which photo from today best captures how the day felt?", "What is something you are grateful for that you rarely say aloud?", "What would your perfect completely unplanned day look like?", "Which family tradition should we start after this trip?", "What is one thing you admire about each person here?", "What did you believe about life at twenty that you see differently now?", "Which meal from the trip would you happily eat every week?", "What made you laugh hardest today?", "What would you tell your future self to remember about this week?"];
+  const newQuestion = document.getElementById("newQuestion");
+  if(newQuestion) newQuestion.addEventListener("click", function(){
+    document.getElementById("questionCard").textContent = questions[Math.floor(Math.random()*questions.length)];
+  });
+
+  // Daily awards
+  document.querySelectorAll("[data-award-v2]").forEach(function(select){
+    select.value = gamesState.awards[select.dataset.awardV2] || "";
+    select.addEventListener("change", function(){
+      gamesState.awards[select.dataset.awardV2] = select.value; saveGames();
+    });
+  });
+
+  // Scavenger hunt
+  function renderFinds(){
+    const boxes = Array.from(document.querySelectorAll("[data-find]"));
+    boxes.forEach(function(b){ b.checked = !!gamesState.finds[b.dataset.find]; });
+    const done = boxes.filter(function(b){return b.checked;}).length;
+    const bar = document.getElementById("scavengerV2Progress");
+    const text = document.getElementById("scavengerV2Text");
+    if(bar) bar.style.width = (boxes.length ? done/boxes.length*100 : 0) + "%";
+    if(text) text.textContent = done + " of " + boxes.length + " found";
+  }
+  document.querySelectorAll("[data-find]").forEach(function(box){
+    box.addEventListener("change", function(){
+      gamesState.finds[box.dataset.find] = box.checked; saveGames(); renderFinds();
+    });
+  });
+  renderFinds();
+
+  // Meals and grocery list
+  const mealsKey = "maui2026-meals-v1";
+  let mealState = {meals:[], groceries:[]};
+  try{ mealState = Object.assign(mealState, JSON.parse(localStorage.getItem(mealsKey) || "{}")); }catch(e){}
+  function saveMeals(){localStorage.setItem(mealsKey, JSON.stringify(mealState));}
+  function renderMeals(){
+    const root = document.getElementById("mealPlanList"); if(!root) return;
+    root.innerHTML = "";
+    mealState.meals.forEach(function(item,index){
+      const row=document.createElement("div");row.className="meal-plan-item";
+      row.innerHTML="<span><strong>"+item.type+":</strong> "+item.name+"</span><button type='button'>×</button>";
+      row.querySelector("button").addEventListener("click",function(){mealState.meals.splice(index,1);saveMeals();renderMeals();});
+      root.appendChild(row);
+    });
+  }
+  function renderGroceries(){
+    const root = document.getElementById("groceryList"); if(!root) return;
+    root.innerHTML = "";
+    mealState.groceries.forEach(function(item,index){
+      const row=document.createElement("div");row.className="grocery-item"+(item.done?" done":"");
+      row.innerHTML="<label><input type='checkbox' "+(item.done?"checked":"")+"> <span>"+item.name+"</span></label><button type='button'>×</button>";
+      row.querySelector("input").addEventListener("change",function(e){item.done=e.target.checked;saveMeals();renderGroceries();});
+      row.querySelector("button").addEventListener("click",function(){mealState.groceries.splice(index,1);saveMeals();renderGroceries();});
+      root.appendChild(row);
+    });
+  }
+  const addMeal = document.getElementById("addMeal");
+  if(addMeal) addMeal.addEventListener("click",function(){
+    const name=document.getElementById("mealName"),type=document.getElementById("mealType");
+    if(!name.value.trim())return;
+    mealState.meals.push({name:name.value.trim(),type:type.value});name.value="";saveMeals();renderMeals();
+  });
+  const addGrocery = document.getElementById("addGrocery");
+  if(addGrocery) addGrocery.addEventListener("click",function(){
+    const input=document.getElementById("groceryItem");if(!input.value.trim())return;
+    mealState.groceries.push({name:input.value.trim(),done:false});input.value="";saveMeals();renderGroceries();
+  });
+  renderMeals();renderGroceries();
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+
+  // Whole-trip scavenger board
+  const huntKey = "maui2026-hunt-v1";
+  const players = ["trish","denise","lindsay"];
+  let huntState = {};
+  try{ huntState = JSON.parse(localStorage.getItem(huntKey) || "{}"); }catch(e){}
+
+  function saveHunt(){
+    localStorage.setItem(huntKey, JSON.stringify(huntState));
+  }
+
+  function renderHunt(){
+    const totals = {trish:0,denise:0,lindsay:0};
+    let found = 0;
+    document.querySelectorAll(".hunt-square").forEach(function(square){
+      const id = square.dataset.huntId;
+      const owner = huntState[id] || "";
+      square.classList.remove("claim-trish","claim-denise","claim-lindsay");
+      if(owner){
+        square.classList.add("claim-" + owner);
+        totals[owner] += Number(square.dataset.points || 0);
+        found += 1;
+      }
+    });
+    const t = document.getElementById("huntScoreTrish");
+    const d = document.getElementById("huntScoreDenise");
+    const l = document.getElementById("huntScoreLindsay");
+    const f = document.getElementById("huntFoundCount");
+    if(t) t.textContent = totals.trish;
+    if(d) d.textContent = totals.denise;
+    if(l) l.textContent = totals.lindsay;
+    if(f) f.textContent = found;
+
+    const max = Math.max(totals.trish, totals.denise, totals.lindsay);
+    const leaders = Object.keys(totals).filter(function(p){ return totals[p] === max && max > 0; });
+    const names = {trish:"Trish",denise:"Denise",lindsay:"Lindsay"};
+    const leader = document.getElementById("huntLeader");
+    if(leader){
+      if(max === 0) leader.textContent = "The board is wide open.";
+      else if(leaders.length > 1) leader.textContent = "It’s a tie at " + max + " points!";
+      else leader.textContent = names[leaders[0]] + " leads with " + max + " points.";
+    }
+  }
+
+  document.addEventListener("click", function(event){
+    const square = event.target.closest(".hunt-square");
+    if(!square) return;
+    const id = square.dataset.huntId;
+    const current = huntState[id] || "";
+    if(!current) huntState[id] = "trish";
+    else if(current === "trish") huntState[id] = "denise";
+    else if(current === "denise") huntState[id] = "lindsay";
+    else delete huntState[id];
+    saveHunt();
+    renderHunt();
+  });
+
+  const clear = document.getElementById("clearHuntBoard");
+  if(clear) clear.addEventListener("click", function(){
+    if(confirm("Clear the entire scavenger hunt board?")){
+      huntState = {};
+      saveHunt();
+      renderHunt();
+    }
+  });
+  renderHunt();
+
+  // Guide-card journals and photos
+  const guideMemoryKey = "maui2026-guide-memories-v1";
+  let guideMemoryState = {};
+  let activeGuideKey = "";
+  try{ guideMemoryState = JSON.parse(localStorage.getItem(guideMemoryKey) || "{}"); }catch(e){}
+
+  function saveGuideMemories(){
+    localStorage.setItem(guideMemoryKey, JSON.stringify(guideMemoryState));
+  }
+
+  function getActiveMemory(){
+    if(!activeGuideKey) return null;
+    if(!guideMemoryState[activeGuideKey]){
+      guideMemoryState[activeGuideKey] = {
+        notes:{trish:"",denise:"",lindsay:""},
+        photos:{trish:"",denise:"",lindsay:""}
+      };
+    }
+    return guideMemoryState[activeGuideKey];
+  }
+
+  function renderGuideMemory(){
+    const memory = getActiveMemory();
+    if(!memory) return;
+    ["trish","denise","lindsay"].forEach(function(person){
+      const cap = person.charAt(0).toUpperCase()+person.slice(1);
+      const note = document.getElementById("guideNote"+cap);
+      const preview = document.getElementById("guidePhoto"+cap);
+      if(note) note.value = memory.notes[person] || "";
+      if(preview){
+        const photo = memory.photos[person] || "";
+        preview.style.backgroundImage = photo ? 'url("' + photo + '")' : "";
+        preview.classList.toggle("has-photo", !!photo);
+      }
+    });
+  }
+
+  // Listen to the same guided-photo clicks and infer the active card key.
+  document.addEventListener("click", function(event){
+    const figure = event.target.closest(".guided-photo");
+    if(figure){
+      activeGuideKey = (figure.dataset.guideDate || "") + ":" + (figure.dataset.guideIndex || "0");
+      window.setTimeout(renderGuideMemory, 0);
+    }
+  }, true);
+
+  ["Trish","Denise","Lindsay"].forEach(function(cap){
+    const person = cap.toLowerCase();
+    const note = document.getElementById("guideNote"+cap);
+    if(note){
+      note.addEventListener("input", function(){
+        const memory = getActiveMemory();
+        if(!memory) return;
+        memory.notes[person] = note.value;
+        saveGuideMemories();
+      });
+    }
+  });
+
+  document.querySelectorAll("[data-guide-photo-person]").forEach(function(input){
+    input.addEventListener("change", function(){
+      const file = input.files && input.files[0];
+      if(!file || !activeGuideKey) return;
+      const person = input.dataset.guidePhotoPerson;
+      const reader = new FileReader();
+      reader.onload = function(){
+        const memory = getActiveMemory();
+        memory.photos[person] = reader.result;
+        saveGuideMemories();
+        renderGuideMemory();
+      };
+      reader.readAsDataURL(file);
+    });
+  });
 })();
 </script>
 

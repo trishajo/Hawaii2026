@@ -1696,6 +1696,65 @@
       .guide-traveler-grid{grid-template-columns:1fr}
     }
 
+
+    .arrival-home{
+      display:grid;
+      grid-template-columns:1fr 1.05fr;
+      gap:18px;
+      margin:18px 0 25px;
+      padding:26px;
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 0 100%,rgba(239,143,121,.2),transparent 18rem),
+        linear-gradient(145deg,#fffaf2,#edf7f5);
+      border:1px solid rgba(18,59,83,.12);
+      box-shadow:0 16px 38px rgba(18,59,83,.09)
+    }
+    .arrival-home-copy h2{font-size:clamp(2rem,4vw,3.4rem);margin:10px 0}
+    .arrival-home-copy p{color:#526c74;line-height:1.7;font-size:1.02rem}
+    .arrival-home-actions{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}
+    .arrival-home-actions a{
+      display:inline-flex;padding:11px 14px;border-radius:999px;
+      background:#173f4d;color:#fff;text-decoration:none;font-weight:900
+    }
+    .arrival-home-actions a:nth-child(2){background:#e98570}
+    .arrival-home-actions a:nth-child(3){background:#edf4f3;color:#173f4d;border:1px solid #cad9da}
+    .arrival-checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .arrival-checklist label{padding:10px;border-radius:12px;background:rgba(255,255,255,.75);color:#355963;font-weight:800}
+    .arrival-home-gallery{
+      display:grid;grid-template-columns:1.25fr .75fr;
+      grid-template-rows:220px 220px;gap:10px
+    }
+    .arrival-home-gallery figure{margin:0;position:relative;overflow:hidden;border-radius:20px}
+    .arrival-home-gallery figure:first-child{grid-row:1/3}
+    .arrival-home-gallery img{width:100%;height:100%;object-fit:cover}
+    .arrival-home-gallery figcaption{
+      position:absolute;inset:auto 0 0;padding:34px 13px 12px;
+      background:linear-gradient(transparent,rgba(5,39,53,.82));
+      color:#fff;font-weight:900
+    }
+    .arrival-memory-strip{
+      grid-column:1/3;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px
+    }
+    .arrival-photo-upload{
+      min-height:145px;border:2px dashed #b7cbce;border-radius:18px;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      padding:14px;background:#fff;color:#294f5a;font-weight:900;
+      cursor:pointer;background-size:cover;background-position:center;position:relative;overflow:hidden
+    }
+    .arrival-photo-upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .arrival-photo-upload.has-photo span{
+      background:rgba(5,39,53,.72);color:#fff;padding:8px 10px;border-radius:999px
+    }
+    @media(max-width:850px){
+      .arrival-home{grid-template-columns:1fr}
+      .arrival-home-gallery{grid-template-columns:1fr 1fr;grid-template-rows:230px 180px}
+      .arrival-home-gallery figure:first-child{grid-column:1/3;grid-row:auto}
+      .arrival-memory-strip{grid-column:1;grid-template-columns:1fr}
+      .arrival-checklist{grid-template-columns:1fr}
+    }
+
 </style>
 
 </head>
@@ -1938,7 +1997,7 @@
             <div class="travel-prompt">Press “Give us a challenge” when you need something fun.</div>
             <div class="travel-game-buttons">
               <button type="button" class="new-travel-prompt">Give us a challenge</button>
-              <a href="https://www.psychologytoday.com/us/blog/in-practice/202001/36-questions-increase-closeness" target="_blank" rel="noopener">Conversation questions ↗</a>
+              <a href="https://ggia.berkeley.edu/practice/36_questions_for_increasing_closeness" target="_blank" rel="noopener">Conversation questions ↗</a>
             </div>
             <h3 style="margin-top:7px;">Travel-day points</h3>
             <div class="journey-score">
@@ -3082,7 +3141,7 @@
             <div class="travel-prompt">Press “Give us a challenge” when you need something fun.</div>
             <div class="travel-game-buttons">
               <button type="button" class="new-travel-prompt">Give us a challenge</button>
-              <a href="https://www.psychologytoday.com/us/blog/in-practice/202001/36-questions-increase-closeness" target="_blank" rel="noopener">Conversation questions ↗</a>
+              <a href="https://ggia.berkeley.edu/practice/36_questions_for_increasing_closeness" target="_blank" rel="noopener">Conversation questions ↗</a>
             </div>
             <h3 style="margin-top:7px;">Travel-day points</h3>
             <div class="journey-score">
@@ -5169,6 +5228,39 @@ renderVotes();renderChallenges();
         memory.photos[person] = reader.result;
         saveGuideMemories();
         renderGuideMemory();
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+
+  const arrivalKey = "maui2026-arrival-home-v1";
+  let arrivalState = {};
+  try{ arrivalState = JSON.parse(localStorage.getItem(arrivalKey) || "{}"); }catch(e){}
+
+  document.querySelectorAll("[data-arrival-check]").forEach(function(box){
+    box.checked = !!arrivalState[box.dataset.arrivalCheck];
+    box.addEventListener("change", function(){
+      arrivalState[box.dataset.arrivalCheck] = box.checked;
+      localStorage.setItem(arrivalKey, JSON.stringify(arrivalState));
+    });
+  });
+
+  document.querySelectorAll("[data-arrival-photo]").forEach(function(input){
+    input.addEventListener("change", function(){
+      const file = input.files && input.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = function(){
+        const label = input.closest(".arrival-photo-upload");
+        label.style.backgroundImage = 'url("' + reader.result + '")';
+        label.classList.add("has-photo");
       };
       reader.readAsDataURL(file);
     });

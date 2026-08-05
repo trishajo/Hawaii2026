@@ -979,7 +979,8 @@
       background:#eef8f7;
       box-shadow:0 12px 30px rgba(18,59,83,.10);
     }
-    .day-map iframe{width:100%;height:270px;border:0;display:block}
+    .day-map iframe{display:none!important}
+    .day-map::before{content:"Explore today’s corner of Maui";display:flex;align-items:center;justify-content:center;min-height:210px;padding:28px;text-align:center;font-family:var(--serif);font-size:clamp(1.7rem,4vw,3rem);font-weight:800;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35);background:linear-gradient(135deg,rgba(6,52,69,.84),rgba(16,128,139,.58),rgba(240,163,111,.65)),url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80') center/cover}
     .day-map .map-caption{padding:12px 15px;color:#45616c;font-size:.9rem}
     .journal-intro{
       padding:16px;
@@ -1083,7 +1084,7 @@
     @media(max-width:850px){
       .culture-grid,.culture-fact-list{grid-template-columns:1fr}
       .culture-hero{min-height:350px;padding:25px}
-      .day-map iframe{height:230px}
+      .day-map::before{min-height:170px}
     }
 
 
@@ -2272,7 +2273,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     @media(max-width:760px){.booking-list,.booking-add-grid{grid-template-columns:1fr}.booking-wide{grid-column:auto}}
   </style>
 </head>
-<body data-chapter="overview" data-aesthetic="daylight">
+<body data-chapter="overview" data-aesthetic="bloom">
   <div class="atmosphere-overlay" aria-hidden="true">
     <span class="bloom-petal" style="left:5%;--fall:17s;--delay:-4s;--size:17px;--sway:52px">✿</span>
     <span class="bloom-petal" style="left:14%;--fall:21s;--delay:-13s;--size:13px;--sway:38px">❀</span>
@@ -2292,7 +2293,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     <div class="hero-shade"></div>
     <div class="hero-inner dynamic-hero-inner">
 
-    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button" aria-label="Current atmosphere: Daylight. Click for Moonlight." aria-pressed="false" title="Next: Moonlight">
+    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button" aria-label="Current atmosphere: Island Bloom. Click for Glitter Tide." aria-pressed="false" title="Next: Glitter Tide">
       <span class="toggle-orbit" aria-hidden="true">
         <span class="toggle-sun">☀</span>
         <span class="toggle-moon">☾</span>
@@ -2302,7 +2303,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </span>
       <span class="toggle-copy">
         <small>Island atmosphere</small>
-        <strong id="aestheticToggleLabel">Daylight</strong>
+        <strong id="aestheticToggleLabel">Island Bloom</strong>
       </span>
     </button>
 
@@ -4653,7 +4654,9 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
           <span class="pill">Find our way</span>
           <h2 style="margin-top:12px;">Our Maui story map</h2>
           <p class="muted">Wailea is our home base, with special days stretching north to Kū‘au, west to Ka‘anapali and through Central Maui.</p>
-          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/embed(9).html" title="Maui trip overview map"></iframe>
+          <div class="day-map" style="margin-top:18px;">
+            <div class="map-caption">📍 See Wailea, Pāʻia, Kaʻanapali and Central Maui together. <a href="https://www.google.com/maps/search/?api=1&amp;query=Maui+Hawaii+Wailea+Paia+Kaanapali" target="_blank" rel="noopener">Open our Maui story map ↗</a></div>
+          </div>
         </div>
 
         <div class="card span-12">

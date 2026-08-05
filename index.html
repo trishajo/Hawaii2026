@@ -2254,6 +2254,14 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     @keyframes glitterField{from{transform:translate3d(0,0,0)}to{transform:translate3d(74px,113px,0)}}
     @media(prefers-reduced-motion:reduce){.toggle-sun,.toggle-moon,.toggle-bloom,.toggle-glitter{transition:none!important}}
     @media(prefers-reduced-motion:reduce){.atmosphere-overlay,.atmosphere-overlay::before,.bloom-petal{animation:none!important}.bloom-petal{display:none}}
+    .bookings-intro{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(239,253,255,.92))}
+    .booking-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+    .booking-list .reservation-card{margin:0;height:100%}
+    .booking-add-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:18px 0}
+    .booking-add-grid label{margin:0}.booking-wide{grid-column:1/-1}.custom-booking-list:empty{display:none}
+    .booking-card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.booking-card-actions a,.booking-card-actions button{display:inline-flex;align-items:center;padding:9px 12px;border-radius:11px;text-decoration:none;font-size:.84rem;font-weight:850}
+    .booking-card-actions a{background:#173f4d;color:#fff}.booking-card-actions button{background:rgba(167,61,66,.1);color:#8b3036;box-shadow:none}
+    @media(max-width:760px){.booking-list,.booking-add-grid{grid-template-columns:1fr}.booking-wide{grid-column:auto}}
   </style>
 </head>
 <body data-chapter="overview" data-aesthetic="bloom">
@@ -2587,8 +2595,8 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> A gentle first sunset is the perfect moment to arrive with aloha—slow down, notice the place and begin the trip with gratitude rather than a checklist.</p>
           </div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps.html" title="Map for Wailea Maui Hawaii"></iframe>
-            <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/embed.html" title="Map of Wailea, Maui"></iframe>
+              <div class="map-caption">📍 Wailea and the surrounding South Maui coast. <a href="https://www.google.com/maps/search/?api=1&amp;query=Wailea+Maui+Hawaii" target="_blank" rel="noopener">Open Google Maps for directions ↗</a></div>
           </div>
           
         </div>
@@ -2683,7 +2691,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> While browsing Wailea, notice the Hawaiian names around you and treat them as clues to the older landscape beneath the shopping center and hotels.</p>
           <a class="source-link" href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">📚 Explore Hawaiian culture ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(1).html" title="Map for The Shops at Wailea Maui"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps.html" title="Map for The Shops at Wailea Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -2818,7 +2826,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> At Ho‘okipa and Kū‘au Bay, the surf is not just scenery—it is part of a living seafaring culture. Watch the water with a little extra wonder before Mama’s.</p>
           <a class="source-link" href="https://www.gohawaii.com/islands/maui/regions/south-maui/wailea" target="_blank" rel="noopener">📚 Discover Wailea ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(2).html" title="Map for Hookipa Lookout Maui to Mamas Fish House"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(1).html" title="Map for Hookipa Lookout Maui to Mamas Fish House"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -2953,7 +2961,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> At the luau, listen for what the dances are communicating, not just how spectacular they look. The performance becomes richer when you think of it as storytelling.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm" target="_blank" rel="noopener">📚 Read about early Hawaiian voyagers ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(3).html" title="Map for Maui Ocean Center to Gilligans Island Luau Kihei"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(2).html" title="Map for Maui Ocean Center to Gilligans Island Luau Kihei"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -3078,7 +3086,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> A quiet resort day can still be meaningful: use reef-safe sunscreen, refill water bottles and leave every beach or garden exactly as you found it.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📚 Explore Hawaiian moʻolelo ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(4).html" title="Map for Wailea Beach Maui"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(3).html" title="Map for Wailea Beach Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -3213,7 +3221,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> On the drive from Wailea to Ka‘anapali, watch the mountains descend toward the ocean. You are crossing landscapes that were understood as connected systems, not separate attractions.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/archeology.htm" target="_blank" rel="noopener">📚 Learn how to mālama Hawaiian places ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(5).html" title="Map for Wailea to Whalers Village Kaanapali Maui"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(4).html" title="Map for Wailea to Whalers Village Kaanapali Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -3338,7 +3346,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> At Maui Tropical Plantation, the coffee, fruit and market treats tell a layered story—Native crops, introduced plants and generations of immigrant influence all sharing one table.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/archeology.htm" target="_blank" rel="noopener">📚 Learn about mauka-to-makai landscapes ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(6).html" title="Map for Maui Tropical Plantation Waikapu"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(5).html" title="Map for Maui Tropical Plantation Waikapu"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -3463,7 +3471,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> During your final sunset, notice the changing wind, cloud shapes, color and water—not just the view. The details are part of what makes each place distinct.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/timeline.htm" target="_blank" rel="noopener">📚 Explore Maui’s historical timeline ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(7).html" title="Map for Wailea Maui sunset viewpoint"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(6).html" title="Map for Wailea Maui sunset viewpoint"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -3667,7 +3675,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> Your three journals are becoming a family moʻolelo of their own—a record of what Maui looked, tasted and felt like to Trish, Denise and Lindsay.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/nature-mo-olelo.htm" target="_blank" rel="noopener">📚 Read nature moʻolelo from Haleakalā ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(8).html" title="Map for Wailea Maui to Kahului Airport via Waikapu"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(7).html" title="Map for Wailea Maui to Kahului Airport via Waikapu"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
@@ -4624,7 +4632,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
           <span class="pill">Find our way</span>
           <h2 style="margin-top:12px;">Our Maui story map</h2>
           <p class="muted">Wailea is our home base, with special days stretching north to Kū‘au, west to Ka‘anapali and through Central Maui.</p>
-          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(9).html" title="Maui trip overview map"></iframe>
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(8).html" title="Maui trip overview map"></iframe>
         </div>
 
         <div class="card span-12">
@@ -4707,7 +4715,33 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <blockquote>“Let all things be done decently and in order.”</blockquote>
         <cite>1 Corinthians 14:40</cite>
       </div>
-    <div class="grid"><div class="card span-12"><h2>All bookings &amp; confirmations</h2><div id="bookingList"></div></div></div></section>
+      <div class="grid bookings-chapter">
+        <div class="card span-12 bookings-intro">
+          <span class="pill">Everything confirmed, in one place</span>
+          <h2>Our Maui reservations</h2>
+          <p class="muted">Flights, Home Base and the experiences already on the calendar. Live-status and official-site buttons open in a new tab.</p>
+        </div>
+        <div class="card span-12">
+          <h2>Confirmed travel &amp; stays</h2>
+          <div id="bookingList" class="booking-list"><article class="item reservation-card flight"><div class="row"><span class="pill">Flight</span><small>Thu, Sep 17 · 6:00 AM</small></div><h3>Alaska 782 · Boise to Portland</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: Flight 782</span></div><p>Depart Boise 6:00 AM; arrive Portland 6:20 AM. Scheduled duration 1 hr 20 min.</p><div class="booking-card-actions"><a href="https://www.alaskaair.com/status/782/2026-09-17" target="_blank" rel="noopener">Live flight status ↗</a></div></article><article class="item reservation-card flight"><div class="row"><span class="pill">Flight</span><small>Thu, Sep 17 · 7:12 AM</small></div><h3>Alaska 479 · Portland to Maui</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: Flight 479</span></div><p>Depart Portland 7:12 AM; arrive Maui 10:21 AM. Scheduled duration 6 hr 9 min.</p><div class="booking-card-actions"><a href="https://www.alaskaair.com/status/479/2026-09-17" target="_blank" rel="noopener">Live flight status ↗</a></div></article><article class="item reservation-card lodging"><div class="row"><span class="pill">Lodging</span><small>Sep 17–25 · 8 nights</small></div><h3>Wailea residence · CoralTree Residence Collection</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: Airbnb Trips reservation</span></div><p>Check-in after 4:00 PM on September 17. Check-out before 11:00 AM on September 25.</p><div class="booking-card-actions"><a href="https://www.coraltreeresidencecollection.com/our-destinations/wailea/" target="_blank" rel="noopener">Open website ↗</a></div></article><article class="item reservation-card restaurant"><div class="row"><span class="pill">Restaurant</span><small>Sat, Sep 19 · 3:30 PM</small></div><h3>Mama’s Fish House</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: 52X98W3KGFEF</span></div><p>3 guests, Main Dining. Smart casual; complimentary valet. Cancellation and party-size change terms apply.</p><div class="booking-card-actions"><a href="https://mamasfishhouse.com/" target="_blank" rel="noopener">Open website ↗</a></div></article><article class="item reservation-card activity"><div class="row"><span class="pill">Activity</span><small>Sun, Sep 20 · 5:00 PM</small></div><h3>Gilligans’ Island Luau</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: 1759659377</span></div><p>3 adults. Booking reference 1376940241. Auto-payment scheduled September 18.</p><div class="booking-card-actions"><a href="https://gilligansmaui.com/luau/" target="_blank" rel="noopener">Open website ↗</a></div></article><article class="item reservation-card activity"><div class="row"><span class="pill">Activity</span><small>Tue, Sep 22 · 4:30 PM</small></div><h3>Kaʻanapali Luxury Sunset Cocktail Sail</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: GYGMX4HX6Q2B</span></div><p>3 adults · approximately 2 hours · Teralani Sailing Adventures. Printed voucher requested.</p><div class="booking-card-actions"><a href="https://teralani.com/maui-sunset-sail/" target="_blank" rel="noopener">Open website ↗</a></div></article><article class="item reservation-card flight"><div class="row"><span class="pill">Flight</span><small>Fri, Sep 25 · 7:00 AM</small></div><h3>Alaska 246 · Maui to Seattle</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: Flight 246</span></div><p>Depart Kahului 7:00 AM; arrive Seattle 3:44 PM. Scheduled duration 5 hr 44 min.</p><div class="booking-card-actions"><a href="https://www.alaskaair.com/status/246/2026-09-25" target="_blank" rel="noopener">Live flight status ↗</a></div></article><article class="item reservation-card flight"><div class="row"><span class="pill">Flight</span><small>Fri, Sep 25 · 5:55 PM</small></div><h3>Alaska 586 · Seattle to Boise</h3><div class="reservation-meta"><span class="detail-chip">Confirmation: Flight 586</span></div><p>Depart Seattle 5:55 PM; arrive Boise 8:25 PM. Scheduled duration 1 hr 30 min.</p><div class="booking-card-actions"><a href="https://www.alaskaair.com/status/586/2026-09-25" target="_blank" rel="noopener">Live flight status ↗</a></div></article></div>
+        </div>
+        <div class="card span-12">
+          <span class="pill">Add as plans become official</span>
+          <h2>Add another booking</h2>
+          <p class="muted">Anything added here stays privately in this browser. Avoid placing door codes, payment information or other secrets on the public page itself.</p>
+          <div class="booking-add-grid">
+            <label>Type<select id="bookingAddType"><option>Restaurant</option><option>Activity</option><option>Transportation</option><option>Lodging</option><option>Other</option></select></label>
+            <label>Date &amp; time<input id="bookingAddDate" placeholder="Example: Sep 23 · 12:30 PM"></label>
+            <label>Booking name<input id="bookingAddName" placeholder="Restaurant, tour or reservation name"></label>
+            <label>Confirmation number<input id="bookingAddConfirm" placeholder="Optional"></label>
+            <label class="booking-wide">Website or map link<input id="bookingAddUrl" type="url" placeholder="https://..."></label>
+            <label class="booking-wide">Notes<textarea id="bookingAddNotes" placeholder="Check-in details, accessibility notes, cancellation reminder…"></textarea></label>
+          </div>
+          <button id="bookingAddButton" type="button">＋ Add booking</button>
+          <div id="customBookingList" class="booking-list custom-booking-list"></div>
+        </div>
+      </div>
+    </section>
     <section id="packing" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Take therefore no thought for the morrow.”</blockquote>
@@ -6068,6 +6102,49 @@ renderVotes();renderChallenges();
 })();
 </script>
 
+<script>
+(function(){
+  "use strict";
+  const confirmedBookings = [
+    {type:"Flight",date:"Thu, Sep 17 · 6:00 AM",name:"Alaska 782 · Boise to Portland",confirm:"Flight 782",notes:"Depart Boise 6:00 AM; arrive Portland 6:20 AM. Scheduled duration 1 hr 20 min.",url:"https://www.alaskaair.com/status/782/2026-09-17"},
+    {type:"Flight",date:"Thu, Sep 17 · 7:12 AM",name:"Alaska 479 · Portland to Maui",confirm:"Flight 479",notes:"Depart Portland 7:12 AM; arrive Maui 10:21 AM. Scheduled duration 6 hr 9 min.",url:"https://www.alaskaair.com/status/479/2026-09-17"},
+    {type:"Lodging",date:"Sep 17–25 · 8 nights",name:"Wailea residence · CoralTree Residence Collection",confirm:"Airbnb Trips reservation",notes:"Check-in after 4:00 PM on September 17. Check-out before 11:00 AM on September 25.",url:"https://www.coraltreeresidencecollection.com/our-destinations/wailea/"},
+    {type:"Restaurant",date:"Sat, Sep 19 · 3:30 PM",name:"Mama’s Fish House",confirm:"52X98W3KGFEF",notes:"3 guests, Main Dining. Smart casual; complimentary valet. Cancellation and party-size change terms apply.",url:"https://mamasfishhouse.com/"},
+    {type:"Activity",date:"Sun, Sep 20 · 5:00 PM",name:"Gilligans’ Island Luau",confirm:"1759659377",notes:"3 adults. Booking reference 1376940241. Auto-payment scheduled September 18.",url:"https://gilligansmaui.com/luau/"},
+    {type:"Activity",date:"Tue, Sep 22 · 4:30 PM",name:"Kaʻanapali Luxury Sunset Cocktail Sail",confirm:"GYGMX4HX6Q2B",notes:"3 adults · approximately 2 hours · Teralani Sailing Adventures. Printed voucher requested.",url:"https://teralani.com/maui-sunset-sail/"},
+    {type:"Flight",date:"Fri, Sep 25 · 7:00 AM",name:"Alaska 246 · Maui to Seattle",confirm:"Flight 246",notes:"Depart Kahului 7:00 AM; arrive Seattle 3:44 PM. Scheduled duration 5 hr 44 min.",url:"https://www.alaskaair.com/status/246/2026-09-25"},
+    {type:"Flight",date:"Fri, Sep 25 · 5:55 PM",name:"Alaska 586 · Seattle to Boise",confirm:"Flight 586",notes:"Depart Seattle 5:55 PM; arrive Boise 8:25 PM. Scheduled duration 1 hr 30 min.",url:"https://www.alaskaair.com/status/586/2026-09-25"}
+  ];
+  const customKey="maui2026-custom-bookings-v1";
+  let customBookings=[];
+  try{customBookings=JSON.parse(localStorage.getItem(customKey)||"[]");if(!Array.isArray(customBookings))customBookings=[];}catch(error){customBookings=[];}
+  function safeLink(value){try{const url=new URL(value);return (url.protocol==="https:"||url.protocol==="http:")?url.href:"";}catch(error){return "";}}
+  function bookingCard(item,removeIndex){
+    const card=document.createElement("article");card.className="item reservation-card "+String(item.type||"other").toLowerCase();
+    const top=document.createElement("div");top.className="row";
+    const pill=document.createElement("span");pill.className="pill";pill.textContent=item.type||"Booking";
+    const date=document.createElement("small");date.textContent=item.date||"Date to be decided";top.append(pill,date);
+    const title=document.createElement("h3");title.textContent=item.name||"Untitled booking";
+    card.append(top,title);
+    if(item.confirm){const meta=document.createElement("div");meta.className="reservation-meta";const chip=document.createElement("span");chip.className="detail-chip";chip.textContent="Confirmation: "+item.confirm;meta.appendChild(chip);card.appendChild(meta);}
+    if(item.notes){const notes=document.createElement("p");notes.textContent=item.notes;card.appendChild(notes);}
+    const actions=document.createElement("div");actions.className="booking-card-actions";const link=safeLink(item.url||"");
+    if(link){const open=document.createElement("a");open.href=link;open.target="_blank";open.rel="noopener";open.textContent=item.type==="Flight"?"Live flight status ↗":"Open website ↗";actions.appendChild(open);}
+    if(removeIndex!==undefined){const remove=document.createElement("button");remove.type="button";remove.textContent="Remove";remove.addEventListener("click",function(){if(confirm("Remove this added booking?")){customBookings.splice(removeIndex,1);localStorage.setItem(customKey,JSON.stringify(customBookings));renderCustom();}});actions.appendChild(remove);}
+    if(actions.children.length)card.appendChild(actions);return card;
+  }
+  function renderConfirmed(){const root=document.getElementById("bookingList");if(!root)return;root.innerHTML="";confirmedBookings.forEach(function(item){root.appendChild(bookingCard(item));});}
+  function renderCustom(){const root=document.getElementById("customBookingList");if(!root)return;root.innerHTML="";customBookings.forEach(function(item,index){root.appendChild(bookingCard(item,index));});}
+  const add=document.getElementById("bookingAddButton");
+  if(add)add.addEventListener("click",function(){
+    const name=document.getElementById("bookingAddName");if(!name.value.trim()){name.focus();return;}
+    customBookings.push({type:document.getElementById("bookingAddType").value,date:document.getElementById("bookingAddDate").value.trim(),name:name.value.trim(),confirm:document.getElementById("bookingAddConfirm").value.trim(),url:document.getElementById("bookingAddUrl").value.trim(),notes:document.getElementById("bookingAddNotes").value.trim()});
+    localStorage.setItem(customKey,JSON.stringify(customBookings));["bookingAddDate","bookingAddName","bookingAddConfirm","bookingAddUrl","bookingAddNotes"].forEach(function(id){document.getElementById(id).value="";});renderCustom();
+  });
+  window.renderBookings=renderConfirmed;
+  renderConfirmed();renderCustom();
+})();
+</script>
 
 
 </body></html>

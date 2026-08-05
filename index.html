@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- saved from url=(0127)file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#overview -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hawaii 2026 · Maui Girls Trip</title>
   <meta name="theme-color" content="#061a24">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./index_files/css2" rel="stylesheet">
 
   <style>
     :root {
@@ -2215,25 +2215,78 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     #day-2026-09-23 .page-verse,
     #day-2026-09-24 .page-verse { max-width: 860px; margin-inline: auto; }
   </style>
+  <style id="island-atmosphere-modes">
+    .toggle-bloom,.toggle-glitter{
+      position:absolute;font-size:1.25rem;opacity:0;transform:translateY(42px);
+      transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s ease;
+    }
+    body[data-aesthetic="bloom"]{
+      --navy:#4d244c;--ocean:#168b89;--aqua:#73ded0;--coral:#ff6f91;--hibiscus:#cb3374;
+      --sun:#ffd45f;--ink:#3b2941;--muted:#765e78;--card:rgba(255,255,255,.96);
+      background:radial-gradient(circle at 9% 9%,rgba(255,109,158,.28),transparent 27rem),radial-gradient(circle at 91% 8%,rgba(93,221,190,.28),transparent 26rem),linear-gradient(180deg,#fff7fb,#f0fffa 52%,#fff5dc);
+    }
+    body[data-aesthetic="bloom"] .tab.active{background:linear-gradient(135deg,#d83f82,#168b89)}
+    body[data-aesthetic="bloom"] .toggle-orbit{background:linear-gradient(145deg,#ff93b7,#9ae6bd)}
+    body[data-aesthetic="bloom"] .toggle-sun{opacity:0;transform:translateY(-42px)}
+    body[data-aesthetic="bloom"] .toggle-bloom{opacity:1;transform:translateY(0)}
+
+    body[data-aesthetic="glitter"]{
+      --navy:#39275c;--ocean:#416fb0;--aqua:#88e5ef;--coral:#ff83b4;--hibiscus:#b74dce;
+      --sun:#ffe793;--ink:#30243f;--muted:#6d617b;--card:rgba(255,255,255,.95);
+      background:radial-gradient(circle at 12% 10%,rgba(180,118,234,.25),transparent 28rem),radial-gradient(circle at 88% 8%,rgba(110,225,238,.3),transparent 27rem),radial-gradient(circle at 80% 88%,rgba(255,174,204,.27),transparent 24rem),linear-gradient(180deg,#faf7ff,#effdff 48%,#fff8e8);
+    }
+    body[data-aesthetic="glitter"] .tab.active{background:linear-gradient(135deg,#7250a8,#3f9fb0);box-shadow:0 9px 28px rgba(145,102,200,.3)}
+    body[data-aesthetic="glitter"] .card,body[data-aesthetic="glitter"] .games-panel,body[data-aesthetic="glitter"] .meals-panel{box-shadow:0 20px 55px rgba(107,74,147,.16),inset 0 0 0 1px rgba(255,255,255,.85)}
+    body[data-aesthetic="glitter"] .toggle-orbit{background:linear-gradient(145deg,#dca8ff,#74e1eb);color:#fff}
+    body[data-aesthetic="glitter"] .toggle-sun{opacity:0;transform:translateY(-42px)}
+    body[data-aesthetic="glitter"] .toggle-glitter{opacity:1;transform:translateY(0);text-shadow:0 0 9px #fff}
+    .atmosphere-overlay{position:fixed;inset:0;z-index:9997;pointer-events:none;overflow:hidden;opacity:0;transition:opacity .7s ease;mix-blend-mode:screen}
+    .atmosphere-overlay::before{content:"";position:absolute;inset:-25%;opacity:0;transition:opacity .7s ease}
+    body[data-aesthetic="bloom"] .atmosphere-overlay{opacity:.72;background:linear-gradient(120deg,rgba(255,153,190,.08),transparent 35%,rgba(105,224,185,.08) 70%,rgba(255,216,126,.06));}
+    body[data-aesthetic="bloom"] .atmosphere-overlay::before{opacity:.65;background:radial-gradient(ellipse at 18% 28%,rgba(255,162,197,.18),transparent 24%),radial-gradient(ellipse at 82% 62%,rgba(117,224,181,.14),transparent 27%);animation:bloomVeil 14s ease-in-out infinite alternate}
+    .bloom-petal{position:absolute;top:-12vh;opacity:0;color:#ff8eb4;text-shadow:0 0 12px rgba(255,255,255,.95);animation:petalDrift var(--fall,15s) linear infinite;animation-delay:var(--delay,0s);font-size:var(--size,18px);transform:translateX(0) rotate(0deg)}
+    body:not([data-aesthetic="bloom"]) .bloom-petal{animation-play-state:paused}
+    body[data-aesthetic="glitter"] .atmosphere-overlay{opacity:.82;background:linear-gradient(115deg,transparent 0 28%,rgba(255,255,255,.09) 40%,rgba(180,226,255,.12) 48%,rgba(255,184,236,.1) 56%,transparent 68%);background-size:260% 260%;animation:glitterSweep 8s ease-in-out infinite}
+    body[data-aesthetic="glitter"] .atmosphere-overlay::before{opacity:.75;background-image:radial-gradient(circle,rgba(255,255,255,.95) 0 1px,transparent 1.8px),radial-gradient(circle,rgba(207,176,255,.8) 0 1.4px,transparent 2px),radial-gradient(circle,rgba(122,232,239,.85) 0 1px,transparent 1.8px);background-size:74px 74px,113px 113px,151px 151px;background-position:0 0,31px 48px,79px 20px;animation:glitterField 18s linear infinite}
+    @keyframes bloomVeil{from{transform:translate3d(-3%,-2%,0) rotate(-2deg)}to{transform:translate3d(4%,3%,0) rotate(2deg)}}
+    @keyframes petalDrift{0%{opacity:0;transform:translate3d(0,-10vh,0) rotate(0deg)}10%{opacity:.72}55%{transform:translate3d(var(--sway,45px),52vh,0) rotate(190deg)}90%{opacity:.62}100%{opacity:0;transform:translate3d(calc(0px - var(--sway,45px)),115vh,0) rotate(390deg)}}
+    @keyframes glitterSweep{0%,100%{background-position:0% 20%}50%{background-position:100% 80%}}
+    @keyframes glitterField{from{transform:translate3d(0,0,0)}to{transform:translate3d(74px,113px,0)}}
+    @media(prefers-reduced-motion:reduce){.toggle-sun,.toggle-moon,.toggle-bloom,.toggle-glitter{transition:none!important}}
+    @media(prefers-reduced-motion:reduce){.atmosphere-overlay,.atmosphere-overlay::before,.bloom-petal{animation:none!important}.bloom-petal{display:none}}
+  </style>
 </head>
-<body>
+<body data-chapter="overview" data-aesthetic="bloom">
+  <div class="atmosphere-overlay" aria-hidden="true">
+    <span class="bloom-petal" style="left:5%;--fall:17s;--delay:-4s;--size:17px;--sway:52px">✿</span>
+    <span class="bloom-petal" style="left:14%;--fall:21s;--delay:-13s;--size:13px;--sway:38px">❀</span>
+    <span class="bloom-petal" style="left:24%;--fall:15s;--delay:-8s;--size:20px;--sway:64px">✿</span>
+    <span class="bloom-petal" style="left:36%;--fall:23s;--delay:-17s;--size:14px;--sway:44px">❀</span>
+    <span class="bloom-petal" style="left:47%;--fall:18s;--delay:-10s;--size:18px;--sway:70px">✿</span>
+    <span class="bloom-petal" style="left:58%;--fall:25s;--delay:-21s;--size:12px;--sway:42px">❀</span>
+    <span class="bloom-petal" style="left:68%;--fall:16s;--delay:-7s;--size:19px;--sway:58px">✿</span>
+    <span class="bloom-petal" style="left:78%;--fall:22s;--delay:-15s;--size:15px;--sway:46px">❀</span>
+    <span class="bloom-petal" style="left:88%;--fall:19s;--delay:-11s;--size:21px;--sway:66px">✿</span>
+    <span class="bloom-petal" style="left:96%;--fall:24s;--delay:-19s;--size:13px;--sway:36px">❀</span>
+  </div>
 
   
   <header class="top-hero dynamic-hero" id="dynamicHero">
-    <div class="hero-backdrop" id="heroBackdrop"></div>
+    <div class="hero-backdrop" id="heroBackdrop" style="background-image: url(&quot;https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&amp;fit=crop&amp;w=2200&amp;q=95&quot;);"></div>
     <div class="hero-shade"></div>
     <div class="hero-inner dynamic-hero-inner">
 
-    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button"
-            aria-label="Switch to moonlight mode" aria-pressed="false">
+    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button" aria-label="Current atmosphere: Island Bloom. Click for Glitter Tide." aria-pressed="false" title="Next: Glitter Tide">
       <span class="toggle-orbit" aria-hidden="true">
         <span class="toggle-sun">☀</span>
         <span class="toggle-moon">☾</span>
-        <span class="toggle-star">✦</span>
+        <span class="toggle-bloom">🌺</span>
+        <span class="toggle-glitter">✦</span>
+        <span class="toggle-star">✧</span>
       </span>
       <span class="toggle-copy">
         <small>Island atmosphere</small>
-        <strong id="aestheticToggleLabel">Daylight</strong>
+        <strong id="aestheticToggleLabel">Island Bloom</strong>
       </span>
     </button>
 
@@ -2250,13 +2303,13 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
           </article>
           <article class="hero-glass-card">
             <span class="hero-mini-label">Photo challenge</span>
-            <strong id="heroChallengeTitle">The first glimpse</strong>
-            <p id="heroChallenge">Capture the moment the trip begins to feel real.</p>
+            <strong id="heroChallengeTitle">Before we go</strong>
+            <p id="heroChallenge">Take a screenshot of this website so we can remember how the story began.</p>
           </article>
           <article class="hero-glass-card">
             <span class="hero-mini-label">Memory prompt</span>
-            <strong id="heroPromptTitle">Pause and notice</strong>
-            <p id="heroPrompt">What detail would future-you want to remember?</p>
+            <strong id="heroPromptTitle">The anticipation</strong>
+            <p id="heroPrompt">What are you most excited to experience together?</p>
           </article>
         </div>
 
@@ -2268,13 +2321,13 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         </div>
 
         <div class="hero-actions">
-          <button class="daily-story-btn" id="heroStoryButton" type="button">🌺 Tell me today’s Maui story</button>
-          <a class="source-link" id="heroSource" href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">📚 Explore the source ↗</a>
+          <button class="daily-story-btn" id="heroStoryButton" type="button" data-story-date="2026-09-17">🌺 Tell me today’s Maui story</button>
+          <a class="source-link" id="heroSource" href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">📚 Explore Hawaiian culture ↗</a>
         </div>
       </div>
       <aside class="hero-day-card">
         <span class="hero-mini-label">Today’s chapter</span>
-        <div class="hero-day-number" id="heroDayNumber">01</div>
+        <div class="hero-day-number" id="heroDayNumber">00</div>
         <h2 id="heroChapter">The anticipation</h2>
         <p id="heroChapterCopy">Dreaming, planning and beginning the story before the plane ever leaves.</p>
       </aside>
@@ -2285,25 +2338,25 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 
 
   <main class="shell">
-    <nav class="tabs no-print"><a class="tab active" data-tab="overview" href="#overview">Overview</a>
-      <a class="tab" data-tab="day-2026-09-17" href="#day-2026-09-17">Thu 17</a>
-      <a class="tab" data-tab="day-2026-09-18" href="#day-2026-09-18">Fri 18</a>
-      <a class="tab" data-tab="day-2026-09-19" href="#day-2026-09-19">Sat 19</a>
-      <a class="tab" data-tab="day-2026-09-20" href="#day-2026-09-20">Sun 20</a>
-      <a class="tab" data-tab="day-2026-09-21" href="#day-2026-09-21">Mon 21</a>
-      <a class="tab" data-tab="day-2026-09-22" href="#day-2026-09-22">Tue 22</a>
-      <a class="tab" data-tab="day-2026-09-23" href="#day-2026-09-23">Wed 23</a>
-      <a class="tab" data-tab="day-2026-09-24" href="#day-2026-09-24">Thu 24</a>
-      <a class="tab" data-tab="day-2026-09-25" href="#day-2026-09-25">Fri 25</a>
-      <a class="tab" data-tab="games" href="#games">Games</a>
-      <a class="tab" data-tab="meals" href="#meals">Our Maui Table</a>
-      <a class="tab" data-tab="playlist" href="#playlist">Playlist</a>
-      <a class="tab" data-tab="culture" href="#culture">Island Stories</a>
-      <a class="tab" data-tab="ideas" href="#ideas">Ideas</a>
-      <a class="tab" data-tab="bookings" href="#bookings">All Bookings</a>
-      <a class="tab" data-tab="packing" href="#packing">Packing</a>
-      <a class="tab" data-tab="share" href="#share">Share / Backup</a></nav>
-    <section id="overview" class="active">
+    <nav class="tabs no-print"><a class="tab active" data-tab="overview" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#overview" aria-current="page" aria-selected="true">Overview</a>
+      <a class="tab" data-tab="day-2026-09-17" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-17" aria-current="false" aria-selected="false">Thu 17</a>
+      <a class="tab" data-tab="day-2026-09-18" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-18" aria-current="false" aria-selected="false">Fri 18</a>
+      <a class="tab" data-tab="day-2026-09-19" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-19" aria-current="false" aria-selected="false">Sat 19</a>
+      <a class="tab" data-tab="day-2026-09-20" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-20" aria-current="false" aria-selected="false">Sun 20</a>
+      <a class="tab" data-tab="day-2026-09-21" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-21" aria-current="false" aria-selected="false">Mon 21</a>
+      <a class="tab" data-tab="day-2026-09-22" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-22" aria-current="false" aria-selected="false">Tue 22</a>
+      <a class="tab" data-tab="day-2026-09-23" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-23" aria-current="false" aria-selected="false">Wed 23</a>
+      <a class="tab" data-tab="day-2026-09-24" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-24" aria-current="false" aria-selected="false">Thu 24</a>
+      <a class="tab" data-tab="day-2026-09-25" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#day-2026-09-25" aria-current="false" aria-selected="false">Fri 25</a>
+      <a class="tab" data-tab="games" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#games" aria-current="false" aria-selected="false">Games</a>
+      <a class="tab" data-tab="meals" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#meals" aria-current="false" aria-selected="false">Our Maui Table</a>
+      <a class="tab" data-tab="playlist" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#playlist" aria-current="false" aria-selected="false">Playlist</a>
+      <a class="tab" data-tab="culture" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#culture" aria-current="false" aria-selected="false">Island Stories</a>
+      <a class="tab" data-tab="ideas" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#ideas" aria-current="false" aria-selected="false">Ideas</a>
+      <a class="tab" data-tab="bookings" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#bookings" aria-current="false" aria-selected="false">All Bookings</a>
+      <a class="tab" data-tab="packing" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#packing" aria-current="false" aria-selected="false">Packing</a>
+      <a class="tab" data-tab="share" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#share" aria-current="false" aria-selected="false">Share / Backup</a></nav>
+    <section id="overview" class="active" aria-hidden="false" style="display: block !important;">
       <div class="grid">
         <div class="editorial-intro span-12">
           <div class="copy">
@@ -2334,7 +2387,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p>Our CoralTree Residence Collection stay gives us a beautiful South Maui home base close to Wailea Beach, Polo Beach and Poʻolenalena Beach—perfect for easy mornings, pool afternoons and sunset walks.</p>
             <div class="stay-meta stay-meta-links">
               <a href="https://www.coraltreeresidencecollection.com/our-destinations/wailea/" target="_blank" rel="noopener">🏡 Explore CoralTree ↗</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=CoralTree+Residence+Collection+Wailea+Maui" target="_blank" rel="noopener">📍 Open the neighborhood map ↗</a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=CoralTree+Residence+Collection+Wailea+Maui" target="_blank" rel="noopener">📍 Open the neighborhood map ↗</a>
               <a href="https://bookings.coraltreeresidencecollection.com/wailea" target="_blank" rel="noopener">🔑 Browse Wailea residences ↗</a>
               <span>📅 Sep 17–25 · 8 nights</span>
               <span>🕓 Check-in after 4 PM</span>
@@ -2350,7 +2403,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="home-lede">Our private little world between adventures: lanai coffee, bare feet, groceries in the kitchen, stories after sunset and the feeling that, for eight nights, Maui is home.</p>
             <div class="home-base-actions">
               <a href="https://www.coraltreeresidencecollection.com/our-destinations/wailea/" target="_blank" rel="noopener">Enter our Maui home ↗</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=CoralTree+Residence+Collection+Wailea+Maui" target="_blank" rel="noopener">Explore the neighborhood ↗</a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=CoralTree+Residence+Collection+Wailea+Maui" target="_blank" rel="noopener">Explore the neighborhood ↗</a>
             </div>
             <div class="home-orbit">
               <article><strong>Morning ritual</strong><span>Coffee on the lanai</span></article>
@@ -2360,9 +2413,9 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             </div>
           </div>
           <div class="home-base-gallery" aria-label="Wailea mood gallery">
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=90" alt="Elegant tropical residence interior"></figure>
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=700&q=90" alt="Tropical lanai"></figure>
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=90" alt="Maui beach water"></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1600607687939-ce8a6c25118c" alt="Elegant tropical residence interior"></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1601918774946-25832a4be0d6" alt="Tropical lanai"></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1507525428034-b723cf961d3e" alt="Maui beach water"></figure>
           </div>
         </section>
 
@@ -2383,24 +2436,21 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
           <h2 style="margin-top:12px;">The headline experiences</h2>
           <p class="muted">Fresh island flavors, a fiery Polynesian celebration and golden hour from the deck of a luxury catamaran.</p>
           <div class="experience-grid">
-            <a class="experience-card" href="https://mamasfishhouse.com/" target="_blank" rel="noopener"
-               style="--experience-image:url('https://images.prismic.io/mamas-fish-house/aIlYE1GsbswqTcLW__DSC1343-2.jpg?auto=format%2Ccompress&h=940&rect=0%2C129%2C1452%2C711&w=1920')">
+            <a class="experience-card" href="https://mamasfishhouse.com/" target="_blank" rel="noopener" style="--experience-image:url(&#39;https://images.prismic.io/mamas-fish-house/aIlYE1GsbswqTcLW__DSC1343-2.jpg?auto=format%2Ccompress&amp;h=940&amp;rect=0%2C129%2C1452%2C711&amp;w=1920&#39;)">
               <div class="experience-copy">
                 <span class="experience-kicker">Saturday · 3:30 PM</span>
                 <h3>Mama’s Fish House</h3>
                 <p>A dreamy North Shore oasis where locally caught fish, tropical flowers and Kū‘au Bay create one of Maui’s most iconic dining experiences.</p>
               </div>
             </a>
-            <a class="experience-card" href="https://gilligansmaui.com/luau/" target="_blank" rel="noopener"
-               style="--experience-image:url('https://gilligansmaui.com/wp-content/uploads/2023/01/016-Sean-M.-Hower-2022-050-Sean-M.-Hower-2022DSC_1406-scaled.jpg')">
+            <a class="experience-card" href="https://gilligansmaui.com/luau/" target="_blank" rel="noopener" style="--experience-image:url(&#39;https://gilligansmaui.com/wp-content/uploads/2023/01/016-Sean-M.-Hower-2022-050-Sean-M.-Hower-2022DSC_1406-scaled.jpg&#39;)">
               <div class="experience-copy">
                 <span class="experience-kicker">Sunday · 5:00 PM</span>
                 <h3>Gilligans’ Island Luau</h3>
                 <p>An open-air evening of Hawaiian food, live music and Polynesian dance—building to a spectacular Samoan fire-knife finale.</p>
               </div>
             </a>
-            <a class="experience-card" href="https://teralani.com/maui-sunset-sail/" target="_blank" rel="noopener"
-               style="--experience-image:url('https://teralani.com/wp-content/uploads/2023/11/teralani-sunset-12-1024x684.jpg')">
+            <a class="experience-card" href="https://teralani.com/maui-sunset-sail/" target="_blank" rel="noopener" style="--experience-image:url(&#39;https://teralani.com/wp-content/uploads/2023/11/teralani-sunset-12-1024x684.jpg&#39;)">
               <div class="experience-copy">
                 <span class="experience-kicker">Tuesday · 4:30 PM</span>
                 <h3>Ka‘anapali Sunset Sail</h3>
@@ -2412,19 +2462,19 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 
         <div class="card span-6">
           <h2>Our must-do list</h2>
-          <div class="row"><input id="mustInput" placeholder="Add a Maui must-do" /><button onclick="addItem('musts','mustInput')">Add</button></div>
+          <div class="row"><input id="mustInput" placeholder="Add a Maui must-do"><button onclick="addItem(&#39;musts&#39;,&#39;mustInput&#39;)">Add</button></div>
           <ul id="mustsList" class="list"></ul>
         </div>
 
         <div class="card span-6">
           <h2>Maybe we should…</h2>
-          <div class="row"><input id="questionInput" placeholder="Add a beautiful possibility" /><button onclick="addItem('questions','questionInput')">Add</button></div>
+          <div class="row"><input id="questionInput" placeholder="Add a beautiful possibility"><button onclick="addItem(&#39;questions&#39;,&#39;questionInput&#39;)">Add</button></div>
           <ul id="questionsList" class="list"></ul>
         </div>
       </div>
     </section>
     
-    <section id="day-2026-09-17">
+    <section id="day-2026-09-17" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“The Lord shall preserve thy going out and thy coming in from this time forth.”</blockquote>
         <cite>Psalm 121:8</cite>
@@ -2488,9 +2538,9 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               <input type="file" accept="image/*">
             </label></div>
           </div>
-          <aside class="travel-game-card" data-travel-prompts='["Everyone chooses one snack the others must rate from 1\u201310.", "Take a photo of the best airport outfit.", "Name one thing you are leaving behind and one feeling you want to bring with you.", "Guess the exact minute someone first says, \u201cI can\u2019t believe we\u2019re in Maui.\u201d", "Find something in each airport that matches your trip colors.", "Each person chooses one song for the flight."]'>
+          <aside class="travel-game-card" data-travel-prompts="[&quot;Everyone chooses one snack the others must rate from 1\u201310.&quot;, &quot;Take a photo of the best airport outfit.&quot;, &quot;Name one thing you are leaving behind and one feeling you want to bring with you.&quot;, &quot;Guess the exact minute someone first says, \u201cI can\u2019t believe we\u2019re in Maui.\u201d&quot;, &quot;Find something in each airport that matches your trip colors.&quot;, &quot;Each person chooses one song for the flight.&quot;]">
             <span class="hero-mini-label">Play while you travel</span>
-            <h3>Airport & airplane challenge</h3>
+            <h3>Airport &amp; airplane challenge</h3>
             <div class="travel-prompt">Press “Give us a challenge” when you need something fun.</div>
             <div class="travel-game-buttons">
               <button type="button" class="new-travel-prompt">Give us a challenge</button>
@@ -2529,7 +2579,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <div class="optional-fit"><strong>Why it fits this day:</strong> Arrival day is best left flexible. This gives everyone a beautiful first-night memory without adding pressure after the flight.</div>
             <a class="optional-link" href="https://www.gohawaii.com/islands/maui/regions/south-maui/wailea" target="_blank" rel="noopener">Explore this idea ↗</a>
           </div>
-          <div id="dayItems-2026-09-17"></div>
+          <div id="dayItems-2026-09-17"><div class="item reservation-card "><div class="row"><span class="pill">Reservation</span><small>After 4:00 PM</small></div><h3>Check in to our Wailea residence</h3><p>Hosted by CoralTree Residence Collection. Settle in, unpack and enjoy the first Maui sunset.</p></div></div>
           <div class="did-you-know">
             <span class="eyebrow">Wow — did you know?</span>
             <h3>Aloha is more than a greeting</h3>
@@ -2537,20 +2587,18 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> A gentle first sunset is the perfect moment to arrive with aloha—slow down, notice the place and begin the trip with gratitude rather than a checklist.</p>
           </div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Wailea+Maui+Hawaii&output=embed"
-              title="Map for Wailea Maui Hawaii"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps.html" title="Map for Wailea Maui Hawaii"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-17" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-17" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-17"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-17" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-17" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-17" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-17')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-17&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -2564,34 +2612,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-17" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-17" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-17','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-17&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-17-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-17" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-17" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-17','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-17&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-17-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-17" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-17" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-17','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-17&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-17-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -2603,11 +2645,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="hero-mini-label">Keep exploring</span>
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
-        <div class="explore-links"><a href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">🌺 Hawaiian culture ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Wailea+Maui" target="_blank" rel="noopener">📍 Explore Wailea ↗</a><a href="https://www.youtube.com/results?search_query=Wailea+Maui+travel" target="_blank" rel="noopener">🎥 Maui arrival inspiration ↗</a><a href="https://open.spotify.com/search/Hawaiian%20music" target="_blank" rel="noopener">🎵 Hawaiian music ↗</a></div>
+        <div class="explore-links"><a href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">🌺 Hawaiian culture ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Wailea+Maui" target="_blank" rel="noopener">📍 Explore Wailea ↗</a><a href="https://www.youtube.com/results?search_query=Wailea+Maui+travel" target="_blank" rel="noopener">🎥 Maui arrival inspiration ↗</a><a href="https://open.spotify.com/search/Hawaiian%20music" target="_blank" rel="noopener">🎵 Hawaiian music ↗</a></div>
       </div>
     </section>
 
-    <section id="day-2026-09-18">
+    <section id="day-2026-09-18" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“O taste and see that the Lord is good.”</blockquote>
         <cite>Psalm 34:8</cite>
@@ -2641,18 +2683,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> While browsing Wailea, notice the Hawaiian names around you and treat them as clues to the older landscape beneath the shopping center and hotels.</p>
           <a class="source-link" href="https://www.gohawaii.com/hawaiian-culture" target="_blank" rel="noopener">📚 Explore Hawaiian culture ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=The+Shops+at+Wailea+Maui&output=embed"
-              title="Map for The Shops at Wailea Maui"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(1).html" title="Map for The Shops at Wailea Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>Arriving with aloha</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-17')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-17&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -2673,17 +2713,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=88" alt="First evening by the Pacific"><figcaption>First evening by the Pacific</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=88" alt="Arrive slowly"><figcaption>Arrive slowly</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Wailea glow"><figcaption>Wailea glow</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1507525428034-b723cf961d3e(1)" alt="First evening by the Pacific"><figcaption>First evening by the Pacific</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1500534314209-a25ddb2bd429" alt="Arrive slowly"><figcaption>Arrive slowly</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-18" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1510414842594-a61c69b5ae57" alt="Wailea glow"><figcaption>Wailea glow</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-18" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-18" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-18"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-18" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-18" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-18" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-18')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-18&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -2697,34 +2737,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-18" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-18" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-18','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-18&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-18-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-18" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-18" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-18','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-18&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-18-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-18" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-18" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-18','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-18&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-18-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -2736,11 +2770,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="hero-mini-label">Keep exploring</span>
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
-        <div class="explore-links"><a href="https://www.gohawaii.com/islands/maui/regions/south-maui/wailea" target="_blank" rel="noopener">🏝️ Wailea guide ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Wailea+Beach+Path+Maui" target="_blank" rel="noopener">📍 Wailea Beach Walk ↗</a><a href="https://www.google.com/search?q=native+flowers+of+Maui" target="_blank" rel="noopener">🌺 Maui flowers ↗</a><a href="https://www.youtube.com/results?search_query=Wailea+Maui+photography" target="_blank" rel="noopener">📸 Wailea photography ideas ↗</a></div>
+        <div class="explore-links"><a href="https://www.gohawaii.com/islands/maui/regions/south-maui/wailea" target="_blank" rel="noopener">🏝️ Wailea guide ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Wailea+Beach+Path+Maui" target="_blank" rel="noopener">📍 Wailea Beach Walk ↗</a><a href="https://www.google.com/search?q=native+flowers+of+Maui" target="_blank" rel="noopener">🌺 Maui flowers ↗</a><a href="https://www.youtube.com/results?search_query=Wailea+Maui+photography" target="_blank" rel="noopener">📸 Wailea photography ideas ↗</a></div>
       </div>
     </section>
 
-    <section id="day-2026-09-19">
+    <section id="day-2026-09-19" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“They that go down to the sea in ships… see the works of the Lord.”</blockquote>
         <cite>Psalm 107:23–24</cite>
@@ -2756,7 +2790,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <span class="pill">🌺 Maui day 3</span>
           </div>
           
-          <div class="feature-banner" style="--feature-image:url('https://images.prismic.io/mamas-fish-house/aIlYE1GsbswqTcLW__DSC1343-2.jpg?auto=format%2Ccompress&h=940&rect=0%2C129%2C1452%2C711&w=1920')">
+          <div class="feature-banner" style="--feature-image:url(&#39;https://images.prismic.io/mamas-fish-house/aIlYE1GsbswqTcLW__DSC1343-2.jpg?auto=format%2Ccompress&amp;h=940&amp;rect=0%2C129%2C1452%2C711&amp;w=1920&#39;)">
             <div class="feature-content">
               <span class="feature-date">Reserved · 3:30 PM</span>
               <h3>Mama’s Fish House</h3>
@@ -2784,18 +2818,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> At Ho‘okipa and Kū‘au Bay, the surf is not just scenery—it is part of a living seafaring culture. Watch the water with a little extra wonder before Mama’s.</p>
           <a class="source-link" href="https://www.gohawaii.com/islands/maui/regions/south-maui/wailea" target="_blank" rel="noopener">📚 Discover Wailea ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Hookipa+Lookout+Maui+to+Mamas+Fish+House&output=embed"
-              title="Map for Hookipa Lookout Maui to Mamas Fish House"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(2).html" title="Map for Hookipa Lookout Maui to Mamas Fish House"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1520454974749-611b7248ffdb?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1520454974749-611b7248ffdb?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>Reading the island through names</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-18')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-18&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -2816,17 +2848,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=88" alt="A slow resort morning"><figcaption>A slow resort morning</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Tropical details"><figcaption>Tropical details</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=88" alt="Follow the palms"><figcaption>Follow the palms</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1540541338287-41700207dee6" alt="A slow resort morning"><figcaption>A slow resort morning</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1540202404-a2f29016b523" alt="Tropical details"><figcaption>Tropical details</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-19" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1500534623283-312aade485b7" alt="Follow the palms"><figcaption>Follow the palms</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-19" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-19" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-19"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-19" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-19" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-19" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-19')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-19&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -2840,34 +2872,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-19" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-19" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-19','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-19&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-19-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-19" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-19" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-19','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-19&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-19-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-19" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-19" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-19','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-19&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-19-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -2879,11 +2905,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="hero-mini-label">Keep exploring</span>
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
-        <div class="explore-links"><a href="https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm" target="_blank" rel="noopener">🛶 Early Hawaiian voyagers ↗</a><a href="https://www.mamasfishhouse.com/" target="_blank" rel="noopener">🍽️ Mama’s Fish House ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Mama%27s+Fish+House+Maui" target="_blank" rel="noopener">📍 Mama’s Fish House map ↗</a><a href="https://www.google.com/search?q=Maui+North+Shore+live+webcam" target="_blank" rel="noopener">🌊 North Shore webcams ↗</a><a href="https://www.youtube.com/results?search_query=Polynesian+wayfinding+navigation" target="_blank" rel="noopener">🎥 Polynesian navigation ↗</a></div>
+        <div class="explore-links"><a href="https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm" target="_blank" rel="noopener">🛶 Early Hawaiian voyagers ↗</a><a href="https://www.mamasfishhouse.com/" target="_blank" rel="noopener">🍽️ Mama’s Fish House ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Mama%27s+Fish+House+Maui" target="_blank" rel="noopener">📍 Mama’s Fish House map ↗</a><a href="https://www.google.com/search?q=Maui+North+Shore+live+webcam" target="_blank" rel="noopener">🌊 North Shore webcams ↗</a><a href="https://www.youtube.com/results?search_query=Polynesian+wayfinding+navigation" target="_blank" rel="noopener">🎥 Polynesian navigation ↗</a></div>
       </div>
     </section>
 
-    <section id="day-2026-09-20">
+    <section id="day-2026-09-20" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Let them praise his name in the dance: let them sing praises unto him.”</blockquote>
         <cite>Psalm 149:3</cite>
@@ -2899,7 +2925,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <span class="pill">🌺 Maui day 4</span>
           </div>
           
-          <div class="feature-banner" style="--feature-image:url('https://gilligansmaui.com/wp-content/uploads/2023/01/016-Sean-M.-Hower-2022-050-Sean-M.-Hower-2022DSC_1406-scaled.jpg')">
+          <div class="feature-banner" style="--feature-image:url(&#39;https://gilligansmaui.com/wp-content/uploads/2023/01/016-Sean-M.-Hower-2022-050-Sean-M.-Hower-2022DSC_1406-scaled.jpg&#39;)">
             <div class="feature-content">
               <span class="feature-date">Reserved · 5:00 PM</span>
               <h3>Gilligans’ Island Luau</h3>
@@ -2927,18 +2953,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> At the luau, listen for what the dances are communicating, not just how spectacular they look. The performance becomes richer when you think of it as storytelling.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm" target="_blank" rel="noopener">📚 Read about early Hawaiian voyagers ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Maui+Ocean+Center+to+Gilligans+Island+Luau+Kihei&output=embed"
-              title="Map for Maui Ocean Center to Gilligans Island Luau Kihei"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(3).html" title="Map for Maui Ocean Center to Gilligans Island Luau Kihei"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>The ocean as a road</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-19')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-19&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -2959,17 +2983,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1000&q=88" alt="North Shore energy"><figcaption>North Shore energy</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?auto=format&fit=crop&w=900&q=88" alt="Reading wind and waves"><figcaption>Reading wind and waves</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=88" alt="A road toward the sea"><figcaption>A road toward the sea</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1502680390469-be75c86b636f" alt="North Shore energy"><figcaption>North Shore energy</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1455729552865-3658a5d39692" alt="Reading wind and waves"><figcaption>Reading wind and waves</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-20" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1500530855697-b586d89ba3ee" alt="A road toward the sea"><figcaption>A road toward the sea</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-20" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-20" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-20"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-20" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-20" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-20" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-20')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-20&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -2983,34 +3007,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-20" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-20" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-20','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-20&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-20-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-20" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-20" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-20','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-20&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-20-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-20" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-20" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-20','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-20&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-20-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -3022,11 +3040,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="hero-mini-label">Keep exploring</span>
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
-        <div class="explore-links"><a href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📖 Hawaiian moʻolelo ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Gilligans+Island+Luau+Maui" target="_blank" rel="noopener">📍 Gilligans’ Island Luau ↗</a><a href="https://www.youtube.com/results?search_query=history+and+meaning+of+hula" target="_blank" rel="noopener">🎥 Learn about hula ↗</a><a href="https://open.spotify.com/search/Hawaiian%20hula" target="_blank" rel="noopener">🎵 Hawaiian hula music ↗</a></div>
+        <div class="explore-links"><a href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📖 Hawaiian moʻolelo ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Gilligans+Island+Luau+Maui" target="_blank" rel="noopener">📍 Gilligans’ Island Luau ↗</a><a href="https://www.youtube.com/results?search_query=history+and+meaning+of+hula" target="_blank" rel="noopener">🎥 Learn about hula ↗</a><a href="https://open.spotify.com/search/Hawaiian%20hula" target="_blank" rel="noopener">🎵 Hawaiian hula music ↗</a></div>
       </div>
     </section>
 
-    <section id="day-2026-09-21">
+    <section id="day-2026-09-21" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Be still, and know that I am God.”</blockquote>
         <cite>Psalm 46:10</cite>
@@ -3060,18 +3078,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> A quiet resort day can still be meaningful: use reef-safe sunscreen, refill water bottles and leave every beach or garden exactly as you found it.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/mo-olelo-stories.htm" target="_blank" rel="noopener">📚 Explore Hawaiian moʻolelo ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Wailea+Beach+Maui&output=embed"
-              title="Map for Wailea Beach Maui"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(4).html" title="Map for Wailea Beach Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>Hula is a living archive</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-20')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-20&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -3092,17 +3108,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1000&q=88" alt="Story through movement"><figcaption>Story through movement</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="Island color"><figcaption>Island color</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=88" alt="An evening of music"><figcaption>An evening of music</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1531761535209-180857e963b9" alt="Story through movement"><figcaption>Story through movement</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1504198453319-5ce911bafcde" alt="Island color"><figcaption>Island color</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-21" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1518509562904-e7ef99cdcc86" alt="An evening of music"><figcaption>An evening of music</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-21" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-21" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-21"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-21" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-21" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-21" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-21')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-21&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -3116,34 +3132,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-21" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-21" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-21','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-21&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-21-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-21" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-21" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-21','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-21&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-21-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-21" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-21" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-21','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-21&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-21-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -3155,11 +3165,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="hero-mini-label">Keep exploring</span>
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
-        <div class="explore-links"><a href="https://www.gohawaii.com/malama" target="_blank" rel="noopener">🌿 Mālama Hawaiʻi ↗</a><a href="https://www.google.com/search?q=best+calm+beaches+South+Maui" target="_blank" rel="noopener">🏖️ Gentle Maui beaches ↗</a><a href="https://www.google.com/maps/search/?api=1&query=coffee+near+Wailea+Maui" target="_blank" rel="noopener">📍 Wailea cafés ↗</a><a href="https://open.spotify.com/search/relaxing%20Hawaiian" target="_blank" rel="noopener">🎵 Relaxing island playlist ↗</a></div>
+        <div class="explore-links"><a href="https://www.gohawaii.com/malama" target="_blank" rel="noopener">🌿 Mālama Hawaiʻi ↗</a><a href="https://www.google.com/search?q=best+calm+beaches+South+Maui" target="_blank" rel="noopener">🏖️ Gentle Maui beaches ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=coffee+near+Wailea+Maui" target="_blank" rel="noopener">📍 Wailea cafés ↗</a><a href="https://open.spotify.com/search/relaxing%20Hawaiian" target="_blank" rel="noopener">🎵 Relaxing island playlist ↗</a></div>
       </div>
     </section>
 
-    <section id="day-2026-09-22">
+    <section id="day-2026-09-22" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“From the rising of the sun unto the going down of the same the Lord’s name is to be praised.”</blockquote>
         <cite>Psalm 113:3</cite>
@@ -3175,7 +3185,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <span class="pill">🌺 Maui day 6</span>
           </div>
           
-          <div class="feature-banner" style="--feature-image:url('https://teralani.com/wp-content/uploads/2023/11/teralani-sunset-12-1024x684.jpg')">
+          <div class="feature-banner" style="--feature-image:url(&#39;https://teralani.com/wp-content/uploads/2023/11/teralani-sunset-12-1024x684.jpg&#39;)">
             <div class="feature-content">
               <span class="feature-date">Reserved · 4:30 PM</span>
               <h3>Ka‘anapali Luxury Sunset Cocktail Sail</h3>
@@ -3203,18 +3213,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> On the drive from Wailea to Ka‘anapali, watch the mountains descend toward the ocean. You are crossing landscapes that were understood as connected systems, not separate attractions.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/archeology.htm" target="_blank" rel="noopener">📚 Learn how to mālama Hawaiian places ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Wailea+to+Whalers+Village+Kaanapali+Maui&output=embed"
-              title="Map for Wailea to Whalers Village Kaanapali Maui"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(5).html" title="Map for Wailea to Whalers Village Kaanapali Maui"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>Care can look quiet</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-21')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-21&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -3235,17 +3243,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1000&q=88" alt="Rest is part of the trip"><figcaption>Rest is part of the trip</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=88" alt="Small tropical joys"><figcaption>Small tropical joys</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=88" alt="A quiet horizon"><figcaption>A quiet horizon</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1573843981267-be1999ff37cd" alt="Rest is part of the trip"><figcaption>Rest is part of the trip</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1540202404-a2f29016b523" alt="Small tropical joys"><figcaption>Small tropical joys</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-22" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1507525428034-b723cf961d3e(2)" alt="A quiet horizon"><figcaption>A quiet horizon</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-22" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-22" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-22"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-22" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-22" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-22" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-22')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-22&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -3259,34 +3267,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-22" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-22" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-22','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-22&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-22-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-22" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-22" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-22','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-22&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-22-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-22" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-22" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-22','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-22&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-22-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -3298,11 +3300,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="hero-mini-label">Keep exploring</span>
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
-        <div class="explore-links"><a href="https://www.youtube.com/results?search_query=Maui+sunset+sail" target="_blank" rel="noopener">⛵ Sunset sailing inspiration ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Kaanapali+Beach+Maui" target="_blank" rel="noopener">📍 Kaʻanapali Beach ↗</a><a href="https://www.google.com/search?q=Maui+sunset+time+September+22+2026" target="_blank" rel="noopener">🌅 Maui sunset forecast ↗</a><a href="https://www.google.com/search?q=how+to+take+beautiful+sunset+photos+phone" target="_blank" rel="noopener">📸 Sunset photography tips ↗</a><a href="https://open.spotify.com/search/sunset%20Hawaii" target="_blank" rel="noopener">🎵 Golden-hour playlist ↗</a></div>
+        <div class="explore-links"><a href="https://www.youtube.com/results?search_query=Maui+sunset+sail" target="_blank" rel="noopener">⛵ Sunset sailing inspiration ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Kaanapali+Beach+Maui" target="_blank" rel="noopener">📍 Kaʻanapali Beach ↗</a><a href="https://www.google.com/search?q=Maui+sunset+time+September+22+2026" target="_blank" rel="noopener">🌅 Maui sunset forecast ↗</a><a href="https://www.google.com/search?q=how+to+take+beautiful+sunset+photos+phone" target="_blank" rel="noopener">📸 Sunset photography tips ↗</a><a href="https://open.spotify.com/search/sunset%20Hawaii" target="_blank" rel="noopener">🎵 Golden-hour playlist ↗</a></div>
       </div>
     </section>
 
-    <section id="day-2026-09-23">
+    <section id="day-2026-09-23" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Every good gift and every perfect gift is from above.”</blockquote>
         <cite>James 1:17</cite>
@@ -3336,18 +3338,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> At Maui Tropical Plantation, the coffee, fruit and market treats tell a layered story—Native crops, introduced plants and generations of immigrant influence all sharing one table.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/archeology.htm" target="_blank" rel="noopener">📚 Learn about mauka-to-makai landscapes ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Maui+Tropical+Plantation+Waikapu&output=embed"
-              title="Map for Maui Tropical Plantation Waikapu"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(6).html" title="Map for Maui Tropical Plantation Waikapu"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>From mountain to sea</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-22')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-22&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -3368,17 +3368,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=88" alt="Maui from the water"><figcaption>Maui from the water</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=88" alt="Golden-hour sailing"><figcaption>Golden-hour sailing</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=900&q=88" alt="The coast in layers"><figcaption>The coast in layers</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1500375592092-40eb2168fd21" alt="Maui from the water"><figcaption>Maui from the water</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1524250502761-1ac6f2e30d43" alt="Golden-hour sailing"><figcaption>Golden-hour sailing</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-23" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1504512485720-7d83a16ee930" alt="The coast in layers"><figcaption>The coast in layers</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-23" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-23" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-23"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-23" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-23" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-23" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-23')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-23&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -3392,34 +3392,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-23" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-23" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-23','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-23&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-23-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-23" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-23" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-23','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-23&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-23-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-23" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-23" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-23','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-23&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-23-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -3431,11 +3425,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="hero-mini-label">Keep exploring</span>
         <h3>Follow today’s rabbit holes</h3>
         <p>Open a map, watch a story, hear the music or learn one more thing about the place you’re experiencing.</p>
-        <div class="explore-links"><a href="https://www.google.com/search?q=Maui+farms+gardens+visitor+guide" target="_blank" rel="noopener">🌺 Maui farms and gardens ↗</a><a href="https://mauipineappletour.com/" target="_blank" rel="noopener">🍍 Maui Gold pineapple ↗</a><a href="https://www.google.com/maps/search/?api=1&query=local+food+near+Wailea+Maui" target="_blank" rel="noopener">📍 Local food near Wailea ↗</a><a href="https://www.youtube.com/results?search_query=Maui+local+food+culture" target="_blank" rel="noopener">🎥 Maui food culture ↗</a></div>
+        <div class="explore-links"><a href="https://www.google.com/search?q=Maui+farms+gardens+visitor+guide" target="_blank" rel="noopener">🌺 Maui farms and gardens ↗</a><a href="https://mauipineappletour.com/" target="_blank" rel="noopener">🍍 Maui Gold pineapple ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=local+food+near+Wailea+Maui" target="_blank" rel="noopener">📍 Local food near Wailea ↗</a><a href="https://www.youtube.com/results?search_query=Maui+local+food+culture" target="_blank" rel="noopener">🎥 Maui food culture ↗</a></div>
       </div>
     </section>
 
-    <section id="day-2026-09-24">
+    <section id="day-2026-09-24" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“A merry heart maketh a cheerful countenance.”</blockquote>
         <cite>Proverbs 15:13</cite>
@@ -3469,18 +3463,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> During your final sunset, notice the changing wind, cloud shapes, color and water—not just the view. The details are part of what makes each place distinct.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/timeline.htm" target="_blank" rel="noopener">📚 Explore Maui’s historical timeline ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Wailea+Maui+sunset+viewpoint&output=embed"
-              title="Map for Wailea Maui sunset viewpoint"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(7).html" title="Map for Wailea Maui sunset viewpoint"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>Many journeys, one local table</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-23')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-23&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -3501,17 +3493,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=88" alt="A tropical garden palette"><figcaption>A tropical garden palette</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1519096845289-95806ee03a1a?auto=format&fit=crop&w=900&q=88" alt="Fruit, flowers and flavor"><figcaption>Fruit, flowers and flavor</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=88" alt="The details of the land"><figcaption>The details of the land</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1501004318641-b39e6451bec6" alt="A tropical garden palette"><figcaption>A tropical garden palette</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1519096845289-95806ee03a1a" alt="Fruit, flowers and flavor"><figcaption>Fruit, flowers and flavor</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-24" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1490750967868-88aa4486c946" alt="The details of the land"><figcaption>The details of the land</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-24" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-24" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-24"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-24" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-24" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-24" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-24')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-24&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -3525,34 +3517,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-24" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-24" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-24','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-24&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-24-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-24" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-24" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-24','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-24&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-24-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-24" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-24" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-24','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-24&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-24-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -3568,7 +3554,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </div>
     </section>
 
-    <section id="day-2026-09-25">
+    <section id="day-2026-09-25" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“In every thing give thanks.”</blockquote>
         <cite>1 Thessalonians 5:18</cite>
@@ -3632,9 +3618,9 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               <input type="file" accept="image/*">
             </label></div>
           </div>
-          <aside class="travel-game-card" data-travel-prompts='["Each person shares her funniest moment from the trip.", "Choose the photograph most likely to become framed art.", "Name one Maui habit you want to carry into ordinary life.", "Describe the trip using only three words.", "Vote on the official trip anthem.", "Write one sentence to read before the next family trip."]'>
+          <aside class="travel-game-card" data-travel-prompts="[&quot;Each person shares her funniest moment from the trip.&quot;, &quot;Choose the photograph most likely to become framed art.&quot;, &quot;Name one Maui habit you want to carry into ordinary life.&quot;, &quot;Describe the trip using only three words.&quot;, &quot;Vote on the official trip anthem.&quot;, &quot;Write one sentence to read before the next family trip.&quot;]">
             <span class="hero-mini-label">Play while you travel</span>
-            <h3>Airport & airplane challenge</h3>
+            <h3>Airport &amp; airplane challenge</h3>
             <div class="travel-prompt">Press “Give us a challenge” when you need something fun.</div>
             <div class="travel-game-buttons">
               <button type="button" class="new-travel-prompt">Give us a challenge</button>
@@ -3681,18 +3667,16 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <p class="culture-connection"><strong>Today’s connection:</strong> Your three journals are becoming a family moʻolelo of their own—a record of what Maui looked, tasted and felt like to Trish, Denise and Lindsay.</p>
           <a class="source-link" href="https://www.nps.gov/hale/learn/historyculture/nature-mo-olelo.htm" target="_blank" rel="noopener">📚 Read nature moʻolelo from Haleakalā ↗</a></div>
           <div class="day-map">
-            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Wailea+Maui+to+Kahului+Airport+via+Waikapu&output=embed"
-              title="Map for Wailea Maui to Kahului Airport via Waikapu"></iframe>
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(8).html" title="Map for Wailea Maui to Kahului Airport via Waikapu"></iframe>
             <div class="map-caption">📍 A visual guide to today’s part of Maui. Open the map in a new tab for turn-by-turn directions.</div>
           </div>
           <div class="day-discovery">
-            <div class="story-photo" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=92')">
+            <div class="story-photo" style="background-image:url(&#39;https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1500&amp;q=92&#39;)">
               <div class="story-photo-copy">
                 <span class="pill">Today’s Maui story</span>
                 <h3>The island after sunset</h3>
                 <p>A small story to carry with you into the day.</p>
-                <button class="daily-story-btn" onclick="openStory('2026-09-24')">🌺 Tell me today’s Maui story</button>
+                <button class="daily-story-btn" onclick="openStory(&#39;2026-09-24&#39;)">🌺 Tell me today’s Maui story</button>
               </div>
             </div>
             <div class="discovery-stack">
@@ -3713,17 +3697,17 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
               </div>
             </div>
           </div>
-          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="0"><img loading="lazy" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=88" alt="One last golden evening"><figcaption>One last golden evening</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="1"><img loading="lazy" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=88" alt="A toast to the trip"><figcaption>A toast to the trip</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="2"><img loading="lazy" src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=88" alt="Remember this light"><figcaption>Remember this light</figcaption></figure></div>
+          <div class="photo-ribbon"><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="0"><img loading="lazy" src="./index_files/photo-1470252649378-9c29740c9fa8" alt="One last golden evening"><figcaption>One last golden evening</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="1"><img loading="lazy" src="./index_files/photo-1504198453319-5ce911bafcde" alt="A toast to the trip"><figcaption>A toast to the trip</figcaption></figure><figure class="guided-photo" role="link" tabindex="0" data-guide-date="2026-09-25" data-guide-index="2"><img loading="lazy" src="./index_files/photo-1510414842594-a61c69b5ae57" alt="Remember this light"><figcaption>Remember this light</figcaption></figure></div>
     
           
         </div>
         <div class="card span-6 day-note">
           <h2>Add to this day</h2>
-          <label>Time</label><input id="time-2026-09-25" placeholder="Morning, 3:30 PM, sunset..." />
+          <label>Time</label><input id="time-2026-09-25" placeholder="Morning, 3:30 PM, sunset...">
           <label>Category</label><select id="category-2026-09-25"><option>Activity</option><option>Restaurant</option><option>Beach</option><option>Drive / Travel</option><option>Shopping</option><option>Free Time</option><option>Reservation</option></select>
-          <label>Plan</label><input id="title-2026-09-25" placeholder="What are we doing?" />
+          <label>Plan</label><input id="title-2026-09-25" placeholder="What are we doing?">
           <label>Notes, address, or link</label><textarea id="notes-2026-09-25" placeholder="Add anything helpful for the day..."></textarea>
-          <p><button onclick="addDayItem('2026-09-25')">Add plan</button></p>
+          <p><button onclick="addDayItem(&#39;2026-09-25&#39;)">Add plan</button></p>
         </div>
         <div class="card span-6">
           <h2>Our three perspectives</h2>
@@ -3737,34 +3721,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             
             <div class="traveler-journal">
               <h3>🌺 Trish’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-25" data-person="trish"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-25" data-person="trish" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Trish’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-25','trish',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-25&#39;,&#39;trish&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-25-trish" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌸 Denise’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-25" data-person="denise"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-25" data-person="denise" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Denise’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-25','denise',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-25&#39;,&#39;denise&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-25-denise" class="personal-photo-grid"></div>
             </div>
             <div class="traveler-journal">
               <h3>🌊 Lindsay’s journal</h3>
-              <textarea class="person-journal" data-date="2026-09-25" data-person="lindsay"
-                placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
+              <textarea class="person-journal" data-date="2026-09-25" data-person="lindsay" placeholder="Favorite moment, funniest story, something beautiful, what I want to remember..."></textarea>
               <div class="day-photo-uploader">
                 <div>📸 Add Lindsay’s photos or personal highlights</div>
-                <input type="file" accept="image/*" multiple
-                  onchange="addPersonPhotos('2026-09-25','lindsay',this.files)" />
+                <input type="file" accept="image/*" multiple="" onchange="addPersonPhotos(&#39;2026-09-25&#39;,&#39;lindsay&#39;,this.files)">
               </div>
               <div id="personPhotoGrid-2026-09-25-lindsay" class="personal-photo-grid"></div>
             </div>
@@ -3783,7 +3761,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 
     
     
-<section id="games">
+<section id="games" hidden="" aria-hidden="true" style="display: none !important;">
   <div class="page-verse">
     <blockquote>“A merry heart doeth good like a medicine.”</blockquote>
     <cite>Proverbs 17:22</cite>
@@ -4192,7 +4170,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       <span class="pill">The Maui Photo Awards</span>
       <h2>Best picture of…</h2>
       <p class="muted">Upload as many entries as you like throughout the vacation. Every category becomes three private galleries—Trish, Denise and Lindsay—and you can click through each person’s collection before choosing the winner.</p>
-      <div class="photo-awards-grid" id="photoAwards"></div>
+      <div class="photo-awards-grid" id="photoAwards"><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Nature</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Food</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Sunset</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Sunrise</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Wildlife</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Best Candid</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Best Portrait</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article><article class="photo-award-card"><div class="photo-award-heading"><div><h3>Funniest Photo</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple=""></label></div><div class="person-photo-groups"><section class="person-photo-group"><h4><span>Trish</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Denise</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section><section class="person-photo-group"><h4><span>Lindsay</span><small>0 photos</small></h4><div class="person-photo-gallery"><div class="empty-gallery">No entries yet</div></div></section></div></article></div>
     </section>
 
     <div class="games-two-column">
@@ -4286,7 +4264,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <label><input type="checkbox" data-find="matching"> Accidental matching outfits</label>
         <label><input type="checkbox" data-find="kindness"> A beautiful act of kindness</label>
       </div>
-      <div class="game-progress"><div id="scavengerV2Progress"></div></div>
+      <div class="game-progress"><div id="scavengerV2Progress" style="width: 0%;"></div></div>
       <p class="muted" id="scavengerV2Text">0 of 12 found</p>
     </section>
   </div>
@@ -4295,7 +4273,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 
 
     
-<section id="meals">
+<section id="meals" hidden="" aria-hidden="true" style="display: none !important;">
   <div class="page-verse">
     <blockquote>“They did eat their meat with gladness and singleness of heart.”</blockquote>
     <cite>Acts 2:46</cite>
@@ -4313,10 +4291,10 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       <h2>Ingredients that tell Hawaiʻi’s story</h2>
       <p class="muted">Hawaiʻi’s food is layered. Native Hawaiian foodways center the gifts of land and sea; today’s “local food” also reflects generations of Chinese, Japanese, Filipino, Portuguese, Korean, Puerto Rican and other communities. Learning the difference makes every plate more meaningful.</p>
       <div class="food-knowledge-grid">
-        <article><span>Voyaging crops</span><h3>Kalo, ʻuala, ʻulu & maiʻa</h3><p>Taro, sweet potato, breadfruit and banana traveled with Polynesian voyagers and became important sources of nourishment. Kalo holds especially deep genealogical and spiritual meaning in Hawaiian culture.</p></article>
-        <article><span>Maui-grown</span><h3>Pineapple, coffee & tropical fruit</h3><p>Maui agriculture includes pineapple, coffee, macadamia nuts, bananas, citrus, avocado and many diversified crops grown from warm coastlines to cooler Upcountry farms.</p></article>
-        <article><span>Flavor builders</span><h3>Shoyu, ginger, garlic & sesame</h3><p>Island kitchens often reach for shoyu, fresh ginger, garlic, sesame oil, scallions, Hawaiian salt, citrus, coconut, chile pepper water and sweet-tart lilikoi.</p></article>
-        <article><span>Look for</span><h3>Poke, poi, laulau & plate lunch</h3><p>Try traditional foods such as poi and laulau alongside beloved local dishes like poke, loco moco, saimin, Spam musubi, plate lunch and malasadas.</p></article>
+        <article><span>Voyaging crops</span><h3>Kalo, ʻuala, ʻulu &amp; maiʻa</h3><p>Taro, sweet potato, breadfruit and banana traveled with Polynesian voyagers and became important sources of nourishment. Kalo holds especially deep genealogical and spiritual meaning in Hawaiian culture.</p></article>
+        <article><span>Maui-grown</span><h3>Pineapple, coffee &amp; tropical fruit</h3><p>Maui agriculture includes pineapple, coffee, macadamia nuts, bananas, citrus, avocado and many diversified crops grown from warm coastlines to cooler Upcountry farms.</p></article>
+        <article><span>Flavor builders</span><h3>Shoyu, ginger, garlic &amp; sesame</h3><p>Island kitchens often reach for shoyu, fresh ginger, garlic, sesame oil, scallions, Hawaiian salt, citrus, coconut, chile pepper water and sweet-tart lilikoi.</p></article>
+        <article><span>Look for</span><h3>Poke, poi, laulau &amp; plate lunch</h3><p>Try traditional foods such as poi and laulau alongside beloved local dishes like poke, loco moco, saimin, Spam musubi, plate lunch and malasadas.</p></article>
       </div>
       <div class="meal-links">
         <a href="https://pacific-crops.ctahr.hawaii.edu/hawaiian-indigenous-crops/" target="_blank" rel="noopener">Learn about Indigenous Hawaiian crops ↗</a>
@@ -4332,7 +4310,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       <article class="meal-idea"><span>Easy lunch</span><h3>Poke bowls</h3><p>Fresh prepared poke over rice with cucumber, avocado, edamame, seaweed and sesame.</p></article>
       <article class="meal-idea"><span>Easy dinner</span><h3>Fresh fish tacos</h3><p>Local fish, cabbage slaw, avocado, lime crema and mango-pineapple salsa.</p></article>
       <article class="meal-idea"><span>Easy dinner</span><h3>Teriyaki chicken bowls</h3><p>Rice, grilled chicken, pineapple, cucumber, edamame, scallions and sesame.</p></article>
-      <article class="meal-idea"><span>Lanai dinner</span><h3>Garlic shrimp & rice</h3><p>Buttery garlic shrimp, rice, a simple salad, green onion and fresh lime.</p></article>
+      <article class="meal-idea"><span>Lanai dinner</span><h3>Garlic shrimp &amp; rice</h3><p>Buttery garlic shrimp, rice, a simple salad, green onion and fresh lime.</p></article>
       <article class="meal-idea"><span>Use-the-fridge night</span><h3>Island fried rice</h3><p>Leftover rice, eggs, vegetables, pineapple, scallions and any remaining chicken or shrimp.</p></article>
       <article class="meal-idea"><span>Low-effort night</span><h3>Island snack board</h3><p>Poke, crackers, cheese, fruit, vegetables, hummus, macadamia nuts and something sweet.</p></article>
     </div>
@@ -4342,15 +4320,15 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       <h2>What we ate each day</h2>
       <p class="muted">Record meals at the condo and meals out. These entries save privately in this browser and can travel with the personal keepsake backup.</p>
       <div class="meal-diary" id="mealDiary">
-        <details open data-meal-day="2026-09-17"><summary>Thu, September 17 · Arrival</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-18"><summary>Fri, September 18</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-19"><summary>Sat, September 19 · Mama’s Fish House</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-20"><summary>Sun, September 20 · Luau</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-21"><summary>Mon, September 21</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-22"><summary>Tue, September 22 · Sunset sail</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-23"><summary>Wed, September 23</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-24"><summary>Thu, September 24</summary><div class="meal-diary-fields"></div></details>
-        <details data-meal-day="2026-09-25"><summary>Fri, September 25 · Travel home</summary><div class="meal-diary-fields"></div></details>
+        <details open="" data-meal-day="2026-09-17"><summary>Thu, September 17 · Arrival</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-18"><summary>Fri, September 18</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-19"><summary>Sat, September 19 · Mama’s Fish House</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-20"><summary>Sun, September 20 · Luau</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-21"><summary>Mon, September 21</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-22"><summary>Tue, September 22 · Sunset sail</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-23"><summary>Wed, September 23</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-24"><summary>Thu, September 24</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
+        <details data-meal-day="2026-09-25"><summary>Fri, September 25 · Travel home</summary><div class="meal-diary-fields"><label>Breakfast<textarea placeholder="What did we eat? Coffee on the lanai?"></textarea></label><label>Lunch<textarea placeholder="At home, picnic, food truck or restaurant…"></textarea></label><label>Dinner<textarea placeholder="What we cooked or where we went…"></textarea></label><label>Treats &amp; food memory<textarea placeholder="Favorite bite, drink, funny moment or rating…"></textarea></label></div></details>
       </div>
     </section>
 
@@ -4377,7 +4355,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         </div>
         <div id="groceryList" class="grocery-list"></div>
         <div class="meal-links">
-          <a href="https://www.google.com/maps/search/?api=1&query=grocery+store+near+Wailea+Maui" target="_blank" rel="noopener">Groceries near Wailea ↗</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=grocery+store+near+Wailea+Maui" target="_blank" rel="noopener">Groceries near Wailea ↗</a>
           <a href="https://www.farmersmarketsmaui.com/kihei" target="_blank" rel="noopener">Kīhei farmers market ↗</a>
           <a href="https://www.google.com/search?q=easy+Hawaiian+vacation+rental+recipes" target="_blank" rel="noopener">More condo meal ideas ↗</a>
         </div>
@@ -4398,7 +4376,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
   </div>
 </section>
 
-<section id="playlist">
+<section id="playlist" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Make a joyful noise unto the Lord… come before his presence with singing.”</blockquote>
         <cite>Psalm 100:1–2</cite>
@@ -4418,13 +4396,13 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         </div>
 
         <div class="card span-12">
-          <span class="pill">Curated for Trish, Denise & Lindsay</span>
+          <span class="pill">Curated for Trish, Denise &amp; Lindsay</span>
           <h2 style="margin-top:12px;">Songs for every chapter</h2>
           <p class="muted">Tap Preview to hear a short sample, or open the full song in Apple Music. Only one preview plays at a time.</p>
           <div class="track-grid">
             
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/44/06/fd/4406fdc0-aab5-e300-82ba-3e5fe81a68a7/00602537868858.rgb.jpg/600x600bb.jpg" alt="Better Together album artwork" loading="lazy">
+        <img src="./index_files/600x600bb.jpg" alt="Better Together album artwork" loading="lazy">
         <div class="track-copy">
           <span>Arrival</span>
           <h3>Better Together</h3>
@@ -4437,7 +4415,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/y2004/m04/d20/h17/s05.kbjerdzd.jpg/600x600bb.jpg" alt="Somewhere Over the Rainbow / What a Wonderful World album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(1).jpg" alt="Somewhere Over the Rainbow / What a Wonderful World album artwork" loading="lazy">
         <div class="track-copy">
           <span>First sunset</span>
           <h3>Somewhere Over the Rainbow / What a Wonderful World</h3>
@@ -4450,7 +4428,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/44/06/fd/4406fdc0-aab5-e300-82ba-3e5fe81a68a7/00602537868858.rgb.jpg/600x600bb.jpg" alt="Banana Pancakes album artwork" loading="lazy">
+        <img src="./index_files/600x600bb.jpg" alt="Banana Pancakes album artwork" loading="lazy">
         <div class="track-copy">
           <span>Slow morning</span>
           <h3>Banana Pancakes</h3>
@@ -4463,9 +4441,9 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/y2004/m05/d05/h16/s05.vsetphgg.jpg/600x600bb.jpg" alt="Hawai'i '78 album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(2).jpg" alt="Hawai&#39;i &#39;78 album artwork" loading="lazy">
         <div class="track-copy">
-          <span>Learn & reflect</span>
+          <span>Learn &amp; reflect</span>
           <h3>Hawai'i '78</h3>
           <p>Israel Kamakawiwo'ole</p>
           <div class="track-actions">
@@ -4476,7 +4454,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/36/c3/a7/mzi.vilpzcxo.jpg/600x600bb.jpg" alt="You Are the Best Thing album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(3).jpg" alt="You Are the Best Thing album artwork" loading="lazy">
         <div class="track-copy">
           <span>Family favorite</span>
           <h3>You Are the Best Thing</h3>
@@ -4489,7 +4467,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ac/ec/f8acec21-40e2-fa91-fe61-1be3cbc1467a/mzi.jokpbtnf.jpg/600x600bb.jpg" alt="I'm Yours album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(4).jpg" alt="I&#39;m Yours album artwork" loading="lazy">
         <div class="track-copy">
           <span>Top down drive</span>
           <h3>I'm Yours</h3>
@@ -4502,7 +4480,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/1c/93/781c934a-c233-cfce-39db-31f7284969b4/cover.jpg/600x600bb.jpg" alt="Sunset Lover album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(5).jpg" alt="Sunset Lover album artwork" loading="lazy">
         <div class="track-copy">
           <span>Sunset sail</span>
           <h3>Sunset Lover</h3>
@@ -4515,7 +4493,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d9/cd/24/d9cd2461-82dc-9f9f-6ed3-86bb75d110b9/13UABIM50290.rgb.jpg/600x600bb.jpg" alt="Put Your Records On album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(6).jpg" alt="Put Your Records On album artwork" loading="lazy">
         <div class="track-copy">
           <span>Getting ready</span>
           <h3>Put Your Records On</h3>
@@ -4528,11 +4506,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/15/0b/db/150bdba3-8dbb-8e66-79b3-c8e1dead908b/20UMGIM03868.rgb.jpg/600x600bb.jpg" alt="Three Little Birds album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(7).jpg" alt="Three Little Birds album artwork" loading="lazy">
         <div class="track-copy">
           <span>No worries</span>
           <h3>Three Little Birds</h3>
-          <p>Bob Marley & The Wailers</p>
+          <p>Bob Marley &amp; The Wailers</p>
           <div class="track-actions">
             <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8a/68/72/8a68729a-4091-b8d5-f487-008188eddb76/mzaf_15991723677491948312.plus.aac.ep.m4a" data-track="8">▶ Preview</button>
             <a href="https://music.apple.com/us/album/three-little-birds/1496696597?i=1496696606" target="_blank" rel="noopener">Open in Apple Music ↗</a>
@@ -4541,11 +4519,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/b2/a3/77/b2a377cb-1dd9-be0c-f5a5-71ae077ad2a1/05099963522853.jpg/600x600bb.jpg" alt="Home album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(8).jpg" alt="Home album artwork" loading="lazy">
         <div class="track-copy">
           <span>The three of us</span>
           <h3>Home</h3>
-          <p>Edward Sharpe & The Magnetic Zeros</p>
+          <p>Edward Sharpe &amp; The Magnetic Zeros</p>
           <div class="track-actions">
             <button class="preview-button" type="button" data-preview="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/42/4a/a4/424aa4b5-9e29-2bbf-b25d-2dc2e2335d46/mzaf_6653649822996525231.plus.aac.ep.m4a" data-track="9">▶ Preview</button>
             <a href="https://music.apple.com/us/album/home/716436562?i=716436758" target="_blank" rel="noopener">Open in Apple Music ↗</a>
@@ -4554,7 +4532,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2b/c4/c9/2bc4c9d4-3bc6-ab13-3f71-df0b89b173de/886448022213.jpg/600x600bb.jpg" alt="Golden album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(9).jpg" alt="Golden album artwork" loading="lazy">
         <div class="track-copy">
           <span>Golden hour</span>
           <h3>Golden</h3>
@@ -4567,7 +4545,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </article>
     
       <article class="track-card">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/89/a6/f7/89a6f7be-a0e0-2524-a13b-6b5df7b7534a/06UMGIM24399.rgb.jpg/600x600bb.jpg" alt="Somewhere Only We Know album artwork" loading="lazy">
+        <img src="./index_files/600x600bb(10).jpg" alt="Somewhere Only We Know album artwork" loading="lazy">
         <div class="track-copy">
           <span>Flight home</span>
           <h3>Somewhere Only We Know</h3>
@@ -4614,7 +4592,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </div>
     </section>
 
-<section id="culture">
+<section id="culture" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“The earth is the Lord’s, and the fulness thereof.”</blockquote>
         <cite>Psalm 24:1</cite>
@@ -4634,11 +4612,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
           <span class="pill">A visual love letter</span>
           <h2 style="margin-top:12px;">Maui, in moments</h2>
           <div class="culture-gallery">
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1500&q=92" alt="Maui coastline"><figcaption>Where mountain meets the Pacific</figcaption></figure>
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=90" alt="Maui surf"><figcaption>Ocean energy</figcaption></figure>
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=90" alt="Tropical flowers"><figcaption>Island color</figcaption></figure>
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=90" alt="Sunset"><figcaption>Golden hour</figcaption></figure>
-            <figure><img loading="lazy" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=90" alt="Ocean waves"><figcaption>The living sea</figcaption></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1542259009477-d625272157b7" alt="Maui coastline"><figcaption>Where mountain meets the Pacific</figcaption></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1502680390469-be75c86b636f(1)" alt="Maui surf"><figcaption>Ocean energy</figcaption></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1501004318641-b39e6451bec6(1)" alt="Tropical flowers"><figcaption>Island color</figcaption></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1470252649378-9c29740c9fa8(1)" alt="Sunset"><figcaption>Golden hour</figcaption></figure>
+            <figure><img loading="lazy" src="./index_files/photo-1500375592092-40eb2168fd21(1)" alt="Ocean waves"><figcaption>The living sea</figcaption></figure>
           </div>
         </div>
 
@@ -4646,9 +4624,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
           <span class="pill">Find our way</span>
           <h2 style="margin-top:12px;">Our Maui story map</h2>
           <p class="muted">Wailea is our home base, with special days stretching north to Kū‘au, west to Ka‘anapali and through Central Maui.</p>
-          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Maui+Hawaii+Wailea+Paia+Kaanapali+Waikapu&output=embed"
-            title="Maui trip overview map"></iframe>
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./index_files/maps(9).html" title="Maui trip overview map"></iframe>
         </div>
 
         <div class="card span-12">
@@ -4665,25 +4641,25 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         </div>
 
         <div class="span-12 culture-grid">
-          <article class="culture-story" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=90')">
+          <article class="culture-story" style="background-image:url(&#39;https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&amp;fit=crop&amp;w=1200&amp;q=90&#39;)">
             <span class="pill">Voyaging</span>
             <h3>The Pacific was a pathway, not a barrier</h3>
             <p>Polynesian navigators crossed immense distances in double-hulled canoes by observing stars, currents, swells, birds and weather. Their knowledge made the settlement of Hawaiʻi possible.</p>
             <a href="https://www.nps.gov/hale/learn/historyculture/early-hawaiians.htm" target="_blank" rel="noopener">Learn more from the National Park Service ↗</a>
           </article>
-          <article class="culture-story" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=90')">
+          <article class="culture-story" style="background-image:url(&#39;https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;w=1200&amp;q=90&#39;)">
             <span class="pill">Land</span>
             <h3>From mountain to sea</h3>
             <p>Traditional ahupuaʻa often extended from upland forests to outer reefs, linking water, farming, gathering and fishing within one living system.</p>
             <a href="https://www.nps.gov/hale/learn/historyculture/archeology.htm" target="_blank" rel="noopener">Explore the cultural landscape ↗</a>
           </article>
-          <article class="culture-story" style="background-image:url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=90')">
+          <article class="culture-story" style="background-image:url(&#39;https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&amp;fit=crop&amp;w=1200&amp;q=90&#39;)">
             <span class="pill">Story</span>
             <h3>Why Haleakalā is the “house of the sun”</h3>
             <p>In a famous moʻolelo, the demigod Māui slowed the sun so his mother Hina would have enough daylight to dry her kapa cloth.</p>
             <a href="https://www.nps.gov/hale/learn/historyculture/deities.htm" target="_blank" rel="noopener">Read the story of Māui and the sun ↗</a>
           </article>
-          <article class="culture-story" style="background-image:url('https://images.unsplash.com/photo-1484291470158-b8f8d608850d?auto=format&fit=crop&w=1200&q=90')">
+          <article class="culture-story" style="background-image:url(&#39;https://images.unsplash.com/photo-1484291470158-b8f8d608850d?auto=format&amp;fit=crop&amp;w=1200&amp;q=90&#39;)">
             <span class="pill">Stewardship</span>
             <h3>Leave a place more loved than you found it</h3>
             <p>Mālama ʻāina recognizes a reciprocal relationship with land and ocean. Respectful travel begins with small choices: stay on paths, protect reefs and never take stones or sand.</p>
@@ -4700,7 +4676,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </div>
     </section>
 
-    <section id="ideas">
+    <section id="ideas" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Commit thy works unto the Lord, and thy thoughts shall be established.”</blockquote>
         <cite>Proverbs 16:3</cite>
@@ -4710,45 +4686,45 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <span class="pill">Interactive girls’ picks</span>
         <h2 style="margin-top:12px;">What sounds most fun?</h2>
         <p class="muted">Add possibilities and tap the heart to vote for favorites. Choices save in this browser.</p>
-        <div class="row"><input id="pickInput" placeholder="Example: sunset beach picnic" /><button onclick="addPick()">Add idea</button></div>
-        <div id="girlsPicks" class="vote-grid"></div>
+        <div class="row"><input id="pickInput" placeholder="Example: sunset beach picnic"><button onclick="addPick()">Add idea</button></div>
+        <div id="girlsPicks" class="vote-grid"><div class="vote-card"><h3>Sunset beach picnic</h3><p class="muted">0 hearts</p><div class="row"><button class="heart-button " onclick="votePick(0)">♡ Vote</button><button class="secondary" onclick="removePick(0)">Remove</button></div></div><div class="vote-card"><h3>Shave ice taste test</h3><p class="muted">0 hearts</p><div class="row"><button class="heart-button " onclick="votePick(1)">♡ Vote</button><button class="secondary" onclick="removePick(1)">Remove</button></div></div><div class="vote-card"><h3>Spa or resort day</h3><p class="muted">0 hearts</p><div class="row"><button class="heart-button " onclick="votePick(2)">♡ Vote</button><button class="secondary" onclick="removePick(2)">Remove</button></div></div></div>
       </div>
       <div class="card span-12">
         <span class="pill">Maui bingo</span>
         <h2 style="margin-top:12px;">Little moments to collect</h2>
         <p class="muted">Tap a square when it happens.</p>
-        <div class="progress-track"><div id="bingoProgress" class="progress-fill"></div></div>
-        <p id="bingoCount" class="muted"></p>
-        <div id="bingoGrid" class="bingo-grid"></div>
+        <div class="progress-track"><div id="bingoProgress" class="progress-fill" style="width: 0%;"></div></div>
+        <p id="bingoCount" class="muted">0 of 12 Maui moments collected</p>
+        <div id="bingoGrid" class="bingo-grid"><button class="bingo-tile" type="button">See a sea turtle</button><button class="bingo-tile" type="button">Try shave ice</button><button class="bingo-tile" type="button">Wear a flower in our hair</button><button class="bingo-tile" type="button">Watch a Maui sunset</button><button class="bingo-tile" type="button">Eat fresh pineapple</button><button class="bingo-tile" type="button">Take a barefoot beach photo</button><button class="bingo-tile" type="button">Spot a rainbow</button><button class="bingo-tile" type="button">Order a tropical drink</button><button class="bingo-tile" type="button">Find the perfect souvenir</button><button class="bingo-tile" type="button">Have a slow pool morning</button><button class="bingo-tile" type="button">Try local poke</button><button class="bingo-tile" type="button">Laugh until we cry</button></div>
       </div>
-      <div class="card span-6"><h2>Restaurants & treats</h2><div class="row"><input id="foodInput" placeholder="Add restaurant or food idea" /><button onclick="addItem('food','foodInput')">Add</button></div><ul id="foodList" class="list"></ul></div>
-      <div class="card span-6"><h2>Activities</h2><div class="row"><input id="activityInput" placeholder="Add activity idea" /><button onclick="addItem('activities','activityInput')">Add</button></div><ul id="activitiesList" class="list"></ul></div>
-      <div class="card span-6"><h2>Beaches</h2><div class="row"><input id="beachInput" placeholder="Add beach idea" /><button onclick="addItem('beaches','beachInput')">Add</button></div><ul id="beachesList" class="list"></ul></div>
-      <div class="card span-6"><h2>Shopping / cute stops</h2><div class="row"><input id="shopInput" placeholder="Add shopping or scenic stop" /><button onclick="addItem('shops','shopInput')">Add</button></div><ul id="shopsList" class="list"></ul></div>
+      <div class="card span-6"><h2>Restaurants &amp; treats</h2><div class="row"><input id="foodInput" placeholder="Add restaurant or food idea"><button onclick="addItem(&#39;food&#39;,&#39;foodInput&#39;)">Add</button></div><ul id="foodList" class="list"></ul></div>
+      <div class="card span-6"><h2>Activities</h2><div class="row"><input id="activityInput" placeholder="Add activity idea"><button onclick="addItem(&#39;activities&#39;,&#39;activityInput&#39;)">Add</button></div><ul id="activitiesList" class="list"></ul></div>
+      <div class="card span-6"><h2>Beaches</h2><div class="row"><input id="beachInput" placeholder="Add beach idea"><button onclick="addItem(&#39;beaches&#39;,&#39;beachInput&#39;)">Add</button></div><ul id="beachesList" class="list"></ul></div>
+      <div class="card span-6"><h2>Shopping / cute stops</h2><div class="row"><input id="shopInput" placeholder="Add shopping or scenic stop"><button onclick="addItem(&#39;shops&#39;,&#39;shopInput&#39;)">Add</button></div><ul id="shopsList" class="list"></ul></div>
     </div></section>
-    <section id="bookings">
+    <section id="bookings" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Let all things be done decently and in order.”</blockquote>
         <cite>1 Corinthians 14:40</cite>
       </div>
-    <div class="grid"><div class="card span-12"><h2>All bookings & confirmations</h2><div id="bookingList"></div></div></div></section>
-    <section id="packing">
+    <div class="grid"><div class="card span-12"><h2>All bookings &amp; confirmations</h2><div id="bookingList"></div></div></div></section>
+    <section id="packing" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“Take therefore no thought for the morrow.”</blockquote>
         <cite>Matthew 6:34</cite>
       </div>
     <div class="grid">
-      <div class="card span-6"><h2>Packing checklist</h2><div class="row"><input id="packInput" placeholder="Add packing item" /><button onclick="addItem('packing','packInput')">Add</button></div><ul id="packingList" class="list"></ul></div>
-      <div class="card span-6"><h2>Pre-trip tasks</h2><div class="row"><input id="taskInput" placeholder="Add pre-trip task" /><button onclick="addItem('tasks','taskInput')">Add</button></div><ul id="tasksList" class="list"></ul></div>
+      <div class="card span-6"><h2>Packing checklist</h2><div class="row"><input id="packInput" placeholder="Add packing item"><button onclick="addItem(&#39;packing&#39;,&#39;packInput&#39;)">Add</button></div><ul id="packingList" class="list"><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;packing&#39;,0)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;packing&#39;,0)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;packing&#39;,1)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;packing&#39;,1)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;packing&#39;,2)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;packing&#39;,2)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;packing&#39;,3)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;packing&#39;,3)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;packing&#39;,4)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;packing&#39;,4)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;packing&#39;,5)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;packing&#39;,5)">Remove</button></li></ul></div>
+      <div class="card span-6"><h2>Pre-trip tasks</h2><div class="row"><input id="taskInput" placeholder="Add pre-trip task"><button onclick="addItem(&#39;tasks&#39;,&#39;taskInput&#39;)">Add</button></div><ul id="tasksList" class="list"><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;tasks&#39;,0)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;tasks&#39;,0)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;tasks&#39;,1)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;tasks&#39;,1)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;tasks&#39;,2)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;tasks&#39;,2)">Remove</button></li><li><span class="check"><input type="checkbox" onchange="toggleItem(&#39;tasks&#39;,3)"><span style="">undefined</span></span><button class="secondary" onclick="deleteItem(&#39;tasks&#39;,3)">Remove</button></li></ul></div>
     </div></section>
-    <section id="share">
+    <section id="share" hidden="" aria-hidden="true" style="display: none !important;">
       <div class="page-verse">
         <blockquote>“O give thanks unto the Lord; for he is good.”</blockquote>
         <cite>Psalm 107:1</cite>
       </div>
     <div class="grid">
       <div class="card span-6"><h2>Share this dashboard</h2><p>Send the HTML file to your mom and sister by email, cloud storage, or text. Each person’s journals and photos are currently saved in their own browser. Export a backup to preserve them; true live sharing will require connecting the site to a shared database.</p><p><button onclick="window.print()">Print / Save PDF</button> <button class="secondary" onclick="exportData()">Export Backup</button></p><p class="muted">The backup includes plans, notes, reservations, and daily photos.</p></div>
-      <div class="card span-6"><h2>Import backup</h2><input id="importFile" type="file" accept="application/json" /><p><button onclick="importData()">Import Backup</button></p><p><button class="danger" onclick="clearAll()">Clear saved dashboard data</button></p></div>
+      <div class="card span-6"><h2>Import backup</h2><input id="importFile" type="file" accept="application/json"><p><button onclick="importData()">Import Backup</button></p><p><button class="danger" onclick="clearAll()">Clear saved dashboard data</button></p></div>
     </div></section>
     <p class="footer-note">Made for sunshine, ocean days, great meals, and memories. 🌴</p>
   </main>
@@ -5003,7 +4979,7 @@ renderVotes();renderChallenges();
         <span class="pill">Today’s Maui story</span>
         <h2 id="storyModalTitle"></h2>
         <p id="storyModalText"></p>
-        <a id="storyModalSource" class="optional-link" href="#" target="_blank" rel="noopener">Read the source ↗</a>
+        <a id="storyModalSource" class="optional-link" href="file:///C:/Users/henni/Documents/Codex/2026-08-05/referenced-chatgpt-conversation-this-is-untrusted/outputs/index.html#" target="_blank" rel="noopener">Read the source ↗</a>
       </div>
     </article>
   </div>
@@ -5200,7 +5176,7 @@ renderVotes();renderChallenges();
           <div class="guide-memory-heading">
             <div>
               <span class="pill">Make this moment yours</span>
-              <h3>Our notes & pictures</h3>
+              <h3>Our notes &amp; pictures</h3>
             </div>
             <small>Saved in this browser</small>
           </div>
@@ -5778,7 +5754,7 @@ renderVotes();renderChallenges();
   });
   renderMeals();renderGroceries();
 })();
-</script>
+</script><div class="award-lightbox" aria-hidden="true"><button class="award-lightbox-close" type="button" aria-label="Close gallery">×</button><div class="award-lightbox-card"><button class="award-lightbox-prev" type="button" aria-label="Previous photo">‹</button><figure class="award-lightbox-figure"><img alt="Photo award entry"><figcaption></figcaption></figure><button class="award-lightbox-next" type="button" aria-label="Next photo">›</button></div></div>
 
 
 <script>
@@ -5963,8 +5939,6 @@ renderVotes();renderChallenges();
 
 
 <div class="magic-bar no-print" aria-label="Visual mood controls">
-  <button type="button" id="sparkleToggle">✦ Sparkle</button>
-  <button type="button" id="moonToggle">☾ Moonlight</button>
   <button type="button" id="homeJump">⌂ Home Base</button>
 </div>
 
@@ -5976,10 +5950,10 @@ renderVotes();renderChallenges();
   function setChapterMood(){document.body.dataset.chapter=currentChapter();}
   window.addEventListener("hashchange",setChapterMood);setChapterMood();
 
-  let sparkleOn=true;
-  const sparkleButton=document.getElementById("sparkleToggle");
+  let sparkleOn=document.body.dataset.aesthetic==="glitter";
+  const reducedMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function createSparkle(){
-    if(!sparkleOn)return;
+    if(!sparkleOn||reducedMotion||document.hidden)return;
     const s=document.createElement("span");
     s.setAttribute("aria-hidden","true");
     s.style.cssText="position:fixed;z-index:9998;pointer-events:none;color:#fff;font-size:"+(8+Math.random()*12)+"px;left:"+(Math.random()*100)+"vw;top:"+(8+Math.random()*55)+"vh;text-shadow:0 0 10px #fff;opacity:0;transition:1.8s ease";
@@ -5987,10 +5961,8 @@ renderVotes();renderChallenges();
     requestAnimationFrame(function(){s.style.opacity=".75";s.style.transform="translateY(-22px) scale(.6)";});
     setTimeout(function(){s.remove();},1900);
   }
-  const sparkleTimer=setInterval(createSparkle,700);
-  if(sparkleButton)sparkleButton.addEventListener("click",function(){sparkleOn=!sparkleOn;sparkleButton.textContent=sparkleOn?"✦ Sparkle":"✦ Still";});
-  const moon=document.getElementById("moonToggle");
-  if(moon)moon.addEventListener("click",function(){document.body.classList.toggle("moonlit");moon.textContent=document.body.classList.contains("moonlit")?"☀ Daylight":"☾ Moonlight";});
+  const sparkleTimer=setInterval(createSparkle,520);
+  window.addEventListener("maui-aesthetic-change",function(event){sparkleOn=event.detail==="glitter";});
   const jump=document.getElementById("homeJump");
   if(jump)jump.addEventListener("click",function(){location.hash="overview";setTimeout(function(){const h=document.querySelector(".mystic-home-base");if(h)h.scrollIntoView({behavior:"smooth",block:"center"});},80);});
 })();
@@ -6063,23 +6035,28 @@ renderVotes();renderChallenges();
   var toggle = document.getElementById("aestheticToggle");
   var label = document.getElementById("aestheticToggleLabel");
   var stored = localStorage.getItem("maui2026-aesthetic");
-  var initial = stored === "moonlight" ? "moonlight" : "daylight";
+  var atmosphereModes = ["daylight","moonlight","bloom","glitter"];
+  var atmosphereLabels = {daylight:"Daylight",moonlight:"Moonlight",bloom:"Island Bloom",glitter:"Glitter Tide"};
+  var initial = atmosphereModes.indexOf(stored) >= 0 ? stored : "daylight";
 
   function applyAesthetic(mode){
     body.dataset.aesthetic = mode;
-    var isMoon = mode === "moonlight";
+    var nextIndex = (atmosphereModes.indexOf(mode) + 1) % atmosphereModes.length;
+    var nextMode = atmosphereModes[nextIndex];
     if(toggle){
-      toggle.setAttribute("aria-pressed", isMoon ? "true" : "false");
-      toggle.setAttribute("aria-label", isMoon ? "Switch to daylight mode" : "Switch to moonlight mode");
+      toggle.setAttribute("aria-label", "Current atmosphere: " + atmosphereLabels[mode] + ". Click for " + atmosphereLabels[nextMode] + ".");
+      toggle.title = "Next: " + atmosphereLabels[nextMode];
     }
-    if(label) label.textContent = isMoon ? "Moonlight" : "Daylight";
+    if(label) label.textContent = atmosphereLabels[mode];
     localStorage.setItem("maui2026-aesthetic", mode);
+    window.dispatchEvent(new CustomEvent("maui-aesthetic-change",{detail:mode}));
   }
 
   applyAesthetic(initial);
   if(toggle){
     toggle.addEventListener("click", function(){
-      applyAesthetic(body.dataset.aesthetic === "moonlight" ? "daylight" : "moonlight");
+      var currentIndex = atmosphereModes.indexOf(body.dataset.aesthetic);
+      applyAesthetic(atmosphereModes[(currentIndex + 1) % atmosphereModes.length]);
     });
   }
 
@@ -6091,5 +6068,6 @@ renderVotes();renderChallenges();
 })();
 </script>
 
-</body>
-</html>
+
+
+</body></html>

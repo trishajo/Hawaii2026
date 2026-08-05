@@ -1414,6 +1414,11 @@
       url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1800&q=92")
     }
     .playlist-top-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .span-7{grid-column:span 7}.span-5{grid-column:span 5}
+    .continuous-player{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:18px 20px;margin:18px 0;border-radius:20px;background:linear-gradient(135deg,#092f40,#17616d);color:#fff}
+    .continuous-player h3{color:#fff;margin:0 0 4px;font-family:Georgia,serif;font-size:1.35rem}.continuous-player p{color:rgba(255,255,255,.78);margin:0}
+    .continuous-player-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.continuous-player button{background:linear-gradient(135deg,#f7bf4c,#ef7968)}
+    .playlist-link-box{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:14px}.playlist-link-box input{margin:0!important}.playlist-link-box a{display:none;align-items:center;padding:10px 14px;border-radius:12px;background:#173f4d;color:#fff;text-decoration:none;font-weight:850}
     .track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
     .track-card{display:grid;grid-template-columns:105px 1fr;gap:14px;padding:12px;border:1px solid rgba(18,59,83,.12);border-radius:20px;background:#fff}
     .track-card img{width:105px;height:105px;object-fit:cover;border-radius:14px}
@@ -1431,7 +1436,7 @@
     .song-suggestion{display:flex;justify-content:space-between;gap:12px;padding:11px 13px;border-radius:13px;background:#f2f8f7}
     .song-suggestion button{border:0;background:transparent;cursor:pointer}
     @media(max-width:1050px){.track-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:700px){.track-grid{grid-template-columns:1fr}.playlist-suggest-grid{grid-template-columns:1fr}}
+    @media(max-width:700px){.track-grid,.playlist-suggest-grid,.playlist-link-box{grid-template-columns:1fr}.span-7,.span-5{grid-column:span 12}}
 
 
     .flight-journey{
@@ -1553,7 +1558,7 @@
     .games-panel{padding:25px;border-radius:25px;background:#fff;border:1px solid rgba(18,59,83,.12);box-shadow:0 12px 28px rgba(18,59,83,.07)}
     .games-panel h2{margin:9px 0 5px}
     .games-two-column{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .photo-awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+    .photo-awards-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
     .photo-award-card{border:1px solid #d6e2e2;border-radius:18px;padding:11px;background:#f8fbfa}
     .award-photo{
       height:160px;border-radius:13px;background:linear-gradient(145deg,#d9ecea,#f5d3ad);
@@ -1566,6 +1571,24 @@
     .award-form select,.secret-mission-panel select{
       width:100%;box-sizing:border-box;padding:10px;border:1px solid #cbd8da;border-radius:11px;background:#fff;margin-top:5px
     }
+    .photo-award-card{padding:20px}
+    .photo-award-heading{display:flex;justify-content:space-between;gap:16px;align-items:start;flex-wrap:wrap}
+    .photo-award-heading h3{font-size:1.55rem;margin:0}
+    .photo-upload-row{display:grid;grid-template-columns:170px 1fr auto;gap:10px;align-items:end;margin:15px 0}
+    .photo-upload-row label{margin:0}.photo-upload-button{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border-radius:13px;background:linear-gradient(135deg,#ef7968,#d94979);color:#fff;font-weight:900;cursor:pointer}
+    .photo-upload-button input{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .person-photo-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .person-photo-group{padding:12px;border-radius:16px;background:#eef7f6;border:1px solid rgba(18,59,83,.1);min-width:0}
+    .person-photo-group h4{margin:0 0 10px;color:#173f4d;display:flex;justify-content:space-between;gap:8px}
+    .person-photo-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+    .person-photo-gallery .empty-gallery{grid-column:1/-1;padding:18px 8px;text-align:center;color:#6a7e85;font-size:.85rem}
+    .award-thumb{position:relative;aspect-ratio:1;border-radius:11px;overflow:hidden;background:#dce9e8;cursor:pointer;border:0;padding:0;box-shadow:none}
+    .award-thumb:hover{transform:translateY(-2px)}.award-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .award-thumb .remove-photo{position:absolute;right:5px;top:5px;width:25px;height:25px;border-radius:50%;padding:0;background:rgba(5,28,38,.78);color:#fff;box-shadow:none;font-size:.8rem}
+    .award-lightbox{display:none;position:fixed;inset:0;z-index:20000;background:rgba(2,16,23,.94);align-items:center;justify-content:center;padding:28px}
+    .award-lightbox.open{display:flex}.award-lightbox-card{width:min(1050px,96vw);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:15px}
+    .award-lightbox-figure{margin:0;text-align:center}.award-lightbox-figure img{max-width:100%;max-height:76vh;border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.48)}
+    .award-lightbox-figure figcaption{color:#fff;margin-top:12px}.award-lightbox button{font-size:1.5rem;background:rgba(255,255,255,.14);box-shadow:none}.award-lightbox-close{position:absolute;right:22px;top:18px}
     .game-picker-result,.secret-mission,.question-card{
       min-height:105px;padding:20px;border-radius:18px;background:#f0f7f6;
       display:flex;align-items:center;font-family:Georgia,serif;font-size:1.22rem;line-height:1.5;
@@ -1574,13 +1597,23 @@
     .external-games{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
     .external-games a{text-align:center;padding:11px;border-radius:13px;background:#173f4d;color:white;text-decoration:none;font-weight:900}
     .award-form{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+    .daily-awards-toolbar{display:flex;gap:14px;align-items:end;justify-content:space-between;flex-wrap:wrap;margin:16px 0 18px;padding:16px;border-radius:18px;background:linear-gradient(135deg,rgba(101,203,208,.12),rgba(247,191,76,.13))}
+    .daily-awards-toolbar label{margin:0;min-width:260px}
+    .daily-awards-scoreboard{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 18px}
+    .daily-score-card{padding:17px;border-radius:18px;text-align:center;color:#fff;box-shadow:0 12px 28px rgba(18,59,83,.12)}
+    .daily-score-card.trish{background:linear-gradient(135deg,#ef7968,#d94979)}
+    .daily-score-card.denise{background:linear-gradient(135deg,#d9a531,#f7bf4c);color:#213947}
+    .daily-score-card.lindsay{background:linear-gradient(135deg,#167c92,#65cbd0)}
+    .daily-score-card strong{display:block;font-family:Georgia,serif;font-size:2.35rem;line-height:1;margin:5px 0}
+    .daily-awards-summary{margin-top:16px;padding:15px 17px;border-radius:16px;background:rgba(22,124,146,.08);color:var(--navy);font-weight:750;line-height:1.55}
     .scavenger-v2{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}
     .scavenger-v2 label{padding:12px;border-radius:13px;background:#f2f8f7}
     @media(max-width:1000px){.photo-awards-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:760px){
       .games-dashboard,.games-two-column,.scavenger-v2{grid-template-columns:1fr}
-      .photo-awards-grid{grid-template-columns:1fr}
-      .award-form{grid-template-columns:1fr}
+      .photo-awards-grid,.person-photo-groups{grid-template-columns:1fr}
+      .award-form,.daily-awards-scoreboard{grid-template-columns:1fr}
+      .photo-upload-row{grid-template-columns:1fr}
     }
 
 
@@ -1598,6 +1631,12 @@
     .meal-idea span{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#d27361}
     .meal-idea h3{font-family:Georgia,serif;color:#173f4d;margin:8px 0}
     .meal-idea p{color:#587078;line-height:1.55;margin:0}
+    .food-story-panel{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(239,253,255,.9))}
+    .food-knowledge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+    .food-knowledge-grid article{padding:19px;border-radius:19px;background:rgba(255,255,255,.9);border:1px solid rgba(18,59,83,.11)}
+    .food-knowledge-grid span{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#d27361}
+    .food-knowledge-grid h3{font-family:Georgia,serif;margin:8px 0;color:#173f4d}
+    .food-knowledge-grid p{margin:0;color:#587078;line-height:1.55}
     .meals-two-column{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .meals-panel{padding:24px;border-radius:24px;background:#fff;border:1px solid rgba(18,59,83,.12)}
     .meal-add-row{display:grid;grid-template-columns:1fr .42fr auto;gap:8px;margin:15px 0}
@@ -1610,7 +1649,17 @@
     .grocery-item.done span{text-decoration:line-through;opacity:.55}
     .meal-links{display:grid;gap:8px;margin-top:16px}
     .meal-links a{text-decoration:none;padding:11px 13px;border-radius:12px;background:#173f4d;color:#fff;font-weight:900;text-align:center}
-    @media(max-width:850px){.meal-idea-grid,.meals-two-column{grid-template-columns:1fr}.meal-add-row{grid-template-columns:1fr}}
+    .meal-diary{display:grid;gap:10px;margin-top:18px}
+    .meal-diary details{border:1px solid rgba(18,59,83,.13);border-radius:18px;background:#fff;overflow:hidden}
+    .meal-diary summary{cursor:pointer;padding:16px 18px;font-family:Georgia,serif;font-weight:800;font-size:1.15rem;color:#173f4d;background:linear-gradient(135deg,rgba(101,203,208,.1),rgba(247,191,76,.09))}
+    .meal-diary-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
+    .meal-diary-fields label{margin:0}.meal-diary-fields textarea{min-height:82px}
+    .lunch-idea-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .lunch-idea-grid a{display:flex;flex-direction:column;gap:7px;padding:18px;border-radius:18px;text-decoration:none;background:linear-gradient(145deg,#0e4253,#17616d);color:#fff;transition:.2s}
+    .lunch-idea-grid a:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(18,59,83,.18)}
+    .lunch-idea-grid strong{font-family:Georgia,serif;font-size:1.15rem}.lunch-idea-grid span{color:rgba(255,255,255,.82);line-height:1.5}
+    @media(max-width:1050px){.food-knowledge-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:850px){.meal-idea-grid,.meals-two-column,.food-knowledge-grid,.lunch-idea-grid,.meal-diary-fields{grid-template-columns:1fr}.meal-add-row{grid-template-columns:1fr}}
 
 
     .scavenger-board-panel{overflow:hidden}
@@ -2126,6 +2175,46 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 
 </style>
 
+  <style id="chapter-isolation-fix">
+    /*
+      Chapter isolation: the Overview is the default landing page, but once a
+      real hash target exists it must never remain visible beside that target.
+      This CSS fallback keeps navigation reliable even if an optional widget
+      throws a JavaScript error.
+    */
+    main.shell > section { display: none !important; }
+    main.shell > section:target { display: block !important; }
+    body:not(:has(main.shell > section:target)) main.shell > #overview {
+      display: block !important;
+    }
+    body:has(main.shell > section:target) main.shell > section.active:not(:target) {
+      display: none !important;
+    }
+
+    /* Each day opens like a new keepsake chapter, directly in its own story. */
+    main.shell > section[id^="day-"] > .page-verse {
+      margin-top: 8px;
+    }
+    main.shell > section[id^="day-"]:target > :first-child,
+    main.shell > section[id^="day-"].active > :first-child {
+      animation: chapterLeadIn .5s ease both;
+    }
+    @keyframes chapterLeadIn {
+      from { opacity: .25; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* A little editorial variety without moving or rewriting saved content. */
+    #day-2026-09-17 .flight-journey,
+    #day-2026-09-25 .flight-journey { position: relative; z-index: 2; }
+    #day-2026-09-19 .experience-feature,
+    #day-2026-09-20 .experience-feature,
+    #day-2026-09-22 .experience-feature { box-shadow: 0 26px 70px rgba(5,33,45,.18); }
+    #day-2026-09-18 .page-verse,
+    #day-2026-09-21 .page-verse,
+    #day-2026-09-23 .page-verse,
+    #day-2026-09-24 .page-verse { max-width: 860px; margin-inline: auto; }
+  </style>
 </head>
 <body>
 
@@ -2207,7 +2296,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       <a class="tab" data-tab="day-2026-09-24" href="#day-2026-09-24">Thu 24</a>
       <a class="tab" data-tab="day-2026-09-25" href="#day-2026-09-25">Fri 25</a>
       <a class="tab" data-tab="games" href="#games">Games</a>
-      <a class="tab" data-tab="meals" href="#meals">Meals at Home</a>
+      <a class="tab" data-tab="meals" href="#meals">Our Maui Table</a>
       <a class="tab" data-tab="playlist" href="#playlist">Playlist</a>
       <a class="tab" data-tab="culture" href="#culture">Island Stories</a>
       <a class="tab" data-tab="ideas" href="#ideas">Ideas</a>
@@ -4102,7 +4191,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 <section class="games-panel">
       <span class="pill">The Maui Photo Awards</span>
       <h2>Best picture of…</h2>
-      <p class="muted">Each person can upload an entry for a category. The photos are displayed for this browser session; captions and winners save locally.</p>
+      <p class="muted">Upload as many entries as you like throughout the vacation. Every category becomes three private galleries—Trish, Denise and Lindsay—and you can click through each person’s collection before choosing the winner.</p>
       <div class="photo-awards-grid" id="photoAwards"></div>
     </section>
 
@@ -4146,6 +4235,28 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       <section class="games-panel">
         <span class="pill">Daily awards</span>
         <h2>And the award goes to…</h2>
+        <p class="muted">Choose the winners each evening. Every award is worth one point, and the trip scoreboard adds up all nine days.</p>
+        <div class="daily-awards-toolbar">
+          <label>Awards for
+            <select id="dailyAwardsDate">
+              <option value="2026-09-17">Thursday, September 17</option>
+              <option value="2026-09-18">Friday, September 18</option>
+              <option value="2026-09-19">Saturday, September 19</option>
+              <option value="2026-09-20">Sunday, September 20</option>
+              <option value="2026-09-21">Monday, September 21</option>
+              <option value="2026-09-22">Tuesday, September 22</option>
+              <option value="2026-09-23">Wednesday, September 23</option>
+              <option value="2026-09-24">Thursday, September 24</option>
+              <option value="2026-09-25">Friday, September 25</option>
+            </select>
+          </label>
+          <span class="pill" id="dailyAwardsSaved">Saved privately in this browser</span>
+        </div>
+        <div class="daily-awards-scoreboard" aria-label="Trip awards scoreboard">
+          <article class="daily-score-card trish"><span>Trish</span><strong id="dailyScoreTrish">0</strong><small>award points</small></article>
+          <article class="daily-score-card denise"><span>Denise</span><strong id="dailyScoreDenise">0</strong><small>award points</small></article>
+          <article class="daily-score-card lindsay"><span>Lindsay</span><strong id="dailyScoreLindsay">0</strong><small>award points</small></article>
+        </div>
         <div class="award-form">
           <label>Best dressed<select data-award-v2="dressed"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
           <label>Funniest moment<select data-award-v2="funniest"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
@@ -4154,6 +4265,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
           <label>Most joyful<select data-award-v2="joy"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
           <label>MVP of the day<select data-award-v2="mvp"><option value="">Choose</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>
         </div>
+        <div class="daily-awards-summary" id="dailyAwardsSummary">No awards chosen for this day yet.</div>
       </section>
     </div>
 
@@ -4191,19 +4303,56 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
 
   <div class="meals-page">
     <header class="meals-hero">
-      <span class="pill">Breakfasts, easy dinners & condo nights</span>
-      <h2>Meals at Home</h2>
-      <p>Not every Maui memory needs a reservation. Some of the sweetest evenings may be bare feet, a beautiful plate, a glass of something cold and dinner together at the condo.</p>
+      <span class="pill">Taste · cook · remember</span>
+      <h2>Our Maui Table</h2>
+      <p>Part kitchen notebook, part island food guide and part delicious diary—because breakfast on the lanai, a casual lunch and a memorable dinner all belong in the story.</p>
     </header>
 
+    <section class="meals-panel food-story-panel">
+      <span class="pill">From the ʻāina to the table</span>
+      <h2>Ingredients that tell Hawaiʻi’s story</h2>
+      <p class="muted">Hawaiʻi’s food is layered. Native Hawaiian foodways center the gifts of land and sea; today’s “local food” also reflects generations of Chinese, Japanese, Filipino, Portuguese, Korean, Puerto Rican and other communities. Learning the difference makes every plate more meaningful.</p>
+      <div class="food-knowledge-grid">
+        <article><span>Voyaging crops</span><h3>Kalo, ʻuala, ʻulu & maiʻa</h3><p>Taro, sweet potato, breadfruit and banana traveled with Polynesian voyagers and became important sources of nourishment. Kalo holds especially deep genealogical and spiritual meaning in Hawaiian culture.</p></article>
+        <article><span>Maui-grown</span><h3>Pineapple, coffee & tropical fruit</h3><p>Maui agriculture includes pineapple, coffee, macadamia nuts, bananas, citrus, avocado and many diversified crops grown from warm coastlines to cooler Upcountry farms.</p></article>
+        <article><span>Flavor builders</span><h3>Shoyu, ginger, garlic & sesame</h3><p>Island kitchens often reach for shoyu, fresh ginger, garlic, sesame oil, scallions, Hawaiian salt, citrus, coconut, chile pepper water and sweet-tart lilikoi.</p></article>
+        <article><span>Look for</span><h3>Poke, poi, laulau & plate lunch</h3><p>Try traditional foods such as poi and laulau alongside beloved local dishes like poke, loco moco, saimin, Spam musubi, plate lunch and malasadas.</p></article>
+      </div>
+      <div class="meal-links">
+        <a href="https://pacific-crops.ctahr.hawaii.edu/hawaiian-indigenous-crops/" target="_blank" rel="noopener">Learn about Indigenous Hawaiian crops ↗</a>
+        <a href="https://dab.hawaii.gov/blog/ag-resources/history-of-agriculture-in-hawaii/" target="_blank" rel="noopener">Explore Hawaiʻi agriculture ↗</a>
+        <a href="https://www.wvfarmersmarket.org/" target="_blank" rel="noopener">Wailea farmers market ↗</a>
+      </div>
+    </section>
+
     <div class="meal-idea-grid">
-      <article class="meal-idea"><span>Breakfast</span><h3>Tropical yogurt bar</h3><p>Greek yogurt, granola, pineapple, mango, berries, coconut and macadamia nuts.</p></article>
-      <article class="meal-idea"><span>Breakfast</span><h3>Hawaiian French toast</h3><p>Sweet bread, eggs, cinnamon and fresh fruit with coffee on the lanai.</p></article>
-      <article class="meal-idea"><span>Easy dinner</span><h3>Fresh fish tacos</h3><p>Local fish, cabbage slaw, avocado, lime crema and mango salsa.</p></article>
-      <article class="meal-idea"><span>Easy dinner</span><h3>Teriyaki chicken bowls</h3><p>Rice, grilled chicken, pineapple, cucumber, edamame and sesame.</p></article>
-      <article class="meal-idea"><span>Lanai dinner</span><h3>Garlic shrimp & rice</h3><p>Buttery garlic shrimp, rice, a simple salad and fresh lime.</p></article>
-      <article class="meal-idea"><span>Low-effort night</span><h3>Island snack board</h3><p>Poke, crackers, cheese, fruit, vegetables, dips and something sweet.</p></article>
+      <article class="meal-idea"><span>Lanai breakfast</span><h3>Tropical yogurt bar</h3><p>Greek yogurt, granola, pineapple, mango, banana, coconut, macadamia nuts and lilikoi curd.</p></article>
+      <article class="meal-idea"><span>Slow breakfast</span><h3>Sweet-bread French toast</h3><p>Hawaiian sweet bread, eggs, cinnamon, butter, fruit and Maui-grown coffee.</p></article>
+      <article class="meal-idea"><span>Fast breakfast</span><h3>Island egg sandwiches</h3><p>Eggs, avocado, cheese, tomato and Portuguese sausage or a vegetable alternative.</p></article>
+      <article class="meal-idea"><span>Easy lunch</span><h3>Poke bowls</h3><p>Fresh prepared poke over rice with cucumber, avocado, edamame, seaweed and sesame.</p></article>
+      <article class="meal-idea"><span>Easy dinner</span><h3>Fresh fish tacos</h3><p>Local fish, cabbage slaw, avocado, lime crema and mango-pineapple salsa.</p></article>
+      <article class="meal-idea"><span>Easy dinner</span><h3>Teriyaki chicken bowls</h3><p>Rice, grilled chicken, pineapple, cucumber, edamame, scallions and sesame.</p></article>
+      <article class="meal-idea"><span>Lanai dinner</span><h3>Garlic shrimp & rice</h3><p>Buttery garlic shrimp, rice, a simple salad, green onion and fresh lime.</p></article>
+      <article class="meal-idea"><span>Use-the-fridge night</span><h3>Island fried rice</h3><p>Leftover rice, eggs, vegetables, pineapple, scallions and any remaining chicken or shrimp.</p></article>
+      <article class="meal-idea"><span>Low-effort night</span><h3>Island snack board</h3><p>Poke, crackers, cheese, fruit, vegetables, hummus, macadamia nuts and something sweet.</p></article>
     </div>
+
+    <section class="meals-panel">
+      <span class="pill">Nine delicious chapters</span>
+      <h2>What we ate each day</h2>
+      <p class="muted">Record meals at the condo and meals out. These entries save privately in this browser and can travel with the personal keepsake backup.</p>
+      <div class="meal-diary" id="mealDiary">
+        <details open data-meal-day="2026-09-17"><summary>Thu, September 17 · Arrival</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-18"><summary>Fri, September 18</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-19"><summary>Sat, September 19 · Mama’s Fish House</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-20"><summary>Sun, September 20 · Luau</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-21"><summary>Mon, September 21</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-22"><summary>Tue, September 22 · Sunset sail</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-23"><summary>Wed, September 23</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-24"><summary>Thu, September 24</summary><div class="meal-diary-fields"></div></details>
+        <details data-meal-day="2026-09-25"><summary>Fri, September 25 · Travel home</summary><div class="meal-diary-fields"></div></details>
+      </div>
+    </section>
 
     <div class="meals-two-column">
       <section class="meals-panel">
@@ -4220,6 +4369,8 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       <section class="meals-panel">
         <span class="pill">Shopping list</span>
         <h2>Condo groceries</h2>
+        <p class="muted">Start with the essentials below, then add anything special for the meals you choose.</p>
+        <button id="addStarterGroceries" class="secondary" type="button">Add the Maui starter list</button>
         <div class="meal-add-row grocery-row">
           <input id="groceryItem" placeholder="Add an ingredient">
           <button id="addGrocery" type="button">Add</button>
@@ -4227,11 +4378,23 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
         <div id="groceryList" class="grocery-list"></div>
         <div class="meal-links">
           <a href="https://www.google.com/maps/search/?api=1&query=grocery+store+near+Wailea+Maui" target="_blank" rel="noopener">Groceries near Wailea ↗</a>
-          <a href="https://www.google.com/search?q=Maui+farmers+market+schedule" target="_blank" rel="noopener">Maui farmers markets ↗</a>
+          <a href="https://www.farmersmarketsmaui.com/kihei" target="_blank" rel="noopener">Kīhei farmers market ↗</a>
           <a href="https://www.google.com/search?q=easy+Hawaiian+vacation+rental+recipes" target="_blank" rel="noopener">More condo meal ideas ↗</a>
         </div>
       </section>
     </div>
+
+    <section class="meals-panel">
+      <span class="pill">Lunch adventures</span>
+      <h2>A few easy meals out</h2>
+      <p class="muted">Flexible lunch ideas rather than added reservations. Check current hours and menus before going.</p>
+      <div class="lunch-idea-grid">
+        <a href="https://www.monkeypodkitchen.com/" target="_blank" rel="noopener"><strong>Monkeypod Kitchen · Wailea</strong><span>Island-inspired lunch, pies, cocktails and live music near Home Base.</span></a>
+        <a href="https://naluskihei.com/" target="_blank" rel="noopener"><strong>Nalu’s South Shore Grill · Kīhei</strong><span>Relaxed, family-friendly breakfast and lunch with a broad menu.</span></a>
+        <a href="https://www.southmauigardens.com/" target="_blank" rel="noopener"><strong>Kīhei Food Oasis · South Maui Gardens</strong><span>A garden setting with many food-truck choices—handy when everyone wants something different.</span></a>
+        <a href="https://www.mauifoodtrucks.org/" target="_blank" rel="noopener"><strong>South Maui food trucks</strong><span>Browse casual fish, bowls, tacos and other quick lunch possibilities around Kīhei.</span></a>
+      </div>
+    </section>
   </div>
 </section>
 
@@ -4770,7 +4933,8 @@ const heroChapters = {
 };
 const defaultHero = heroChapters.overview;
 function updateHero(tabId){
-  const h=heroChapters[tabId]||defaultHero;
+  const mealsHero={number:"🍍",eyebrow:"Our Maui Table",title:"Taste the island.",subtitle:"Cook, explore and remember every meal we share.",word:"ʻAi",meaning:"To eat; food and nourishment shared together.",challengeTitle:"A delicious detail",challenge:"Photograph one ingredient, plate or kitchen moment worth remembering.",promptTitle:"The flavor memory",prompt:"Which taste will bring you back to Maui?",chapter:"The table",chapterCopy:"Island crops, condo cooking, easy lunches and a nine-day food diary.",image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2200&q=95",date:"2026-09-23",source:"https://pacific-crops.ctahr.hawaii.edu/hawaiian-indigenous-crops/",sourceText:"Explore Hawaiian crops"};
+  const h=heroChapters[tabId]||(tabId==="meals"?mealsHero:defaultHero);
   const hero=document.getElementById('dynamicHero');
   hero.classList.add('hero-changing');
   setTimeout(()=>{
@@ -5178,7 +5342,8 @@ renderVotes();renderChallenges();
   }
 
   function changeHero(id){
-    const h = HERO[id] || HERO.overview;
+    const mealsHero = {eyebrow:"Our Maui Table",title:"Taste the island.",subtitle:"Cook, explore and remember every meal we share.",word:"ʻAi",meaning:"To eat; food and nourishment shared together.",challengeTitle:"A delicious detail",challenge:"Photograph one ingredient, plate or kitchen moment worth remembering.",promptTitle:"The flavor memory",prompt:"Which taste will bring you back to Maui?",number:"🍍",chapter:"The table",chapterCopy:"Island crops, condo cooking, easy lunches and a nine-day food diary.",image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2200&q=95",date:"2026-09-23"};
+    const h = HERO[id] || (id === "meals" ? mealsHero : HERO.overview);
     const hero = document.getElementById("dynamicHero");
     if(hero) hero.classList.add("hero-changing");
 
@@ -5372,37 +5537,90 @@ renderVotes();renderChallenges();
   const photoCategories = ["Nature", "Food", "Sunset", "Sunrise", "Wildlife", "Best Candid", "Best Portrait", "Funniest Photo"];
   const awardsRoot = document.getElementById("photoAwards");
   const gamesKey = "maui2026-games-v2";
-  let gamesState = {captions:{}, winners:{}, awards:{}, finds:{}};
+  let gamesState = {captions:{}, winners:{}, awards:{}, awardsByDay:{}, awardsDate:"2026-09-17", finds:{}};
   try{ gamesState = Object.assign(gamesState, JSON.parse(localStorage.getItem(gamesKey) || "{}")); }catch(e){}
   function saveGames(){ localStorage.setItem(gamesKey, JSON.stringify(gamesState)); }
   if(awardsRoot){
-    photoCategories.forEach(function(category, index){
-      const card = document.createElement("article");
-      card.className = "photo-award-card";
-      card.innerHTML =
-        '<label class="award-photo"><span>📷 Add an entry</span><input type="file" accept="image/*"></label>' +
-        '<h3>' + category + '</h3>' +
-        '<input type="text" placeholder="Caption or story">' +
-        '<label>Winner<select><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label>';
-      const caption = card.querySelector('input[type="text"]');
-      const winner = card.querySelector("select");
-      caption.value = gamesState.captions[category] || "";
-      winner.value = gamesState.winners[category] || "";
-      caption.addEventListener("input", function(){ gamesState.captions[category]=caption.value; saveGames(); });
-      winner.addEventListener("change", function(){ gamesState.winners[category]=winner.value; saveGames(); });
-      const fileInput = card.querySelector('input[type="file"]');
-      fileInput.addEventListener("change", function(){
-        const file = fileInput.files && fileInput.files[0]; if(!file) return;
-        const reader = new FileReader();
-        reader.onload = function(){
-          const photo = card.querySelector(".award-photo");
-          photo.style.backgroundImage = 'url("' + reader.result + '")';
-          photo.querySelector("span").style.display = "none";
-        };
-        reader.readAsDataURL(file);
+    const photoPeople = ["Trish","Denise","Lindsay"];
+    const dbRequest = indexedDB.open("maui2026-private-photos",1);
+    let photoDb = null;
+    let galleryUrls = [];
+    let lightboxItems = [];
+    let lightboxIndex = 0;
+    const lightbox = document.createElement("div");
+    lightbox.className = "award-lightbox";
+    lightbox.setAttribute("aria-hidden","true");
+    lightbox.innerHTML = '<button class="award-lightbox-close" type="button" aria-label="Close gallery">×</button><div class="award-lightbox-card"><button class="award-lightbox-prev" type="button" aria-label="Previous photo">‹</button><figure class="award-lightbox-figure"><img alt="Photo award entry"><figcaption></figcaption></figure><button class="award-lightbox-next" type="button" aria-label="Next photo">›</button></div>';
+    document.body.appendChild(lightbox);
+    function closeAwardLightbox(){lightbox.classList.remove("open");lightbox.setAttribute("aria-hidden","true");document.body.style.overflow="";}
+    function showLightboxPhoto(){
+      const item=lightboxItems[lightboxIndex];if(!item)return;
+      lightbox.querySelector("img").src=item.url;
+      lightbox.querySelector("figcaption").textContent=item.person+" · "+item.category+(item.caption?" — "+item.caption:"");
+    }
+    function openAwardLightbox(items,index){lightboxItems=items;lightboxIndex=index;showLightboxPhoto();lightbox.classList.add("open");lightbox.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}
+    lightbox.querySelector(".award-lightbox-close").addEventListener("click",closeAwardLightbox);
+    lightbox.querySelector(".award-lightbox-prev").addEventListener("click",function(){lightboxIndex=(lightboxIndex-1+lightboxItems.length)%lightboxItems.length;showLightboxPhoto();});
+    lightbox.querySelector(".award-lightbox-next").addEventListener("click",function(){lightboxIndex=(lightboxIndex+1)%lightboxItems.length;showLightboxPhoto();});
+    lightbox.addEventListener("click",function(event){if(event.target===lightbox)closeAwardLightbox();});
+    document.addEventListener("keydown",function(event){if(event.key==="Escape"&&lightbox.classList.contains("open"))closeAwardLightbox();});
+
+    dbRequest.onupgradeneeded = function(event){
+      const db=event.target.result;
+      if(!db.objectStoreNames.contains("photos")){
+        const store=db.createObjectStore("photos",{keyPath:"id"});
+        store.createIndex("category","category",{unique:false});
+        store.createIndex("person","person",{unique:false});
+      }
+    };
+    dbRequest.onerror=function(){awardsRoot.innerHTML='<p class="muted">Private photo storage could not open in this browser. Try opening the published GitHub website in your regular browser.</p>';};
+    dbRequest.onsuccess=function(event){photoDb=event.target.result;renderPhotoAwards();};
+    function allAwardPhotos(){
+      return new Promise(function(resolve,reject){
+        const request=photoDb.transaction("photos","readonly").objectStore("photos").getAll();
+        request.onsuccess=function(){resolve(request.result||[]);};request.onerror=function(){reject(request.error);};
       });
-      awardsRoot.appendChild(card);
-    });
+    }
+    function addAwardPhoto(record){
+      return new Promise(function(resolve,reject){const request=photoDb.transaction("photos","readwrite").objectStore("photos").add(record);request.onsuccess=resolve;request.onerror=function(){reject(request.error);};});
+    }
+    function deleteAwardPhoto(id){
+      return new Promise(function(resolve,reject){const request=photoDb.transaction("photos","readwrite").objectStore("photos").delete(id);request.onsuccess=resolve;request.onerror=function(){reject(request.error);};});
+    }
+    function uniquePhotoId(){return (window.crypto&&crypto.randomUUID)?crypto.randomUUID():Date.now()+"-"+Math.random().toString(16).slice(2);}
+    async function renderPhotoAwards(){
+      galleryUrls.forEach(function(url){URL.revokeObjectURL(url);});galleryUrls=[];
+      const photos=await allAwardPhotos();awardsRoot.innerHTML="";
+      photoCategories.forEach(function(category){
+        const card=document.createElement("article");card.className="photo-award-card";
+        card.innerHTML='<div class="photo-award-heading"><div><h3>'+category+'</h3><p class="muted">Build the gallery now; crown the winner later.</p></div><label>Category winner<select class="category-winner"><option value="">Not chosen</option><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label></div><div class="photo-upload-row"><label>Photographer<select class="photo-owner"><option>Trish</option><option>Denise</option><option>Lindsay</option></select></label><label>Caption for this upload<input class="photo-caption" type="text" placeholder="Optional story or detail"></label><label class="photo-upload-button">📷 Add photos<input class="photo-files" type="file" accept="image/*" multiple></label></div><div class="person-photo-groups"></div>';
+        const winner=card.querySelector(".category-winner");winner.value=gamesState.winners[category]||"";winner.addEventListener("change",function(){gamesState.winners[category]=winner.value;saveGames();});
+        const groups=card.querySelector(".person-photo-groups");
+        photoPeople.forEach(function(person){
+          const personPhotos=photos.filter(function(photo){return photo.category===category&&photo.person===person;}).sort(function(a,b){return a.created-b.created;});
+          const group=document.createElement("section");group.className="person-photo-group";
+          group.innerHTML='<h4><span>'+person+'</span><small>'+personPhotos.length+' photo'+(personPhotos.length===1?'':'s')+'</small></h4><div class="person-photo-gallery"></div>';
+          const gallery=group.querySelector(".person-photo-gallery");
+          if(!personPhotos.length){gallery.innerHTML='<div class="empty-gallery">No entries yet</div>';}
+          const viewItems=personPhotos.map(function(photo){const url=URL.createObjectURL(photo.blob);galleryUrls.push(url);return Object.assign({},photo,{url:url});});
+          viewItems.forEach(function(photo,index){
+            const thumb=document.createElement("div");thumb.className="award-thumb";thumb.setAttribute("role","button");thumb.tabIndex=0;thumb.title=photo.caption||("Open "+person+" photo");
+            const img=document.createElement("img");img.src=photo.url;img.alt=photo.caption||category+" entry by "+person;thumb.appendChild(img);
+            const remove=document.createElement("button");remove.className="remove-photo";remove.type="button";remove.textContent="×";remove.title="Remove photo";
+            remove.addEventListener("click",async function(event){event.stopPropagation();if(confirm("Remove this photo from the private gallery?")){await deleteAwardPhoto(photo.id);renderPhotoAwards();}});
+            thumb.appendChild(remove);thumb.addEventListener("click",function(){openAwardLightbox(viewItems,index);});thumb.addEventListener("keydown",function(event){if(event.key==="Enter"||event.key===" "){event.preventDefault();openAwardLightbox(viewItems,index);}});gallery.appendChild(thumb);
+          });
+          groups.appendChild(group);
+        });
+        const files=card.querySelector(".photo-files");
+        files.addEventListener("change",async function(){
+          const owner=card.querySelector(".photo-owner").value;const caption=card.querySelector(".photo-caption").value.trim();const selected=Array.from(files.files||[]);if(!selected.length)return;
+          for(const file of selected){await addAwardPhoto({id:uniquePhotoId(),category:category,person:owner,caption:caption,created:Date.now()+Math.random(),blob:file});}
+          files.value="";card.querySelector(".photo-caption").value="";await renderPhotoAwards();
+        });
+        awardsRoot.appendChild(card);
+      });
+    }
   }
 
   // Evening game picker
@@ -5429,13 +5647,51 @@ renderVotes();renderChallenges();
     document.getElementById("questionCard").textContent = questions[Math.floor(Math.random()*questions.length)];
   });
 
-  // Daily awards
-  document.querySelectorAll("[data-award-v2]").forEach(function(select){
-    select.value = gamesState.awards[select.dataset.awardV2] || "";
+  // Daily awards + whole-trip scoreboard
+  const awardDate = document.getElementById("dailyAwardsDate");
+  const awardSelects = Array.from(document.querySelectorAll("[data-award-v2]"));
+  const awardLabels = {dressed:"Best dressed",funniest:"Funniest moment",food:"Best food choice",candid:"Best candid",joy:"Most joyful",mvp:"MVP of the day"};
+  const awardPeople = ["Trish","Denise","Lindsay"];
+  if(!gamesState.awardsByDay || typeof gamesState.awardsByDay !== "object") gamesState.awardsByDay = {};
+  // Preserve choices made in the earlier trip-wide version by placing them on the first day.
+  if(Object.keys(gamesState.awards || {}).length && !Object.keys(gamesState.awardsByDay).length){
+    gamesState.awardsByDay["2026-09-17"] = Object.assign({}, gamesState.awards);
+  }
+  if(awardDate){
+    const today = new Date().toISOString().slice(0,10);
+    const tripDates = Array.from(awardDate.options).map(function(option){return option.value;});
+    awardDate.value = tripDates.includes(gamesState.awardsDate) ? gamesState.awardsDate : (tripDates.includes(today) ? today : tripDates[0]);
+  }
+  function renderDailyAwards(){
+    if(!awardDate) return;
+    const day = awardDate.value;
+    const dayAwards = gamesState.awardsByDay[day] || {};
+    awardSelects.forEach(function(select){ select.value = dayAwards[select.dataset.awardV2] || ""; });
+    const totals = {Trish:0,Denise:0,Lindsay:0};
+    Object.keys(gamesState.awardsByDay).forEach(function(date){
+      Object.values(gamesState.awardsByDay[date] || {}).forEach(function(person){ if(totals[person] !== undefined) totals[person] += 1; });
+    });
+    awardPeople.forEach(function(person){
+      const score = document.getElementById("dailyScore" + person);
+      if(score) score.textContent = totals[person];
+    });
+    const summary = document.getElementById("dailyAwardsSummary");
+    if(summary){
+      const chosen = Object.keys(dayAwards).filter(function(key){return dayAwards[key];});
+      summary.textContent = chosen.length ? chosen.map(function(key){return awardLabels[key] + ": " + dayAwards[key];}).join(" · ") : "No awards chosen for this day yet.";
+    }
+  }
+  awardSelects.forEach(function(select){
     select.addEventListener("change", function(){
-      gamesState.awards[select.dataset.awardV2] = select.value; saveGames();
+      const day = awardDate.value;
+      if(!gamesState.awardsByDay[day]) gamesState.awardsByDay[day] = {};
+      gamesState.awardsByDay[day][select.dataset.awardV2] = select.value;
+      gamesState.awardsDate = day;
+      saveGames(); renderDailyAwards();
     });
   });
+  if(awardDate) awardDate.addEventListener("change", function(){ gamesState.awardsDate = awardDate.value; saveGames(); renderDailyAwards(); });
+  renderDailyAwards();
 
   // Scavenger hunt
   function renderFinds(){
@@ -5456,7 +5712,7 @@ renderVotes();renderChallenges();
 
   // Meals and grocery list
   const mealsKey = "maui2026-meals-v1";
-  let mealState = {meals:[], groceries:[]};
+  let mealState = {meals:[], groceries:[], diary:{}};
   try{ mealState = Object.assign(mealState, JSON.parse(localStorage.getItem(mealsKey) || "{}")); }catch(e){}
   function saveMeals(){localStorage.setItem(mealsKey, JSON.stringify(mealState));}
   function renderMeals(){
@@ -5490,6 +5746,35 @@ renderVotes();renderChallenges();
   if(addGrocery) addGrocery.addEventListener("click",function(){
     const input=document.getElementById("groceryItem");if(!input.value.trim())return;
     mealState.groceries.push({name:input.value.trim(),done:false});input.value="";saveMeals();renderGroceries();
+  });
+  const starterGroceries = ["Eggs","Hawaiian sweet bread","Greek yogurt","Granola","Maui-grown coffee","Rice","Shoyu","Sesame oil","Fresh ginger","Garlic","Scallions","Limes","Pineapple","Bananas","Mango or seasonal fruit","Avocados","Cucumber","Cabbage or salad greens","Prepared poke","Chicken or tofu","Fresh fish or shrimp","Tortillas","Cheese","Macadamia nuts","Sparkling water"];
+  const starterButton = document.getElementById("addStarterGroceries");
+  if(starterButton) starterButton.addEventListener("click",function(){
+    const existing = new Set(mealState.groceries.map(function(item){return item.name.toLowerCase();}));
+    starterGroceries.forEach(function(name){if(!existing.has(name.toLowerCase())) mealState.groceries.push({name:name,done:false});});
+    saveMeals();renderGroceries();starterButton.textContent="Starter list added ✓";
+  });
+
+  const mealFields = [
+    {key:"breakfast",label:"Breakfast",placeholder:"What did we eat? Coffee on the lanai?"},
+    {key:"lunch",label:"Lunch",placeholder:"At home, picnic, food truck or restaurant…"},
+    {key:"dinner",label:"Dinner",placeholder:"What we cooked or where we went…"},
+    {key:"memory",label:"Treats & food memory",placeholder:"Favorite bite, drink, funny moment or rating…"}
+  ];
+  document.querySelectorAll("[data-meal-day]").forEach(function(dayCard){
+    const day = dayCard.dataset.mealDay;
+    if(!mealState.diary[day]) mealState.diary[day] = {};
+    const fields = dayCard.querySelector(".meal-diary-fields");
+    if(!fields) return;
+    mealFields.forEach(function(field){
+      const label = document.createElement("label");
+      label.textContent = field.label;
+      const textarea = document.createElement("textarea");
+      textarea.placeholder = field.placeholder;
+      textarea.value = mealState.diary[day][field.key] || "";
+      textarea.addEventListener("input",function(){mealState.diary[day][field.key]=textarea.value;saveMeals();});
+      label.appendChild(textarea);fields.appendChild(label);
+    });
   });
   renderMeals();renderGroceries();
 })();
@@ -5720,8 +6005,16 @@ renderVotes();renderChallenges();
     var target = document.getElementById(id);
     if(!target || !target.matches("main > section")) return;
 
-    document.querySelectorAll("main > section").forEach(function(section){
-      section.classList.toggle("active", section.id === id);
+    document.querySelectorAll("main.shell > section").forEach(function(section){
+      var selected = section.id === id;
+      section.classList.toggle("active", selected);
+      section.hidden = !selected;
+      section.setAttribute("aria-hidden", selected ? "false" : "true");
+      if(selected){
+        section.style.setProperty("display", "block", "important");
+      }else{
+        section.style.setProperty("display", "none", "important");
+      }
     });
     document.querySelectorAll(".tabs .tab[data-tab]").forEach(function(tab){
       var active = tab.dataset.tab === id;

@@ -1416,7 +1416,11 @@
     .playlist-top-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .apple-playlist-live{overflow:hidden;padding:0!important;background:linear-gradient(145deg,#fff,#f7f2ff)}
     .apple-playlist-live .live-playlist-copy{padding:24px 26px 12px}
-    .apple-playlist-live iframe{display:block;width:100%;height:520px;border:0;background:transparent}
+    .apple-playlist-launch{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:10px 26px 18px;padding:24px;border-radius:22px;background:linear-gradient(135deg,#fc3c68,#8d46ff);color:#fff;box-shadow:0 18px 45px rgba(100,42,143,.22)}
+    .apple-playlist-launch strong{display:block;font-family:var(--serif);font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.05;margin-bottom:7px}
+    .apple-playlist-launch span{display:block;opacity:.9;max-width:620px}
+    .apple-playlist-launch a{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;background:#fff;color:#311448;text-decoration:none;font-weight:900;box-shadow:0 8px 22px rgba(35,10,55,.2)}
+    @media(max-width:700px){.apple-playlist-launch{align-items:flex-start;flex-direction:column;margin:8px 16px 16px}.apple-playlist-launch a{width:100%;box-sizing:border-box}}
     .apple-playlist-note{padding:0 26px 24px;color:var(--muted);font-size:.92rem}
     .span-7{grid-column:span 7}.span-5{grid-column:span 5}
     .continuous-player{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:18px 20px;margin:18px 0;border-radius:20px;background:linear-gradient(135deg,#092f40,#17616d);color:#fff}
@@ -2268,7 +2272,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     @media(max-width:760px){.booking-list,.booking-add-grid{grid-template-columns:1fr}.booking-wide{grid-column:auto}}
   </style>
 </head>
-<body data-chapter="overview" data-aesthetic="bloom">
+<body data-chapter="overview" data-aesthetic="daylight">
   <div class="atmosphere-overlay" aria-hidden="true">
     <span class="bloom-petal" style="left:5%;--fall:17s;--delay:-4s;--size:17px;--sway:52px">✿</span>
     <span class="bloom-petal" style="left:14%;--fall:21s;--delay:-13s;--size:13px;--sway:38px">❀</span>
@@ -2288,7 +2292,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     <div class="hero-shade"></div>
     <div class="hero-inner dynamic-hero-inner">
 
-    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button" aria-label="Current atmosphere: Island Bloom. Click for Glitter Tide." aria-pressed="false" title="Next: Glitter Tide">
+    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button" aria-label="Current atmosphere: Daylight. Click for Moonlight." aria-pressed="false" title="Next: Moonlight">
       <span class="toggle-orbit" aria-hidden="true">
         <span class="toggle-sun">☀</span>
         <span class="toggle-moon">☾</span>
@@ -2298,7 +2302,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </span>
       <span class="toggle-copy">
         <small>Island atmosphere</small>
-        <strong id="aestheticToggleLabel">Island Bloom</strong>
+        <strong id="aestheticToggleLabel">Daylight</strong>
       </span>
     </button>
 
@@ -4413,8 +4417,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
             <h2 style="margin-top:12px;">Press play on Maui</h2>
             <p class="muted">This player follows the Maui playlist Trish manages in Apple Music. Add or remove songs there and the website playlist will refresh with it.</p>
           </div>
-          <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="./index_files/pl.html" title="Maui playlist on Apple Music" loading="lazy"></iframe>
-          <div class="apple-playlist-note">For full songs, Apple may ask listeners to sign in. Browsers also require someone to press Play once before music begins.</div>
+          <div class="apple-playlist-launch">
+            <div><strong>Our live Maui soundtrack</strong><span>Open the complete playlist and let it play straight through. Any songs Trish adds in Apple Music automatically become part of this soundtrack.</span></div>
+            <a href="https://music.apple.com/us/playlist/maui/pl.u-WabZ6l3iEgzkyj" target="_blank" rel="noopener">▶ Open &amp; Play</a>
+          </div>
+          <div class="apple-playlist-note">The playlist opens in Apple Music, where full-length playback and continuous listening work reliably.</div>
         </div>
 
         <div class="card span-12">

@@ -2281,7 +2281,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
   </style>
   <script src="./index_files/supabase-js@2"></script>
 </head>
-<body data-chapter="overview" data-aesthetic="bloom">
+<body data-chapter="overview" data-aesthetic="daylight">
   <div class="family-cloud no-print" id="familyCloud">
     <button type="button" id="familyCloudButton" aria-haspopup="dialog">☁ Family sign in</button>
     <div class="family-cloud-panel" id="familyCloudPanel" hidden="">
@@ -2322,7 +2322,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     <div class="hero-shade"></div>
     <div class="hero-inner dynamic-hero-inner">
 
-    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button" aria-label="Current atmosphere: Island Bloom. Click for Glitter Tide." aria-pressed="false" title="Next: Glitter Tide">
+    <button class="aesthetic-toggle no-print" id="aestheticToggle" type="button" aria-label="Current atmosphere: Daylight. Click for Moonlight." aria-pressed="false" title="Next: Moonlight">
       <span class="toggle-orbit" aria-hidden="true">
         <span class="toggle-sun">☀</span>
         <span class="toggle-moon">☾</span>
@@ -2332,7 +2332,7 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       </span>
       <span class="toggle-copy">
         <small>Island atmosphere</small>
-        <strong id="aestheticToggleLabel">Island Bloom</strong>
+        <strong id="aestheticToggleLabel">Daylight</strong>
       </span>
     </button>
 
@@ -6216,7 +6216,13 @@ renderVotes();renderChallenges();
   if(!button||!panel)return;
   button.addEventListener("click",()=>{panel.hidden=!panel.hidden;});
   close.addEventListener("click",()=>{panel.hidden=true;});
-  if(!window.supabase){status.textContent="The family cloud could not load. Please check your internet connection.";return;}
+  if(!window.supabase){
+    status.textContent=location.protocol==="file:"
+      ? "Preview Mode: family sign-in becomes available after this file is published on GitHub Pages."
+      : "The family cloud library could not load. Refresh the page and try again.";
+    send.disabled=true;
+    return;
+  }
   const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
   window.mauiSupabase=client;
   function showSession(session){

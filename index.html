@@ -2182,6 +2182,13 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
       }
     }
 
+    .family-cloud{position:fixed;right:18px;top:18px;z-index:10020;font-family:var(--sans)}
+    .family-cloud>button{border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:11px 16px;background:rgba(8,38,52,.88);color:#fff;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.2);backdrop-filter:blur(14px);cursor:pointer}
+    .family-cloud>button.connected{background:linear-gradient(135deg,#087b77,#2cae91)}
+    .family-cloud-panel{position:absolute;right:0;top:52px;width:min(390px,calc(100vw - 30px));box-sizing:border-box;padding:26px;border-radius:24px;background:rgba(255,255,255,.97);color:#163244;box-shadow:0 26px 80px rgba(4,24,36,.3);border:1px solid rgba(255,255,255,.8);backdrop-filter:blur(18px)}
+    .family-cloud-panel h2{margin:12px 0 8px;font-family:var(--serif);font-size:1.85rem}.family-cloud-panel p{line-height:1.55}.family-cloud-panel label{display:block;font-weight:800;margin-top:16px}.family-cloud-panel input{width:100%;box-sizing:border-box;margin-top:7px;padding:12px;border:1px solid #bfd0d5;border-radius:12px;font:inherit}.family-cloud-close{position:absolute;right:13px;top:10px;border:0;background:transparent;font-size:1.7rem;color:#49636d;cursor:pointer}.family-cloud-status{min-height:1.4em;margin:12px 0 0;font-weight:750;color:#0d756f}
+    @media(max-width:760px){.family-cloud{right:10px;top:10px}.family-cloud-panel{position:fixed;right:10px;top:62px}}
+
 </style>
 
   <style id="chapter-isolation-fix">
@@ -2272,8 +2279,30 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     .booking-card-actions a{background:#173f4d;color:#fff}.booking-card-actions button{background:rgba(167,61,66,.1);color:#8b3036;box-shadow:none}
     @media(max-width:760px){.booking-list,.booking-add-grid{grid-template-columns:1fr}.booking-wide{grid-column:auto}}
   </style>
+  <script src="./index_files/supabase-js@2"></script>
 </head>
 <body data-chapter="overview" data-aesthetic="bloom">
+  <div class="family-cloud no-print" id="familyCloud">
+    <button type="button" id="familyCloudButton" aria-haspopup="dialog">☁ Family sign in</button>
+    <div class="family-cloud-panel" id="familyCloudPanel" hidden="">
+      <button class="family-cloud-close" id="familyCloudClose" type="button" aria-label="Close">×</button>
+      <div id="familySignedOut">
+        <span class="pill">Hawaii 2026 family cloud</span>
+        <h2>Bring your memories with you</h2>
+        <p>Enter your email and Supabase will send a secure sign-in link—no password to remember.</p>
+        <label>Email address<input id="familyEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+        <button class="daily-story-btn" id="familyMagicLink" type="button">Email my sign-in link</button>
+      </div>
+      <div id="familySignedIn" hidden="">
+        <span class="pill">Connected</span>
+        <h2 id="familyWelcome">Welcome to the family cloud</h2>
+        <p id="familyAccount"></p>
+        <p class="muted">Shared syncing will be enabled feature by feature. Your existing browser memories remain safely in place.</p>
+        <button class="daily-story-btn" id="familySignOut" type="button">Sign out</button>
+      </div>
+      <p class="family-cloud-status" id="familyCloudStatus" role="status"></p>
+    </div>
+  </div>
   <div class="atmosphere-overlay" aria-hidden="true">
     <span class="bloom-petal" style="left:5%;--fall:17s;--delay:-4s;--size:17px;--sway:52px">✿</span>
     <span class="bloom-petal" style="left:14%;--fall:21s;--delay:-13s;--size:13px;--sway:38px">❀</span>
@@ -6167,6 +6196,49 @@ renderVotes();renderChallenges();
   });
   window.renderBookings=renderConfirmed;
   renderConfirmed();renderCustom();
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  const SUPABASE_URL="https://uluopuzzclsnkaynebgt.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY="sb_publishable_YlgEVPX38sFDoF5rIoCzFg_NBUbTvqg";
+  const button=document.getElementById("familyCloudButton");
+  const panel=document.getElementById("familyCloudPanel");
+  const close=document.getElementById("familyCloudClose");
+  const email=document.getElementById("familyEmail");
+  const send=document.getElementById("familyMagicLink");
+  const signOut=document.getElementById("familySignOut");
+  const status=document.getElementById("familyCloudStatus");
+  const signedOut=document.getElementById("familySignedOut");
+  const signedIn=document.getElementById("familySignedIn");
+  const account=document.getElementById("familyAccount");
+  if(!button||!panel)return;
+  button.addEventListener("click",()=>{panel.hidden=!panel.hidden;});
+  close.addEventListener("click",()=>{panel.hidden=true;});
+  if(!window.supabase){status.textContent="The family cloud could not load. Please check your internet connection.";return;}
+  const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+  window.mauiSupabase=client;
+  function showSession(session){
+    const user=session&&session.user;
+    signedOut.hidden=!!user;signedIn.hidden=!user;
+    button.classList.toggle("connected",!!user);
+    button.textContent=user?"☁ Family cloud connected":"☁ Family sign in";
+    account.textContent=user?("Signed in as "+user.email):"";
+    if(user)status.textContent="Your secure family connection is ready.";
+  }
+  client.auth.getSession().then(({data})=>showSession(data.session)).catch(()=>{status.textContent="Unable to check sign-in right now.";});
+  client.auth.onAuthStateChange((_event,session)=>showSession(session));
+  send.addEventListener("click",async()=>{
+    const address=email.value.trim();
+    if(!address){email.focus();status.textContent="Please enter your email address.";return;}
+    send.disabled=true;status.textContent="Sending your secure sign-in link…";
+    const redirectTo=location.protocol==="http:"||location.protocol==="https:" ? location.origin+location.pathname : "https://trishajo.github.io/Hawaii2026/";
+    const {error}=await client.auth.signInWithOtp({email:address,options:{emailRedirectTo:redirectTo}});
+    send.disabled=false;
+    status.textContent=error?("Could not send the link: "+error.message):"Check your email for the secure sign-in link.";
+  });
+  signOut.addEventListener("click",async()=>{await client.auth.signOut();status.textContent="Signed out on this device.";});
 })();
 </script>
 

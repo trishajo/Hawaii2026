@@ -2280,11 +2280,11 @@ body.moonlit .hero::before{background:linear-gradient(90deg,rgba(0,10,20,.97),rg
     @media(max-width:760px){.booking-list,.booking-add-grid{grid-template-columns:1fr}.booking-wide{grid-column:auto}}
   </style>
 </head>
-<body>
+<body data-build="supabase-family-cloud-v2">
   <div class="family-cloud no-print" id="familyCloud">
-    <button type="button" id="familyCloudButton" aria-haspopup="dialog">☁ Family sign in</button>
+    <button type="button" id="familyCloudButton" aria-haspopup="dialog" onclick="var p=document.getElementById('familyCloudPanel');p.hidden=!p.hidden">☁ Family sign in</button>
     <div class="family-cloud-panel" id="familyCloudPanel" hidden>
-      <button class="family-cloud-close" id="familyCloudClose" type="button" aria-label="Close">×</button>
+      <button class="family-cloud-close" id="familyCloudClose" type="button" aria-label="Close" onclick="document.getElementById('familyCloudPanel').hidden=true">×</button>
       <div id="familySignedOut">
         <span class="pill">Hawaii 2026 family cloud</span>
         <h2>Bring your memories with you</h2>
@@ -6289,8 +6289,6 @@ renderVotes();renderChallenges();
   const signedIn=document.getElementById("familySignedIn");
   const account=document.getElementById("familyAccount");
   if(!button||!panel)return;
-  button.addEventListener("click",()=>{panel.hidden=!panel.hidden;});
-  close.addEventListener("click",()=>{panel.hidden=true;});
   let createSupabaseClient=window.supabase&&window.supabase.createClient;
   if(!createSupabaseClient){
     try{
